@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite it as below."
+title: "Ottimizzazione combinatoria: online lecture notes with worked exercises"
+abstract: >-
+  The lecture notes of the Ottimizzazione combinatoria course — linear functions,
+  polyhedra, LP problems, the simplex algorithm, duality, revised and dual
+  methods, sensitivity analysis, modelling techniques — with definitions,
+  theorems and proofs, worked examples, a catalogue of LP problems and
+  exercises with solutions.
+authors:
+  - family-names: Furini
+    given-names: Fabio
+    email: fabio.furini@uniroma1.it
+    affiliation: "DIAG, Sapienza University of Rome"
+url: "https://fabiofurini.github.io/ottimizzazione-combinatoria/"
+repository-code: "https://github.com/fabiofurini/ottimizzazione-combinatoria"
+license:
+  - CC-BY-4.0
+  - MIT
+date-released: 2026-10-10
+keywords:
+  - linear programming
+  - simplex algorithm
+  - duality
+  - sensitivity analysis
+  - operations research
+  - teaching material
