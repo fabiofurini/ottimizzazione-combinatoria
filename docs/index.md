@@ -177,6 +177,7 @@ Dello stesso autore:
 - **[Ottimizzazione convessa](https://fabiofurini.github.io/ottimizzazione-convessa/)** — insiemi e funzioni convesse, problemi di ottimizzazione convessa, con grafici interattivi;
 - **[Algoritmi](https://fabiofurini.github.io/algoritmi/)** — rappresentazione dei numeri, pseudocodice, ordinamento e ricerca, analisi e algoritmi ricorsivi;
 - **[Programmazione lineare intera](https://fabiofurini.github.io/programmazione-lineare-intera/)** — rilassamento continuo, disuguaglianze valide, piani di taglio, branch-and-bound e branch-and-cut;
+- **[Ottimizzazione su reti](https://fabiofurini.github.io/ottimizzazione-su-reti/)** — grafi, alberi ricoprenti, cammini minimi, flussi su reti, simplesso su reti e gestione dei progetti;
 - **[Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/)** — modelli di programmazione lineare a variabili intere, dalla formulazione alla soluzione con i solver;
 - **[Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/)** — modellazione e risoluzione di problemi di ottimizzazione con Python e i solver;
 - **[Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/)** — numeri reali, funzioni, limiti, derivate e serie, con i grafici interattivi;
