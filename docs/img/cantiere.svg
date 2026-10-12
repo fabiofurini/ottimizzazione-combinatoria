@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-label="LAVORI IN CORSO">
+<defs><clipPath id="c"><rect width="720" height="30"/></clipPath><clipPath id="d"><rect y="160" width="720" height="30"/></clipPath></defs>
+<rect width="720" height="190" rx="14" fill="#ffc107"/>
+<g clip-path="url(#c)"><polygon points="0,0 30,0 0,30 -30,30" fill="#1f1f1f"/><polygon points="60,0 90,0 60,30 30,30" fill="#1f1f1f"/><polygon points="120,0 150,0 120,30 90,30" fill="#1f1f1f"/><polygon points="180,0 210,0 180,30 150,30" fill="#1f1f1f"/><polygon points="240,0 270,0 240,30 210,30" fill="#1f1f1f"/><polygon points="300,0 330,0 300,30 270,30" fill="#1f1f1f"/><polygon points="360,0 390,0 360,30 330,30" fill="#1f1f1f"/><polygon points="420,0 450,0 420,30 390,30" fill="#1f1f1f"/><polygon points="480,0 510,0 480,30 450,30" fill="#1f1f1f"/><polygon points="540,0 570,0 540,30 510,30" fill="#1f1f1f"/><polygon points="600,0 630,0 600,30 570,30" fill="#1f1f1f"/><polygon points="660,0 690,0 660,30 630,30" fill="#1f1f1f"/><polygon points="720,0 750,0 720,30 690,30" fill="#1f1f1f"/></g>
+<g clip-path="url(#d)" transform="translate(0,160)"><polygon points="0,0 30,0 0,30 -30,30" fill="#1f1f1f"/><polygon points="60,0 90,0 60,30 30,30" fill="#1f1f1f"/><polygon points="120,0 150,0 120,30 90,30" fill="#1f1f1f"/><polygon points="180,0 210,0 180,30 150,30" fill="#1f1f1f"/><polygon points="240,0 270,0 240,30 210,30" fill="#1f1f1f"/><polygon points="300,0 330,0 300,30 270,30" fill="#1f1f1f"/><polygon points="360,0 390,0 360,30 330,30" fill="#1f1f1f"/><polygon points="420,0 450,0 420,30 390,30" fill="#1f1f1f"/><polygon points="480,0 510,0 480,30 450,30" fill="#1f1f1f"/><polygon points="540,0 570,0 540,30 510,30" fill="#1f1f1f"/><polygon points="600,0 630,0 600,30 570,30" fill="#1f1f1f"/><polygon points="660,0 690,0 660,30 630,30" fill="#1f1f1f"/><polygon points="720,0 750,0 720,30 690,30" fill="#1f1f1f"/></g>
+<g transform="translate(70,95)">
+<polygon points="0,-48 44,30 -44,30" fill="#ff6f00" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"/>
+<rect x="-5" y="-22" width="10" height="30" rx="3" fill="#1f1f1f"/><circle cx="0" cy="18" r="5" fill="#1f1f1f"/>
+</g>
+<text x="400" y="88" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#1f1f1f">LAVORI IN CORSO</text>
+<text x="400" y="128" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="21" fill="#1f1f1f">Sito e materiale didattico sono ancora in costruzione</text>
+</svg>

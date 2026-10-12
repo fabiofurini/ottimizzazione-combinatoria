@@ -19,6 +19,10 @@
   font-weight: 700;
 }
 [data-md-color-scheme="slate"] .md-typeset h1 { color: #7fd4e4; }
+/* il simbolo ¶ del titolo non deve andare a capo da solo: con un titolo lungo quasi quanto la colonna
+   lasciava una riga vuota sotto il titolo (Exercises · Formulations of the knapsack problem) */
+.md-typeset h1 { position: relative; }
+.md-typeset h1 .headerlink { position: absolute; margin-left: .2em; }
 .md-typeset h2 {
   border-bottom: 2px solid #0E749033;
   padding-bottom: .15em;
@@ -161,7 +165,7 @@
   border-radius: 14px;
   padding: 10px;
   max-width: 100%;
-  min-width: min(280px, 100%);
+  min-width: min(160px, 100%);   /* le figure piccole restano alla loro scala (280px le ingrandiva fino a 3 volte) */
   box-shadow: 0 2px 12px rgba(22, 50, 74, .10);
   margin: 1em auto;
 }
@@ -211,3 +215,88 @@
 
 /* minipage delle note affiancate */
 .md-typeset .minipage { display: inline-block; vertical-align: top; }
+
+/* ---- box «formula» (rosa: ricorrenze della PD e formule richiamate), modulo Ottimizzazione combinatoria ---- */
+:root { --c-formula: #b0398a; }
+[data-md-color-scheme="slate"] { --c-formula: #e07fc0; }
+.md-typeset .admonition.formula, .md-typeset details.formula { border-color: var(--c-formula); background: color-mix(in srgb, var(--c-formula) 6%, transparent); }
+.md-typeset .formula > .admonition-title, .md-typeset .formula > summary { background: color-mix(in srgb, var(--c-formula) 13%, transparent); }
+.md-typeset .formula > .admonition-title::before, .md-typeset .formula > summary::before { background-color: var(--c-formula); -webkit-mask-image: var(--md-admonition-icon--abstract); mask-image: var(--md-admonition-icon--abstract); }
+.md-typeset .admonition.formula > .admonition-title:empty { display: none; }
+
+/* ---- pseudocodice (algorithm2e): righe numerate e rientri come nel PDF ---- */
+.md-typeset .pseudocodice { margin: .2em 0 .4em; line-height: 1.55; overflow-x: auto; }
+.md-typeset .pseudocodice .pc { position: relative; padding-left: calc(2.4em + var(--liv, 0) * 1.5em); min-height: 1.5em; white-space: nowrap; }
+.md-typeset .pseudocodice .pc-n { position: absolute; left: 0; width: 1.8em; text-align: right; color: var(--md-default-fg-color--light); font-size: .85em; }
+.md-typeset .pseudocodice .pc strong { font-weight: 700; }
+.md-typeset .pseudocodice .pc-com { color: var(--md-default-fg-color--light); font-style: italic; margin-left: .6em; }
+.md-typeset .pseudocodice .pc:target { background: color-mix(in srgb, var(--md-accent-fg-color) 14%, transparent); }
+
+/* tabelle in stile booktabs, come nelle dispense (niente caselle, un solo scorrimento) */
+.md-typeset .tabella .md-typeset__scrollwrap { overflow: visible; margin: 0; }
+.md-typeset .tabella .md-typeset__table { padding: 0; }
+.md-typeset .tabella table:not([class]) { display: table; width: auto; border: 0; border-radius: 0; box-shadow: none;
+  font-size: .78rem; border-top: 1.5px solid var(--md-default-fg-color); border-bottom: 1.5px solid var(--md-default-fg-color); }
+.md-typeset .tabella table:not([class]) th, .md-typeset .tabella table:not([class]) td { border: 0; background: none;
+  padding: .3em .75em; text-align: center; }
+.md-typeset .tabella table:not([class]) tr:first-child > * { border-bottom: 1px solid var(--md-default-fg-color--light); }
+.md-typeset .tabella table:not([class]) tbody tr:hover { background: none; box-shadow: none; }
+.md-typeset .tabella table:not([class]) th, .md-typeset .tabella table:not([class]) td { min-width: 0; }
+
+/* ---------- pulsanti «Esegui in Colab: Python · C++» dopo lo pseudocodice ----------
+   (notebook_colab.pulsanti_colab; su telefono vanno a capo) */
+.md-typeset .colab-pulsanti {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35em .45em;
+  margin: -.4em 0 1.2em;
+  font-size: .72rem;
+}
+.md-typeset .colab-pulsanti .colab-etichetta {
+  color: var(--md-default-fg-color--light);
+  font-weight: 600;
+  margin-right: .15em;
+}
+.md-typeset .colab-pulsanti .colab-pulsante {
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+  padding: .12em .7em;
+  border: 1px solid var(--c-algoritmo);
+  border-radius: 999px;
+  color: var(--c-algoritmo);
+  font-weight: 600;
+  line-height: 1.6;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .15s, color .15s;
+}
+.md-typeset .colab-pulsanti .colab-pulsante::before {
+  content: "";
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: .3em 0 .3em .5em;
+  border-color: transparent transparent transparent currentColor;
+}
+.md-typeset .colab-pulsanti .colab-pulsante:hover,
+.md-typeset .colab-pulsanti .colab-pulsante:focus {
+  background-color: var(--c-algoritmo);
+  color: var(--md-default-bg-color);
+}
+/* pagina Notebook: badge e link nella tabella */
+.md-typeset .tabella-notebook td { vertical-align: middle; }
+.md-typeset .tabella-notebook img { display: inline-block; margin: 0; vertical-align: middle; }
+
+/* menu in alto con molte voci: più compatto, così tutte le voci stanno nella riga (2026-10-12) */
+.md-tabs__item { padding-left: .3rem; padding-right: .3rem; }
+.md-tabs__link { font-size: .68rem; }
+.md-tabs__list { margin-left: .2rem; }
+
+/* pagina Downloads: tabelle a tutta larghezza; numeri dei capitoli e file su una riga (2026-10-12) */
+.md-typeset .tabella-download table:not([class]) { display: table; width: 100%; font-size: .74rem; }
+.md-typeset .tabella-download td:nth-last-child(-n+2), .md-typeset .tabella-download th:nth-last-child(-n+2) { white-space: nowrap; }
+.md-typeset .tabella-download td:first-child { font-weight: 600; min-width: 9em; }
+
+/* schede: la riga «Part N · chapters a–b» in corsivo, più piccola e grigia */
+.md-typeset .grid.cards > ul > li > p > em:only-child { color: var(--md-default-fg-color--light); font-size: .72rem; }

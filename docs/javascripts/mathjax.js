@@ -10,7 +10,7 @@ window.MathJax = {
     tags: "ams",
     packages: { "[+]": ["mathtools", "cancel", "color"] },
     macros: {
-      MIP: "\\mathrm{MIP}", ILP: "\\mathrm{ILP}", BIP: "\\mathrm{BIP}", LP: "\\mathrm{LP}", KP: "\\mathrm{KP}", LPKP: "\\mathrm{LP}_{\\mathrm{KP}}", LB: "\\mathrm{LB}", UB: "\\mathrm{UB}",
+      allowbreak: "", toprule: "\\hline", midrule: "\\hline", bottomrule: "\\hline",
       N: "\\mathbb{N}", Z: "\\mathbb{Z}", Q: "\\mathbb{Q}", R: "\\mathbb{R}",
       C: "\\mathbb{C}", F: "\\mathbb{F}",
       rr: "\\rightarrow", mt: "\\mapsto", ip: "+\\infty", im: "-\\infty",
@@ -38,7 +38,15 @@ window.MathJax = {
       vet: ["\\boldsymbol{#1}", 1], mat: ["\\boldsymbol{#1}", 1], T: "'",
       equal: "=",
       thicksim: "\\sim", thickapprox: "\\approx",
-      mathscr: ["\\mathcal{#1}", 1]
+      mathscr: ["\\mathcal{#1}", 1],
+      // macro del modulo Ottimizzazione combinatoria (GUIDA_DI_STILE §3, preambolo delle dispense)
+      MIP: "\\mathrm{MIP}", LP: "\\mathrm{LP}", ILP: "\\mathrm{ILP}", BIP: "\\mathrm{BIP}",
+      KP: "\\mathrm{KP}", BPP: "\\mathrm{BPP}", VCP: "\\mathrm{VCP}", MCP: "\\mathrm{MCP}", MSSP: "\\mathrm{MSSP}", TSP: "\\mathrm{TSP}",
+      ATSP: "\\mathrm{ATSP}", CLSP: "\\mathrm{CLSP}", PCmax: "P\\|C_{\\max}",
+      // \\LB[x] delle dispense = LB(x): MathJax non ha argomenti facoltativi condizionali, sul sito si scrive LB(x) per esteso
+      LB: "\\mathrm{LB}", UB: "\\mathrm{UB}",
+      Ioggetti: "\\mathcal{I}", Jlavori: "\\mathcal{J}", Vcitta: "\\mathcal{V}",
+      bigO: "\\mathcal{O}"
     }
   },
   options: { ignoreHtmlClass: ".*|", processHtmlClass: "arithmatex|gi" }
