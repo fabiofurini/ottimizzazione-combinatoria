@@ -56,34 +56,34 @@ extra:
   social:
     - icon: material/web
       link: https://fabiofurini.github.io/
-      name: Fabio Furini — personal website
+      name: Fabio Furini — sito personale
     - icon: material/school
       link: https://www.diag.uniroma1.it/
-      name: DIAG — Sapienza University of Rome
+      name: DIAG — Sapienza Università di Roma
     - icon: fontawesome/brands/github
       link: https://github.com/fabiofurini
       name: GitHub
     - icon: material/chart-timeline-variant
-      link: https://fabiofurini.github.io/operations-research-lab/
-      name: Operations Research Lab
+      link: https://fabiofurini.github.io/laboratorio-ricerca-operativa/
+      name: Laboratorio di Ricerca Operativa
     - icon: material/vector-triangle
-      link: https://fabiofurini.github.io/linear-programming/
-      name: Linear Programming
+      link: https://fabiofurini.github.io/programmazione-lineare/
+      name: Programmazione lineare
     - icon: material/vector-polygon
-      link: https://fabiofurini.github.io/mip-modelling/
-      name: MIP Modelling
+      link: https://fabiofurini.github.io/modellazione-mip/
+      name: Modellazione MIP
     - icon: material/math-integral
-      link: https://fabiofurini.github.io/mathematical-analysis-1/
-      name: Mathematical Analysis 1
+      link: https://fabiofurini.github.io/analisi-matematica-1/
+      name: Analisi Matematica 1
     - icon: material/matrix
-      link: https://fabiofurini.github.io/linear-algebra/
-      name: Linear Algebra
+      link: https://fabiofurini.github.io/algebra-lineare/
+      name: Algebra lineare
     - icon: material/chart-bell-curve
-      link: https://fabiofurini.github.io/convex-optimization/
-      name: Convex Optimization
+      link: https://fabiofurini.github.io/ottimizzazione-convessa/
+      name: Ottimizzazione convessa
     - icon: material/code-braces
-      link: https://fabiofurini.github.io/algorithms/
-      name: Algorithms
+      link: https://fabiofurini.github.io/algoritmi/
+      name: Algoritmi
   alternate:
     - name: English
       link: https://fabiofurini.github.io/combinatorial-optimization/
