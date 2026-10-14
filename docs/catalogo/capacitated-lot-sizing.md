@@ -67,10 +67,6 @@ title: "Lot sizing capacitato (CLS)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/lot-sizing/">Cap. 8 (5 esercizi)</a>; <a href="../../esercizi/lot-sizing-formulations/">Cap. 15 (5 esercizi)</a>; <a href="../../esercizi/dp-capacitated-lot-sizing/">Cap. 26 (2 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/lot-sizing/il-problema-del-lot-sizing-capacitato/#box-2-ex-cls5">Cap. 8</a> (<span class="arithmatex">\(z=180\)</span>)</td>
-</tr>
 </table></div>
 
 ### Proprietà { #sez-sec-cat-cls-properties }

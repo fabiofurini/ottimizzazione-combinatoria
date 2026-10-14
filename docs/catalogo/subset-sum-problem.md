@@ -65,8 +65,4 @@ title: "Problema del subset sum (SSP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/knapsack/#esercizio-2-2">Esercizio 2.2</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-6">Esercizio 9.6</a>; <a href="../../esercizi/dp-principles/#esercizio-16-2">Esercizio 16.2</a>; <a href="../../esercizi/dp-subset-sum/">Cap. 20 (5 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-del-subset-sum/#box-5-ex-ssp">Cap. 2</a></td>
-</tr>
 </table></div>

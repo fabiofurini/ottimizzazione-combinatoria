@@ -67,10 +67,6 @@ title: "Problema della clique massima (MCP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/coloring/">Cap. 4 (2 esercizi)</a>; <a href="../../esercizi/clique/">Cap. 5 (5 esercizi)</a>; <a href="../../esercizi/clique-formulations/">Cap. 12 (5 esercizi)</a>; <a href="../../esercizi/clique-inapproximability/">Cap. 38 (4 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima/#box-6-mcpP-ex1">Cap. 5</a> (<span class="arithmatex">\(z=3\)</span>)</td>
-</tr>
 </table></div>
 
 ### Proprietà { #sez-sec-cat-mcp-properties }

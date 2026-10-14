@@ -43,8 +43,4 @@ title: "Problema del cambio monete (CCP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/dp-coin-change/">Cap. 27 (5 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../programmazione-dinamica/dp-coin-change/#box-1-texccpex1">Cap. 27</a> (<span class="arithmatex">\(z=2\)</span>)</td>
-</tr>
 </table></div>

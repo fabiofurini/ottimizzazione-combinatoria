@@ -81,10 +81,6 @@ title: "Problema dello zaino 0/1 (KP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/knapsack/">Cap. 2 (6 esercizi)</a>; <a href="../../esercizi/knapsack-formulations/">Cap. 9 (5 esercizi)</a>; <a href="../../esercizi/dp-principles/#esercizio-16-1">Esercizio 16.1</a>; <a href="../../esercizi/dp-knapsack/">Cap. 17 (5 esercizi)</a>; <a href="../../esercizi/heuristics/">Cap. 29 (2 esercizi)</a>; <a href="../../esercizi/constructive-heuristics/">Cap. 30 (3 esercizi)</a>; <a href="../../esercizi/local-search/">Cap. 31 (3 esercizi)</a>; <a href="../../esercizi/metaheuristics/">Cap. 32 (5 esercizi)</a>; <a href="../../esercizi/mip-heuristics-classical/">Cap. 33 (4 esercizi)</a>; <a href="../../esercizi/approximation/#esercizio-34-4">Esercizio 34.4</a>; <a href="../../esercizi/knapsack-approximation/">Cap. 35 (15 esercizi)</a>; <a href="../../esercizi/knapsack-branch-and-bound/">Cap. 41 (4 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-0-1/#box-2-ex-kp">Cap. 2</a> (<span class="arithmatex">\(z=15\)</span>); <a href="../../algoritmi-euristici/heuristics/#box-2-ex-refKP">Cap. 29</a> (<span class="arithmatex">\(z=17\)</span>); <a href="../../algoritmi-euristici/metaheuristics/i-problemi-e-le-ipotesi/#box-2-ex-tsp20">Cap. 32, KP20</a> (<span class="arithmatex">\(z=521\)</span>); <a href="../../algoritmi-di-approssimazione/knapsack-approximation/#box-2-ex-split">Cap. 35</a> (<span class="arithmatex">\(z=15\)</span>)</td>
-</tr>
 </table></div>
 
 ### Proprietà { #sez-sec-cat-kp-properties }
@@ -146,5 +142,3 @@ title: "Problema dello zaino 0/1 (KP)"
 ### Algoritmi ad hoc { #sez-sec-cat-kp-adhocalgorithms }
 
 - Il rilassamento lineare di un nodo si risolve con le formule di Dantzig, senza il simplesso, e ha una sola variabile frazionaria: l'oggetto critico, su cui si fa branching ([Cap. 41](../algoritmi-specializzati/knapsack-branch-and-bound.md#411-lalgoritmo-per-il-kp)).
-
-- Sull'istanza del [Cap. 2](../problemi-di-ottimizzazione-combinatoria/knapsack/index.md) chiude il gap fra $\LB=15$ e $\UB=16$ con $5$ nodi ([Cap. 41](../algoritmi-specializzati/knapsack-branch-and-bound.md#box-3-texexpbox2)).

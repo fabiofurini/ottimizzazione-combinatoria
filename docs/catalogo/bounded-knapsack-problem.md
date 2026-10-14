@@ -71,8 +71,4 @@ title: "Problema dello zaino limitato (BKP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/knapsack/#esercizio-2-3">Esercizio 2.3</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-7">Esercizio 9.7</a>; <a href="../../esercizi/dp-bounded-knapsack/">Cap. 19 (5 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-limitato/#box-7-ex-bkp">Cap. 2</a> (<span class="arithmatex">\(z=18\)</span>)</td>
-</tr>
 </table></div>

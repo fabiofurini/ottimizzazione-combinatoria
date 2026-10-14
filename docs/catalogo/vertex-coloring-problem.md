@@ -87,10 +87,6 @@ title: "Problema della colorazione dei vertici (VCP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/coloring/">Cap. 4 (5 esercizi)</a>; <a href="../../esercizi/coloring-formulations/">Cap. 11 (5 esercizi)</a>; <a href="../../esercizi/constructive-heuristics/">Cap. 30 (3 esercizi)</a>; <a href="../../esercizi/coloring-inapproximability/">Cap. 37 (5 esercizi)</a>; <a href="../../esercizi/dsatur-branch-and-bound/">Cap. 42 (5 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici/#box-5-ex-vcp2">Cap. 4</a> (<span class="arithmatex">\(z=3\)</span>)</td>
-</tr>
 </table></div>
 
 ### Proprietà { #sez-sec-cat-vcp-properties }

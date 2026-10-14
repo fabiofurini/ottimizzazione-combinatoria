@@ -69,8 +69,4 @@ title: "Problema dello zaino con setup (KPS)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/knapsack-formulations/#esercizio-9-12">Esercizio 9.12</a>; <a href="../../esercizi/dp-knapsack-setups/">Cap. 23 (5 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-con-setup/#box-17-ex-kps">Cap. 2</a> (<span class="arithmatex">\(z=16\)</span>)</td>
-</tr>
 </table></div>

@@ -45,8 +45,4 @@ title: "Problema del taglio delle aste (RCP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/dp-rod-cutting/">Cap. 28 (5 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../programmazione-dinamica/dp-rod-cutting/#box-1-texexpbox1">Cap. 28</a> (<span class="arithmatex">\(z=10\)</span>)</td>
-</tr>
 </table></div>

@@ -69,8 +69,4 @@ title: "Problema dello zaino a scelta multipla (MCKP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/knapsack/#esercizio-2-5">Esercizio 2.5</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-11">Esercizio 9.11</a>; <a href="../../esercizi/dp-principles/#esercizio-16-5">Esercizio 16.5</a>; <a href="../../esercizi/dp-multiple-choice-knapsack/">Cap. 21 (5 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-a-scelta-multipla/#box-15-ex-mckp">Cap. 2</a> (<span class="arithmatex">\(z=17\)</span>)</td>
-</tr>
 </table></div>

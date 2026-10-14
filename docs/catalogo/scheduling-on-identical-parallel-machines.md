@@ -67,10 +67,6 @@ title: "Scheduling su macchine parallele identiche (P||Cmax)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/pcmax/">Cap. 7 (5 esercizi)</a>; <a href="../../esercizi/pcmax-formulations/">Cap. 14 (5 esercizi)</a>; <a href="../../esercizi/heuristics/">Cap. 29 (2 esercizi)</a>; <a href="../../esercizi/constructive-heuristics/">Cap. 30 (3 esercizi)</a>; <a href="../../esercizi/local-search/">Cap. 31 (3 esercizi)</a>; <a href="../../esercizi/metaheuristics/">Cap. 32 (3 esercizi)</a>; <a href="../../esercizi/mip-heuristics-classical/#esercizio-33-5">Esercizio 33.5</a>; <a href="../../esercizi/approximation/#esercizio-34-2">Esercizio 34.2</a>; <a href="../../esercizi/pcmax-approximation/">Cap. 40 (3 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/pcmax/scheduling-su-macchine-parallele-identiche/#box-2-ex-pcmax7">Cap. 7</a> (<span class="arithmatex">\(z=9\)</span>); <a href="../../algoritmi-euristici/local-search/p-cmax-move-e-swap/#sez-sec-pcmax">Cap. 31, PCM12</a> (<span class="arithmatex">\(z=19\)</span>); <a href="../../algoritmi-euristici/metaheuristics/i-problemi-e-le-ipotesi/#box-3-ex-medium">Cap. 32, PCM15</a> (<span class="arithmatex">\(z=69\)</span>)</td>
-</tr>
 </table></div>
 
 ### Proprietà { #sez-sec-cat-pcmax-properties }

@@ -69,8 +69,4 @@ title: "Problema dello zaino multidimensionale (MDKP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/knapsack-formulations/#esercizio-9-9">Esercizio 9.9</a>; <a href="../../esercizi/dp-multidimensional-knapsack/">Cap. 22 (5 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-multidimensionale/#box-11-ex-mdkp">Cap. 2</a> (<span class="arithmatex">\(z=14\)</span>)</td>
-</tr>
 </table></div>

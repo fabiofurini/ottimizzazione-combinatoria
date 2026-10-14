@@ -73,10 +73,6 @@ title: "Problema del bin packing (BPP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/bin-packing/">Cap. 3 (6 esercizi)</a>; <a href="../../esercizi/pcmax/#esercizio-7-5">Esercizio 7.5</a>; <a href="../../esercizi/bin-packing-formulations/">Cap. 10 (5 esercizi)</a>; <a href="../../esercizi/heuristics/#esercizio-29-2">Esercizio 29.2</a>; <a href="../../esercizi/constructive-heuristics/">Cap. 30 (3 esercizi)</a>; <a href="../../esercizi/local-search/">Cap. 31 (3 esercizi)</a>; <a href="../../esercizi/metaheuristics/">Cap. 32 (2 esercizi)</a>; <a href="../../esercizi/approximation/#esercizio-34-3">Esercizio 34.3</a>; <a href="../../esercizi/bin-packing-approximation/">Cap. 36 (12 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/bin-packing/il-problema-del-bin-packing/#box-2-ex-bpp">Cap. 3</a> (<span class="arithmatex">\(z=3\)</span>); <a href="../../algoritmi-euristici/heuristics/#box-3-ex-refBPP">Cap. 29</a> (<span class="arithmatex">\(z=3\)</span>); <a href="../../algoritmi-euristici/local-search/paesaggi-piatti-e-obiettivi-ausiliari/#sez-sec-flat">Cap. 31</a> (<span class="arithmatex">\(z=5\)</span>); <a href="../../algoritmi-euristici/metaheuristics/i-problemi-e-le-ipotesi/#box-3-ex-medium">Cap. 32, BPP24</a> (<span class="arithmatex">\(z=9\)</span>); <a href="../../algoritmi-euristici/mip-heuristics-classical/#box-19-ex-gurobi">Cap. 33</a> (<span class="arithmatex">\(z=23\)</span>)</td>
-</tr>
 </table></div>
 
 ### Proprietà { #sez-sec-cat-bpp-properties }

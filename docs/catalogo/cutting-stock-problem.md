@@ -61,8 +61,4 @@ title: "Problema del cutting stock (CSP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/bin-packing/#esercizio-3-4">Esercizio 3.4</a>; <a href="../../esercizi/bin-packing-formulations/#esercizio-10-6">Esercizio 10.6</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/bin-packing/il-problema-del-cutting-stock/#box-5-ex-csp">Cap. 3</a> (<span class="arithmatex">\(z=3\)</span>)</td>
-</tr>
 </table></div>

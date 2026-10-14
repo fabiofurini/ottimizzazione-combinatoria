@@ -71,10 +71,6 @@ title: "Problema del commesso viaggiatore (TSP)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/tsp/">Cap. 6 (7 esercizi)</a>; <a href="../../esercizi/tsp-formulations/">Cap. 13 (5 esercizi)</a>; <a href="../../esercizi/heuristics/#esercizio-29-3">Esercizio 29.3</a>; <a href="../../esercizi/constructive-heuristics/">Cap. 30 (3 esercizi)</a>; <a href="../../esercizi/local-search/">Cap. 31 (3 esercizi)</a>; <a href="../../esercizi/metaheuristics/">Cap. 32 (7 esercizi)</a>; <a href="../../esercizi/tsp-approximation/">Cap. 39 (3 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/tsp/il-problema-del-commesso-viaggiatore/#box-2-ex-tsp5">Cap. 6</a> (<span class="arithmatex">\(z=18\)</span>); <a href="../../algoritmi-euristici/metaheuristics/i-problemi-e-le-ipotesi/#box-2-ex-tsp20">Cap. 32, TSP20</a> (<span class="arithmatex">\(z=291\)</span>)</td>
-</tr>
 </table></div>
 
 ### Proprietà { #sez-sec-cat-tsp-properties }

@@ -61,8 +61,4 @@ title: "Problema del lot sizing senza capacità (ULS)"
 <td><strong>Esercizi</strong></td>
 <td><a href="../../esercizi/lot-sizing/#esercizio-8-4">Esercizio 8.4</a>; <a href="../../esercizi/lot-sizing-formulations/#esercizio-15-6">Esercizio 15.6</a>; <a href="../../esercizi/dp-lot-sizing/">Cap. 25 (3 esercizi)</a></td>
 </tr>
-<tr>
-<td><strong>Istanze di riferimento</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/lot-sizing/il-problema-del-lot-sizing-capacitato/#83-contare-le-soluzioni">Cap. 8</a> (<span class="arithmatex">\(z=170\)</span>)</td>
-</tr>
 </table></div>
