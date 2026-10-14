@@ -185,3 +185,5 @@ Materiale didattico di **[Fabio Furini](https://fabiofurini.github.io/)** —
 *Questo sito è disponibile anche in [inglese](https://fabiofurini.github.io/combinatorial-optimization/).*
 
 [:material-presentation: Slide del corso --- Capitolo 1: Problemi di ottimizzazione combinatoria](pdf/slide-01-problemi-di-ottimizzazione-combinatoria.pdf){ .md-button }
+
+[:material-presentation: Slide del corso --- Capitolo 2: Problemi di zaino](pdf/slide-02-problemi-di-zaino.pdf){ .md-button }
