@@ -7,10 +7,6 @@ hide:
 
 <div class="hero" markdown>
 
-![Lavori in corso: sito e materiale didattico sono ancora in costruzione](img/cantiere.svg){ width="560" }
-
-**Sito in costruzione.** Il materiale è in lavorazione e in revisione.
-
 # Ottimizzazione combinatoria
 
 Materiale didattico ideato e sviluppato da **[Fabio Furini](https://fabiofurini.github.io/)**, professore
@@ -186,4 +182,6 @@ Dello stesso autore:
 Materiale didattico di **[Fabio Furini](https://fabiofurini.github.io/)** —
 [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.
 
-*This website is also available in [English](https://fabiofurini.github.io/combinatorial-optimization/).*
+*Questo sito è disponibile anche in [inglese](https://fabiofurini.github.io/combinatorial-optimization/).*
+
+*Le slide del corso potrebbero non essere ancora disponibili.*
