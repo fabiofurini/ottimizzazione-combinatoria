@@ -184,4 +184,4 @@ Materiale didattico di **[Fabio Furini](https://fabiofurini.github.io/)** —
 
 *Questo sito è disponibile anche in [inglese](https://fabiofurini.github.io/combinatorial-optimization/).*
 
-*Le slide del corso potrebbero non essere ancora disponibili.*
+[:material-presentation: Slide del corso --- Capitolo 1: Problemi di ottimizzazione combinatoria](pdf/slide-01-problemi-di-ottimizzazione-combinatoria.pdf){ .md-button }
