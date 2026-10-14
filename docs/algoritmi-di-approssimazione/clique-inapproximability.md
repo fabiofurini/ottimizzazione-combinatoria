@@ -1,12 +1,12 @@
 ---
-title: "Cricca massima: limiti dell'approssimazione"
+title: "Clique massima: limiti dell'approssimazione"
 ---
 
-# Cricca massima: limiti dell'approssimazione
+# Clique massima: limiti dell'approssimazione
 
 <div class="info-capitolo" markdown>
 
-**Parte 5 · Algoritmi di approssimazione · Capitolo 38** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-pencil: Esercizi: Cricca massima (MCP)](../esercizi/clique-inapproximability.md)
+**Parte 5 · Algoritmi di approssimazione · Capitolo 38** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-pencil: Esercizi: Clique massima (MCP)](../esercizi/clique-inapproximability.md)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "Cricca massima: limiti dell'approssimazione"
 
     - Da questo modulo, il capitolo [«Principi degli algoritmi di approssimazione»](approximation.md): rapporto di prestazione per un problema di massimo, algoritmo di $\alpha$-approssimazione, PTAS.
 
-    - Da questo modulo, il capitolo [«Problemi di cricca»](../problemi-di-ottimizzazione-combinatoria/clique/index.md): le definizioni del MCP e del MSSP, il numero di cricca $\omega(G)$, il grafo complementare e $\omega(G)=\alpha(\overline{G})$.
+    - Da questo modulo, il capitolo [«Problemi di clique»](../problemi-di-ottimizzazione-combinatoria/clique/index.md): le definizioni del MCP e del MSSP, il numero di clique $\omega(G)$, il grafo complementare e $\omega(G)=\alpha(\overline{G})$.
 
     - Da questo modulo, il capitolo [«Colorazione dei vertici: limiti dell'approssimazione»](coloring-inapproximability.md): i grafi planari e il bound $m\le 3n-6$.
 
@@ -30,13 +30,13 @@ title: "Cricca massima: limiti dell'approssimazione"
 
     - risolvere il MCP all'ottimo sui grafi planari e sui grafi di grado limitato, e approssimare il MSSP sui grafi di grado limitato.
 
-Il problema di questo capitolo è il [problema della cricca massima (MCP)](../problemi-di-ottimizzazione-combinatoria/clique/index.md): la sua definizione e le sue ipotesi sono nella sua pagina.
+Il problema di questo capitolo è il [problema della clique massima (MCP)](../problemi-di-ottimizzazione-combinatoria/clique/index.md): la sua definizione e le sue ipotesi sono nella sua pagina.
 
 ## 38.1 Notazione
 
-- Come nella pagina del problema, $G=(V,E)$ è un grafo semplice con $n$ vertici e $m$ spigoli, $N(v)$ è l'insieme dei vicini di $v$ e $\Delta(G)$ il grado massimo. Il valore ottimo del MCP è il numero di cricca, $z(I)=\omega(G)$, e quello del MSSP è il numero di stabilità $\alpha(G)$.
+- Come nella pagina del problema, $G=(V,E)$ è un grafo semplice con $n$ vertici e $m$ spigoli, $N(v)$ è l'insieme dei vicini di $v$ e $\Delta(G)$ il grado massimo. Il valore ottimo del MCP è il numero di clique, $z(I)=\omega(G)$, e quello del MSSP è il numero di stabilità $\alpha(G)$.
 
-- <strong>Richiamo.</strong> Come nel capitolo [«Principi degli algoritmi di approssimazione»](approximation.md#box-2-def-pratio), $\mathscr{A}(I)$ è il numero di vertici della cricca restituita dall'algoritmo $\mathscr{A}$. Il MCP è un problema di massimo, quindi
+- <strong>Richiamo.</strong> Come nel capitolo [«Principi degli algoritmi di approssimazione»](approximation.md#box-2-def-pratio), $\mathscr{A}(I)$ è il numero di vertici della clique restituita dall'algoritmo $\mathscr{A}$. Il MCP è un problema di massimo, quindi
 
     $$
     \mathscr{A}(I) \le \omega(G) ~~~~~~~\text{e}~~~~~~~ \frac{\omega(G)}{\mathscr{A}(I)} \ge 1
@@ -44,7 +44,7 @@ Il problema di questo capitolo è il [problema della cricca massima (MCP)](../pr
 
     per ogni istanza $I$.
 
-- Un singolo vertice è una cricca, quindi il rapporto $n$ è banale. Questo capitolo mostra che un algoritmo polinomiale non può fare molto meglio su tutti i grafi, e poi le classi di grafi su cui può.
+- Un singolo vertice è una clique, quindi il rapporto $n$ è banale. Questo capitolo mostra che un algoritmo polinomiale non può fare molto meglio su tutti i grafi, e poi le classi di grafi su cui può.
 
 ## 38.2 Il MCP non è approssimabile
 
@@ -70,25 +70,25 @@ Il problema di questo capitolo è il [problema della cricca massima (MCP)](../pr
 
     Per ogni coppia di grafi $G$ e $H$:
 
-    1. se $K\subseteq V\times W$ è una cricca di $G\boxtimes H$, allora $p(K)$ è una cricca di $G$, ogni fibra $K_u$ è una cricca di $H$, e $|K|\le|p(K)|\cdot\max_{u}|K_u|$;
+    1. se $K\subseteq V\times W$ è una clique di $G\boxtimes H$, allora $p(K)$ è una clique di $G$, ogni fibra $K_u$ è una clique di $H$, e $|K|\le|p(K)|\cdot\max_{u}|K_u|$;
 
     2. $\omega(G\boxtimes H)=\omega(G)\,\omega(H)$.
 
 ??? dimostrazione "Dimostrazione"
 
-    <em>Parte 1.</em> Siano $u\neq v$ in $p(K)$, con $(u,x),(v,y)\in K$. Questi due vertici sono adiacenti e $u\neq v$, quindi $\{u,v\}\in E$: $p(K)$ è una cricca. Siano $x\neq y$ in $K_u$: $(u,x)$ e $(u,y)$ sono adiacenti, quindi $\{x,y\}\in F$, e $K_u$ è una cricca. Le fibre partizionano $K$, quindi
+    <em>Parte 1.</em> Siano $u\neq v$ in $p(K)$, con $(u,x),(v,y)\in K$. Questi due vertici sono adiacenti e $u\neq v$, quindi $\{u,v\}\in E$: $p(K)$ è una clique. Siano $x\neq y$ in $K_u$: $(u,x)$ e $(u,y)$ sono adiacenti, quindi $\{x,y\}\in F$, e $K_u$ è una clique. Le fibre partizionano $K$, quindi
 
     $$
     |K| \;=\; \sum_{u\in p(K)} |K_u| \;\le\; |p(K)|\cdot\max_{u}|K_u| .
     $$
 
-    <em>Parte 2.</em> Se $K_G$ e $K_H$ sono cricche massime di $G$ e $H$, ogni coppia di vertici distinti di $K_G\times K_H$ soddisfa la definizione, quindi $\omega(G\boxtimes H)\ge\omega(G)\,\omega(H)$. Viceversa, per la Parte 1 ogni cricca $K$ di $G\boxtimes H$ ha $|K|\le|p(K)|\cdot\max_u|K_u|\le\omega(G)\,\omega(H)$. <span class="qed">□</span>
+    <em>Parte 2.</em> Se $K_G$ e $K_H$ sono clique massime di $G$ e $H$, ogni coppia di vertici distinti di $K_G\times K_H$ soddisfa la definizione, quindi $\omega(G\boxtimes H)\ge\omega(G)\,\omega(H)$. Viceversa, per la Parte 1 ogni clique $K$ di $G\boxtimes H$ ha $|K|\le|p(K)|\cdot\max_u|K_u|\le\omega(G)\,\omega(H)$. <span class="qed">□</span>
 
 - Anche il prodotto <em>lessicografico</em> soddisfa $\omega(G[H])=\omega(G)\,\omega(H)$; usiamo il prodotto forte, la cui definizione è simmetrica nei due grafi.
 
 ### 38.2.2 Un rapporto costante darebbe ogni rapporto costante
 
-- La Parte 1 della [Proposizione 38.2](#box-2-cli-propprod) è costruttiva: da una cricca $K$ di $G\boxtimes G$, $p(K)$ oppure la fibra più grande è una cricca di $G$ con almeno $\sqrt{|K|}$ vertici, perché il prodotto delle loro dimensioni è almeno $|K|$. Entrambe si calcolano in tempo polinomiale.
+- La Parte 1 della [Proposizione 38.2](#box-2-cli-propprod) è costruttiva: da una clique $K$ di $G\boxtimes G$, $p(K)$ oppure la fibra più grande è una clique di $G$ con almeno $\sqrt{|K|}$ vertici, perché il prodotto delle loro dimensioni è almeno $|K|$. Entrambe si calcolano in tempo polinomiale.
 
 <a id="box-3-cli-thmamp"></a>
 
@@ -100,9 +100,9 @@ Il problema di questo capitolo è il [problema della cricca massima (MCP)](../pr
 
     Sia $\mathscr{A}$ un algoritmo polinomiale di $\alpha$-approssimazione, e definiamo l'algoritmo $\mathscr{B}$:
 
-    1. costruire $G\boxtimes G$ ed eseguire $\mathscr{A}$ su di esso, ottenendo una cricca $K$;
+    1. costruire $G\boxtimes G$ ed eseguire $\mathscr{A}$ su di esso, ottenendo una clique $K$;
 
-    2. restituire la più grande fra $p(K)$ e la fibra più grande di $K$, una cricca di $G$ con almeno $\sqrt{|K|}$ vertici.
+    2. restituire la più grande fra $p(K)$ e la fibra più grande di $K$, una clique di $G$ con almeno $\sqrt{|K|}$ vertici.
 
     Per la [Proposizione 38.2](#box-2-cli-propprod), $\omega(G\boxtimes G)=\omega(G)^2$, quindi $|K|\ge\frac{\omega(G)^2}{\alpha}$ e
 
@@ -148,7 +148,7 @@ Il problema di questo capitolo è il [problema della cricca massima (MCP)](../pr
 
 ??? dimostrazione "Dimostrazione"
 
-    Un sottografo di un grafo planare è planare. Il grafo completo con $5$ vertici ha $10$ spigoli, più di $3\cdot5-6=9$, quindi non è planare, e un grafo planare non ha cricche con $5$ vertici. I sottoinsiemi di al più $4$ vertici sono $O(n^4)$, e ciascuno si verifica in tempo costante. <span class="qed">□</span>
+    Un sottografo di un grafo planare è planare. Il grafo completo con $5$ vertici ha $10$ spigoli, più di $3\cdot5-6=9$, quindi non è planare, e un grafo planare non ha clique con $5$ vertici. I sottoinsiemi di al più $4$ vertici sono $O(n^4)$, e ciascuno si verifica in tempo costante. <span class="qed">□</span>
 
 ### 38.3.2 Grafi di grado massimo limitato
 
@@ -160,13 +160,13 @@ Il problema di questo capitolo è il [problema della cricca massima (MCP)](../pr
 
 ??? dimostrazione "Dimostrazione"
 
-    Una cricca che contiene il vertice $v$ è contenuta in $\{v\}\cup N(v)$, che ha al più $\Delta+1$ vertici. Per ogni vertice $v$, enumeriamo i $2^{\deg(v)}\le 2^\Delta$ sottoinsiemi $S\subseteq N(v)$ e teniamo il più grande $\{v\}\cup S$ che sia una cricca; verificare le coppie di $S$ richiede tempo $O(\Delta^2)$. Ogni cricca massima si trova a partire da uno qualsiasi dei suoi vertici. <span class="qed">□</span>
+    Una clique che contiene il vertice $v$ è contenuta in $\{v\}\cup N(v)$, che ha al più $\Delta+1$ vertici. Per ogni vertice $v$, enumeriamo i $2^{\deg(v)}\le 2^\Delta$ sottoinsiemi $S\subseteq N(v)$ e teniamo il più grande $\{v\}\cup S$ che sia una clique; verificare le coppie di $S$ richiede tempo $O(\Delta^2)$. Ogni clique massima si trova a partire da uno qualsiasi dei suoi vertici. <span class="qed">□</span>
 
 - Il tempo è polinomiale per ogni $\Delta$ fissato, e anche quando $\Delta\le\log_2 n$, perché allora $2^\Delta\le n$.
 
 ### 38.3.3 Il problema dell'insieme stabile massimo
 
-- Per $\omega(G)=\alpha(\overline{G})$ (capitolo [«Problemi di cricca»](../problemi-di-ottimizzazione-combinatoria/clique/index.md)), un insieme stabile di $G$ è una cricca di $\overline{G}$, che si costruisce in tempo $O(n^2)$ e ha lo stesso $n$.
+- Per $\omega(G)=\alpha(\overline{G})$ (capitolo [«Problemi di clique»](../problemi-di-ottimizzazione-combinatoria/clique/index.md)), un insieme stabile di $G$ è una clique di $\overline{G}$, che si costruisce in tempo $O(n^2)$ e ha lo stesso $n$.
 
 - Un algoritmo con rapporto $\rho(n)$ per uno dei due problemi, applicato al grafo complementare, ha lo stesso rapporto $\rho(n)$ per l'altro.
 
@@ -200,13 +200,13 @@ Il problema di questo capitolo è il [problema della cricca massima (MCP)](../pr
 
 !!! esempio "Esempio 38.1: Prodotto forte ed enumerazione sull'istanza di riferimento del MCP"
 
-    L'istanza di riferimento del MCP è il ciclo $1,2,\dots,7,1$ con la corda $\{1,3\}$: $n=7$, $m=8$, $\Delta(G)=3$ e $\omega(G)=3$, con l'unica cricca massima $\{1,2,3\}$ (in rosso).
+    L'istanza di riferimento del MCP è il ciclo $1,2,\dots,7,1$ con la corda $\{1,3\}$: $n=7$, $m=8$, $\Delta(G)=3$ e $\omega(G)=3$, con l'unica clique massima $\{1,2,3\}$ (in rosso).
 
     ![Figura 1](../img/clique-inapproximability/fig01.svg){ .fig loading=lazy  }
 
     - <strong>Prodotto forte.</strong> $G\boxtimes G$ ha $7^2=49$ vertici e $240$ spigoli, e $\omega(G\boxtimes G)=3^2=9$, raggiunto da $\{1,2,3\}\times\{1,2,3\}$.
 
-    - Supponiamo che un algoritmo restituisca su $G\boxtimes G$ la cricca $K=\{1,2,3\}\times\{4,5\}$, con $|K|=6$. La sua proiezione $p(K)=\{1,2,3\}$ e le sue fibre $K_u=\{4,5\}$ sono cricche di $G$; la più grande ha $3\ge\sqrt6$ vertici.
+    - Supponiamo che un algoritmo restituisca su $G\boxtimes G$ la clique $K=\{1,2,3\}\times\{4,5\}$, con $|K|=6$. La sua proiezione $p(K)=\{1,2,3\}$ e le sue fibre $K_u=\{4,5\}$ sono clique di $G$; la più grande ha $3\ge\sqrt6$ vertici.
 
     - <strong>Grado limitato.</strong> L'enumerazione della [Proposizione 38.6](#box-6-cli-propdeg) esamina $\sum_v 2^{\deg(v)}=2^3+2^2+2^3+4\cdot 2^2=36$ sottoinsiemi, e trova $\{1,2,3\}$ dai vertici $1$, $2$ e $3$.
 
@@ -238,7 +238,7 @@ Il problema di questo capitolo è il [problema della cricca massima (MCP)](../pr
 
 !!! chiave "In sintesi"
 
-    - Il prodotto forte eleva al quadrato il numero di cricca, e una cricca del prodotto restituisce una cricca di $G$ di dimensione almeno pari alla radice quadrata della sua: un rapporto costante per il MCP darebbe ogni rapporto costante.
+    - Il prodotto forte eleva al quadrato il numero di clique, e una clique del prodotto restituisce una clique di $G$ di dimensione almeno pari alla radice quadrata della sua: un rapporto costante per il MCP darebbe ogni rapporto costante.
 
     - Per i risultati di Håstad e Zuckerman, a meno che $P=NP$ non è possibile nemmeno il rapporto $n^{1-\varepsilon}$: il MCP non è approssimabile, e nemmeno il MSSP, attraverso il grafo complementare.
 
@@ -296,4 +296,4 @@ Il problema di questo capitolo è il [problema della cricca massima (MCP)](../pr
 
 ---
 
-**Esercizi su questo capitolo:** [:material-pencil: Cricca massima (MCP)](../esercizi/clique-inapproximability.md)
+**Esercizi su questo capitolo:** [:material-pencil: Clique massima (MCP)](../esercizi/clique-inapproximability.md)

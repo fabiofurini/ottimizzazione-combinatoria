@@ -11,7 +11,7 @@ Esercizi con le **soluzioni svolte**, capitolo per capitolo, con le stesse parti
 - [2. Problemi di zaino](knapsack.md) · 6 esercizi
 - [3. Problemi di packing](bin-packing.md) · 6 esercizi
 - [4. Problemi di colorazione](coloring.md) · 5 esercizi
-- [5. Problemi di cricca](clique.md) · 5 esercizi
+- [5. Problemi di clique](clique.md) · 5 esercizi
 - [6. Problemi di routing](tsp.md) · 7 esercizi
 - [7. Problemi di scheduling](pcmax.md) · 5 esercizi
 - [8. Problemi di lot sizing](lot-sizing.md) · 5 esercizi
@@ -21,7 +21,7 @@ Esercizi con le **soluzioni svolte**, capitolo per capitolo, con le stesse parti
 - [9. Formulazioni dei problemi di zaino](knapsack-formulations.md) · 12 esercizi
 - [10. Formulazioni dei problemi di packing](bin-packing-formulations.md) · 6 esercizi
 - [11. Formulazioni dei problemi di colorazione](coloring-formulations.md) · 5 esercizi
-- [12. Formulazioni dei problemi di cricca](clique-formulations.md) · 8 esercizi
+- [12. Formulazioni dei problemi di clique](clique-formulations.md) · 8 esercizi
 - [13. Formulazioni dei problemi di routing](tsp-formulations.md) · 6 esercizi
 - [14. Formulazioni dei problemi di scheduling](pcmax-formulations.md) · 5 esercizi
 - [15. Formulazioni dei problemi di lot sizing](lot-sizing-formulations.md) · 9 esercizi
@@ -75,9 +75,9 @@ Esercizi con le **soluzioni svolte**, capitolo per capitolo, con le stesse parti
 
 - [37. Colorazione dei vertici: limiti dell'approssimazione](coloring-inapproximability.md) · 5 esercizi
 
-### Problemi di cricca
+### Problemi di clique
 
-- [38. Cricca massima: limiti dell'approssimazione](clique-inapproximability.md) · 4 esercizi
+- [38. Clique massima: limiti dell'approssimazione](clique-inapproximability.md) · 4 esercizi
 
 ### Problemi di routing
 

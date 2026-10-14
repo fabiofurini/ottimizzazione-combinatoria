@@ -161,7 +161,7 @@ title: "Colorazione dei vertici"
 
 <a id="box-6-obs-clique-bound"></a>
 
-!!! teorema "Osservazione 4.4: bound di cricca"
+!!! teorema "Osservazione 4.4: bound di clique"
 
     Per ogni grafo $G = (V,E)$ abbiamo
 
@@ -171,7 +171,7 @@ title: "Colorazione dei vertici"
 
 ??? dimostrazione "Dimostrazione"
 
-    Poiché tutti i vertici di una cricca sono a due a due adiacenti, devono ricevere colori diversi in ogni soluzione ammissibile del VCP. Quindi servono almeno $\omega(G)$ colori diversi per colorare i vertici di una cricca massima, da cui $\omega(G) \le \chi(G)$. <span class="qed">□</span>
+    Poiché tutti i vertici di una clique sono a due a due adiacenti, devono ricevere colori diversi in ogni soluzione ammissibile del VCP. Quindi servono almeno $\omega(G)$ colori diversi per colorare i vertici di una clique massima, da cui $\omega(G) \le \chi(G)$. <span class="qed">□</span>
 
 <a id="box-7-obs-stable-bound"></a>
 
@@ -187,7 +187,7 @@ title: "Colorazione dei vertici"
 
     In una soluzione ammissibile con $k$ classi di colore, ogni classe è un insieme stabile, quindi ha al più $\alpha(G)$ vertici. Gli $n$ vertici sono coperti dalle classi, quindi $n \le k \, \alpha(G)$. Il numero $k$ è intero, quindi $k \ge \lceil n/\alpha(G) \rceil$. <span class="qed">□</span>
 
-- Il bound di cricca è utile quando il grafo ha una cricca grande, e il bound degli insiemi stabili quando i suoi insiemi stabili sono piccoli. Entrambi sono bound duali: una cricca e un insieme stabile si trovano senza conoscere $\chi(G)$.
+- Il bound di clique è utile quando il grafo ha una clique grande, e il bound degli insiemi stabili quando i suoi insiemi stabili sono piccoli. Entrambi sono bound duali: una clique e un insieme stabile si trovano senza conoscere $\chi(G)$.
 
 ## 4.2.3 Contare le soluzioni, una prima soluzione e i bound
 
@@ -203,7 +203,7 @@ title: "Colorazione dei vertici"
 
     Nessun lato unisce due vertici della stessa classe, quindi è ammissibile: è un <strong>bound primale</strong>, $\UB = 3 \ge \chi(G)$.
 
-- <strong>Bound duali sul grafo di Petersen.</strong> Il grafo non ha triangoli, quindi $\omega(G) = 2$ e il bound di cricca dà solo $\LB = 2$: resta un gap di $1$.
+- <strong>Bound duali sul grafo di Petersen.</strong> Il grafo non ha triangoli, quindi $\omega(G) = 2$ e il bound di clique dà solo $\LB = 2$: resta un gap di $1$.
 
 - I vertici $1,2,3,4,5$ formano un ciclo con $5$ vertici, e così $6,7,8,9,10$ (i lati della figura). Un insieme stabile contiene al più $2$ vertici di ogni ciclo, quindi $\alpha(G) \le 4$; l'insieme $\{1,4,7,8\}$ mostra che $\alpha(G) = 4$.
 
@@ -219,9 +219,9 @@ title: "Colorazione dei vertici"
 
 !!! attenzione "Attenzione"
 
-    - <strong>Confondere una cricca con un insieme stabile.</strong> In una cricca tutte le coppie sono lati e i vertici richiedono colori diversi; in un insieme stabile nessuna coppia è un lato e i vertici possono condividere un colore.
+    - <strong>Confondere una clique con un insieme stabile.</strong> In una clique tutte le coppie sono lati e i vertici richiedono colori diversi; in un insieme stabile nessuna coppia è un lato e i vertici possono condividere un colore.
 
-    - <strong>Credere che il bound di cricca sia stretto.</strong> Non lo è: il grafo di Petersen ha $\omega(G) = 2$ e $\chi(G) = 3$, e lo stesso accade per un ciclo con $5$ vertici.
+    - <strong>Credere che il bound di clique sia stretto.</strong> Non lo è: il grafo di Petersen ha $\omega(G) = 2$ e $\chi(G) = 3$, e lo stesso accade per un ciclo con $5$ vertici.
 
     - <strong>Contare le permutazioni dei colori come soluzioni diverse.</strong> Una soluzione è una partizione dei vertici in insiemi stabili: scambiare i nomi di due colori dà la stessa soluzione.
 
@@ -235,11 +235,11 @@ title: "Colorazione dei vertici"
 
     - Il VCP partiziona i vertici di un grafo nel numero minimo di insiemi stabili; il valore ottimo è il numero cromatico $\chi(G)$.
 
-    - Una cricca richiede colori diversi e un insieme stabile può condividerne uno; le cricche di $G$ sono gli insiemi stabili del grafo complementare.
+    - Una clique richiede colori diversi e un insieme stabile può condividerne uno; le clique di $G$ sono gli insiemi stabili del grafo complementare.
 
-    - Una colorazione trovata a occhio è un bound primale; il bound di cricca $\omega(G)$ e il bound degli insiemi stabili $\lceil n/\alpha(G) \rceil$ sono bound duali.
+    - Una colorazione trovata a occhio è un bound primale; il bound di clique $\omega(G)$ e il bound degli insiemi stabili $\lceil n/\alpha(G) \rceil$ sono bound duali.
 
-    - I bound non sempre si incontrano: sul grafo di Petersen il bound di cricca lascia un gap, il bound degli insiemi stabili lo chiude.
+    - I bound non sempre si incontrano: sul grafo di Petersen il bound di clique lascia un gap, il bound degli insiemi stabili lo chiude.
 
     <strong>Quadro riassuntivo delle istanze di riferimento.</strong>
 
@@ -252,7 +252,7 @@ title: "Colorazione dei vertici"
     </tr>
     <tr>
     <td><span style="color:#1971c2"><a href="#box-4-ex-vcp1">Esempio 4.1</a></span> (triangolo)</td>
-    <td><span class="arithmatex">\(3\)</span> (bound di cricca)</td>
+    <td><span class="arithmatex">\(3\)</span> (bound di clique)</td>
     <td><span class="arithmatex">\(3\)</span> (a occhio)</td>
     <td>questo capitolo</td>
     </tr>

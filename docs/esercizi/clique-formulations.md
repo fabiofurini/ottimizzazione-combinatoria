@@ -1,18 +1,18 @@
 ---
-title: "Esercizi · Formulazioni dei problemi di cricca"
+title: "Esercizi · Formulazioni dei problemi di clique"
 ---
 
-# Esercizi · Formulazioni dei problemi di cricca
+# Esercizi · Formulazioni dei problemi di clique
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Capitolo 12** · ogni soluzione si apre con un clic · [:material-book-open-variant: Capitolo 12: Problemi di cricca](../formulazioni/clique-formulations/index.md) · [:material-file-pdf-box: Eserciziario, volume 2 (PDF)](../pdf/esercizi-2-formulazioni.pdf)
+**Esercizi · Capitolo 12** · ogni soluzione si apre con un clic · [:material-book-open-variant: Capitolo 12: Problemi di clique](../formulazioni/clique-formulations/index.md) · [:material-file-pdf-box: Eserciziario, volume 2 (PDF)](../pdf/esercizi-2-formulazioni.pdf)
 
 </div>
 
 !!! chiave ""
 
-    <strong>Formulazioni usate in questi esercizi.</strong> I modelli del capitolo [Formulazioni dei problemi di cricca](../formulazioni/clique-formulations/index.md), dove $\overline{E}$ è l'insieme dei non-spigoli di $G$ e $\mathcal{Q}$ l'insieme degli insiemi stabili massimali di $G$ (le cricche massimali del grafo complementare). La formulazione sugli spigoli $\mathrm{ILP}_{\mathrm{MCP}}$:
+    <strong>Formulazioni usate in questi esercizi.</strong> I modelli del capitolo [Formulazioni dei problemi di clique](../formulazioni/clique-formulations/index.md), dove $\overline{E}$ è l'insieme dei non-spigoli di $G$ e $\mathcal{Q}$ l'insieme degli insiemi stabili massimali di $G$ (le clique massimali del grafo complementare). La formulazione sugli spigoli $\mathrm{ILP}_{\mathrm{MCP}}$:
 
     \begin{align*}
     && \max ~~ \sum_{v\in V} x_v \tag{M0}\\
@@ -20,7 +20,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
     && x_v &\in\{0,1\}, & \forall v\in V. \tag{M2}
     \end{align*}
 
-    La formulazione a cricche $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$:
+    La formulazione a clique $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$:
 
     \begin{align*}
     && \max ~~ \sum_{v\in V} x_v \tag{M3}\\
@@ -28,7 +28,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
     && x_v &\in\{0,1\}, & \forall v\in V. \tag{M5}
     \end{align*}
 
-    Il rilassamento $\mathrm{LP}_{\mathrm{MCP}}$ rilassa (M2) in $0\le x_v\le 1$; il rilassamento $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ rilassa (M5) in $x_v\ge 0$, perché (M4) dà $x_v\le 1$. I modelli $\mathrm{ILP}_{\mathrm{MSSP}}$ e $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ del MSSP sono (M0)–(M2) con (M1) scritto sugli spigoli di $G$, e (M3)–(M5) con (M4) scritto sulle cricche massimali di $G$. Il modello $\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}$ del VWMCP è (M0)–(M2) con la funzione obiettivo $\max \sum_{v\in V} w_v\,x_v$. Il modello $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$ dell'EWMCP aggiunge una variabile binaria $y_{uv}$ per ogni spigolo $\{u,v\}\in E$:
+    Il rilassamento $\mathrm{LP}_{\mathrm{MCP}}$ rilassa (M2) in $0\le x_v\le 1$; il rilassamento $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ rilassa (M5) in $x_v\ge 0$, perché (M4) dà $x_v\le 1$. I modelli $\mathrm{ILP}_{\mathrm{MSSP}}$ e $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ del MSSP sono (M0)–(M2) con (M1) scritto sugli spigoli di $G$, e (M3)–(M5) con (M4) scritto sulle clique massimali di $G$. Il modello $\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}$ del VWMCP è (M0)–(M2) con la funzione obiettivo $\max \sum_{v\in V} w_v\,x_v$. Il modello $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$ dell'EWMCP aggiunge una variabile binaria $y_{uv}$ per ogni spigolo $\{u,v\}\in E$:
 
     \begin{align*}
     && \max ~~ \sum_{\{u,v\}\in E} r_{uv}\,y_{uv} \tag{M6}\\
@@ -41,7 +41,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
 <a id="esercizio-12-1"></a>
 
-!!! esercizio "Esercizio 12.1: Modello PLI del problema della cricca massima (MCP)"
+!!! esercizio "Esercizio 12.1: Modello PLI del problema della clique massima (MCP)"
 
     Consideriamo il grafo $G=(V,E)$ con $V=\{1,\dots,6\}$ e i $7$ spigoli
 
@@ -88,7 +88,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
         \end{array}
         $$
 
-    3. Gurobi restituisce $z(\mathrm{ILP}_{\mathrm{MCP}})=3$ con $\tilde x_1=\tilde x_2=\tilde x_3=1$ e $\tilde x_4=\tilde x_5=\tilde x_6=0$: la cricca $\{1,2,3\}$. L'enumerazione delle cricche mostra che è l'unico triangolo, e nessuna cricca ha $4$ vertici (solo i vertici $2$, $3$ e $5$ hanno grado $3$). La soluzione ottima è unica.
+    3. Gurobi restituisce $z(\mathrm{ILP}_{\mathrm{MCP}})=3$ con $\tilde x_1=\tilde x_2=\tilde x_3=1$ e $\tilde x_4=\tilde x_5=\tilde x_6=0$: la clique $\{1,2,3\}$. L'enumerazione delle clique mostra che è l'unico triangolo, e nessuna clique ha $4$ vertici (solo i vertici $2$, $3$ e $5$ hanno grado $3$). La soluzione ottima è unica.
 
         ![Figura 2](../img/es-clique-formulations/fig02.svg){ .fig loading=lazy  }
 
@@ -96,7 +96,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
 <a id="esercizio-12-2"></a>
 
-!!! esercizio "Esercizio 12.2: Il grafo complementare e la formulazione a cricche (MCP)"
+!!! esercizio "Esercizio 12.2: Il grafo complementare e la formulazione a clique (MCP)"
 
     Consideriamo il grafo $G=(V,E)$ con $V=\{1,\dots,6\}$ e i $7$ spigoli
 
@@ -110,13 +110,13 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
     1. Scrivere gli spigoli del grafo complementare $\overline{G}$ e disegnarlo accanto a $G$.
 
-    2. Elencare le cricche massimali di $\overline{G}$.
+    2. Elencare le clique massimali di $\overline{G}$.
 
-    3. Scrivere la formulazione a cricche $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$ e confrontare il suo numero di vincoli con quello del modello $\mathrm{ILP}_{\mathrm{MCP}}$.
+    3. Scrivere la formulazione a clique $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$ e confrontare il suo numero di vincoli con quello del modello $\mathrm{ILP}_{\mathrm{MCP}}$.
 
     4. Mostrare che ogni vincolo di $\mathrm{ILP}_{\mathrm{MCP}}$ è implicato da un vincolo di $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$.
 
-    5. Risolvere entrambi i modelli con Gurobi e dare una cricca massima di $G$.
+    5. Risolvere entrambi i modelli con Gurobi e dare una clique massima di $G$.
 
 ??? soluzione "Soluzione"
 
@@ -130,9 +130,9 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
         ![Figura 5](../img/es-clique-formulations/fig05.svg){ .fig loading=lazy  }
 
-    2. Le cricche massimali di $\overline{G}$ sono i due triangoli $\{1,2,3\}$ e $\{3,4,5\}$, che hanno in comune il vertice $3$, e i due spigoli $\{1,6\}$ e $\{5,6\}$: il vertice $6$ è adiacente in $\overline{G}$ solo a $1$ e $5$, che lì non sono adiacenti.
+    2. Le clique massimali di $\overline{G}$ sono i due triangoli $\{1,2,3\}$ e $\{3,4,5\}$, che hanno in comune il vertice $3$, e i due spigoli $\{1,6\}$ e $\{5,6\}$: il vertice $6$ è adiacente in $\overline{G}$ solo a $1$ e $5$, che lì non sono adiacenti.
 
-    3. La formulazione a cricche ha un vincolo per ogni cricca massimale di $\overline{G}$:
+    3. La formulazione a clique ha un vincolo per ogni clique massimale di $\overline{G}$:
 
         $$
         \begin{array}{rrrrrrrcl}
@@ -147,7 +147,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
         Ha $4$ vincoli, contro gli $8$ vincoli di $\mathrm{ILP}_{\mathrm{MCP}}$ (uno per ogni spigolo di $\overline{G}$).
 
-    4. Ogni spigolo di $\overline{G}$ sta in una cricca massimale, e le variabili sono non negative:
+    4. Ogni spigolo di $\overline{G}$ sta in una clique massimale, e le variabili sono non negative:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -188,13 +188,13 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
         </tr>
         </table></div>
 
-    5. Entrambi i modelli danno il valore ottimo $3$, con la cricca $\{2,4,6\}$ di $G$: è un insieme stabile di $\overline{G}$, ed è l'unica cricca massima (enumerazione).
+    5. Entrambi i modelli danno il valore ottimo $3$, con la clique $\{2,4,6\}$ di $G$: è un insieme stabile di $\overline{G}$, ed è l'unica clique massima (enumerazione).
 
         ![Figura 6](../img/es-clique-formulations/fig06.svg){ .fig loading=lazy  }
 
 <a id="esercizio-12-3"></a>
 
-!!! esercizio "Esercizio 12.3: Bound LP: formulazione sugli spigoli e formulazione a cricche (MCP)"
+!!! esercizio "Esercizio 12.3: Bound LP: formulazione sugli spigoli e formulazione a clique (MCP)"
 
     Consideriamo il grafo $G=(V,E)$ con $V=\{1,\dots,7\}$ e i $9$ spigoli
 
@@ -209,7 +209,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
     1. Scrivere il modello $\mathrm{LP}_{\mathrm{MCP}}$ (formulazione sugli spigoli con $0\le x_v\le 1$). Mostrare che $\bar x_v=\frac{1}{2}$ per ogni vertice è ammissibile, e calcolare $z(\mathrm{LP}_{\mathrm{MCP}})$ con Gurobi.
 
-    2. Elencare le cricche massimali di $\overline{G}$ e scrivere il modello $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$.
+    2. Elencare le clique massimali di $\overline{G}$ e scrivere il modello $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$.
 
     3. Il punto $\bar x_v=\frac{1}{2}$ è ammissibile per $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$? Calcolare $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})$ con Gurobi, e dimostrare il valore sommando alcuni vincoli.
 
@@ -247,7 +247,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
         Con $\bar x_v=\frac{1}{2}$ ogni vincolo diventa $\frac{1}{2}+\frac{1}{2}=1\le 1$, e il valore è $\frac{7}{2}$. Gurobi restituisce $z(\mathrm{LP}_{\mathrm{MCP}})=\frac{7}{2}$: il punto è ottimo.
 
-    2. Le $6$ cricche massimali di $\overline{G}$ (insiemi stabili massimali di $G$) sono $\{1,3,7\}$, $\{2,3,6\}$, $\{2,4,5\}$, $\{2,4,6\}$, $\{3,6,7\}$, $\{4,6,7\}$, e il modello è
+    2. Le $6$ clique massimali di $\overline{G}$ (insiemi stabili massimali di $G$) sono $\{1,3,7\}$, $\{2,3,6\}$, $\{2,4,5\}$, $\{2,4,6\}$, $\{3,6,7\}$, $\{4,6,7\}$, e il modello è
 
         $$
         \begin{array}{rrrrrrrrcl}
@@ -264,15 +264,15 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
     3. No: $\bar x_1+\bar x_3+\bar x_7=\frac{3}{2}>1$. Gurobi restituisce $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=3$. I tre vincoli di $\{1,3,7\}$, $\{2,3,6\}$, $\{2,4,5\}$ coprono ogni vertice almeno una volta; sommandoli, ogni variabile compare con coefficiente almeno $1$, quindi $\sum_{v=1}^{7}x_v\le 3$ per ogni punto ammissibile.
 
-    4. Il triangolo $\{1,5,6\}$ è l'unica cricca massima (enumerazione), quindi $\omega(G)=3$.
+    4. Il triangolo $\{1,5,6\}$ è l'unica clique massima (enumerazione), quindi $\omega(G)=3$.
 
         ![Figura 8](../img/es-clique-formulations/fig08.svg){ .fig loading=lazy  }
 
-        La formulazione sugli spigoli dà $\frac{7}{2}$ (e $\lfloor\frac{7}{2}\rfloor=3$ arrotondando per difetto, perché $\omega(G)$ è intero); la formulazione a cricche dà direttamente $3$, senza gap.
+        La formulazione sugli spigoli dà $\frac{7}{2}$ (e $\lfloor\frac{7}{2}\rfloor=3$ arrotondando per difetto, perché $\omega(G)$ è intero); la formulazione a clique dà direttamente $3$, senza gap.
 
 <a id="esercizio-12-4"></a>
 
-!!! esercizio "Esercizio 12.4: Numero di cricca, bound LP e numero cromatico (MCP)"
+!!! esercizio "Esercizio 12.4: Numero di clique, bound LP e numero cromatico (MCP)"
 
     La ruota $W_5$ ha i vertici $V=\{1,\dots,6\}$: i vertici $1,\dots,5$ formano un ciclo, e il vertice $6$ è adiacente a tutti loro.
 
@@ -280,7 +280,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
     **Domande**
 
-    1. Elencare gli insiemi stabili massimali di $W_5$, cioè le cricche massimali di $\overline{W_5}$.
+    1. Elencare gli insiemi stabili massimali di $W_5$, cioè le clique massimali di $\overline{W_5}$.
 
     2. Scrivere il modello $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ e il suo duale $D(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})$, e dire quale formulazione di colorazione rilassa il duale.
 
@@ -400,9 +400,9 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
         \end{array}
         $$
 
-    2. - $\bar{\vet x}^{a}$: ammissibile per $\mathrm{LP}_{\mathrm{MCP}}$; la disuguaglianza di cricca di $\{1,3,5\}$ dà $\frac{3}{2}>1$, quindi inammissibile per $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ e $\mathrm{ILP}_{\mathrm{MCP}}$.
+    2. - $\bar{\vet x}^{a}$: ammissibile per $\mathrm{LP}_{\mathrm{MCP}}$; la disuguaglianza di clique di $\{1,3,5\}$ dà $\frac{3}{2}>1$, quindi inammissibile per $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ e $\mathrm{ILP}_{\mathrm{MCP}}$.
 
-        - $\bar{\vet x}^{b}$: ammissibile per tutti e tre i modelli: è la cricca $\{1,2\}$.
+        - $\bar{\vet x}^{b}$: ammissibile per tutti e tre i modelli: è la clique $\{1,2\}$.
 
         - $\bar{\vet x}^{c}$: $x_1+x_3=2>1$ viola un vincolo su un non-spigolo: inammissibile per tutti e tre i modelli (ogni vincolo di $\mathrm{LP}_{\mathrm{MCP}}$ è implicato da $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$).
 
@@ -412,7 +412,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
     3. $\bar{\vet x}^{a}$ ha valore $3$, quindi $z(\mathrm{LP}_{\mathrm{MCP}})\ge 3$. In $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ il miglior punto ammissibile fra i cinque è $\bar{\vet x}^{e}$, di valore $2$; $\bar{\vet x}^{d}$ ha valore $\frac{3}{2}$ e $\bar{\vet x}^{b}$ ha valore $2$.
 
-    4. Gurobi restituisce $z(\mathrm{LP}_{\mathrm{MCP}})=3$ e $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=2$. Il secondo valore si dimostra sommando i vincoli di $\{1,3,5\}$ e $\{2,4,6\}$, che danno $\sum_{v=1}^{6}x_v\le 2$. $C_6$ non ha triangoli, quindi $\omega(C_6)=2$: la formulazione a cricche chiude il gap, la formulazione sugli spigoli lascia $3$ contro $2$.
+    4. Gurobi restituisce $z(\mathrm{LP}_{\mathrm{MCP}})=3$ e $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=2$. Il secondo valore si dimostra sommando i vincoli di $\{1,3,5\}$ e $\{2,4,6\}$, che danno $\sum_{v=1}^{6}x_v\le 2$. $C_6$ non ha triangoli, quindi $\omega(C_6)=2$: la formulazione a clique chiude il gap, la formulazione sugli spigoli lascia $3$ contro $2$.
 
 <a id="esercizio-12-6"></a>
 
@@ -434,7 +434,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
     2. Risolvere il modello con Gurobi: dare $z(\mathrm{ILP}_{\mathrm{MSSP}})$ e una soluzione ottima. È unica?
 
-    3. Scrivere le cricche massimali di $G$ e la formulazione a cricche $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$.
+    3. Scrivere le clique massimali di $G$ e la formulazione a clique $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$.
 
     4. Confrontare i valori ottimi dei rilassamenti lineari delle due formulazioni (Gurobi).
 
@@ -460,7 +460,7 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
         ![Figura 12](../img/es-clique-formulations/fig12.svg){ .fig loading=lazy  }
 
-    3. Le cricche massimali di $G$ sono il triangolo $\{1,2,3\}$ e gli spigoli $\{1,6\}$, $\{3,4\}$, $\{4,5\}$, $\{5,6\}$: $5$ cricche invece di $7$ spigoli, perché i tre spigoli del triangolo sono sostituiti da $x_1+x_2+x_3\le 1$. Il modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ è:
+    3. Le clique massimali di $G$ sono il triangolo $\{1,2,3\}$ e gli spigoli $\{1,6\}$, $\{3,4\}$, $\{4,5\}$, $\{5,6\}$: $5$ clique invece di $7$ spigoli, perché i tre spigoli del triangolo sono sostituiti da $x_1+x_2+x_3\le 1$. Il modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ è:
 
         $$
         \begin{array}{rrrrrrrcl}
@@ -476,11 +476,11 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
         Il suo valore ottimo è ancora $3$.
 
-    4. Il rilassamento lineare della formulazione sugli spigoli, con $0\le x_v\le 1$, ha valore ottimo $3$; il rilassamento lineare della formulazione a cricche ha valore ottimo $3$. Su questo grafo entrambi i bound sono pari ad $\alpha(G)=3$: il punto $x_v=\frac{1}{2}$, di valore $3$, è ammissibile per la formulazione sugli spigoli ma viola $x_1+x_2+x_3\le 1$, e il bound non cambia perché anche l'ottimo intero ha valore $3$.
+    4. Il rilassamento lineare della formulazione sugli spigoli, con $0\le x_v\le 1$, ha valore ottimo $3$; il rilassamento lineare della formulazione a clique ha valore ottimo $3$. Su questo grafo entrambi i bound sono pari ad $\alpha(G)=3$: il punto $x_v=\frac{1}{2}$, di valore $3$, è ammissibile per la formulazione sugli spigoli ma viola $x_1+x_2+x_3\le 1$, e il bound non cambia perché anche l'ottimo intero ha valore $3$.
 
 <a id="esercizio-12-7"></a>
 
-!!! esercizio "Esercizio 12.7: Modello PLI del problema della cricca massima pesata sui vertici"
+!!! esercizio "Esercizio 12.7: Modello PLI del problema della clique massima pesata sui vertici"
 
     Consideriamo il grafo $G=(V,E)$ con $V=\{1,\dots,6\}$ e i $7$ spigoli
 
@@ -502,11 +502,11 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
     **Domande**
 
-    1. Scrivere il modello $\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}$ del problema della cricca massima pesata sui vertici su questa istanza.
+    1. Scrivere il modello $\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}$ del problema della clique massima pesata sui vertici su questa istanza.
 
-    2. Risolvere il modello con Gurobi: dare il valore ottimo e la cricca ottima. È unica?
+    2. Risolvere il modello con Gurobi: dare il valore ottimo e la clique ottima. È unica?
 
-    3. Confrontare la cricca ottima con la cricca massima di $G$, e spiegare la differenza.
+    3. Confrontare la clique ottima con la clique massima di $G$, e spiegare la differenza.
 
 ??? soluzione "Soluzione"
 
@@ -527,15 +527,15 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
         \end{array}
         $$
 
-    2. Gurobi restituisce il valore ottimo $12$ con $\tilde x_5=\tilde x_6=1$: la cricca $\{5,6\}$, di peso $5+7=12$. L'enumerazione delle cricche dà come secondo miglior valore $11$ (cricca $\{4,5\}$): la soluzione ottima è unica.
+    2. Gurobi restituisce il valore ottimo $12$ con $\tilde x_5=\tilde x_6=1$: la clique $\{5,6\}$, di peso $5+7=12$. L'enumerazione delle clique dà come secondo miglior valore $11$ (clique $\{4,5\}$): la soluzione ottima è unica.
 
         ![Figura 14](../img/es-clique-formulations/fig14.svg){ .fig loading=lazy  }
 
-    3. La cricca massima di $G$ è il triangolo $\{1,2,3\}$, con $3$ vertici ma peso solo $2+3+4=9$. I due modelli hanno gli stessi vincoli, quindi le stesse soluzioni ammissibili (le cricche di $G$); cambia solo la funzione obiettivo, e i vertici leggeri del triangolo perdono contro lo spigolo pesante $\{5,6\}$.
+    3. La clique massima di $G$ è il triangolo $\{1,2,3\}$, con $3$ vertici ma peso solo $2+3+4=9$. I due modelli hanno gli stessi vincoli, quindi le stesse soluzioni ammissibili (le clique di $G$); cambia solo la funzione obiettivo, e i vertici leggeri del triangolo perdono contro lo spigolo pesante $\{5,6\}$.
 
 <a id="esercizio-12-8"></a>
 
-!!! esercizio "Esercizio 12.8: Modello PLI del problema della cricca massima pesata sugli spigoli"
+!!! esercizio "Esercizio 12.8: Modello PLI del problema della clique massima pesata sugli spigoli"
 
     Consideriamo il grafo $G=(V,E)$ con $V=\{1,\dots,5\}$ e i $7$ spigoli
 
@@ -572,11 +572,11 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
     **Domande**
 
-    1. Contare le variabili e i vincoli del modello $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$ del problema della cricca massima pesata sugli spigoli su questa istanza, e scriverlo.
+    1. Contare le variabili e i vincoli del modello $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$ del problema della clique massima pesata sugli spigoli su questa istanza, e scriverlo.
 
-    2. Risolvere il modello con Gurobi: dare il valore ottimo, la cricca ottima e le variabili $y_{uv}$ pari a $1$.
+    2. Risolvere il modello con Gurobi: dare il valore ottimo, la clique ottima e le variabili $y_{uv}$ pari a $1$.
 
-    3. Verificare il risultato elencando le cricche massimali di $G$ con il peso totale dei loro spigoli.
+    3. Verificare il risultato elencando le clique massimali di $G$ con il peso totale dei loro spigoli.
 
     4. Spiegare perché i vincoli $y_{uv}\ge x_u+x_v-1$ non servono nel modello.
 
@@ -609,11 +609,11 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
         \end{array}
         $$
 
-    2. Gurobi restituisce il valore ottimo $13$ con $\tilde x_3=\tilde x_4=\tilde x_5=1$ e $\tilde y_{34}=\tilde y_{35}=\tilde y_{45}=1$, con tutte le altre variabili pari a $0$: la cricca $\{3,4,5\}$, di peso $2+5+6=13$.
+    2. Gurobi restituisce il valore ottimo $13$ con $\tilde x_3=\tilde x_4=\tilde x_5=1$ e $\tilde y_{34}=\tilde y_{35}=\tilde y_{45}=1$, con tutte le altre variabili pari a $0$: la clique $\{3,4,5\}$, di peso $2+5+6=13$.
 
         ![Figura 16](../img/es-clique-formulations/fig16.svg){ .fig loading=lazy  }
 
-    3. Le cricche massimali di $G$ e i loro pesi sono:
+    3. Le clique massimali di $G$ e i loro pesi sono:
 
         - $\{1,2,3\}$: $2+3+1=6$;
 
@@ -621,6 +621,6 @@ title: "Esercizi · Formulazioni dei problemi di cricca"
 
         - $\{3,4,5\}$: $2+5+6=13$;
 
-        Ogni cricca è contenuta in una di esse e i pesi sono positivi, quindi il valore ottimo è $13$, raggiunto solo da $\{3,4,5\}$.
+        Ogni clique è contenuta in una di esse e i pesi sono positivi, quindi il valore ottimo è $13$, raggiunto solo da $\{3,4,5\}$.
 
     4. Se entrambi gli estremi di $\{u,v\}$ sono selezionati, i vincoli permettono $y_{uv}=1$, e poiché $r_{uv}>0$ la funzione obiettivo preferisce $y_{uv}=1$ a $y_{uv}=0$: ogni soluzione ottima ha $y_{uv}=\min\{x_u,x_v\}$. Il vincolo $y_{uv}\ge x_u+x_v-1$ servirebbe solo con pesi negativi.

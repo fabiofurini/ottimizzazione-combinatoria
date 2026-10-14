@@ -97,7 +97,7 @@ title: "Problema della colorazione dei vertici (VCP)"
 
 - NP-difficile in senso forte: decidere se $\chi(G)\le 3$ è NP-completo ([Cap. 1](../problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/cenni-di-complessita-computazionale.md#box-12-def-pseudo)).
 
-- Bound di cricca $\omega(G) \le \chi(G)$ e bound degli insiemi stabili $\lceil n/\alpha(G) \rceil \le \chi(G)$ ([Cap. 4](../problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici.md#box-6-obs-clique-bound)).
+- Bound di clique $\omega(G) \le \chi(G)$ e bound degli insiemi stabili $\lceil n/\alpha(G) \rceil \le \chi(G)$ ([Cap. 4](../problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici.md#box-6-obs-clique-bound)).
 
 - I bound possono non raggiungere $\chi(G)$: sul grafo di Petersen $\omega(G)=2<\chi(G)=3$ ([Cap. 4](../problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici.md#box-7-obs-stable-bound)).
 

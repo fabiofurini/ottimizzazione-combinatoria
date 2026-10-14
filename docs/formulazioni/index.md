@@ -32,11 +32,11 @@ I modelli di programmazione lineare intera dei problemi del volume 1, i loro ril
 
     [:octicons-arrow-right-24: Leggi il capitolo](coloring-formulations/index.md) · [Esercizi](../esercizi/coloring-formulations.md)
 
--   **12. Formulazioni dei problemi di cricca**
+-   **12. Formulazioni dei problemi di clique**
 
     ---
 
-    Cricca massima (MCP) · Cricca massima pesata
+    Clique massima (MCP) · Clique massima pesata
 
     [:octicons-arrow-right-24: Leggi il capitolo](clique-formulations/index.md) · [Esercizi](../esercizi/clique-formulations.md)
 

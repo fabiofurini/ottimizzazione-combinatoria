@@ -36,7 +36,7 @@ title: "Esercizi · Problemi di colorazione"
 
     1. Per ogni soluzione proposta, stabilire se è una soluzione ammissibile del VCP.
 
-    2. Trovare una cricca con $3$ vertici. Quale bound duale fornisce?
+    2. Trovare una clique con $3$ vertici. Quale bound duale fornisce?
 
     3. Stabilire se la soluzione ammissibile della Domanda 1 è ottima, e disegnarla.
 
@@ -48,19 +48,19 @@ title: "Esercizi · Problemi di colorazione"
 
         - $\mathcal{Q}_c$ non è una partizione di $V$: il vertice $7$ non ha colore. Non ammissibile.
 
-    2. I vertici $\{1,2,3\}$ sono a due a due adiacenti, quindi formano una cricca; $G$ ha $3$ cricche con $3$ vertici, $\{1,2,3\}$, $\{1,2,7\}$, $\{4,5,6\}$. Per il bound di cricca, $\chi(G)\ge \omega(G)\ge 3$.
+    2. I vertici $\{1,2,3\}$ sono a due a due adiacenti, quindi formano una clique; $G$ ha $3$ clique con $3$ vertici, $\{1,2,3\}$, $\{1,2,7\}$, $\{4,5,6\}$. Per il bound di clique, $\chi(G)\ge \omega(G)\ge 3$.
 
-    3. $\mathcal{Q}_a$ usa $3$ colori e raggiunge il bound di cricca: è ottima e $\chi(G)=3$.
+    3. $\mathcal{Q}_a$ usa $3$ colori e raggiunge il bound di clique: è ottima e $\chi(G)=3$.
 
         ![Figura 2](../img/es-coloring/fig02.svg){ .fig loading=lazy  }
 
     !!! chiave ""
 
-        Solo $\mathcal{Q}_a$ è ammissibile; usa $3$ colori, tanti quanti i vertici di una cricca: $\chi(G)=3$.
+        Solo $\mathcal{Q}_a$ è ammissibile; usa $3$ colori, tanti quanti i vertici di una clique: $\chi(G)=3$.
 
 <a id="esercizio-4-2"></a>
 
-!!! esercizio "Esercizio 4.2: Intorni, cricche e insiemi stabili (VCP)"
+!!! esercizio "Esercizio 4.2: Intorni, clique e insiemi stabili (VCP)"
 
     Consideriamo il grafo $G=(V,E)$ con $V=\{1,\dots,6\}$ e i lati
 
@@ -76,7 +76,7 @@ title: "Esercizi · Problemi di colorazione"
 
     3. Scrivere i lati del grafo complementare $\overline{G}$.
 
-    4. Determinare $\omega(G)$ e $\alpha(G)$, con una cricca massima e un insieme stabile massimo, e calcolare il bound di cricca e il bound degli insiemi stabili.
+    4. Determinare $\omega(G)$ e $\alpha(G)$, con una clique massima e un insieme stabile massimo, e calcolare il bound di clique e il bound degli insiemi stabili.
 
     5. Trovare una colorazione ottima.
 
@@ -105,15 +105,15 @@ title: "Esercizi · Problemi di colorazione"
         \overline{E}=\{\{1,3\},\{1,6\},\{2,5\},\{2,6\},\{3,4\},\{3,5\},\{4,5\},\{4,6\}\}.
         $$
 
-    4. I vertici $\{1,2,4\}$ formano un triangolo, quindi $\omega(G)\ge 3$. Una cricca con $4$ vertici richiederebbe $4$ vertici di grado almeno $3$, e solo i vertici $1$ e $2$ hanno grado $3$: quindi $\omega(G)=3$. L'insieme $\{3,4,5\}$ è stabile; un insieme stabile con $4$ vertici sarebbe una cricca con $4$ vertici di $\overline{G}$, e l'enumerazione mostra che non ne esistono: $\alpha(G)=3$. Il bound di cricca dà $3$, il bound degli insiemi stabili $\lceil 6/3\rceil=2$.
+    4. I vertici $\{1,2,4\}$ formano un triangolo, quindi $\omega(G)\ge 3$. Una clique con $4$ vertici richiederebbe $4$ vertici di grado almeno $3$, e solo i vertici $1$ e $2$ hanno grado $3$: quindi $\omega(G)=3$. L'insieme $\{3,4,5\}$ è stabile; un insieme stabile con $4$ vertici sarebbe una clique con $4$ vertici di $\overline{G}$, e l'enumerazione mostra che non ne esistono: $\alpha(G)=3$. Il bound di clique dà $3$, il bound degli insiemi stabili $\lceil 6/3\rceil=2$.
 
-    5. La colorazione $\{\{3,4,5\},\{1,6\},\{2\}\}$ ha classi stabili e usa $3$ colori, tanti quanti il bound di cricca: è ottima e $\chi(G)=3$.
+    5. La colorazione $\{\{3,4,5\},\{1,6\},\{2\}\}$ ha classi stabili e usa $3$ colori, tanti quanti il bound di clique: è ottima e $\chi(G)=3$.
 
         ![Figura 4](../img/es-coloring/fig04.svg){ .fig loading=lazy  }
 
     !!! chiave ""
 
-        $\omega(G)=3$ con la cricca $\{1,2,4\}$, $\alpha(G)=3$ con l'insieme stabile $\{3,4,5\}$; il bound di cricca è stretto e $\chi(G)=3$, mentre il bound degli insiemi stabili dà solo $2$.
+        $\omega(G)=3$ con la clique $\{1,2,4\}$, $\alpha(G)=3$ con l'insieme stabile $\{3,4,5\}$; il bound di clique è stretto e $\chi(G)=3$, mentre il bound degli insiemi stabili dà solo $2$.
 
 <a id="esercizio-4-3"></a>
 
@@ -129,7 +129,7 @@ title: "Esercizi · Problemi di colorazione"
 
     2. Calcolare $\alpha(G)$, usando il grafo complementare.
 
-    3. Calcolare $\omega(G)$ e il bound di cricca.
+    3. Calcolare $\omega(G)$ e il bound di clique.
 
     4. Calcolare il bound degli insiemi stabili e trovare una colorazione ottima.
 
@@ -137,9 +137,9 @@ title: "Esercizi · Problemi di colorazione"
 
     1. $C_7$ ha $7$ lati sulle $\binom{7}{2}=21$ coppie, quindi $G$ ha $21-7=14$ lati. Ogni vertice è adiacente a tutti i vertici tranne se stesso e i suoi due vicini sul ciclo: grado $6-2=4$.
 
-    2. Un insieme stabile di $G$ è una cricca di $\overline{G}=C_7$. Le cricche più grandi di un ciclo con $7$ vertici sono i suoi lati, poiché non ha triangoli: $\alpha(G)=2$, per esempio l'insieme stabile $\{1,2\}$.
+    2. Un insieme stabile di $G$ è una clique di $\overline{G}=C_7$. Le clique più grandi di un ciclo con $7$ vertici sono i suoi lati, poiché non ha triangoli: $\alpha(G)=2$, per esempio l'insieme stabile $\{1,2\}$.
 
-    3. Una cricca di $G$ è un insieme stabile di $C_7$: un insieme di vertici senza due vertici consecutivi sul ciclo. $\{1,3,5\}$ è un insieme di questo tipo; con $4$ vertici su $7$, due di essi sarebbero consecutivi. Quindi $\omega(G)=3$ e il bound di cricca dà $\chi(G)\ge 3$.
+    3. Una clique di $G$ è un insieme stabile di $C_7$: un insieme di vertici senza due vertici consecutivi sul ciclo. $\{1,3,5\}$ è un insieme di questo tipo; con $4$ vertici su $7$, due di essi sarebbero consecutivi. Quindi $\omega(G)=3$ e il bound di clique dà $\chi(G)\ge 3$.
 
     4. $\lceil n/\alpha(G)\rceil=\lceil 7/2\rceil=4$: ogni classe di colore ha al più $2$ vertici, e $7$ vertici richiedono almeno $4$ classi. La colorazione $\{\{1,2\},\{3,4\},\{5,6\},\{7\}\}$ usa coppie di vertici consecutivi, che non sono adiacenti in $G$: è ammissibile, usa $4$ colori e raggiunge il bound, quindi $\chi(G)=4$.
 
@@ -147,7 +147,7 @@ title: "Esercizi · Problemi di colorazione"
 
     !!! chiave ""
 
-        Sul complementare di $C_7$ il bound di cricca dà $3$, il bound degli insiemi stabili dà $\lceil 7/2\rceil=4$ e una colorazione con $4$ colori chiude il gap: $\chi(G)=4$.
+        Sul complementare di $C_7$ il bound di clique dà $3$, il bound degli insiemi stabili dà $\lceil 7/2\rceil=4$ e una colorazione con $4$ colori chiude il gap: $\chi(G)=4$.
 
 <a id="esercizio-4-4"></a>
 
@@ -167,7 +167,7 @@ title: "Esercizi · Problemi di colorazione"
 
 ??? soluzione "Soluzione"
 
-    1. Ogni triangolo usa il mozzo e un lato del ciclo, per esempio $\{1,2,6\}$; $4$ vertici a due a due adiacenti richiederebbero $3$ vertici a due a due adiacenti sul ciclo, che non ha triangoli. Quindi $\omega(W_5)=3$. Un insieme stabile contiene al più $2$ vertici del ciclo con $5$ vertici, e il mozzo è adiacente a tutti: $\alpha(W_5)=2$, per esempio $\{1,3\}$. Il bound di cricca dà $3$ e il bound degli insiemi stabili $\lceil 6/2\rceil=3$.
+    1. Ogni triangolo usa il mozzo e un lato del ciclo, per esempio $\{1,2,6\}$; $4$ vertici a due a due adiacenti richiederebbero $3$ vertici a due a due adiacenti sul ciclo, che non ha triangoli. Quindi $\omega(W_5)=3$. Un insieme stabile contiene al più $2$ vertici del ciclo con $5$ vertici, e il mozzo è adiacente a tutti: $\alpha(W_5)=2$, per esempio $\{1,3\}$. Il bound di clique dà $3$ e il bound degli insiemi stabili $\lceil 6/2\rceil=3$.
 
     2. Con $2$ colori i colori devono alternarsi lungo il ciclo: $1$ riceve il colore A, $2$ il colore B, $3$ il colore A, $4$ il colore B, $5$ il colore A. Allora $5$ e $1$, che sono adiacenti, hanno lo stesso colore. Un ciclo con un numero dispari di vertici richiede $3$ colori.
 

@@ -9,7 +9,7 @@ Il corso risolve 7 problemi di ottimizzazione combinatoria in tutti i modi: le l
 | Zaino 0/1 (KP) | un sottoinsieme di oggetti | massimo profitto totale | peso totale al più $c$ | NP-difficile in senso debole, PD pseudo-polinomiale $O(nc)$ |
 | Bin packing (BPP) | una partizione degli oggetti nei contenitori | minimo numero di contenitori | carico di ogni contenitore al più $c$ | NP-difficile in senso forte |
 | Colorazione dei vertici (VCP) | una partizione dei vertici in insiemi stabili | minimo numero di colori $\chi(G)$ | vertici adiacenti con colori diversi | NP-difficile in senso forte |
-| Cricca massima (MCP) | un sottoinsieme di vertici | massima cardinalità $\omega(G)$ | vertici a due a due adiacenti | NP-difficile |
+| Clique massima (MCP) | un sottoinsieme di vertici | massima cardinalità $\omega(G)$ | vertici a due a due adiacenti | NP-difficile |
 | Commesso viaggiatore (TSP) | un ordinamento ciclico delle città | minima lunghezza del giro | ogni città visitata una volta | NP-difficile in senso forte |
 | Scheduling su macchine parallele (P\|\|Cmax) | un assegnamento dei lavori alle macchine | minimo makespan $C_{\max}$ | ogni lavoro su una macchina, senza interruzioni | NP-difficile in senso forte ($m$ nell'input) |
 | Lot sizing capacitato (CLS) | periodi di setup e quantità prodotte | minimo costo di setup, produzione e giacenza | domanda soddisfatta, capacità rispettate | NP-difficile (il caso non capacitato è polinomiale) |
@@ -33,7 +33,7 @@ Ogni cella porta al capitolo.
 - **Zaino 0/1 (KP)** — [che cosa fa il corso su questo problema](../catalogo/knapsack-problem.md)
 - **Bin packing (BPP)** — [che cosa fa il corso su questo problema](../catalogo/bin-packing-problem.md)
 - **Colorazione dei vertici (VCP)** — [che cosa fa il corso su questo problema](../catalogo/vertex-coloring-problem.md)
-- **Cricca massima (MCP)** — [che cosa fa il corso su questo problema](../catalogo/maximum-clique-problem.md)
+- **Clique massima (MCP)** — [che cosa fa il corso su questo problema](../catalogo/maximum-clique-problem.md)
 - **Commesso viaggiatore (TSP)** — [che cosa fa il corso su questo problema](../catalogo/travelling-salesman-problem.md)
 - **Scheduling su macchine parallele (P\|\|Cmax)** — [che cosa fa il corso su questo problema](../catalogo/scheduling-on-identical-parallel-machines.md)
 - **Lot sizing capacitato (CLS)** — [che cosa fa il corso su questo problema](../catalogo/capacitated-lot-sizing.md)

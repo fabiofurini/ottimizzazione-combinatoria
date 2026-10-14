@@ -21,7 +21,7 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
     \end{gathered} \tag{D1}
     \end{equation*}
 
-    - **(D2)** <strong>Bound.</strong> $\UB$ = colori dell'euristica $DSATUR$; $K$ = cricca greedy (vertici per grado non crescente, pareggi con l'indice minimo; un vertice entra se è adiacente a tutti i vertici di $K$), $\LB=|K|$, e il vertice di $K$ in posizione $i$ è pre-colorato con il colore $i$.
+    - **(D2)** <strong>Bound.</strong> $\UB$ = colori dell'euristica $DSATUR$; $K$ = clique greedy (vertici per grado non crescente, pareggi con l'indice minimo; un vertice entra se è adiacente a tutti i vertici di $K$), $\LB=|K|$, e il vertice di $K$ in posizione $i$ è pre-colorato con il colore $i$.
 
     - **(D3)** <strong>Branching.</strong> Il vertice $v\in U^k$ con $\mathit{sat}_k(v)$ massimo, poi $\mathit{du}_k(v)$ massimo, poi indice minimo; un figlio per ogni $c\in F_k(v)$ e uno per il colore nuovo $q(k)+1$, in ordine crescente di colore.
 
@@ -51,7 +51,7 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
     1. Eseguire l'euristica $DSATUR$ su $G_a$ e dare l'upper bound $\UB$.
 
-    2. Trovare la cricca greedy di $G_a$ e il lower bound $\LB$, e stabilire se l'algoritmo di branch-and-bound DSATUR fa branching.
+    2. Trovare la clique greedy di $G_a$ e il lower bound $\LB$, e stabilire se l'algoritmo di branch-and-bound DSATUR fa branching.
 
     3. Rispondere alle stesse due domande per $G_b$.
 
@@ -172,7 +172,7 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
     !!! chiave ""
 
-        Su $G_a$ la cricca $\{2,3,1\}$ raggiunge il bound di $DSATUR$: niente branching. Su $G_b$ il bound della cricca è $2$ e l'albero serve per dimostrare $\chi(C_5)=3$.
+        Su $G_a$ la clique $\{2,3,1\}$ raggiunge il bound di $DSATUR$: niente branching. Su $G_b$ il bound della clique è $2$ e l'albero serve per dimostrare $\chi(C_5)=3$.
 
 <a id="esercizio-42-2"></a>
 
@@ -192,7 +192,7 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
     1. Eseguire l'euristica $DSATUR$: dare l'ordine dei vertici, la colorazione e l'upper bound $\UB$.
 
-    2. Trovare la cricca greedy $K$, il lower bound $\LB$ e il nodo radice dell'algoritmo di branch-and-bound DSATUR.
+    2. Trovare la clique greedy $K$, il lower bound $\LB$ e il nodo radice dell'algoritmo di branch-and-bound DSATUR.
 
     3. Eseguire l'algoritmo di branch-and-bound DSATUR, iterazione per iterazione.
 
@@ -350,7 +350,7 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
         ![Figura 5](../img/es-dsatur-branch-and-bound/fig05.svg){ .fig loading=lazy  }
 
-        Il bound della cricca dà solo $3$: l'albero dimostra che il ciclo dispari e il mozzo richiedono un quarto colore.
+        Il bound della clique dà solo $3$: l'albero dimostra che il ciclo dispari e il mozzo richiedono un quarto colore.
 
 <a id="esercizio-42-3"></a>
 
@@ -373,7 +373,7 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
     1. Eseguire l'euristica $DSATUR$: dare l'ordine dei vertici, la colorazione e l'upper bound $\UB$.
 
-    2. Trovare la cricca greedy $K$, il lower bound $\LB$ e il nodo radice dell'algoritmo di branch-and-bound DSATUR.
+    2. Trovare la clique greedy $K$, il lower bound $\LB$ e il nodo radice dell'algoritmo di branch-and-bound DSATUR.
 
     3. Eseguire l'algoritmo di branch-and-bound DSATUR, iterazione per iterazione.
 
@@ -583,7 +583,7 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
     1. Eseguire l'euristica $DSATUR$: dare l'ordine dei vertici, la colorazione e l'upper bound $\UB$.
 
-    2. Trovare la cricca greedy $K$, il lower bound $\LB$ e il nodo radice dell'algoritmo di branch-and-bound DSATUR.
+    2. Trovare la clique greedy $K$, il lower bound $\LB$ e il nodo radice dell'algoritmo di branch-and-bound DSATUR.
 
     3. Eseguire l'algoritmo di branch-and-bound DSATUR, iterazione per iterazione.
 
@@ -829,7 +829,7 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
         ![Figura 13](../img/es-dsatur-branch-and-bound/fig13.svg){ .fig loading=lazy  }
 
-        Qui $DSATUR$ non è ottima: l'algoritmo di branch-and-bound migliora la soluzione incumbent da $4$ a $3$ colori e si ferma appena $\UB$ raggiunge il bound della cricca.
+        Qui $DSATUR$ non è ottima: l'algoritmo di branch-and-bound migliora la soluzione incumbent da $4$ a $3$ colori e si ferma appena $\UB$ raggiunge il bound della clique.
 
 <a id="esercizio-42-5"></a>
 
@@ -841,7 +841,7 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
     E=\{\{1,2\},\{1,5\},\{2,3\},\{3,4\},\{4,5\}\},
     $$
 
-    disegnato qui sotto. La sua cricca greedy è $K=\{1,2\}$, quindi il nodo radice colora $\mathit{col}^1(1)=1$ e $\mathit{col}^1(2)=2$.
+    disegnato qui sotto. La sua clique greedy è $K=\{1,2\}$, quindi il nodo radice colora $\mathit{col}^1(1)=1$ e $\mathit{col}^1(2)=2$.
 
     ![Figura 14](../img/es-dsatur-branch-and-bound/fig14.svg){ .fig loading=lazy  }
 

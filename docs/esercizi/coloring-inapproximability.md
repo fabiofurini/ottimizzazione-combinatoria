@@ -180,7 +180,7 @@ title: "Esercizi · Colorazione dei vertici: limiti dell'approssimazione"
 
     2. L'ordine è $(1,2,4,3,5,6,7)$, e i colori sono $1\to1$, $2\to2$, $4\to3$, $3\to1$, $5\to3$, $6\to1$, $7\to2$: $GC(I)=3$.
 
-    3. Il punto $3$ sta negli intervalli $\{1,2,4\}$, che si intersecano a due a due e formano una cricca: $\omega(G)\ge3$; nessun punto sta in più di $3$ intervalli, quindi $\omega(G)=3$. Per (C5) e il bound di cricca, $GC(I)=\omega(G)=\chi(G)=3$: la colorazione è ottima, con $3$ sale.
+    3. Il punto $3$ sta negli intervalli $\{1,2,4\}$, che si intersecano a due a due e formano una clique: $\omega(G)\ge3$; nessun punto sta in più di $3$ intervalli, quindi $\omega(G)=3$. Per (C5) e il bound di clique, $GC(I)=\omega(G)=\chi(G)=3$: la colorazione è ottima, con $3$ sale.
 
     4. I colori sono $1\to1$, $2\to2$, $4\to3$, $5\to1$, $3\to4$, $6\to2$, $7\to3$: il vertice $3$ vede i colori $\{1,2,3\}$ sui suoi vicini e prende il colore $4$. $GC(I)=4>\chi(G)$: è l'ordine degli estremi sinistri a rendere esatta la colorazione greedy.
 

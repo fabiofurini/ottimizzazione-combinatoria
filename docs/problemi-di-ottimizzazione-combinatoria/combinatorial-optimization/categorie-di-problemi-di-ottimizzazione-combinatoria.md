@@ -202,7 +202,7 @@ title: "Categorie di problemi di ottimizzazione combinatoria"
 <td>partizionamento</td>
 </tr>
 <tr>
-<td><a href="../../clique/il-problema-della-cricca-massima/">problema della cricca massima (MCP)</a></td>
+<td><a href="../../clique/il-problema-della-cricca-massima/">problema della clique massima (MCP)</a></td>
 <td>sottoinsieme di vertici</td>
 <td>IN/OUT</td>
 </tr>

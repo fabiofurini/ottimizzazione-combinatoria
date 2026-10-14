@@ -2,7 +2,7 @@
 
 *Parte 5 del corso, volume 5 delle dispense: capitoli 34–40.*
 
-Algoritmi di approssimazione: rapporti di prestazione e schemi di approssimazione, con algoritmi e analisi del caso peggiore per lo zaino, il bin packing, il TSP metrico e lo scheduling su macchine parallele, e i limiti dell'approssimazione per la colorazione dei vertici, la cricca massima e il TSP generale.
+Algoritmi di approssimazione: rapporti di prestazione e schemi di approssimazione, con algoritmi e analisi del caso peggiore per lo zaino, il bin packing, il TSP metrico e lo scheduling su macchine parallele, e i limiti dell'approssimazione per la colorazione dei vertici, la clique massima e il TSP generale.
 
 [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf){ .md-button } [:material-file-pdf-box: Esercizi (PDF)](../pdf/esercizi-5-algoritmi-di-approssimazione.pdf){ .md-button }
 
@@ -60,11 +60,11 @@ Algoritmi di approssimazione: rapporti di prestazione e schemi di approssimazion
 
 </div>
 
-## Problemi di cricca
+## Problemi di clique
 
 <div class="grid cards" markdown>
 
--   **38. Cricca massima: limiti dell'approssimazione**
+-   **38. Clique massima: limiti dell'approssimazione**
 
     ---
 

@@ -6,7 +6,7 @@ title: "Problema dell'insieme stabile massimo (MSSP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogo dei problemi di ottimizzazione combinatoria**](index.md) · [:material-folder-outline: Problemi di cricca](clique-problems.md) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
+[:material-view-list: **Catalogo dei problemi di ottimizzazione combinatoria**](index.md) · [:material-folder-outline: Problemi di clique](clique-problems.md) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
 
 </div>
 
@@ -30,7 +30,7 @@ title: "Problema dell'insieme stabile massimo (MSSP)"
     1 \le m < \binom{n}{2}.
     $$
 
-- L'ipotesi si può fare senza perdita di generalità: se il grafo non ha lati, ogni singolo vertice è una cricca massima e $\omega(G)=1$; se il grafo è completo, $V$ stesso è una cricca e $\omega(G)=n$.
+- L'ipotesi si può fare senza perdita di generalità: se il grafo non ha lati, ogni singolo vertice è una clique massima e $\omega(G)=1$; se il grafo è completo, $V$ stesso è una clique e $\omega(G)=n$.
 
 ## Che cosa fa il corso su questo problema { #sez-sec-cat-mssp-vert }
 
@@ -41,15 +41,15 @@ title: "Problema dell'insieme stabile massimo (MSSP)"
 </tr>
 <tr>
 <td><strong>Definizione</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima/#box-3-mcpP-def-MSSP">Cap. 5 «Problemi di cricca»</a></td>
+<td><a href="../../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima/#box-3-mcpP-def-MSSP">Cap. 5 «Problemi di clique»</a></td>
 </tr>
 <tr>
 <td><strong>Formulazioni</strong></td>
-<td><a href="../../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-cricca-massima-la-formu/#sez-sec-mcpf-MSSP">Cap. 12 «Formulazioni dei problemi di cricca»</a></td>
+<td><a href="../../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-cricca-massima-la-formu/#sez-sec-mcpf-MSSP">Cap. 12 «Formulazioni dei problemi di clique»</a></td>
 </tr>
 <tr>
 <td><strong>Limiti dell'approssimazione</strong></td>
-<td><a href="../../algoritmi-di-approssimazione/clique-inapproximability/#box-7-cli-cormssp">Cap. 38 «Cricca massima: limiti dell'approssimazione»</a></td>
+<td><a href="../../algoritmi-di-approssimazione/clique-inapproximability/#box-7-cli-cormssp">Cap. 38 «Clique massima: limiti dell'approssimazione»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>

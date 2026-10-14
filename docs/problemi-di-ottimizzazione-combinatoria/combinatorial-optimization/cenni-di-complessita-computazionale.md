@@ -50,7 +50,7 @@ title: "Cenni di complessità computazionale"
 
     Che un problema sia NP-hard non significa che un'istanza non si possa risolvere: significa che non ci aspettiamo un algoritmo che risolva <em>ogni</em> istanza in tempo polinomiale. In pratica combiniamo <strong>metodi esatti</strong> che chiudono il gap fra bound primali e duali, <strong>euristiche</strong> che trovano rapidamente buone soluzioni, e <strong>algoritmi di approssimazione</strong> che garantiscono un gap limitato nel caso peggiore.
 
-- I problemi dei prossimi capitoli sono tutti NP-hard: il problema dello zaino 0/1 è NP-hard in senso debole, mentre il bin packing, la colorazione dei vertici, la cricca massima e il problema del commesso viaggiatore sono NP-hard in senso forte. Ogni capitolo discute la complessità del suo problema.
+- I problemi dei prossimi capitoli sono tutti NP-hard: il problema dello zaino 0/1 è NP-hard in senso debole, mentre il bin packing, la colorazione dei vertici, la clique massima e il problema del commesso viaggiatore sono NP-hard in senso forte. Ogni capitolo discute la complessità del suo problema.
 
 ## 1.7 Errori tipici
 

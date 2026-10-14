@@ -1,16 +1,16 @@
 ---
-title: "Cricca massima"
+title: "Clique massima"
 ---
 
-# 12.2 Un modello PLI per il problema della cricca massima: la formulazione sugli spigoli { #sez-sec-mcpf-MCP }
+# 12.2 Un modello PLI per il problema della clique massima: la formulazione sugli spigoli { #sez-sec-mcpf-MCP }
 
 <div class="info-capitolo" markdown>
 
-**Parte 2 · Formulazioni dei problemi e loro proprietà · Capitolo 12** · [:material-book-open-variant: Capitolo 12: Problemi di cricca](index.md) · [:material-file-pdf-box: Dispensa, volume 2 (PDF)](../../pdf/dispensa-2-formulazioni.pdf) · [:material-pencil: Esercizi: Problemi di cricca](../../esercizi/clique-formulations.md)
+**Parte 2 · Formulazioni dei problemi e loro proprietà · Capitolo 12** · [:material-book-open-variant: Capitolo 12: Problemi di clique](index.md) · [:material-file-pdf-box: Dispensa, volume 2 (PDF)](../../pdf/dispensa-2-formulazioni.pdf) · [:material-pencil: Esercizi: Problemi di clique](../../esercizi/clique-formulations.md)
 
 </div>
 
-Il problema di questa sezione è il problema della cricca massima (MCP), definito nel [Capitolo 5 «Problemi di cricca», Sezione 5.2](../../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima.md).
+Il problema di questa sezione è il problema della clique massima (MCP), definito nel [Capitolo 5 «Problemi di clique», Sezione 5.2](../../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima.md).
 
 - Dato un grafo semplice $G=(V,E)$, con $V=\{1,2,\dots,n\}$ e $m$ spigoli, indichiamo con
 
@@ -24,13 +24,13 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
 
     \begin{equation*}
     \label{mcpF:var}
-    x_v=\begin{cases}1&\text{se il vertice $v$ è selezionato nella cricca}\\[1.5ex]0&\text{altrimenti}\end{cases}
+    x_v=\begin{cases}1&\text{se il vertice $v$ è selezionato nella clique}\\[1.5ex]0&\text{altrimenti}\end{cases}
     \qquad\forall v\in V. \tag{12.1}
     \end{equation*}
 
 !!! chiave ""
 
-    Con queste variabili, un modello di programmazione lineare intera (PLI) per il problema della cricca massima (MCP) è il seguente:
+    Con queste variabili, un modello di programmazione lineare intera (PLI) per il problema della clique massima (MCP) è il seguente:
 
     <a id="eq-mcpF-ILP"></a>
 
@@ -44,7 +44,7 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
 
 - Descrizione della funzione obiettivo e dei vincoli del modello $\mathrm{ILP}_{\mathrm{MCP}}$:
 
-    - la funzione obiettivo lineare $\eqref{mcpF:obj}$ massimizza la cardinalità della cricca selezionata;
+    - la funzione obiettivo lineare $\eqref{mcpF:obj}$ massimizza la cardinalità della clique selezionata;
 
     - i vincoli $\eqref{mcpF:nonedge}$ garantiscono che due vertici non adiacenti non siano selezionati entrambi ($|\overline{E}|=\binom{n}{2}-m$ vincoli lineari, uno per ogni spigolo di $\overline{G}$);
 
@@ -58,7 +58,7 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
 
 !!! esempio "Esempio 12.1: Istanza del MCP"
 
-    Consideriamo il grafo $G$ con $7$ vertici formato dal ciclo $1,2,\dots,7,1$ e dalla corda $\{1,3\}$ (l'istanza di riferimento del Capitolo 5 [«Problemi di cricca»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md)), e il suo complementare $\overline{G}$:
+    Consideriamo il grafo $G$ con $7$ vertici formato dal ciclo $1,2,\dots,7,1$ e dalla corda $\{1,3\}$ (l'istanza di riferimento del Capitolo 5 [«Problemi di clique»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md)), e il suo complementare $\overline{G}$:
 
     ![Figura 1](../../img/clique-formulations/fig01.svg){ .fig loading=lazy  }
 
@@ -103,7 +103,7 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
     \tilde x_1=\tilde x_2=\tilde x_3=1,~~\tilde x_4=\tilde x_5=\tilde x_6=\tilde x_7=0
     $$
 
-    Il valore ottimo $z(\mathrm{ILP}_{\mathrm{MCP}})$ è $3=\omega(G)$. La soluzione ottima associata del MCP è la cricca $\tilde K=\{1,2,3\}$, ed è l'unica soluzione ottima.
+    Il valore ottimo $z(\mathrm{ILP}_{\mathrm{MCP}})$ è $3=\omega(G)$. La soluzione ottima associata del MCP è la clique $\tilde K=\{1,2,3\}$, ed è l'unica soluzione ottima.
 
 ## 12.3 Un primo rilassamento lineare
 
@@ -331,13 +331,13 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
 
 - Sul ciclo con $5$ vertici $C_5$, dove $\omega(C_5)=2$, il punto $x_v=\frac{1}{2}$ dà $z(\mathrm{LP}_{\mathrm{MCP}})=\frac{5}{2}$.
 
-## 12.5 Disuguaglianze di cricca: una formulazione più forte { #sez-sec-mcpf-CL }
+## 12.5 Disuguaglianze di clique: una formulazione più forte { #sez-sec-mcpf-CL }
 
 <a id="box-8-mcpF-prop-clique"></a>
 
-!!! teorema "Proposizione 12.2: disuguaglianze di cricca"
+!!! teorema "Proposizione 12.2: disuguaglianze di clique"
 
-    Sia $Q\subseteq V$ una cricca di $\overline{G}$, cioè un insieme stabile di $G$. Allora
+    Sia $Q\subseteq V$ una clique di $\overline{G}$, cioè un insieme stabile di $G$. Allora
 
     \begin{equation*}
     \label{mcpF:cliqueineq}
@@ -348,15 +348,15 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
 
 ??? dimostrazione "Dimostrazione"
 
-    Una cricca di $G$ e un insieme stabile $Q$ di $G$ hanno al più un vertice in comune: due vertici comuni sarebbero insieme adiacenti e non adiacenti. Quindi ogni soluzione ammissibile di $\mathrm{ILP}_{\mathrm{MCP}}$ seleziona al più un vertice di $Q$. <span class="qed">□</span>
+    Una clique di $G$ e un insieme stabile $Q$ di $G$ hanno al più un vertice in comune: due vertici comuni sarebbero insieme adiacenti e non adiacenti. Quindi ogni soluzione ammissibile di $\mathrm{ILP}_{\mathrm{MCP}}$ seleziona al più un vertice di $Q$. <span class="qed">□</span>
 
-- Le disuguaglianze $\eqref{mcpF:cliqueineq}$ si chiamano <strong>disuguaglianze di cricca</strong>, dalla cricca $Q$ di $\overline{G}$; lette su $G$, sono <strong>disuguaglianze di insieme stabile</strong>. I vincoli sui non-spigoli sono il caso $|Q|=2$.
+- Le disuguaglianze $\eqref{mcpF:cliqueineq}$ si chiamano <strong>disuguaglianze di clique</strong>, dalla clique $Q$ di $\overline{G}$; lette su $G$, sono <strong>disuguaglianze di insieme stabile</strong>. I vincoli sui non-spigoli sono il caso $|Q|=2$.
 
-- Se $Q\subseteq Q'$, la disuguaglianza di $Q'$ implica quella di $Q$, perché tutte le variabili sono non negative. Basta scrivere le disuguaglianze delle cricche <strong>massimali</strong> di $\overline{G}$, la cui famiglia indichiamo con $\mathcal{Q}$.
+- Se $Q\subseteq Q'$, la disuguaglianza di $Q'$ implica quella di $Q$, perché tutte le variabili sono non negative. Basta scrivere le disuguaglianze delle clique <strong>massimali</strong> di $\overline{G}$, la cui famiglia indichiamo con $\mathcal{Q}$.
 
 !!! chiave ""
 
-    Con le variabili $\eqref{mcpF:var}$, un secondo modello PLI per il problema della cricca massima (MCP) è il seguente:
+    Con le variabili $\eqref{mcpF:var}$, un secondo modello PLI per il problema della clique massima (MCP) è il seguente:
 
     <a id="eq-mcpF-ILPCL"></a>
 
@@ -366,25 +366,25 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
     && x_v &\in\{0,1\}, & \forall v\in V. \label{mcpF:bin-CL} \tag{12.8c}
     \end{align*}
 
-    Questo modello PLI si chiama modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$, o <strong>formulazione a cricche</strong>.
+    Questo modello PLI si chiama modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$, o <strong>formulazione a clique</strong>.
 
 - Descrizione della funzione obiettivo e dei vincoli del modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$:
 
-    - la funzione obiettivo lineare $\eqref{mcpF:obj-CL}$ massimizza la cardinalità della cricca selezionata;
+    - la funzione obiettivo lineare $\eqref{mcpF:obj-CL}$ massimizza la cardinalità della clique selezionata;
 
-    - i vincoli $\eqref{mcpF:cl}$ garantiscono che di ogni cricca massimale di $\overline{G}$ sia selezionato al più un vertice ($|\mathcal{Q}|$ vincoli lineari);
+    - i vincoli $\eqref{mcpF:cl}$ garantiscono che di ogni clique massimale di $\overline{G}$ sia selezionato al più un vertice ($|\mathcal{Q}|$ vincoli lineari);
 
     - infine, i vincoli $\eqref{mcpF:bin-CL}$ definiscono le variabili del modello PLI.
 
-- Ogni spigolo di $\overline{G}$ sta in una cricca massimale, quindi ogni vincolo $\eqref{mcpF:nonedge}$ è implicato da un vincolo $\eqref{mcpF:cl}$: i due modelli hanno le stesse soluzioni ammissibili.
+- Ogni spigolo di $\overline{G}$ sta in una clique massimale, quindi ogni vincolo $\eqref{mcpF:nonedge}$ è implicato da un vincolo $\eqref{mcpF:cl}$: i due modelli hanno le stesse soluzioni ammissibili.
 
-- La famiglia $\mathcal{Q}$ può essere molto grande: Moon e Moser (1965) hanno mostrato grafi con $3^{n/3}$ cricche massimali. In pratica le disuguaglianze si aggiungono solo quando sono violate, come nel [Capitolo 4 «Disuguaglianze valide»](https://fabiofurini.github.io/programmazione-lineare-intera/formulazioni/valid-inequalities/) del modulo <em>Programmazione lineare intera</em>.
+- La famiglia $\mathcal{Q}$ può essere molto grande: Moon e Moser (1965) hanno mostrato grafi con $3^{n/3}$ clique massimali. In pratica le disuguaglianze si aggiungono solo quando sono violate, come nel [Capitolo 4 «Disuguaglianze valide»](https://fabiofurini.github.io/programmazione-lineare-intera/formulazioni/valid-inequalities/) del modulo <em>Programmazione lineare intera</em>.
 
 <a id="box-9-mcpF-ex-cl"></a>
 
 !!! esempio "Esempio 12.7: Modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$"
 
-    Le cricche massimali di $\overline{G}$ nell'<span style="color:#1971c2">[Esempio 12.1](#box-1-mcpF-ex1)</span> sono i $5$ triangoli e i $2$ spigoli
+    Le clique massimali di $\overline{G}$ nell'<span style="color:#1971c2">[Esempio 12.1](#box-1-mcpF-ex1)</span> sono i $5$ triangoli e i $2$ spigoli
 
     $$
     \mathcal{Q}=\big\{\{1,4,6\},\{2,4,6\},\{2,4,7\},\{2,5,7\},\{3,5,7\},\{1,5\},\{3,6\}\big\},
@@ -428,7 +428,7 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
 
     Questo modello PL si chiama modello $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$.
 
-- Ogni vertice sta in qualche cricca massimale di $\overline{G}$, quindi i vincoli $\eqref{mcpF:cl-LP}$ implicano $x_v\le 1$: i bound $\eqref{mcpF:ub}$ non servono.
+- Ogni vertice sta in qualche clique massimale di $\overline{G}$, quindi i vincoli $\eqref{mcpF:cl-LP}$ implicano $x_v\le 1$: i bound $\eqref{mcpF:ub}$ non servono.
 
 - Ogni vincolo $\eqref{mcpF:nonedge-LP}$ è implicato da un vincolo $\eqref{mcpF:cl-LP}$. Quindi la regione ammissibile di $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ è contenuta in quella di $\mathrm{LP}_{\mathrm{MCP}}$, e
 
@@ -472,21 +472,21 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
 
     Il valore ottimo $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})$ è $3=\omega(G)$: il bound LP scende da $\frac{7}{2}$ a $3$ e chiude il gap.
 
-- Le disuguaglianze di cricca non chiudono sempre il gap. Su $C_5$ il complementare è ancora un ciclo con $5$ vertici, le cui cricche massimali sono i suoi spigoli: le due formulazioni coincidono e $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})= \frac{5}{2}>2=\omega(C_5)$.
+- Le disuguaglianze di clique non chiudono sempre il gap. Su $C_5$ il complementare è ancora un ciclo con $5$ vertici, le cui clique massimali sono i suoi spigoli: le due formulazioni coincidono e $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})= \frac{5}{2}>2=\omega(C_5)$.
 
 - Se $C$ è un ciclo di $\overline{G}$ con un numero dispari di vertici e senza corde, allora $\sum_{v\in C}x_v\le(|C|-1)/2$ è una disuguaglianza valida (una <strong>disuguaglianza di ciclo dispari</strong>): un insieme stabile di $\overline{G}$ prende al più $(|C|-1)/2$ vertici di $C$. Per $C_5$ si scrive $x_1+\dots+x_5\le 2$ e chiude il gap.
 
 ## 12.6 La relazione con la colorazione dei vertici
 
-- In una colorazione di $G$ i vertici di una cricca hanno colori a due a due diversi, quindi (Capitolo 4 [«Problemi di colorazione»](../../problemi-di-ottimizzazione-combinatoria/coloring/index.md))
+- In una colorazione di $G$ i vertici di una clique hanno colori a due a due diversi, quindi (Capitolo 4 [«Problemi di colorazione»](../../problemi-di-ottimizzazione-combinatoria/coloring/index.md))
 
     $$
     \omega(G)\le\chi(G).
     $$
 
-    Qui collochiamo il bound LP della formulazione a cricche fra i due numeri.
+    Qui collochiamo il bound LP della formulazione a clique fra i due numeri.
 
-- Le cricche massimali di $\overline{G}$ sono gli <strong>insiemi stabili massimali</strong> di $G$, e una classe di colore è un insieme stabile. Introduciamo le seguenti $|\mathcal{Q}|$ <strong>variabili binarie</strong>:
+- Le clique massimali di $\overline{G}$ sono gli <strong>insiemi stabili massimali</strong> di $G$, e una classe di colore è un insieme stabile. Introduciamo le seguenti $|\mathcal{Q}|$ <strong>variabili binarie</strong>:
 
     \begin{equation*}
     \label{mcpF:var-col}
@@ -534,7 +534,7 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
 
 <a id="box-11-mcpF-prop-dual"></a>
 
-!!! teorema "Proposizione 12.3: bound di cricca dalla dualità LP"
+!!! teorema "Proposizione 12.3: bound di clique dalla dualità LP"
 
     Il modello duale $D(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})$ è il rilassamento lineare del modello $\mathrm{ILP}^{\mathrm{ST}}_{\mathrm{VCP}}$, con le variabili $\pi_Q$ al posto di $y_Q$. Quindi
 
@@ -546,7 +546,7 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
 
     Rilassando i vincoli $\eqref{mcpF:bin-col}$ in $y_Q\ge 0$ si ottiene esattamente il modello [(12.12)](#eq-mcpF-DLPCL), con $y_Q$ al posto di $\pi_Q$. Per la dualità forte $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=z(D(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}))$. La prima disuguaglianza vale perché $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ è un rilassamento del MCP. La seconda vale perché $D(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})$ è un rilassamento del modello $\mathrm{ILP}^{\mathrm{ST}}_{\mathrm{VCP}}$, un problema di minimo con valore ottimo $\chi(G)$. <span class="qed">□</span>
 
-- Il valore comune $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})$ si chiama <strong>numero cromatico frazionario</strong> di $G$. La formulazione a cricche del MCP e la formulazione a insiemi stabili del VCP sono due facce dello stesso problema LP.
+- Il valore comune $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})$ si chiama <strong>numero cromatico frazionario</strong> di $G$. La formulazione a clique del MCP e la formulazione a insiemi stabili del VCP sono due facce dello stesso problema LP.
 
 <a id="box-12-mcpF-ex-dlpcl"></a>
 
@@ -606,7 +606,7 @@ Il problema di questa sezione è il problema della cricca massima (MCP), definit
 
 ## 12.7 Insiemi stabili sul grafo complementare { #sez-sec-mcpf-MSSP }
 
-Il problema di questa sezione è il problema dell'insieme stabile massimo (MSSP), definito nel [Capitolo 5 «Problemi di cricca», Sezione 5.2](../../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima.md).
+Il problema di questa sezione è il problema dell'insieme stabile massimo (MSSP), definito nel [Capitolo 5 «Problemi di clique», Sezione 5.2](../../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima.md).
 
 - Dato un grafo semplice $G=(V,E)$, con $V=\{1,2,\dots,n\}$ e $m$ spigoli, introduciamo le seguenti $n$ <strong>variabili binarie</strong>:
 
@@ -669,7 +669,7 @@ Il problema di questa sezione è il problema dell'insieme stabile massimo (MSSP)
 
     Il valore ottimo $z(\mathrm{ILP}_{\mathrm{MSSP}})$ è $3=\alpha(G)$. La soluzione ottima non è unica: gli insiemi stabili massimi di $G$ sono $\{1,4,6\}$, $\{2,4,6\}$, $\{2,4,7\}$, $\{2,5,7\}$ e $\{3,5,7\}$, i cinque triangoli di $\overline{G}$.
 
-- Un insieme stabile e una cricca di $G$ hanno al più un vertice in comune, quindi per ogni cricca $K$ di $G$ la <strong>disuguaglianza di cricca</strong> $\sum_{v\in K}x_v\le 1$ è valida, e implica i vincoli $\eqref{mcpF:edge-mssp}$ degli spigoli di $K$. Come per il MCP, basta scrivere le disuguaglianze della famiglia $\mathcal{K}$ delle cricche <strong>massimali</strong> di $G$.
+- Un insieme stabile e una clique di $G$ hanno al più un vertice in comune, quindi per ogni clique $K$ di $G$ la <strong>disuguaglianza di clique</strong> $\sum_{v\in K}x_v\le 1$ è valida, e implica i vincoli $\eqref{mcpF:edge-mssp}$ degli spigoli di $K$. Come per il MCP, basta scrivere le disuguaglianze della famiglia $\mathcal{K}$ delle clique <strong>massimali</strong> di $G$.
 
 !!! chiave ""
 
@@ -683,13 +683,13 @@ Il problema di questa sezione è il problema dell'insieme stabile massimo (MSSP)
     && x_v &\in\{0,1\}, & \forall v\in V. \label{mcpF:bin-mssp-cl} \tag{12.15c}
     \end{align*}
 
-    Questo modello PLI si chiama modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$, o <strong>formulazione a cricche</strong> del MSSP.
+    Questo modello PLI si chiama modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$, o <strong>formulazione a clique</strong> del MSSP.
 
 - Descrizione della funzione obiettivo e dei vincoli del modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$:
 
     - la funzione obiettivo lineare $\eqref{mcpF:obj-mssp-cl}$ massimizza la cardinalità dell'insieme stabile selezionato;
 
-    - i vincoli $\eqref{mcpF:cl-mssp}$ garantiscono che di ogni cricca massimale di $G$ sia selezionato al più un vertice ($|\mathcal{K}|$ vincoli lineari);
+    - i vincoli $\eqref{mcpF:cl-mssp}$ garantiscono che di ogni clique massimale di $G$ sia selezionato al più un vertice ($|\mathcal{K}|$ vincoli lineari);
 
     - infine, i vincoli $\eqref{mcpF:bin-mssp-cl}$ definiscono le variabili del modello PLI.
 
@@ -699,7 +699,7 @@ Il problema di questa sezione è il problema dell'insieme stabile massimo (MSSP)
 
 !!! esempio "Esempio 12.12: Modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$"
 
-    Le cricche massimali del grafo $G$ dell'<span style="color:#1971c2">[Esempio 12.1](#box-1-mcpF-ex1)</span> sono il triangolo $\{1,2,3\}$ e i cinque spigoli $\{3,4\},\{4,5\},\{5,6\},\{6,7\},\{1,7\}$. Il modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ sostituisce i tre vincoli del triangolo con un solo vincolo, e ha $6$ vincoli:
+    Le clique massimali del grafo $G$ dell'<span style="color:#1971c2">[Esempio 12.1](#box-1-mcpF-ex1)</span> sono il triangolo $\{1,2,3\}$ e i cinque spigoli $\{3,4\},\{4,5\},\{5,6\},\{6,7\},\{1,7\}$. Il modello $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ sostituisce i tre vincoli del triangolo con un solo vincolo, e ha $6$ vincoli:
 
     $$
     \begin{array}{rrrrrrrrcl}
@@ -714,7 +714,7 @@ Il problema di questa sezione è il problema dell'insieme stabile massimo (MSSP)
     \end{array}
     $$
 
-    La soluzione ottima $\tilde x_1=\tilde x_4=\tilde x_6=1$ dell'<span style="color:#1971c2">[Esempio 12.11](#box-14-mcpF-ex-mssp)</span> è ottima anche qui, con valore $z(\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}})=3$. I rilassamenti lineari sono diversi (Gurobi): la formulazione sugli spigoli, con $0\le x_v\le 1$, ha valore ottimo $\frac{7}{2}$ in $x_v=\frac{1}{2}$, mentre la formulazione a cricche ha valore ottimo $3$, raggiunto da $x_2=x_5=x_7=1$.
+    La soluzione ottima $\tilde x_1=\tilde x_4=\tilde x_6=1$ dell'<span style="color:#1971c2">[Esempio 12.11](#box-14-mcpF-ex-mssp)</span> è ottima anche qui, con valore $z(\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}})=3$. I rilassamenti lineari sono diversi (Gurobi): la formulazione sugli spigoli, con $0\le x_v\le 1$, ha valore ottimo $\frac{7}{2}$ in $x_v=\frac{1}{2}$, mentre la formulazione a clique ha valore ottimo $3$, raggiunto da $x_2=x_5=x_7=1$.
 
 ---
 

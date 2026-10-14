@@ -22,15 +22,15 @@ title: "Problemi di colorazione"
 
     Al termine di questo capitolo saremo in grado di:
 
-    - usare le nozioni di base sui grafi: intorno, grado, grafo indotto, grafo complementare, cricca e insieme stabile;
+    - usare le nozioni di base sui grafi: intorno, grado, grafo indotto, grafo complementare, clique e insieme stabile;
 
     - enunciare la definizione del problema della colorazione dei vertici e le ipotesi sul grafo;
 
     - contare le soluzioni candidate di una piccola istanza e riconoscere che sono partizioni;
 
-    - trovare a mano una colorazione e calcolare il bound di cricca e il bound degli insiemi stabili;
+    - trovare a mano una colorazione e calcolare il bound di clique e il bound degli insiemi stabili;
 
-    - spiegare perché il bound di cricca non è sempre stretto.
+    - spiegare perché il bound di clique non è sempre stretto.
 
 ## 4.1 Panoramica della famiglia
 
@@ -77,21 +77,21 @@ title: "Problemi di colorazione"
 
 <a id="box-2-def-clique-stable"></a>
 
-!!! definizione "Definizione 4.2: cricca e insieme stabile"
+!!! definizione "Definizione 4.2: clique e insieme stabile"
 
     Sia $G = (V,E)$ un grafo.
 
-    1. Una <strong>cricca</strong> è un sottoinsieme $K \subseteq V$ di vertici a due a due adiacenti: $\{u,v\} \in E$ per ogni $u,v \in K$ con $u \neq v$.
+    1. Una <strong>clique</strong> è un sottoinsieme $K \subseteq V$ di vertici a due a due adiacenti: $\{u,v\} \in E$ per ogni $u,v \in K$ con $u \neq v$.
 
     2. Un <strong>insieme stabile</strong> (detto anche <strong>insieme indipendente</strong>) è un sottoinsieme $Q \subseteq V$ di vertici a due a due non adiacenti: $\{u,v\} \notin E$ per ogni $u,v \in Q$ con $u \neq v$.
 
-    Il <strong>numero di cricca</strong> $\omega(G)$ è il massimo numero di vertici di una cricca, e il <strong>numero di stabilità</strong> $\alpha(G)$ è il massimo numero di vertici di un insieme stabile.
+    Il <strong>numero di clique</strong> $\omega(G)$ è il massimo numero di vertici di una clique, e il <strong>numero di stabilità</strong> $\alpha(G)$ è il massimo numero di vertici di un insieme stabile.
 
-- Un insieme stabile di $G$ è una cricca del grafo complementare $\overline{G}$, e viceversa. Un vertice da solo e l'insieme vuoto sono sia una cricca sia un insieme stabile.
+- Un insieme stabile di $G$ è una clique del grafo complementare $\overline{G}$, e viceversa. Un vertice da solo e l'insieme vuoto sono sia una clique sia un insieme stabile.
 
 !!! chiave ""
 
-    Una cricca è un gruppo di vertici a due a due in <em>conflitto</em>; un insieme stabile è un gruppo di vertici senza conflitti. In una colorazione, i vertici di una cricca richiedono colori diversi, e i vertici di un insieme stabile possono condividerne uno.
+    Una clique è un gruppo di vertici a due a due in <em>conflitto</em>; un insieme stabile è un gruppo di vertici senza conflitti. In una colorazione, i vertici di una clique richiedono colori diversi, e i vertici di un insieme stabile possono condividerne uno.
 
 <div class="grid cards sottopagine" markdown>
 

@@ -1,12 +1,12 @@
 ---
-title: "Problemi di cricca"
+title: "Problemi di clique"
 ---
 
-# Problemi di cricca
+# Problemi di clique
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 5** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Problemi di cricca](../../esercizi/clique.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 5** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Problemi di clique](../../esercizi/clique.md)
 
 </div>
 
@@ -20,35 +20,35 @@ title: "Problemi di cricca"
 
     Al termine di questo capitolo saremo in grado di:
 
-    - enunciare il problema della cricca massima e il problema dell'insieme stabile massimo, e passare dall'uno all'altro attraverso il grafo complementare;
+    - enunciare il problema della clique massima e il problema dell'insieme stabile massimo, e passare dall'uno all'altro attraverso il grafo complementare;
 
     - descrivere un'istanza e una soluzione ammissibile, e contare le soluzioni candidate di un piccolo grafo;
 
-    - trovare a mano una cricca e calcolare quattro semplici upper bound sul numero di cricca;
+    - trovare a mano una clique e calcolare quattro semplici upper bound sul numero di clique;
 
     - enunciare le varianti pesate del problema e la sua complessità.
 
 ## 5.1 Panoramica della famiglia
 
-- I <strong>problemi di cricca</strong> hanno gli stessi dati: un grafo semplice non orientato $G = (V,E)$, con $V = \{1,2,\dots,n\}$ e $m$ lati, eventualmente con pesi sui vertici o sui lati.
+- I <strong>problemi di clique</strong> hanno gli stessi dati: un grafo semplice non orientato $G = (V,E)$, con $V = \{1,2,\dots,n\}$ e $m$ lati, eventualmente con pesi sui vertici o sui lati.
 
-- Una soluzione è una cricca di $G$, ossia un sottoinsieme di vertici a due a due adiacenti.
+- Una soluzione è una clique di $G$, ossia un sottoinsieme di vertici a due a due adiacenti.
 
-- L'obiettivo è massimizzare la cardinalità della cricca, o il suo peso totale.
+- L'obiettivo è massimizzare la cardinalità della clique, o il suo peso totale.
 
 <a id="box-1-mcpP-def-clique"></a>
 
-!!! definizione "Definizione 5.1: cricca e numero di cricca"
+!!! definizione "Definizione 5.1: clique e numero di clique"
 
     Sia $G=(V,E)$ un grafo semplice non orientato con $n$ vertici e $m$ lati.
 
-    1. Una <strong>cricca</strong> è un sottoinsieme $K \subseteq V$ di vertici a due a due adiacenti: $\{u,v\} \in E$ per ogni $u,v \in K$ con $u \neq v$. Equivalentemente, $K$ induce un grafo completo.
+    1. Una <strong>clique</strong> è un sottoinsieme $K \subseteq V$ di vertici a due a due adiacenti: $\{u,v\} \in E$ per ogni $u,v \in K$ con $u \neq v$. Equivalentemente, $K$ induce un grafo completo.
 
-    2. Il <strong>numero di cricca</strong> $\omega(G)$ è il massimo numero di vertici di una cricca di $G$.
+    2. Il <strong>numero di clique</strong> $\omega(G)$ è il massimo numero di vertici di una clique di $G$.
 
 !!! chiave ""
 
-    Un problema di cricca seleziona una cricca di cardinalità massima o di peso massimo. Sul grafo complementare $\overline{G}$ gli stessi problemi selezionano insiemi stabili.
+    Un problema di clique seleziona una clique di cardinalità massima o di peso massimo. Sul grafo complementare $\overline{G}$ gli stessi problemi selezionano insiemi stabili.
 
 - La tabella elenca i membri della famiglia, con la sezione che definisce ciascuno di essi.
 
@@ -60,9 +60,9 @@ title: "Problemi di cricca"
 <th><strong>Sezione</strong></th>
 </tr>
 <tr>
-<td>cricca massima</td>
+<td>clique massima</td>
 <td>MCP</td>
-<td>massimo numero di vertici di una cricca</td>
+<td>massimo numero di vertici di una clique</td>
 <td><a href="il-problema-della-cricca-massima/#sez-sec-mcp-MCP">5.2</a></td>
 </tr>
 <tr>
@@ -72,13 +72,13 @@ title: "Problemi di cricca"
 <td><a href="il-problema-della-cricca-massima/#sez-sec-mcp-MCP">5.2</a></td>
 </tr>
 <tr>
-<td>cricca massima pesata sui vertici</td>
+<td>clique massima pesata sui vertici</td>
 <td>VWMCP</td>
 <td>massimo peso totale dei vertici</td>
 <td><a href="varianti-pesate/#sez-sec-mcp-weighted">5.5</a></td>
 </tr>
 <tr>
-<td>cricca massima pesata sui lati</td>
+<td>clique massima pesata sui lati</td>
 <td>EWMCP</td>
 <td>massimo peso totale dei lati</td>
 <td><a href="varianti-pesate/#sez-sec-mcp-weighted">5.5</a></td>
@@ -93,7 +93,7 @@ title: "Problemi di cricca"
 
     [:octicons-arrow-right-24: Apri](#51-panoramica-della-famiglia)
 
--   **5.2 Il problema della cricca massima**
+-   **5.2 Il problema della clique massima**
 
     Upper bound semplici
 
@@ -109,11 +109,11 @@ title: "Problemi di cricca"
 
 ---
 
-**Avanti:** [5.2 Il problema della cricca massima](il-problema-della-cricca-massima.md)
+**Avanti:** [5.2 Il problema della clique massima](il-problema-della-cricca-massima.md)
 
 ---
 
-**Esercizi su questo capitolo:** [:material-pencil: Problemi di cricca](../../esercizi/clique.md)
+**Esercizi su questo capitolo:** [:material-pencil: Problemi di clique](../../esercizi/clique.md)
 
 ---
 

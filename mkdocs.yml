@@ -2,7 +2,7 @@
 # Non modificare mkdocs.yml a mano.
 site_name: Ottimizzazione combinatoria · Fabio Furini
 site_description: >-
-  Dispense di ottimizzazione combinatoria: problemi di zaino, di packing, di colorazione, di cricca, di routing, di scheduling e di lot sizing, risolti in tutti i modi: formulazioni e loro proprietà, programmazione dinamica, algoritmi euristici, di approssimazione e ad hoc, con esercizi e notebook Colab.
+  Dispense di ottimizzazione combinatoria: problemi di zaino, di packing, di colorazione, di clique, di routing, di scheduling e di lot sizing, risolti in tutti i modi: formulazioni e loro proprietà, programmazione dinamica, algoritmi euristici, di approssimazione e ad hoc, con esercizi e notebook Colab.
 site_author: Fabio Furini
 site_url: https://fabiofurini.github.io/ottimizzazione-combinatoria/
 repo_url: https://github.com/fabiofurini/ottimizzazione-combinatoria
@@ -165,10 +165,10 @@ nav:
       - "4. Problemi di colorazione":
           - problemi-di-ottimizzazione-combinatoria/coloring/index.md
           - "Colorazione dei vertici (VCP)": problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici.md
-      - "5. Problemi di cricca":
+      - "5. Problemi di clique":
           - problemi-di-ottimizzazione-combinatoria/clique/index.md
-          - "Cricca massima (MCP)": problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima.md
-          - "Cricca massima pesata": problemi-di-ottimizzazione-combinatoria/clique/varianti-pesate.md
+          - "Clique massima (MCP)": problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima.md
+          - "Clique massima pesata": problemi-di-ottimizzazione-combinatoria/clique/varianti-pesate.md
       - "6. Problemi di routing":
           - problemi-di-ottimizzazione-combinatoria/tsp/index.md
           - "Commesso viaggiatore (TSP)": problemi-di-ottimizzazione-combinatoria/tsp/il-problema-del-commesso-viaggiatore.md
@@ -199,10 +199,10 @@ nav:
       - "11. Problemi di colorazione":
           - formulazioni/coloring-formulations/index.md
           - "Colorazione dei vertici (VCP)": formulazioni/coloring-formulations/un-modello-pli-per-il-problema-della-colorazione-dei-vertici.md
-      - "12. Problemi di cricca":
+      - "12. Problemi di clique":
           - formulazioni/clique-formulations/index.md
-          - "Cricca massima (MCP)": formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-cricca-massima-la-formu.md
-          - "Cricca massima pesata": formulazioni/clique-formulations/modelli-pli-per-le-varianti-pesate.md
+          - "Clique massima (MCP)": formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-cricca-massima-la-formu.md
+          - "Clique massima pesata": formulazioni/clique-formulations/modelli-pli-per-le-varianti-pesate.md
       - "13. Problemi di routing":
           - formulazioni/tsp-formulations/index.md
           - "Commesso viaggiatore (TSP)": formulazioni/tsp-formulations/modelli-pli-per-il-problema-del-commesso-viaggiatore.md
@@ -301,8 +301,8 @@ nav:
           - "36. Bin packing (BPP)": algoritmi-di-approssimazione/bin-packing-approximation.md
       - "Problemi di colorazione":
           - "37. Colorazione dei vertici (VCP)": algoritmi-di-approssimazione/coloring-inapproximability.md
-      - "Problemi di cricca":
-          - "38. Cricca massima (MCP)": algoritmi-di-approssimazione/clique-inapproximability.md
+      - "Problemi di clique":
+          - "38. Clique massima (MCP)": algoritmi-di-approssimazione/clique-inapproximability.md
       - "Problemi di routing":
           - "39. Commesso viaggiatore (TSP)": algoritmi-di-approssimazione/tsp-approximation.md
       - "Problemi di scheduling":
@@ -321,7 +321,7 @@ nav:
           - "2. Problemi di zaino": esercizi/knapsack.md
           - "3. Problemi di packing": esercizi/bin-packing.md
           - "4. Problemi di colorazione": esercizi/coloring.md
-          - "5. Problemi di cricca": esercizi/clique.md
+          - "5. Problemi di clique": esercizi/clique.md
           - "6. Problemi di routing": esercizi/tsp.md
           - "7. Problemi di scheduling": esercizi/pcmax.md
           - "8. Problemi di lot sizing": esercizi/lot-sizing.md
@@ -329,7 +329,7 @@ nav:
           - "9. Problemi di zaino": esercizi/knapsack-formulations.md
           - "10. Problemi di packing": esercizi/bin-packing-formulations.md
           - "11. Problemi di colorazione": esercizi/coloring-formulations.md
-          - "12. Problemi di cricca": esercizi/clique-formulations.md
+          - "12. Problemi di clique": esercizi/clique-formulations.md
           - "13. Problemi di routing": esercizi/tsp-formulations.md
           - "14. Problemi di scheduling": esercizi/pcmax-formulations.md
           - "15. Problemi di lot sizing": esercizi/lot-sizing-formulations.md
@@ -364,8 +364,8 @@ nav:
               - "36. Bin packing (BPP)": esercizi/bin-packing-approximation.md
           - "Problemi di colorazione":
               - "37. Colorazione dei vertici (VCP)": esercizi/coloring-inapproximability.md
-          - "Problemi di cricca":
-              - "38. Cricca massima (MCP)": esercizi/clique-inapproximability.md
+          - "Problemi di clique":
+              - "38. Clique massima (MCP)": esercizi/clique-inapproximability.md
           - "Problemi di routing":
               - "39. Commesso viaggiatore (TSP)": esercizi/tsp-approximation.md
           - "Problemi di scheduling":
@@ -395,12 +395,12 @@ nav:
       - "Problemi di colorazione":
           - catalogo/coloring-problems.md
           - "Colorazione dei vertici (VCP)": catalogo/vertex-coloring-problem.md
-      - "Problemi di cricca":
+      - "Problemi di clique":
           - catalogo/clique-problems.md
-          - "Cricca massima (MCP)": catalogo/maximum-clique-problem.md
+          - "Clique massima (MCP)": catalogo/maximum-clique-problem.md
           - "Insieme stabile massimo (MSSP)": catalogo/maximum-stable-set-problem.md
-          - "Cricca massima pesata sui vertici (VWMCP)": catalogo/vertex-weighted-maximum-clique-problem.md
-          - "Cricca massima pesata sui lati (EWMCP)": catalogo/edge-weighted-maximum-clique-problem.md
+          - "Clique massima pesata sui vertici (VWMCP)": catalogo/vertex-weighted-maximum-clique-problem.md
+          - "Clique massima pesata sui lati (EWMCP)": catalogo/edge-weighted-maximum-clique-problem.md
       - "Problemi di routing":
           - catalogo/routing-problems.md
           - "Commesso viaggiatore (TSP)": catalogo/travelling-salesman-problem.md

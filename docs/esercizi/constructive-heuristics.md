@@ -1446,7 +1446,7 @@ title: "Esercizi · Euristiche costruttive"
 
     3. Applicare $DSATUR$: per ogni passo fornire il vertice scelto, il suo grado di saturazione $sat$, il suo grado fra i vertici non colorati $du$, e il suo colore.
 
-    4. Trovare una cricca di cardinalità massima e determinare $\chi(G)$. Stabilire quale delle due colorazioni è ottima.
+    4. Trovare una clique di cardinalità massima e determinare $\chi(G)$. Stabilire quale delle due colorazioni è ottima.
 
 ??? soluzione "Soluzione"
 
@@ -1522,7 +1522,7 @@ title: "Esercizi · Euristiche costruttive"
 
         Al passo $2$ i vicini di $4$ hanno grado di saturazione $1$, e il vertice $6$ ha più vicini non colorati ($5$, $7$ e $2$). Al passo $3$ i vertici $2$ e $5$ (entrambi adiacenti a $4$ e $6$) hanno grado di saturazione $2$ e un vicino non colorato ciascuno, e si sceglie $2$. $DSATUR$ usa $3$ colori: $Q_1=\{4,7\}$, $Q_2=\{1,6\}$, $Q_3=\{2,3,5\}$.
 
-    4. $\{1,2,4\}$ è una cricca di cardinalità $3$ ($\{1,2\},\{1,4\},\{2,4\}\in E$), quindi $\chi(G)\ge\omega(G)\ge3$; non ci sono cricche di cardinalità $4$, ma non serve: la colorazione di $DSATUR$ usa $3$ colori, quindi $\chi(G)=3$. La colorazione di $DSATUR$ è ottima, quella di $GC$ con la lista $(1,\dots,7)$ usa un colore in più:
+    4. $\{1,2,4\}$ è una clique di cardinalità $3$ ($\{1,2\},\{1,4\},\{2,4\}\in E$), quindi $\chi(G)\ge\omega(G)\ge3$; non ci sono clique di cardinalità $4$, ma non serve: la colorazione di $DSATUR$ usa $3$ colori, quindi $\chi(G)=3$. La colorazione di $DSATUR$ è ottima, quella di $GC$ con la lista $(1,\dots,7)$ usa un colore in più:
 
         $$
         \frac{GC(I)}{\chi(G)}=\frac43,\qquad\frac{DSATUR(I)}{\chi(G)}=1 .

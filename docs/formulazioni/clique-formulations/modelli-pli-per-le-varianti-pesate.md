@@ -6,24 +6,24 @@ title: "Varianti pesate"
 
 <div class="info-capitolo" markdown>
 
-**Parte 2 · Formulazioni dei problemi e loro proprietà · Capitolo 12** · [:material-book-open-variant: Capitolo 12: Problemi di cricca](index.md) · [:material-file-pdf-box: Dispensa, volume 2 (PDF)](../../pdf/dispensa-2-formulazioni.pdf) · [:material-pencil: Esercizi: Problemi di cricca](../../esercizi/clique-formulations.md)
+**Parte 2 · Formulazioni dei problemi e loro proprietà · Capitolo 12** · [:material-book-open-variant: Capitolo 12: Problemi di clique](index.md) · [:material-file-pdf-box: Dispensa, volume 2 (PDF)](../../pdf/dispensa-2-formulazioni.pdf) · [:material-pencil: Esercizi: Problemi di clique](../../esercizi/clique-formulations.md)
 
 </div>
 
-I problemi di questa sezione sono i problemi della cricca massima pesata sui vertici (VWMCP) e pesata sugli spigoli (EWMCP), definiti nel [Capitolo 5 «Problemi di cricca», Sezione 5.5](../../problemi-di-ottimizzazione-combinatoria/clique/varianti-pesate.md), con le loro istanze di riferimento.
+I problemi di questa sezione sono i problemi della clique massima pesata sui vertici (VWMCP) e pesata sugli spigoli (EWMCP), definiti nel [Capitolo 5 «Problemi di clique», Sezione 5.5](../../problemi-di-ottimizzazione-combinatoria/clique/varianti-pesate.md), con le loro istanze di riferimento.
 
-## 12.8.1 Il problema della cricca massima pesata sui vertici
+## 12.8.1 Il problema della clique massima pesata sui vertici
 
 - Dato un grafo semplice $G=(V,E)$ e un vettore dei pesi dei vertici $\vet w\in\Z_{\ge 1}^n$, usiamo le $n$ <strong>variabili binarie</strong> $\eqref{mcpF:var}$ della formulazione sugli spigoli:
 
     $$
-    x_v=\begin{cases}1&\text{se il vertice $v$ è selezionato nella cricca}\\[1.5ex]0&\text{altrimenti}\end{cases}
+    x_v=\begin{cases}1&\text{se il vertice $v$ è selezionato nella clique}\\[1.5ex]0&\text{altrimenti}\end{cases}
     \qquad\forall v\in V.
     $$
 
 !!! chiave ""
 
-    Con queste variabili, un modello di programmazione lineare intera (PLI) per il problema della cricca massima pesata sui vertici (VWMCP) è il seguente:
+    Con queste variabili, un modello di programmazione lineare intera (PLI) per il problema della clique massima pesata sui vertici (VWMCP) è il seguente:
 
     <a id="eq-mcpF-VW"></a>
 
@@ -37,13 +37,13 @@ I problemi di questa sezione sono i problemi della cricca massima pesata sui ver
 
 - Descrizione della funzione obiettivo e dei vincoli del modello $\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}$:
 
-    - la funzione obiettivo lineare $\eqref{mcpF:obj-vw}$ massimizza il peso totale $w(K)$ della cricca selezionata;
+    - la funzione obiettivo lineare $\eqref{mcpF:obj-vw}$ massimizza il peso totale $w(K)$ della clique selezionata;
 
     - i vincoli $\eqref{mcpF:nonedge-vw}$ garantiscono che due vertici non adiacenti non siano selezionati entrambi ($|\overline{E}|=\binom{n}{2}-m$ vincoli lineari);
 
     - infine, i vincoli $\eqref{mcpF:bin-vw}$ definiscono le variabili del modello PLI.
 
-- Cambia solo la funzione obiettivo: le soluzioni ammissibili sono le cricche di $G$, come nel modello $\mathrm{ILP}_{\mathrm{MCP}}$, e con $w_v=1$ per ogni vertice i due modelli coincidono. Anche qui sono valide le disuguaglianze di cricca di $\overline{G}$.
+- Cambia solo la funzione obiettivo: le soluzioni ammissibili sono le clique di $G$, come nel modello $\mathrm{ILP}_{\mathrm{MCP}}$, e con $w_v=1$ per ogni vertice i due modelli coincidono. Anche qui sono valide le disuguaglianze di clique di $\overline{G}$.
 
 <a id="box-16-mcpF-ex-vw"></a>
 
@@ -59,7 +59,7 @@ I problemi di questa sezione sono i problemi della cricca massima pesata sui ver
     \end{array}
     $$
 
-    È l'istanza del VWMCP del Capitolo 5 [«Problemi di cricca»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md). Il modello $\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}$ ha $8$ variabili binarie e un vincolo per ciascuno dei $4$ spigoli di $\overline{G}$:
+    È l'istanza del VWMCP del Capitolo 5 [«Problemi di clique»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md). Il modello $\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}$ ha $8$ variabili binarie e un vincolo per ciascuno dei $4$ spigoli di $\overline{G}$:
 
     $$
     \begin{array}{rrrrrrrrrcl}
@@ -78,21 +78,21 @@ I problemi di questa sezione sono i problemi della cricca massima pesata sui ver
     \tilde x_2=\tilde x_3=\tilde x_5=\tilde x_8=1,~~\tilde x_1=\tilde x_4=\tilde x_6=\tilde x_7=0
     $$
 
-    Il valore ottimo $z(\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}})$ è $8+9+6+9=32$, come indicato nel Capitolo 5 [«Problemi di cricca»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md). La soluzione ottima associata è la cricca $\tilde K=\{2,3,5,8\}$, ed è l'unica soluzione ottima: ogni vincolo tiene il vertice più pesante della sua coppia.
+    Il valore ottimo $z(\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}})$ è $8+9+6+9=32$, come indicato nel Capitolo 5 [«Problemi di clique»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md). La soluzione ottima associata è la clique $\tilde K=\{2,3,5,8\}$, ed è l'unica soluzione ottima: ogni vincolo tiene il vertice più pesante della sua coppia.
 
-## 12.8.2 Il problema della cricca massima pesata sugli spigoli
+## 12.8.2 Il problema della clique massima pesata sugli spigoli
 
 - Dato un grafo semplice $G=(V,E)$ e un vettore dei pesi degli spigoli $\vet r\in\Z_{\ge 1}^m$, il peso di uno spigolo si raccoglie solo se entrambi i suoi estremi sono selezionati: il prodotto $x_u\,x_v$ non è lineare. Introduciamo le $n$ <strong>variabili binarie</strong> $\eqref{mcpF:var}$ e le seguenti $m$ <strong>variabili binarie</strong>:
 
     \begin{equation*}
     \label{mcpF:var-ew}
-    y_{uv}=\begin{cases}1&\text{se gli estremi di $\{u,v\}$ sono entrambi nella cricca}\\[1.5ex]0&\text{altrimenti}\end{cases}
+    y_{uv}=\begin{cases}1&\text{se gli estremi di $\{u,v\}$ sono entrambi nella clique}\\[1.5ex]0&\text{altrimenti}\end{cases}
     \qquad\forall\{u,v\}\in E. \tag{12.17}
     \end{equation*}
 
 !!! chiave ""
 
-    Con queste variabili, un modello di programmazione lineare intera (PLI) per il problema della cricca massima pesata sugli spigoli (EWMCP) è il seguente:
+    Con queste variabili, un modello di programmazione lineare intera (PLI) per il problema della clique massima pesata sugli spigoli (EWMCP) è il seguente:
 
     <a id="eq-mcpF-EW"></a>
 
@@ -109,11 +109,11 @@ I problemi di questa sezione sono i problemi della cricca massima pesata sui ver
 
 - Descrizione della funzione obiettivo e dei vincoli del modello $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$:
 
-    - la funzione obiettivo lineare $\eqref{mcpF:obj-ew}$ massimizza il peso totale $r(K)$ degli spigoli con entrambi gli estremi nella cricca selezionata;
+    - la funzione obiettivo lineare $\eqref{mcpF:obj-ew}$ massimizza il peso totale $r(K)$ degli spigoli con entrambi gli estremi nella clique selezionata;
 
     - i vincoli $\eqref{mcpF:yu-ew}$ e $\eqref{mcpF:yv-ew}$ permettono $y_{uv}=1$ solo se entrambi gli estremi sono selezionati ($2m$ vincoli lineari);
 
-    - i vincoli $\eqref{mcpF:nonedge-ew}$ garantiscono che i vertici selezionati formino una cricca ($\binom{n}{2}-m$ vincoli lineari);
+    - i vincoli $\eqref{mcpF:nonedge-ew}$ garantiscono che i vertici selezionati formino una clique ($\binom{n}{2}-m$ vincoli lineari);
 
     - infine, i vincoli $\eqref{mcpF:binx-ew}$ e $\eqref{mcpF:biny-ew}$ definiscono le variabili del modello PLI.
 
@@ -123,7 +123,7 @@ I problemi di questa sezione sono i problemi della cricca massima pesata sui ver
 
 !!! esempio "Esempio 12.14: Modello $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$"
 
-    Consideriamo il grafo $G$ dell'<span style="color:#1971c2">[Esempio 12.13](#box-16-mcpF-ex-vw)</span>, con i pesi degli spigoli dell'istanza dell'EWMCP del Capitolo 5 [«Problemi di cricca»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md); sono i coefficienti della funzione obiettivo qui sotto. Il modello $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$ ha $8+24=32$ variabili binarie, $48$ vincoli $y_{uv}\le x_u$, $y_{uv}\le x_v$ e $4$ vincoli sui non-spigoli:
+    Consideriamo il grafo $G$ dell'<span style="color:#1971c2">[Esempio 12.13](#box-16-mcpF-ex-vw)</span>, con i pesi degli spigoli dell'istanza dell'EWMCP del Capitolo 5 [«Problemi di clique»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md); sono i coefficienti della funzione obiettivo qui sotto. Il modello $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$ ha $8+24=32$ variabili binarie, $48$ vincoli $y_{uv}\le x_u$, $y_{uv}\le x_v$ e $4$ vincoli sui non-spigoli:
 
     $$
     \begin{array}{rllll}
@@ -156,7 +156,7 @@ I problemi di questa sezione sono i problemi della cricca massima pesata sui ver
     &\tilde y_{25}=\tilde y_{27}=\tilde y_{28}=\tilde y_{57}=\tilde y_{58}=\tilde y_{78}=1,~~\text{tutte le altre }\tilde y_{uv}=0
     \end{align*}
 
-    Il valore ottimo $z(\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}})$ è $6+9+4+7+3+8=37$, come indicato nel Capitolo 5 [«Problemi di cricca»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md). La soluzione ottima associata è la cricca $\tilde K=\{2,5,7,8\}$, ed è l'unica soluzione ottima.
+    Il valore ottimo $z(\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}})$ è $6+9+4+7+3+8=37$, come indicato nel Capitolo 5 [«Problemi di clique»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md). La soluzione ottima associata è la clique $\tilde K=\{2,5,7,8\}$, ed è l'unica soluzione ottima.
 
 ## 12.9 Errori tipici
 
@@ -166,11 +166,11 @@ I problemi di questa sezione sono i problemi della cricca massima pesata sui ver
 
     - <strong>Fidarsi del bound LP della formulazione sugli spigoli.</strong> Il punto $x_v=\frac{1}{2}$ è sempre ammissibile, quindi $z(\mathrm{LP}_{\mathrm{MCP}})\ge n/2$ anche quando $\omega(G)=2$.
 
-    - <strong>Dimenticare i bound $x_v\le 1$ nella formulazione sugli spigoli.</strong> Un vertice adiacente a tutti gli altri non compare in nessun vincolo, e $\mathrm{LP}\text{-}0_{\mathrm{MCP}}$ diventa illimitato. Nella formulazione a cricche i bound sono implicati.
+    - <strong>Dimenticare i bound $x_v\le 1$ nella formulazione sugli spigoli.</strong> Un vertice adiacente a tutti gli altri non compare in nessun vincolo, e $\mathrm{LP}\text{-}0_{\mathrm{MCP}}$ diventa illimitato. Nella formulazione a clique i bound sono implicati.
 
-    - <strong>Credere che le disuguaglianze di cricca chiudano ogni gap.</strong> Su $C_5$ coincidono con i vincoli sui non-spigoli, e serve la disuguaglianza di ciclo dispari.
+    - <strong>Credere che le disuguaglianze di clique chiudano ogni gap.</strong> Su $C_5$ coincidono con i vincoli sui non-spigoli, e serve la disuguaglianza di ciclo dispari.
 
-    - <strong>Usare cricche non massimali di $\overline{G}$.</strong> Le loro disuguaglianze sono valide ma dominate: le cricche massimali danno i vincoli più forti di questa famiglia.
+    - <strong>Usare clique non massimali di $\overline{G}$.</strong> Le loro disuguaglianze sono valide ma dominate: le clique massimali danno i vincoli più forti di questa famiglia.
 
     - <strong>Confondere i grafi del MCP e del MSSP.</strong> Il modello $\mathrm{ILP}_{\mathrm{MSSP}}$ ha un vincolo per ogni spigolo di $G$, il modello $\mathrm{ILP}_{\mathrm{MCP}}$ uno per ogni spigolo di $\overline{G}$.
 
@@ -184,13 +184,13 @@ I problemi di questa sezione sono i problemi della cricca massima pesata sui ver
 
     - Il suo rilassamento lineare è debole: $x_v=\frac{1}{2}$ è ammissibile e $z(\mathrm{LP}_{\mathrm{MCP}})\ge n/2$.
 
-    - Le disuguaglianze di cricca $\sum_{v\in Q}x_v\le 1$, per le cricche massimali $Q$ di $\overline{G}$, danno una formulazione più forte con $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le z(\mathrm{LP}_{\mathrm{MCP}})$.
+    - Le disuguaglianze di clique $\sum_{v\in Q}x_v\le 1$, per le clique massimali $Q$ di $\overline{G}$, danno una formulazione più forte con $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le z(\mathrm{LP}_{\mathrm{MCP}})$.
 
     - Il duale di $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ è il rilassamento lineare di una formulazione di colorazione, quindi $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le\chi(G)$.
 
-    - Il modello $\mathrm{ILP}_{\mathrm{MSSP}}$ ha un vincolo $x_u+x_v\le 1$ per spigolo di $G$; con le cricche massimali di $G$ diventa la formulazione a cricche. Sull'<span style="color:#1971c2">[Esempio 12.1](un-modello-pli-per-il-problema-della-cricca-massima-la-formu.md#box-1-mcpF-ex1)</span> il valore ottimo è $\alpha(G)=3$.
+    - Il modello $\mathrm{ILP}_{\mathrm{MSSP}}$ ha un vincolo $x_u+x_v\le 1$ per spigolo di $G$; con le clique massimali di $G$ diventa la formulazione a clique. Sull'<span style="color:#1971c2">[Esempio 12.1](un-modello-pli-per-il-problema-della-cricca-massima-la-formu.md#box-1-mcpF-ex1)</span> il valore ottimo è $\alpha(G)=3$.
 
-    - Il modello pesato sui vertici cambia solo la funzione obiettivo; il modello pesato sugli spigoli aggiunge una variabile $y_{uv}$ per spigolo, con $y_{uv}\le x_u$ e $y_{uv}\le x_v$. Sulle istanze del Capitolo 5 [«Problemi di cricca»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md) i loro valori ottimi sono $32$ e $37$.
+    - Il modello pesato sui vertici cambia solo la funzione obiettivo; il modello pesato sugli spigoli aggiunge una variabile $y_{uv}$ per spigolo, con $y_{uv}\le x_u$ e $y_{uv}\le x_v$. Sulle istanze del Capitolo 5 [«Problemi di clique»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md) i loro valori ottimi sono $32$ e $37$.
 
     <strong>Cruscotto</strong> (massimizzazione). Bound su $\omega(G)$ calcolati in questo capitolo:
 
@@ -217,5 +217,5 @@ I problemi di questa sezione sono i problemi della cricca massima pesata sui ver
 
 ---
 
-**Esercizi su questo capitolo:** [:material-pencil: Problemi di cricca](../../esercizi/clique-formulations.md)
+**Esercizi su questo capitolo:** [:material-pencil: Problemi di clique](../../esercizi/clique-formulations.md)
 

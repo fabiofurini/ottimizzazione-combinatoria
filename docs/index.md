@@ -12,7 +12,7 @@ hide:
 Materiale didattico ideato e sviluppato da **[Fabio Furini](https://fabiofurini.github.io/)**, professore
 associato al [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.
 
-**Le dispense del corso, online**: i problemi di zaino, di packing, di colorazione, di cricca, di routing, di scheduling e di lot sizing, risolti in tutti i modi: formulazioni e loro proprietà, programmazione dinamica, algoritmi euristici, di approssimazione e ad hoc; con definizioni, risultati con dimostrazione, esempi svolti passo per passo, esercizi con le soluzioni, notebook Colab e app interattive.
+**Le dispense del corso, online**: i problemi di zaino, di packing, di colorazione, di clique, di routing, di scheduling e di lot sizing, risolti in tutti i modi: formulazioni e loro proprietà, programmazione dinamica, algoritmi euristici, di approssimazione e ad hoc; con definizioni, risultati con dimostrazione, esempi svolti passo per passo, esercizi con le soluzioni, notebook Colab e app interattive.
 
 Per gli studenti della laurea magistrale in Ingegneria gestionale della Sapienza, e per chi vuole imparare a risolvere i problemi di ottimizzazione combinatoria. Prerequisiti: [Programmazione lineare intera](https://fabiofurini.github.io/programmazione-lineare-intera/) per le formulazioni e [Algoritmi](https://fabiofurini.github.io/algoritmi/) per gli algoritmi.
 
@@ -45,7 +45,7 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
 
     *Parte 1 · Capitoli 2–8*
 
-    Problemi di zaino · Problemi di packing · Problemi di colorazione · Problemi di cricca · Problemi di routing · Problemi di scheduling · Problemi di lot sizing
+    Problemi di zaino · Problemi di packing · Problemi di colorazione · Problemi di clique · Problemi di routing · Problemi di scheduling · Problemi di lot sizing
 
     [:octicons-arrow-right-24: Le famiglie](problemi-scelti/index.md)
 
@@ -55,7 +55,7 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
 
     *Parte 2 · Capitoli 9–15*
 
-    Problemi di zaino · Problemi di packing · Problemi di colorazione · Problemi di cricca · Problemi di routing · Problemi di scheduling · Problemi di lot sizing
+    Problemi di zaino · Problemi di packing · Problemi di colorazione · Problemi di clique · Problemi di routing · Problemi di scheduling · Problemi di lot sizing
 
     [:octicons-arrow-right-24: I capitoli](formulazioni/index.md)
 
@@ -85,7 +85,7 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
 
     *Parte 5 · Capitoli 34–40*
 
-    Principi · Problemi di zaino · Problemi di packing · Problemi di colorazione · Problemi di cricca · Problemi di routing · Problemi di scheduling
+    Principi · Problemi di zaino · Problemi di packing · Problemi di colorazione · Problemi di clique · Problemi di routing · Problemi di scheduling
 
     [:octicons-arrow-right-24: I capitoli](algoritmi-di-approssimazione/index.md)
 

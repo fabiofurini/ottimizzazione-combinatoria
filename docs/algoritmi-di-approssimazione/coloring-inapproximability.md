@@ -14,7 +14,7 @@ title: "Colorazione dei vertici: limiti dell'approssimazione"
 
     - Da questo modulo, il capitolo [«Principi degli algoritmi di approssimazione»](approximation.md): rapporto di prestazione, algoritmo di $\alpha$-approssimazione, garanzia di prestazione additiva.
 
-    - Da questo modulo, il capitolo [«Problemi di colorazione»](../problemi-di-ottimizzazione-combinatoria/coloring/index.md): la definizione del VCP, il numero cromatico $\chi(G)$, il bound di cricca $\omega(G)\le\chi(G)$ e il grafo di Petersen.
+    - Da questo modulo, il capitolo [«Problemi di colorazione»](../problemi-di-ottimizzazione-combinatoria/coloring/index.md): la definizione del VCP, il numero cromatico $\chi(G)$, il bound di clique $\omega(G)\le\chi(G)$ e il grafo di Petersen.
 
     - Dal modulo <em>Algoritmi</em> ([pagina principale del modulo](https://fabiofurini.github.io/algoritmi/)): visita in ampiezza, tempo polinomiale e NP-completezza.
 
@@ -256,9 +256,9 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
     1. Poiché $[a_u,b_u]$ interseca $[a_v,b_v]$ e $a_u\le a_v$, abbiamo $b_u\ge a_v$: il punto $a_v$ sta nell'intervallo di ciascuno di questi vicini, e nell'intervallo di $v$.
 
-    2. I $k$ intervalli che contengono $a_v$ si intersecano a due a due, quindi i loro vertici formano una cricca e $k\le\omega(G)$.
+    2. I $k$ intervalli che contengono $a_v$ si intersecano a due a due, quindi i loro vertici formano una clique e $k\le\omega(G)$.
 
-    Quindi $GC(I)\le\omega(G)\le\chi(G)\le GC(I)$, per il bound di cricca. <span class="qed">□</span>
+    Quindi $GC(I)\le\omega(G)\le\chi(G)\le GC(I)$, per il bound di clique. <span class="qed">□</span>
 
 - Ordinare gli intervalli richiede tempo $O(n\log n)$, e la colorazione $O(n+m)$.
 
@@ -298,7 +298,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
     - Gli estremi sinistri sono già in ordine crescente. $GC$ assegna i colori $1,2,3,1,2,1$ (rosso, blu, giallo nella figura): $GC(I)=3$.
 
-    - Gli intervalli $1,2,3$ contengono il punto $3$, quindi $\{1,2,3\}$ è una cricca e $\omega(G)=3$: la colorazione è ottima, come garantisce la [Proposizione 37.11](#box-11-vci-propInt).
+    - Gli intervalli $1,2,3$ contengono il punto $3$, quindi $\{1,2,3\}$ è una clique e $\omega(G)=3$: la colorazione è ottima, come garantisce la [Proposizione 37.11](#box-11-vci-propInt).
 
     - Con l'ordine $1,2,3,5,4,6$ i colori sono $1,2,3$, poi $1$ al vertice $5$ e $4$ al vertice $4$, i cui vicini $2,3,5$ usano i colori $1,2,3$: $4$ colori, uno in più di $\chi(G)$.
 

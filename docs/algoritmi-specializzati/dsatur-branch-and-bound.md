@@ -14,7 +14,7 @@ title: "Colorazione dei vertici: il branch-and-bound DSATUR"
 
     - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 7 «Branch-and-bound»](https://fabiofurini.github.io/programmazione-lineare-intera/metodi-esatti/bb/): operazioni di branching e di bounding, lista dei problemi, criteri di potatura, bound $\LB$ e $\UB$.
 
-    - Da questo modulo, [Capitolo 4 «Problemi di colorazione»](../problemi-di-ottimizzazione-combinatoria/coloring/index.md): il problema della colorazione dei vertici, cricche, insiemi stabili e il bound della cricca $\omega(G)\le\chi(G)$.
+    - Da questo modulo, [Capitolo 4 «Problemi di colorazione»](../problemi-di-ottimizzazione-combinatoria/coloring/index.md): il problema della colorazione dei vertici, clique, insiemi stabili e il bound della clique $\omega(G)\le\chi(G)$.
 
     - Da questo modulo, [Capitolo 30 «Euristiche costruttive»](../algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur.md): il grado di saturazione e l'euristica $DSATUR$.
 
@@ -26,7 +26,7 @@ title: "Colorazione dei vertici: il branch-and-bound DSATUR"
 
     - fare branching sul vertice di grado di saturazione massimo, con un figlio per ogni colore ammissibile e uno per un colore nuovo;
 
-    - calcolare l'upper bound con $DSATUR$ e il lower bound con una cricca greedy, e potare un nodo;
+    - calcolare l'upper bound con $DSATUR$ e il lower bound con una clique greedy, e potare un nodo;
 
     - eseguire a mano l'algoritmo di branch-and-bound DSATUR e dimostrare che è esatto.
 
@@ -82,11 +82,11 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
 ### 42.1.2 Bound e potatura { #sez-sec-DSATURBBbounds }
 
-- Il VCP è un problema di minimo: la soluzione incumbent dà l'<strong>upper bound</strong> $\UB$, e un lower bound viene da una cricca.
+- Il VCP è un problema di minimo: la soluzione incumbent dà l'<strong>upper bound</strong> $\UB$, e un lower bound viene da una clique.
 
 - <strong>Upper bound.</strong> Prima del branching, l'euristica $DSATUR$ del [Capitolo 30 «Euristiche costruttive»](../algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur.md) dà la prima soluzione incumbent, e $\UB$ è il suo numero di colori.
 
-- <strong>Cricca greedy.</strong> I vertici si scorrono per grado non crescente (pareggi: indice minimo), e un vertice entra in $K$ se è adiacente a tutti i vertici già in $K$. L'insieme $K=\{k_1,\dots,k_r\}$ è una cricca massimale, e $\LB := r \le \omega(G)\le\chi(G)$.
+- <strong>Clique greedy.</strong> I vertici si scorrono per grado non crescente (pareggi: indice minimo), e un vertice entra in $K$ se è adiacente a tutti i vertici già in $K$. L'insieme $K=\{k_1,\dots,k_r\}$ è una clique massimale, e $\LB := r \le \omega(G)\le\chi(G)$.
 
 - <strong>Pre-colorazione.</strong> I vertici di $K$ richiedono $r$ colori diversi in ogni colorazione, e i nomi dei colori sono arbitrari: il nodo radice colora $k_i$ con il colore $i$, $i=1,\dots,r$. Questo rompe la simmetria dei primi $r$ colori.
 
@@ -96,7 +96,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
     \LB(k) \;:=\; \max\{\, q(k),\; |K| \,\} \;=\; q(k),
     $$
 
-    dove l'uguaglianza vale perché la cricca è pre-colorata.
+    dove l'uguaglianza vale perché la clique è pre-colorata.
 
 - <strong>Potatura.</strong> Il numero di colori è un intero, quindi un nodo può portare a una soluzione migliore solo se usa meno di $\UB$ colori. Il nodo $k$ è <strong>potato per bound</strong> se
 
@@ -108,7 +108,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
 !!! chiave ""
 
-    $DSATUR$ dà $\UB$, una cricca greedy dà $\LB$; un nodo è potato appena usa $\UB$ colori, perché il suo sottoalbero non può contenere una colorazione con meno colori.
+    $DSATUR$ dà $\UB$, una clique greedy dà $\LB$; un nodo è potato appena usa $\UB$ colori, perché il suo sottoalbero non può contenere una colorazione con meno colori.
 
 ### 42.1.3 Scelta del nodo e pseudocodice { #sez-sec-DSATURBBalg }
 
@@ -126,7 +126,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
         1. Eseguire $DSATUR$: porre la soluzione incumbent uguale alla sua colorazione e $\UB$ uguale al suo numero di colori.
 
-        2. Trovare la cricca greedy $K=\{k_1,\dots,k_r\}$ e porre $\LB \leftarrow r$. Se $\LB=\UB$, la soluzione incumbent è ottima. <code>STOP</code>.
+        2. Trovare la clique greedy $K=\{k_1,\dots,k_r\}$ e porre $\LB \leftarrow r$. Se $\LB=\UB$, la soluzione incumbent è ottima. <code>STOP</code>.
 
         3. Creare il nodo $1$ con $\mathit{col}^1(k_i)=i$, $i=1,\dots,r$, e $q(1)=r$. Inserire il nodo $1$ nella lista $L$ e porre il contatore dei nodi $c\leftarrow 1$.
 
@@ -170,7 +170,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
 ??? dimostrazione "Dimostrazione"
 
-    Sia $\mathcal{Q}$ una partizione di $V$ in insiemi stabili. I vertici della cricca $K$ sono adiacenti a due a due, quindi stanno in $r$ classi diverse; diamo il nome $i$ alla classe di $k_i$.
+    Sia $\mathcal{Q}$ una partizione di $V$ in insiemi stabili. I vertici della clique $K$ sono adiacenti a due a due, quindi stanno in $r$ classi diverse; diamo il nome $i$ alla classe di $k_i$.
 
     1. <strong>Esistenza.</strong> Seguiamo un cammino dalla radice mantenendo questo invariante: le classi del nodo sono le classi di $\mathcal{Q}$ ristrette a $V^k$, ciascuna con il suo nome. La radice lo soddisfa. Nel nodo $k$, siano $v$ il vertice di branching e $Q\in\mathcal{Q}$ la sua classe.
 
@@ -215,7 +215,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
             \bar{\mathcal{Q}} = \big\{\, \{1,3,7\},~ \{2,4,6,10\},~ \{5,8,9\} \,\big\}, \qquad \UB = 3 .
             $$
 
-        2. Tutti i gradi sono uguali, quindi la cricca greedy scorre i vertici $1,2,\dots,10$. Il vertice $1$ entra, il vertice $2$ è adiacente a $1$ ed entra, e nessun altro vertice è adiacente a entrambi. Quindi $K=\{1,2\}$ e $\LB=2$. Il grafo di Petersen non ha triangoli, quindi $\omega(G)=2$.
+        2. Tutti i gradi sono uguali, quindi la clique greedy scorre i vertici $1,2,\dots,10$. Il vertice $1$ entra, il vertice $2$ è adiacente a $1$ ed entra, e nessun altro vertice è adiacente a entrambi. Quindi $K=\{1,2\}$ e $\LB=2$. Il grafo di Petersen non ha triangoli, quindi $\omega(G)=2$.
 
         3. Il nodo $1$ colora $\mathit{col}^1(1)=1$ e $\mathit{col}^1(2)=2$, con $q(1)=2$. Poiché $\LB=2<3=\UB$, il nodo $1$ viene inserito nella lista $L$:
 
@@ -331,7 +331,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
 ## 42.3 Osservazioni { #sez-sec-DSATURBBrem }
 
-- <strong>Origine.</strong> Il grado di saturazione e l'algoritmo esatto che fa branching su di esso sono dovuti a Brélaz (1979). Pre-colorare una cricca è il modo usuale di eliminare la simmetria dei primi colori.
+- <strong>Origine.</strong> Il grado di saturazione e l'algoritmo esatto che fa branching su di esso sono dovuti a Brélaz (1979). Pre-colorare una clique è il modo usuale di eliminare la simmetria dei primi colori.
 
 - <strong>Regola di pareggio di Sewell (1996).</strong> Fra i vertici di grado di saturazione massimo, Sewell sceglie il vertice $v$ che massimizza il numero di colori ammissibili in comune con i suoi vicini non colorati, $\sum_{u\in N(v)\cap U^k} |F_k(v)\cap F_k(u)|$. Colorare quel vertice toglie più opzioni al resto del grafo.
 
@@ -351,9 +351,9 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
     - <strong>Potare con $q(k)>\UB$.</strong> Un nodo con $q(k)=\UB$ non può portare a una colorazione migliore, perché il numero di colori è un intero: la regola è $q(k)\ge\UB$.
 
-    - <strong>Pre-colorare un insieme che non è una cricca.</strong> Solo i vertici di una cricca richiedono colori diversi a due a due in ogni colorazione; pre-colorare con colori diversi due vertici non adiacenti può escludere tutte le colorazioni ottime.
+    - <strong>Pre-colorare un insieme che non è una clique.</strong> Solo i vertici di una clique richiedono colori diversi a due a due in ogni colorazione; pre-colorare con colori diversi due vertici non adiacenti può escludere tutte le colorazioni ottime.
 
-    - <strong>Continuare dopo $\UB=|K|$.</strong> Quando una colorazione completa raggiunge il bound della cricca, è ottima: i nodi ancora nella lista non si esplorano.
+    - <strong>Continuare dopo $\UB=|K|$.</strong> Quando una colorazione completa raggiunge il bound della clique, è ottima: i nodi ancora nella lista non si esplorano.
 
 ## 42.5 In sintesi
 
@@ -361,7 +361,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
     - Un nodo del branch-and-bound DSATUR è una colorazione parziale; l'algoritmo fa branching sul vertice più saturo, con un figlio per ogni colore ammissibile e uno per un colore nuovo.
 
-    - $DSATUR$ dà il primo upper bound, una cricca greedy dà il lower bound ed è pre-colorata; un nodo è potato quando $q(k)\ge\UB$.
+    - $DSATUR$ dà il primo upper bound, una clique greedy dà il lower bound ed è pre-colorata; un nodo è potato quando $q(k)\ge\UB$.
 
     - Senza potatura l'albero enumera ogni colorazione ammissibile una volta, a meno di una ridenominazione dei colori: l'algoritmo è esatto.
 
@@ -375,7 +375,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
     <th>Da</th>
     </tr>
     <tr>
-    <td>Bound della cricca (Capitolo 4)</td>
+    <td>Bound della clique (Capitolo 4)</td>
     <td><span class="arithmatex">\(2\)</span></td>
     <td>–</td>
     <td><span class="arithmatex">\(\omega(G)=2\)</span></td>
@@ -390,7 +390,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
     <td>Questo capitolo, inizializzazione</td>
     <td><span class="arithmatex">\(2\)</span></td>
     <td><span class="arithmatex">\(3\)</span></td>
-    <td>cricca greedy <span class="arithmatex">\(K=\{1,2\}\)</span></td>
+    <td>clique greedy <span class="arithmatex">\(K=\{1,2\}\)</span></td>
     </tr>
     <tr>
     <td>Questo capitolo, terminazione</td>
