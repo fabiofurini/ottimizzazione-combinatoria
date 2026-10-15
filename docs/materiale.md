@@ -60,6 +60,8 @@ Le slide delle lezioni, un PDF per capitolo, con le stesse definizioni ed esempi
 | 14 | [Formulazioni dei problemi di scheduling](formulazioni/pcmax-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slide-pcmax-formulations.pdf) (0.4 MB) |
 | 15 | [Formulazioni dei problemi di lot sizing](formulazioni/lot-sizing-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slide-lot-sizing-formulations.pdf) (0.5 MB) |
 | 16 | [Principi della programmazione dinamica](programmazione-dinamica/dp-principles.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-principles.pdf) (0.3 MB) |
+| 17 | [PD per il problema dello zaino 0/1](programmazione-dinamica/dp-knapsack/index.md) (1/2) | [:material-file-pdf-box: PDF](pdf/slide-dp-knapsack-1.pdf) (0.5 MB) |
+| 17 | [PD per il problema dello zaino 0/1](programmazione-dinamica/dp-knapsack/index.md) (2/2) | [:material-file-pdf-box: PDF](pdf/slide-dp-knapsack-2.pdf) (0.6 MB) |
 | 18 | [PD per il problema dello zaino illimitato](programmazione-dinamica/dp-unbounded-knapsack/index.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-unbounded-knapsack.pdf) (0.6 MB) |
 | 19 | [PD per il problema dello zaino limitato](programmazione-dinamica/dp-bounded-knapsack.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-bounded-knapsack.pdf) (0.5 MB) |
 | 20 | [PD per il problema del subset sum](programmazione-dinamica/dp-subset-sum.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-subset-sum.pdf) (0.4 MB) |
@@ -67,9 +69,11 @@ Le slide delle lezioni, un PDF per capitolo, con le stesse definizioni ed esempi
 | 22 | [PD per il problema dello zaino multidimensionale](programmazione-dinamica/dp-multidimensional-knapsack.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-multidimensional-knapsack.pdf) (0.4 MB) |
 | 23 | [PD per il problema dello zaino con setup](programmazione-dinamica/dp-knapsack-setups.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-knapsack-setups.pdf) (0.4 MB) |
 | 24 | [PD per il problema degli zaini multipli](programmazione-dinamica/dp-multiple-knapsack.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-multiple-knapsack.pdf) (0.4 MB) |
+| 25 | [PD per il problema del lot sizing senza capacità](programmazione-dinamica/dp-lot-sizing/index.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-lot-sizing.pdf) (0.5 MB) |
 | 26 | [PD per il problema del lot sizing capacitato](programmazione-dinamica/dp-capacitated-lot-sizing.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-capacitated-lot-sizing.pdf) (0.5 MB) |
 | 27 | [PD per il problema del cambio monete](programmazione-dinamica/dp-coin-change.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-coin-change.pdf) (0.5 MB) |
 | 29 | [Algoritmi euristici: definizioni](algoritmi-euristici/heuristics.md) | [:material-file-pdf-box: PDF](pdf/slide-heuristics.pdf) (0.4 MB) |
+| 34 | [Principi degli algoritmi di approssimazione](algoritmi-di-approssimazione/approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-approximation.pdf) (0.4 MB) |
 
 </div>
 

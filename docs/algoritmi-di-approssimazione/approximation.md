@@ -6,7 +6,7 @@ title: "Principi degli algoritmi di approssimazione"
 
 <div class="info-capitolo" markdown>
 
-**Parte 5 · Algoritmi di approssimazione · Capitolo 34** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-pencil: Esercizi: Principi](../esercizi/approximation.md) · [:material-gesture-tap: App: Istanze tight](../laboratorio/istanze-tight.md)
+**Parte 5 · Algoritmi di approssimazione · Capitolo 34** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-presentation: Slide](../pdf/slide-approximation.pdf) · [:material-pencil: Esercizi: Principi](../esercizi/approximation.md) · [:material-gesture-tap: App: Istanze tight](../laboratorio/istanze-tight.md)
 
 </div>
 
