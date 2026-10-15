@@ -6,7 +6,7 @@ title: "Euristiche MIP per i problemi classici"
 
 <div class="info-capitolo" markdown>
 
-**Parte 4 · Algoritmi euristici · Capitolo 33** · [:material-file-pdf-box: Dispensa, volume 4 (PDF)](../pdf/dispensa-4-algoritmi-euristici.pdf) · [:material-pencil: Esercizi: Euristiche MIP](../esercizi/mip-heuristics-classical.md)
+**Parte 4 · Algoritmi euristici · Capitolo 33** · [:material-file-pdf-box: Dispensa, volume 4 (PDF)](../pdf/dispensa-4-algoritmi-euristici.pdf) · [:material-presentation: Slide](../pdf/slide-mip-heuristics-classical.pdf) · [:material-pencil: Esercizi: Euristiche MIP](../esercizi/mip-heuristics-classical.md)
 
 </div>
 

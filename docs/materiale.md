@@ -73,7 +73,10 @@ Le slide delle lezioni, un PDF per capitolo, con le stesse definizioni ed esempi
 | 26 | [PD per il problema del lot sizing capacitato](programmazione-dinamica/dp-capacitated-lot-sizing.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-capacitated-lot-sizing.pdf) (0.5 MB) |
 | 27 | [PD per il problema del cambio monete](programmazione-dinamica/dp-coin-change.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-coin-change.pdf) (0.5 MB) |
 | 29 | [Algoritmi euristici: definizioni](algoritmi-euristici/heuristics.md) | [:material-file-pdf-box: PDF](pdf/slide-heuristics.pdf) (0.4 MB) |
+| 33 | [Euristiche MIP per i problemi classici](algoritmi-euristici/mip-heuristics-classical.md) | [:material-file-pdf-box: PDF](pdf/slide-mip-heuristics-classical.pdf) (0.8 MB) |
 | 34 | [Principi degli algoritmi di approssimazione](algoritmi-di-approssimazione/approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-approximation.pdf) (0.4 MB) |
+| 37 | [Colorazione dei vertici: limiti dell'approssimazione](algoritmi-di-approssimazione/coloring-inapproximability.md) | [:material-file-pdf-box: PDF](pdf/slide-coloring-inapproximability.pdf) (0.4 MB) |
+| 38 | [Clique massima: limiti dell'approssimazione](algoritmi-di-approssimazione/clique-inapproximability.md) | [:material-file-pdf-box: PDF](pdf/slide-clique-inapproximability.pdf) (0.3 MB) |
 
 </div>
 

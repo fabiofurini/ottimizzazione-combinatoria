@@ -6,7 +6,7 @@ title: "Clique massima: limiti dell'approssimazione"
 
 <div class="info-capitolo" markdown>
 
-**Parte 5 · Algoritmi di approssimazione · Capitolo 38** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-pencil: Esercizi: Clique massima (MCP)](../esercizi/clique-inapproximability.md)
+**Parte 5 · Algoritmi di approssimazione · Capitolo 38** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-presentation: Slide](../pdf/slide-clique-inapproximability.pdf) · [:material-pencil: Esercizi: Clique massima (MCP)](../esercizi/clique-inapproximability.md)
 
 </div>
 
