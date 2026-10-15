@@ -101,7 +101,7 @@ title: "Esercizi · Euristiche MIP per i problemi classici"
         \tilde x=\Big(1,1,\frac45,0,0\Big),\qquad z(\LP_{\KP})=13+12+14\cdot\frac45=\frac{181}{5}=36.2 .
         $$
 
-    2. $\rnd{\frac45}=1$ dà $(1,1,1,0,0)$, di peso $17>15$: <strong>inammissibile</strong>. Arrotondando per difetto si ottiene $(1,1,0,0,0)$, ammissibile (per l'osservazione sull'arrotondamento per difetto del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>), di profitto $25$.
+    2. $\rnd{\frac45}=1$ dà $(1,1,1,0,0)$, di peso $17>15$: <strong>inammissibile</strong>. Arrotondando per difetto si ottiene $(1,1,0,0,0)$, ammissibile (per l'osservazione sull'arrotondamento per difetto del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>), di profitto $25$.
 
     3. <strong>Passo 1.</strong> Fissare $x_3:=\rnd{\frac45}=1$. L'oggetto $3$ usa $10$; il LP prende l'oggetto $1$ (residuo $3$) e la frazione $\frac35$ dell'oggetto $2$: $\tilde x=\big(1,\frac35,1,0,0\big)$, di valore $14+13+\frac{36}{5}=\frac{171}{5}=34.2$.
 
@@ -341,4 +341,4 @@ title: "Esercizi · Euristiche MIP per i problemi classici"
 
     3. Il cutoff è $C_{\max}\le18$: poiché il totale è $36$, entrambi i carichi devono essere esattamente $18$, ossia $M_1$ deve perdere esattamente $1$. Un solo spostamento richiederebbe un lavoro con $t_j=1$: non ce ne sono (la distanza $2$ è impossibile). Con due lavori ($r=2$, distanza $4$): due lavori che lasciano $M_1$ richiederebbero $t_i+t_j=1$, impossibile; uno scambio di $i\in J_1$ con $j\in J_2$ richiede $t_i-t_j=1$, e l'unica coppia è il lavoro $1$ ($9$) con il lavoro $5$ ($8$). La nuova soluzione incumbent è $J_1=\{2,4,5,6\}$, $J_2=\{1,3\}$, con carichi $18$, $18$: makespan $18$, a distanza $4$.
 
-    4. Il cutoff è $C_{\max}\le17$, ma $C_{\max}\ge 36/2=18$ per ogni assegnamento: il sotto-MIP di proximity è inammissibile, e il metodo si ferma. Per la proposizione sulla proximity search del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>, il makespan $18$ è <strong>ottimo</strong>; raggiunge anche il lower bound della Domanda 1.
+    4. Il cutoff è $C_{\max}\le17$, ma $C_{\max}\ge 36/2=18$ per ogni assegnamento: il sotto-MIP di proximity è inammissibile, e il metodo si ferma. Per la proposizione sulla proximity search del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>, il makespan $18$ è <strong>ottimo</strong>; raggiunge anche il lower bound della Domanda 1.

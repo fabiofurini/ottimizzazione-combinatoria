@@ -141,7 +141,7 @@ I problemi di questa sezione sono il problema del commesso viaggiatore asimmetri
 
     - Entrambi i modelli sono scritti sugli archi, quindi sono anche modelli dell'ATSP: il modello $\mathrm{ILP}_{\mathrm{ATSP}}$ è il modello DFJ in cui è ammesso $d_{ij}\neq d_{ji}$. Il TSP metrico ha gli stessi modelli del TSP.
 
-    - Dal modulo <em>Programmazione lineare intera</em>, il [Capitolo 8 «Branch-and-cut»](https://fabiofurini.github.io/programmazione-lineare-intera/exact-methods/branch-and-cut/) mostra come i vincoli di eliminazione dei sottogiri si aggiungono solo quando sono violati.
+    - Dal modulo <em>Programmazione lineare intera</em>, il [Capitolo 8 «Branch-and-cut»](https://fabiofurini.github.io/programmazione-lineare-intera/metodi-esatti/branch-and-cut/) mostra come i vincoli di eliminazione dei sottogiri si aggiungono solo quando sono violati.
 
     <strong>Quadro riassuntivo dell'istanza del capitolo.</strong> Lower bound sul valore ottimo $18$ calcolati in questo capitolo:
 

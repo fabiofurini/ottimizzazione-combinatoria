@@ -378,7 +378,7 @@ Il problema di questa sezione è il problema della clique massima (MCP), definit
 
 - Ogni spigolo di $\overline{G}$ sta in una clique massimale, quindi ogni vincolo $\eqref{mcpF:nonedge}$ è implicato da un vincolo $\eqref{mcpF:cl}$: i due modelli hanno le stesse soluzioni ammissibili.
 
-- La famiglia $\mathcal{Q}$ può essere molto grande: Moon e Moser (1965) hanno mostrato grafi con $3^{n/3}$ clique massimali. In pratica le disuguaglianze si aggiungono solo quando sono violate, come nel [Capitolo 4 «Disuguaglianze valide»](https://fabiofurini.github.io/programmazione-lineare-intera/formulations/valid-inequalities/) del modulo <em>Programmazione lineare intera</em>.
+- La famiglia $\mathcal{Q}$ può essere molto grande: Moon e Moser (1965) hanno mostrato grafi con $3^{n/3}$ clique massimali. In pratica le disuguaglianze si aggiungono solo quando sono violate, come nel [Capitolo 4 «Disuguaglianze valide»](https://fabiofurini.github.io/programmazione-lineare-intera/formulazioni/valid-inequalities/) del modulo <em>Programmazione lineare intera</em>.
 
 <a id="box-9-mcpF-ex-cl"></a>
 

@@ -16,7 +16,7 @@ title: "Formulazioni dei problemi di clique"
 
     - Da questo modulo, [Capitolo 4 «Problemi di colorazione»](../../problemi-di-ottimizzazione-combinatoria/coloring/index.md) e [Capitolo 11 «Formulazioni dei problemi di colorazione»](../coloring-formulations/index.md): il numero cromatico $\chi(G)$ e un modello PLI con i suoi rilassamenti lineari.
 
-    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/lp-relaxation/), [Capitolo 3 «Formulazioni ideali»](https://fabiofurini.github.io/programmazione-lineare-intera/formulations/ideal-formulations/) e [Capitolo 4 «Disuguaglianze valide»](https://fabiofurini.github.io/programmazione-lineare-intera/formulations/valid-inequalities/): rilassamenti lineari, formulazioni più forti e disuguaglianze valide.
+    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/lp-relaxation/), [Capitolo 3 «Formulazioni ideali»](https://fabiofurini.github.io/programmazione-lineare-intera/formulazioni/ideal-formulations/) e [Capitolo 4 «Disuguaglianze valide»](https://fabiofurini.github.io/programmazione-lineare-intera/formulazioni/valid-inequalities/): rilassamenti lineari, formulazioni più forti e disuguaglianze valide.
 
     - Dal modulo <em>Programmazione lineare</em>, [Capitolo 9 «Teoria della dualità»](https://fabiofurini.github.io/programmazione-lineare/dualita/09-dualita/): il duale di un problema LP, la dualità debole e la dualità forte.
 

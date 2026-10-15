@@ -14,7 +14,7 @@ title: "Formulazioni dei problemi di zaino"
 
     - Dal modulo <em>Programmazione lineare</em>, [Capitolo 9 «Teoria della dualità»](https://fabiofurini.github.io/programmazione-lineare/dualita/09-dualita/): il duale di un problema LP, dualità debole e forte.
 
-    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 1 «Programmazione lineare intera»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/ilp/) e [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/lp-relaxation/): problemi PLI, rilassamenti lineari e upper bound.
+    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 1 «Programmazione lineare intera»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/ilp/) e [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/lp-relaxation/): problemi PLI, rilassamenti lineari e upper bound.
 
     - Da questo modulo, [Capitolo 2 «Problemi di zaino»](../../problemi-di-ottimizzazione-combinatoria/knapsack/index.md): il problema dello zaino 0/1 e le sue varianti, le loro ipotesi e le loro istanze di riferimento.
 

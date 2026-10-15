@@ -173,7 +173,7 @@ title: "Zaino 0/1"
 
 - <strong>Un primo bound duale.</strong> Nell'<span style="color:#1971c2">[Esempio 2.1](#box-2-ex-kp)</span> abbiamo $\bar k = 2$, poiché $2+3 = 5 \le 9$ e $2+3+5 = 10 > 9$. I due profitti più grandi sono $9$ e $8$, quindi $\UB = 17$. La somma di tutti i profitti, $41$, è un bound duale molto più debole.
 
-- <strong>Il gap.</strong> Abbiamo $15 \le z(I) \le 17$: il gap assoluto è $2$ e il gap relativo è $\tfrac{2}{15}$. Elencando i $13$ sottoinsiemi ammissibili si vede che $\{1,4\}$ è l'unica soluzione ottima e $z(I) = 15$; per istanze più grandi servono bound più forti, che vengono dai rilassamenti (modulo <em>Programmazione lineare intera</em>, [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/lp-relaxation/)).
+- <strong>Il gap.</strong> Abbiamo $15 \le z(I) \le 17$: il gap assoluto è $2$ e il gap relativo è $\tfrac{2}{15}$. Elencando i $13$ sottoinsiemi ammissibili si vede che $\{1,4\}$ è l'unica soluzione ottima e $z(I) = 15$; per istanze più grandi servono bound più forti, che vengono dai rilassamenti (modulo <em>Programmazione lineare intera</em>, [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/lp-relaxation/)).
 
 ---
 

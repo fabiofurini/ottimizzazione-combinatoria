@@ -54,7 +54,7 @@ title: "Bound primali, bound duali e gap"
     gap(I) = \frac{\UB - \LB}{|\LB|}.
     $$
 
-- Il denominatore è sempre il <strong>lower bound</strong>: nella forma di massimo è il valore della soluzione ammissibile, come nel gap di ottimalità del modulo <em>Programmazione lineare intera</em>, [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/lp-relaxation/); nella forma di minimo è il bound duale.
+- Il denominatore è sempre il <strong>lower bound</strong>: nella forma di massimo è il valore della soluzione ammissibile, come nel gap di ottimalità del modulo <em>Programmazione lineare intera</em>, [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/lp-relaxation/); nella forma di minimo è il bound duale.
 
 - Con questa scelta il gap non è mai minore dell'errore relativo $|f(\bar S) - z(I)|/z(I)$ della soluzione ammissibile $\bar S$: un gap del $5\%$ garantisce una soluzione entro il $5\%$ dall'ottimo.
 

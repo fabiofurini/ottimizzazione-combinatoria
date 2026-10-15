@@ -12,7 +12,7 @@ title: "Formulazioni dei problemi di lot sizing"
 
 !!! nota "Prerequisiti"
 
-    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 1 «Programmazione lineare intera»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/ilp/) e [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/lp-relaxation/): problemi ILP, rilassamenti lineari e lower bound.
+    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 1 «Programmazione lineare intera»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/ilp/) e [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/lp-relaxation/): problemi ILP, rilassamenti lineari e lower bound.
 
     - Da questo modulo, [Capitolo 8 «Problemi di lot sizing»](../../problemi-di-ottimizzazione-combinatoria/lot-sizing/index.md): il problema, le sue ipotesi, i piani e l'istanza di riferimento.
 
