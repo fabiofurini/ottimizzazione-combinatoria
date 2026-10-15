@@ -6,7 +6,7 @@ title: "Errori tipici · In sintesi"
 
 <div class="info-capitolo" markdown>
 
-**Parte 3 · Programmazione dinamica · Capitolo 28** · [:material-book-open-variant: Capitolo 28: Taglio delle aste (RCP)](index.md) · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-pencil: Esercizi: Taglio delle aste (RCP)](../../esercizi/dp-rod-cutting.md)
+**Parte 3 · Programmazione dinamica · Capitolo 28** · [:material-book-open-variant: Capitolo 28: Taglio delle aste (RCP)](index.md) · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-presentation: Slide](../../pdf/slide-dp-rod-cutting.pdf) · [:material-pencil: Esercizi: Taglio delle aste (RCP)](../../esercizi/dp-rod-cutting.md)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "Errori tipici · In sintesi"
 
 !!! attenzione "Attenzione"
 
-    - <strong>Contare i vettori invece degli schemi di taglio.</strong> I $2^{n-1}$ schemi di taglio di una barra di lunghezza $n$ sono più dei vettori soluzione, perché schemi diversi possono dare lo stesso vettore.
+    - <strong>Contare i vettori invece degli schemi di taglio.</strong> I $2^{n-1}$ schemi di taglio di una barra di lunghezza $n$ sono più dei vettori soluzione quando $n\ge 3$, perché schemi diversi possono dare lo stesso vettore.
 
     - <strong>Dimenticare il caso base.</strong> $v(0)=0$ si usa quando il primo pezzo ha la lunghezza dell'intera barra: $v(\ell)$ contiene il termine $p_\ell+v(0)$.
 

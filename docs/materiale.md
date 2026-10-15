@@ -72,11 +72,14 @@ Le slide delle lezioni, un PDF per capitolo, con le stesse definizioni ed esempi
 | 25 | [PD per il problema del lot sizing senza capacità](programmazione-dinamica/dp-lot-sizing/index.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-lot-sizing.pdf) (0.5 MB) |
 | 26 | [PD per il problema del lot sizing capacitato](programmazione-dinamica/dp-capacitated-lot-sizing.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-capacitated-lot-sizing.pdf) (0.5 MB) |
 | 27 | [PD per il problema del cambio monete](programmazione-dinamica/dp-coin-change.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-coin-change.pdf) (0.5 MB) |
+| 28 | [PD per il problema del taglio delle aste](programmazione-dinamica/dp-rod-cutting/index.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-rod-cutting.pdf) (0.5 MB) |
 | 29 | [Algoritmi euristici: definizioni](algoritmi-euristici/heuristics.md) | [:material-file-pdf-box: PDF](pdf/slide-heuristics.pdf) (0.4 MB) |
 | 33 | [Euristiche MIP per i problemi classici](algoritmi-euristici/mip-heuristics-classical.md) | [:material-file-pdf-box: PDF](pdf/slide-mip-heuristics-classical.pdf) (0.8 MB) |
 | 34 | [Principi degli algoritmi di approssimazione](algoritmi-di-approssimazione/approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-approximation.pdf) (0.4 MB) |
 | 37 | [Colorazione dei vertici: limiti dell'approssimazione](algoritmi-di-approssimazione/coloring-inapproximability.md) | [:material-file-pdf-box: PDF](pdf/slide-coloring-inapproximability.pdf) (0.4 MB) |
 | 38 | [Clique massima: limiti dell'approssimazione](algoritmi-di-approssimazione/clique-inapproximability.md) | [:material-file-pdf-box: PDF](pdf/slide-clique-inapproximability.pdf) (0.3 MB) |
+| 39 | [TSP: il caso generale e il caso metrico](algoritmi-di-approssimazione/tsp-approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-tsp-approximation.pdf) (0.5 MB) |
+| 40 | [Approssimazione per $P\|C_{\max}$](algoritmi-di-approssimazione/pcmax-approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-pcmax-approximation.pdf) (0.4 MB) |
 
 </div>
 

@@ -6,7 +6,7 @@ title: "Un primo algoritmo di PD"
 
 <div class="info-capitolo" markdown>
 
-**Parte 3 · Programmazione dinamica · Capitolo 28** · [:material-book-open-variant: Capitolo 28: Taglio delle aste (RCP)](index.md) · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-pencil: Esercizi: Taglio delle aste (RCP)](../../esercizi/dp-rod-cutting.md)
+**Parte 3 · Programmazione dinamica · Capitolo 28** · [:material-book-open-variant: Capitolo 28: Taglio delle aste (RCP)](index.md) · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-presentation: Slide](../../pdf/slide-dp-rod-cutting.pdf) · [:material-pencil: Esercizi: Taglio delle aste (RCP)](../../esercizi/dp-rod-cutting.md)
 
 </div>
 
@@ -595,7 +595,7 @@ title: "Un primo algoritmo di PD"
             \end{array}
             $$
 
-            Possiamo calcolare una soluzione ottima per una barra di lunghezza $n=3$ come segue:
+            Possiamo calcolare una soluzione ottima per una barra di lunghezza $3$ come segue:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -636,7 +636,7 @@ title: "Un primo algoritmo di PD"
             (0,0,1,0)
             $$
 
-            Possiamo calcolare una soluzione ottima per una barra di lunghezza $n=2$ come segue:
+            Possiamo calcolare una soluzione ottima per una barra di lunghezza $2$ come segue:
 
             <div class="tabella" markdown="0"><table>
             <tr>

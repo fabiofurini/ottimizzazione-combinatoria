@@ -6,7 +6,7 @@ title: "Approssimazione per P||Cmax"
 
 <div class="info-capitolo" markdown>
 
-**Parte 5 · Algoritmi di approssimazione · Capitolo 40** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-pencil: Esercizi: Macchine parallele identiche (P||Cmax)](../esercizi/pcmax-approximation.md) · [:material-gesture-tap: App: Istanze tight](../laboratorio/istanze-tight.md)
+**Parte 5 · Algoritmi di approssimazione · Capitolo 40** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-presentation: Slide](../pdf/slide-pcmax-approximation.pdf) · [:material-pencil: Esercizi: Macchine parallele identiche (P||Cmax)](../esercizi/pcmax-approximation.md) · [:material-gesture-tap: App: Istanze tight](../laboratorio/istanze-tight.md)
 
 </div>
 

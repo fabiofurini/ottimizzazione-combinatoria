@@ -6,7 +6,7 @@ title: "TSP: il caso generale e il caso metrico"
 
 <div class="info-capitolo" markdown>
 
-**Parte 5 · Algoritmi di approssimazione · Capitolo 39** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-pencil: Esercizi: Commesso viaggiatore (TSP)](../esercizi/tsp-approximation.md) · [:material-gesture-tap: App: TSP metrico: double tree e Christofides](../laboratorio/tsp-metrico-double-tree-christofides.md)
+**Parte 5 · Algoritmi di approssimazione · Capitolo 39** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-presentation: Slide](../pdf/slide-tsp-approximation.pdf) · [:material-pencil: Esercizi: Commesso viaggiatore (TSP)](../esercizi/tsp-approximation.md) · [:material-gesture-tap: App: TSP metrico: double tree e Christofides](../laboratorio/tsp-metrico-double-tree-christofides.md)
 
 </div>
 
