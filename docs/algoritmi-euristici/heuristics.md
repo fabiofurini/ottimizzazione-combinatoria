@@ -6,7 +6,7 @@ title: "Algoritmi euristici: definizioni"
 
 <div class="info-capitolo" markdown>
 
-**Parte 4 · Algoritmi euristici · Capitolo 29** · [:material-file-pdf-box: Dispensa, volume 4 (PDF)](../pdf/dispensa-4-algoritmi-euristici.pdf) · [:material-pencil: Esercizi: Definizioni](../esercizi/heuristics.md)
+**Parte 4 · Algoritmi euristici · Capitolo 29** · [:material-file-pdf-box: Dispensa, volume 4 (PDF)](../pdf/dispensa-4-algoritmi-euristici.pdf) · [:material-presentation: Slide](../pdf/slide-heuristics.pdf) · [:material-pencil: Esercizi: Definizioni](../esercizi/heuristics.md)
 
 </div>
 
@@ -202,7 +202,7 @@ title: "Algoritmi euristici: definizioni"
 
 ??? dimostrazione "Dimostrazione"
 
-    Per un problema di minimo, $\mathrm{LB}(I)\le z(I)$, quindi $\frac{\mathscr{A}(I)}{z(I)} \le \frac{\mathscr{A}(I)}{\mathrm{LB}(I)}$ and
+    Per un problema di minimo, $\mathrm{LB}(I)\le z(I)$, quindi $\frac{\mathscr{A}(I)}{z(I)} \le \frac{\mathscr{A}(I)}{\mathrm{LB}(I)}$ e
 
     $$
     \frac{\mathscr{A}(I)-z(I)}{z(I)} = \frac{\mathscr{A}(I)}{z(I)} - 1 \;\le\; \frac{\mathscr{A}(I)}{\mathrm{LB}(I)} - 1 = gap(I).

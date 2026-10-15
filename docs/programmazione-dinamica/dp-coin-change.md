@@ -6,7 +6,7 @@ title: "PD per il problema del cambio monete"
 
 <div class="info-capitolo" markdown>
 
-**Parte 3 · Programmazione dinamica · Capitolo 27** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-pencil: Esercizi: Cambio monete (CCP)](../esercizi/dp-coin-change.md)
+**Parte 3 · Programmazione dinamica · Capitolo 27** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-presentation: Slide](../pdf/slide-dp-coin-change.pdf) · [:material-pencil: Esercizi: Cambio monete (CCP)](../esercizi/dp-coin-change.md)
 
 </div>
 

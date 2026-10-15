@@ -6,7 +6,7 @@ title: "PD per il problema del lot sizing capacitato"
 
 <div class="info-capitolo" markdown>
 
-**Parte 3 · Programmazione dinamica · Capitolo 26** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-pencil: Esercizi: Lot sizing capacitato (CLS)](../esercizi/dp-capacitated-lot-sizing.md)
+**Parte 3 · Programmazione dinamica · Capitolo 26** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-presentation: Slide](../pdf/slide-dp-capacitated-lot-sizing.pdf) · [:material-pencil: Esercizi: Lot sizing capacitato (CLS)](../esercizi/dp-capacitated-lot-sizing.md)
 
 </div>
 
