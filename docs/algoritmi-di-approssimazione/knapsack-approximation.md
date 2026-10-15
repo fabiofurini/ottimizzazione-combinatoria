@@ -6,7 +6,7 @@ title: "Algoritmi di approssimazione per lo zaino"
 
 <div class="info-capitolo" markdown>
 
-**Parte 5 · Algoritmi di approssimazione · Capitolo 35** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-pencil: Esercizi: Zaino 0/1 (KP)](../esercizi/knapsack-approximation.md) · [:material-gesture-tap: App: Zaino 0/1: greedy, Ext-Greedy, H² e FPTAS](../laboratorio/zaino-approssimazione.md) · [:material-gesture-tap: App: Istanze tight](../laboratorio/istanze-tight.md)
+**Parte 5 · Algoritmi di approssimazione · Capitolo 35** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-presentation: Slide (1/2)](../pdf/slide-knapsack-approximation-1.pdf) · [:material-presentation: Slide (2/2)](../pdf/slide-knapsack-approximation-2.pdf) · [:material-pencil: Esercizi: Zaino 0/1 (KP)](../esercizi/knapsack-approximation.md) · [:material-gesture-tap: App: Zaino 0/1: greedy, Ext-Greedy, H² e FPTAS](../laboratorio/zaino-approssimazione.md) · [:material-gesture-tap: App: Istanze tight](../laboratorio/istanze-tight.md)
 
 </div>
 
@@ -909,7 +909,7 @@ Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-- L'osservazione mostra che non esiste una costante $\alpha \in [1,+\infty)$ tale che
+- La proposizione mostra che non esiste una costante $\alpha \in [1,+\infty)$ tale che
 
     $$
     \frac{z(I)}{GR(I)} \le \alpha \qquad \text{per ogni istanza } I.

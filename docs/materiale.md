@@ -74,14 +74,19 @@ Le slide delle lezioni, un PDF per capitolo, con le stesse definizioni ed esempi
 | 27 | [PD per il problema del cambio monete](programmazione-dinamica/dp-coin-change.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-coin-change.pdf) (0.5 MB) |
 | 28 | [PD per il problema del taglio delle aste](programmazione-dinamica/dp-rod-cutting/index.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-rod-cutting.pdf) (0.5 MB) |
 | 29 | [Algoritmi euristici: definizioni](algoritmi-euristici/heuristics.md) | [:material-file-pdf-box: PDF](pdf/slide-heuristics.pdf) (0.4 MB) |
+| 32 | [Metaeuristiche](algoritmi-euristici/metaheuristics/index.md) (1/2) | [:material-file-pdf-box: PDF](pdf/slide-metaheuristics-1.pdf) (0.6 MB) |
+| 32 | [Metaeuristiche](algoritmi-euristici/metaheuristics/index.md) (2/2) | [:material-file-pdf-box: PDF](pdf/slide-metaheuristics-2.pdf) (0.6 MB) |
 | 33 | [Euristiche MIP per i problemi classici](algoritmi-euristici/mip-heuristics-classical.md) | [:material-file-pdf-box: PDF](pdf/slide-mip-heuristics-classical.pdf) (0.8 MB) |
 | 34 | [Principi degli algoritmi di approssimazione](algoritmi-di-approssimazione/approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-approximation.pdf) (0.4 MB) |
+| 35 | [Algoritmi di approssimazione per lo zaino](algoritmi-di-approssimazione/knapsack-approximation.md) (1/2) | [:material-file-pdf-box: PDF](pdf/slide-knapsack-approximation-1.pdf) (0.6 MB) |
+| 35 | [Algoritmi di approssimazione per lo zaino](algoritmi-di-approssimazione/knapsack-approximation.md) (2/2) | [:material-file-pdf-box: PDF](pdf/slide-knapsack-approximation-2.pdf) (0.6 MB) |
 | 36 | [Algoritmi di approssimazione per il bin packing](algoritmi-di-approssimazione/bin-packing-approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-bin-packing-approximation.pdf) (0.6 MB) |
 | 37 | [Colorazione dei vertici: limiti dell'approssimazione](algoritmi-di-approssimazione/coloring-inapproximability.md) | [:material-file-pdf-box: PDF](pdf/slide-coloring-inapproximability.pdf) (0.4 MB) |
 | 38 | [Clique massima: limiti dell'approssimazione](algoritmi-di-approssimazione/clique-inapproximability.md) | [:material-file-pdf-box: PDF](pdf/slide-clique-inapproximability.pdf) (0.3 MB) |
 | 39 | [TSP: il caso generale e il caso metrico](algoritmi-di-approssimazione/tsp-approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-tsp-approximation.pdf) (0.5 MB) |
 | 40 | [Approssimazione per $P\|C_{\max}$](algoritmi-di-approssimazione/pcmax-approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-pcmax-approximation.pdf) (0.4 MB) |
 | 41 | [Zaino: branch-and-bound sull'elemento critico](algoritmi-specializzati/knapsack-branch-and-bound.md) | [:material-file-pdf-box: PDF](pdf/slide-knapsack-branch-and-bound.pdf) (0.5 MB) |
+| 42 | [Colorazione dei vertici: il branch-and-bound DSATUR](algoritmi-specializzati/dsatur-branch-and-bound.md) | [:material-file-pdf-box: PDF](pdf/slide-dsatur-branch-and-bound.pdf) (0.4 MB) |
 
 </div>
 

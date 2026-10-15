@@ -6,7 +6,7 @@ title: "Colorazione dei vertici: il branch-and-bound DSATUR"
 
 <div class="info-capitolo" markdown>
 
-**Parte 6 · Algoritmi ad hoc · Capitolo 42** · [:material-file-pdf-box: Dispensa, volume 6 (PDF)](../pdf/dispensa-6-algoritmi-specializzati.pdf) · [:material-pencil: Esercizi: Colorazione dei vertici (VCP)](../esercizi/dsatur-branch-and-bound.md) · [:material-gesture-tap: App: Colorazione: il branch-and-bound DSATUR](../laboratorio/branch-and-bound-dsatur.md)
+**Parte 6 · Algoritmi ad hoc · Capitolo 42** · [:material-file-pdf-box: Dispensa, volume 6 (PDF)](../pdf/dispensa-6-algoritmi-specializzati.pdf) · [:material-presentation: Slide](../pdf/slide-dsatur-branch-and-bound.pdf) · [:material-pencil: Esercizi: Colorazione dei vertici (VCP)](../esercizi/dsatur-branch-and-bound.md) · [:material-gesture-tap: App: Colorazione: il branch-and-bound DSATUR](../laboratorio/branch-and-bound-dsatur.md)
 
 </div>
 
