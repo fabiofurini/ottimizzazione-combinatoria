@@ -468,7 +468,7 @@ Il problema di questa sezione è lo scheduling su macchine parallele identiche (
 
 !!! esempio "Esempio 14.6: Un gap di integralità"
 
-    Consideriamo due macchine e tre lavori con tempi di processamento $(3,3,2)$. La [Proposizione 14.1](#box-4-prop-LP0-PCMAX) dà $z(\mathrm{LP}_{P\|C_{\max}})=8/2=4$. In ogni schedula intera, il lavoro di lunghezza due deve condividere una macchina con un lavoro di lunghezza tre, quindi $z(\mathrm{ILP}_{P\|C_{\max}})=5$. L'assegnamento frazionario
+    Consideriamo due macchine e tre lavori con tempi di processamento $(3,3,2)$. La [Proposizione 14.1](#box-4-prop-LP0-PCMAX) dà $z(\mathrm{LP}_{P\|C_{\max}})=8/2=4$. In ogni schedula intera una macchina esegue almeno due dei tre lavori, quindi il suo carico è almeno $3+2=5$; la schedula $\{3,2\},\{3\}$ lo raggiunge, quindi $z(\mathrm{ILP}_{P\|C_{\max}})=5$. L'assegnamento frazionario
 
     $$
     x_{j1}=x_{j2}=\frac12\qquad\forall j\in\{1,2,3\}

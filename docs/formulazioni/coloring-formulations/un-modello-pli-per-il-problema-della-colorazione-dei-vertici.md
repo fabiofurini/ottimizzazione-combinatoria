@@ -268,7 +268,7 @@ Il problema della colorazione dei vertici e le sue ipotesi sono definiti nel [Ca
     \label{DDPI}
     \tilde{\pi}_{c\{u,v\}}=1,  \quad \forall c \in \mathscr{C}
     {\rm ~~~~e~~~~}
-    \tilde{\pi}_{ce}= 0,  \quad \forall e \in E \setminus \{\{u,v\}\}, \tag{11.7b}
+    \tilde{\pi}_{ce}= 0,  \quad \forall c \in \mathscr{C},~ e \in E \setminus \{\{u,v\}\}, \tag{11.7b}
     \end{equation*}
 
 <a id="box-5-cor_lp0_vcp_value"></a>
@@ -515,7 +515,7 @@ Il problema della colorazione dei vertici e le sue ipotesi sono definiti nel [Ca
 
     $$
     \begin{array}{rcccccccccccccccr}
-    {\max} & {\mu_1} & {+\mu_2} & {+\mu_3} &  &  &  &  &  &  &  &  &  & {\lambda_1} & {+\lambda_2} & {+\lambda_3} &  \\[1ex]
+    {\max} & {\mu_1} & {+\mu_2} & {+\mu_3} &  &  &  &  &  &  &  &  &  & {+\lambda_1} & {+\lambda_2} & {+\lambda_3} &  \\[1ex]
     \text{soggetto a} & {\mu_1} &  &  & {-\pi_{112}} & {-\pi_{113}} &  &  &  &  &  &  &  &  &  &  & {\le 0} \\[1ex]
     & {\mu_1} &  &  &  &  &  & {-\pi_{212}} & {-\pi_{213}} &  &  &  &  &  &  &  & {\le 0} \\[1ex]
     & {\mu_1} &  &  &  &  &  &  &  &  & {-\pi_{312}} & {-\pi_{313}} &  &  &  &  & {\le 0} \\[1ex]
@@ -595,7 +595,7 @@ Il problema della colorazione dei vertici e le sue ipotesi sono definiti nel [Ca
     \label{DDPI_BIS}
     \tilde{\pi}_{c\{u,v\}}=1,~ \forall c \in \mathscr{C},
     {\rm ~~~~~}
-    \tilde{\pi}_{ce}= 0,  ~ \forall e \in E \setminus \{\{u,v\}\},
+    \tilde{\pi}_{ce}= 0,  ~ \forall c \in \mathscr{C},~ e \in E \setminus \{\{u,v\}\},
     {\rm ~~~~e~~~~}
     \tilde{\lambda}_{c}= 0,  ~ \forall c \in \mathscr{C}, \tag{11.15b}
     \end{equation*}
@@ -635,7 +635,7 @@ Il problema della colorazione dei vertici e le sue ipotesi sono definiti nel [Ca
 
     - <strong>Credere che il modello conti solo i colori davvero usati.</strong> I vincoli permettono $y_c=1$ per un colore che nessun vertice prende: è la funzione obiettivo che spegne questi colori.
 
-    - <strong>Ignorare la simmetria.</strong> Permutando i colori di una soluzione ottima si ottiene un'altra soluzione ottima: il modello $\mathrm{ILP}_{\mathrm{VCP}}$ ha $k!$ copie equivalenti di ogni colorazione.
+    - <strong>Ignorare la simmetria.</strong> Permutando i colori di una soluzione ottima si ottiene un'altra soluzione ottima: una colorazione che usa $q$ dei $k$ colori ha $k!/(k-q)!$ copie equivalenti nel modello $\mathrm{ILP}_{\mathrm{VCP}}$ ($k!$ quando usa tutti i colori).
 
     - <strong>Scrivere la soluzione duale con uno spigolo sbagliato.</strong> I valori duali $\tilde{\pi}_{ce}$ sono diversi da zero solo per uno spigolo $e=\{u,v\}$, e per ogni colore $c$: tutti gli altri spigoli hanno valore zero.
 

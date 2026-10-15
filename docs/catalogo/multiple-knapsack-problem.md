@@ -41,7 +41,7 @@ title: "Problema degli zaini multipli (MKP)"
     2. Ogni oggetto, da solo, entra in (almeno) uno zaino (altrimenti non può mai essere selezionato). Formalmente,
 
         $$
-        \exists\, k\in \mathscr{K}\ \text{tale che}\ w_j \le c_k, \qquad \forall\, j\in \mathscr{I}.
+        \forall\, j\in \mathscr{I}\quad \exists\, k\in \mathscr{K}\ \text{tale che}\ w_j \le c_k .
         $$
 
 ## Che cosa fa il corso su questo problema { #sez-sec-cat-mkp-vert }

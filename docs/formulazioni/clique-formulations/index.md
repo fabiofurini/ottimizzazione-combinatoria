@@ -18,7 +18,7 @@ title: "Formulazioni dei problemi di clique"
 
     - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/lp-relaxation/), [Capitolo 3 «Formulazioni ideali»](https://fabiofurini.github.io/programmazione-lineare-intera/formulations/ideal-formulations/) e [Capitolo 4 «Disuguaglianze valide»](https://fabiofurini.github.io/programmazione-lineare-intera/formulations/valid-inequalities/): rilassamenti lineari, formulazioni più forti e disuguaglianze valide.
 
-    - Dal modulo <em>Programmazione lineare</em>, [Capitolo 9 «Teoria della dualità»](https://fabiofurini.github.io/programmazione-lineare/dualita/09-dualita/): il duale di un problema LP e la dualità debole.
+    - Dal modulo <em>Programmazione lineare</em>, [Capitolo 9 «Teoria della dualità»](https://fabiofurini.github.io/programmazione-lineare/dualita/09-dualita/): il duale di un problema LP, la dualità debole e la dualità forte.
 
 !!! chiave "Obiettivi"
 

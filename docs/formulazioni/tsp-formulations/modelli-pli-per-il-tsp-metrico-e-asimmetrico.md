@@ -115,7 +115,7 @@ I problemi di questa sezione sono il problema del commesso viaggiatore asimmetri
 
     - <strong>Scrivere i vincoli MTZ per la città $1$.</strong> I vincoli [(13.1d)](modelli-pli-per-il-problema-del-commesso-viaggiatore.md#mjx-eqn:MTZ:TSP) si scrivono solo per le coppie di città diverse dalla città $1$: la città $1$ non ha variabile di posizione.
 
-    - <strong>Usare un coefficiente minore di $n-1$.</strong> Con un coefficiente minore di $n-1$ il vincolo taglia giri ammissibili; $n-1$ è il più piccolo valore valido.
+    - <strong>Usare un big-M minore di $n-1$.</strong> Scritto come $u_i-u_j+Mx_{ij}\le M-1$, il vincolo con $M<n-1$ taglia giri ammissibili: quando $x_{ij}=0$ richiede $u_i-u_j\le M-1<n-2$, mentre due posizioni possono differire di $n-2$; $M=n-1$ è il più piccolo valore valido.
 
     - <strong>Prendere $S=\mathscr{V}$ nei vincoli di eliminazione dei sottogiri.</strong> Un giro usa $|\mathscr{V}|$ archi dentro $\mathscr{V}$: il vincolo taglierebbe ogni giro. Gli insiemi $S$ sono sottoinsiemi propri delle città, con almeno due città.
 

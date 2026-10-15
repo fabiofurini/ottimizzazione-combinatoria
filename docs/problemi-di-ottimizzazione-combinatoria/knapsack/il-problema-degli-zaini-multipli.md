@@ -142,7 +142,7 @@ title: "Zaini multipli"
     2. Ogni oggetto, da solo, entra in (almeno) uno zaino (altrimenti non può mai essere selezionato). Formalmente,
 
         $$
-        \exists\, k\in \mathscr{K}\ \text{tale che}\ w_j \le c_k, \qquad \forall\, j\in \mathscr{I}.
+        \forall\, j\in \mathscr{I}\quad \exists\, k\in \mathscr{K}\ \text{tale che}\ w_j \le c_k .
         $$
 
 ---
