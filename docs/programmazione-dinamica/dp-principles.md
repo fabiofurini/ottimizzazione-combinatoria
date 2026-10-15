@@ -168,7 +168,7 @@ title: "Principi della programmazione dinamica"
 <tr>
 <td>RCP</td>
 <td><span class="arithmatex">\(v(\ell)\)</span></td>
-<td>lunghezze della barra</td>
+<td>lunghezze dell'asta</td>
 <td><span class="arithmatex">\(\Theta(n^2)\)</span></td>
 </tr>
 <tr>

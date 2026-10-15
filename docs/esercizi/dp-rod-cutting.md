@@ -12,9 +12,9 @@ title: "Esercizi · PD per il problema del taglio delle aste"
 
 <a id="esercizio-28-1"></a>
 
-!!! esercizio "Esercizio 28.1: Esercizio 1: problema del taglio delle barre"
+!!! esercizio "Esercizio 28.1: Esercizio 1: problema del taglio delle aste"
 
-    Consideriamo la seguente istanza dell'RCP, in cui la barra ha lunghezza $n=6$ e i profitti associati alle possibili lunghezze dei pezzi sono:
+    Consideriamo la seguente istanza dell'RCP, in cui l'asta ha lunghezza $n=6$ e i profitti associati alle possibili lunghezze dei pezzi sono:
 
     $$
     \begin{array}{l|rrrrrr}
@@ -388,7 +388,7 @@ title: "Esercizi · PD per il problema del taglio delle aste"
         \end{array}
         $$
 
-        Possiamo ricostruire una soluzione ottima per una barra di lunghezza $n=6$ come segue:
+        Possiamo ricostruire una soluzione ottima per un'asta di lunghezza $n=6$ come segue:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -977,9 +977,9 @@ title: "Esercizi · PD per il problema del taglio delle aste"
 
 <a id="esercizio-28-2"></a>
 
-!!! esercizio "Esercizio 28.2: Esercizio 2: problema del taglio delle barre"
+!!! esercizio "Esercizio 28.2: Esercizio 2: problema del taglio delle aste"
 
-    Consideriamo la seguente istanza dell'RCP, in cui la barra ha lunghezza $n=5$ e i profitti associati alle possibili lunghezze dei pezzi sono:
+    Consideriamo la seguente istanza dell'RCP, in cui l'asta ha lunghezza $n=5$ e i profitti associati alle possibili lunghezze dei pezzi sono:
 
     $$
     \begin{array}{l|rrrrr}
@@ -1281,7 +1281,7 @@ title: "Esercizi · PD per il problema del taglio delle aste"
         \end{array}
         $$
 
-        Possiamo ricostruire una soluzione ottima per una barra di lunghezza $n=5$ come segue:
+        Possiamo ricostruire una soluzione ottima per un'asta di lunghezza $n=5$ come segue:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -1729,9 +1729,9 @@ title: "Esercizi · PD per il problema del taglio delle aste"
 
 <a id="esercizio-28-3"></a>
 
-!!! esercizio "Esercizio 28.3: Esercizio 3: problema del taglio delle barre"
+!!! esercizio "Esercizio 28.3: Esercizio 3: problema del taglio delle aste"
 
-    Consideriamo la seguente istanza dell'RCP, in cui la barra ha lunghezza $n=5$ e i profitti associati alle possibili lunghezze dei pezzi sono:
+    Consideriamo la seguente istanza dell'RCP, in cui l'asta ha lunghezza $n=5$ e i profitti associati alle possibili lunghezze dei pezzi sono:
 
     $$
     \begin{array}{l|rrrrr}
@@ -2033,7 +2033,7 @@ title: "Esercizi · PD per il problema del taglio delle aste"
         \end{array}
         $$
 
-        Possiamo ricostruire una soluzione ottima per una barra di lunghezza $n=5$ come segue:
+        Possiamo ricostruire una soluzione ottima per un'asta di lunghezza $n=5$ come segue:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -2562,9 +2562,9 @@ title: "Esercizi · PD per il problema del taglio delle aste"
 
 <a id="esercizio-28-4"></a>
 
-!!! esercizio "Esercizio 28.4: Esercizio 4: problema del taglio delle barre"
+!!! esercizio "Esercizio 28.4: Esercizio 4: problema del taglio delle aste"
 
-    Consideriamo la seguente istanza dell'RCP, in cui la barra ha lunghezza $n=6$ e i profitti associati alle possibili lunghezze dei pezzi sono:
+    Consideriamo la seguente istanza dell'RCP, in cui l'asta ha lunghezza $n=6$ e i profitti associati alle possibili lunghezze dei pezzi sono:
 
     $$
     \begin{array}{l|rrrrrr}
@@ -2938,7 +2938,7 @@ title: "Esercizi · PD per il problema del taglio delle aste"
         \end{array}
         $$
 
-        Possiamo ricostruire una soluzione ottima per una barra di lunghezza $n=6$ come segue:
+        Possiamo ricostruire una soluzione ottima per un'asta di lunghezza $n=6$ come segue:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -3527,9 +3527,9 @@ title: "Esercizi · PD per il problema del taglio delle aste"
 
 <a id="esercizio-28-5"></a>
 
-!!! esercizio "Esercizio 28.5: Esercizio 5: problema del taglio delle barre"
+!!! esercizio "Esercizio 28.5: Esercizio 5: problema del taglio delle aste"
 
-    Consideriamo la seguente istanza dell'RCP, in cui la barra ha lunghezza $n=6$ e i profitti associati alle possibili lunghezze dei pezzi sono:
+    Consideriamo la seguente istanza dell'RCP, in cui l'asta ha lunghezza $n=6$ e i profitti associati alle possibili lunghezze dei pezzi sono:
 
     $$
     \begin{array}{l|rrrrrr}
@@ -3903,7 +3903,7 @@ title: "Esercizi · PD per il problema del taglio delle aste"
         \end{array}
         $$
 
-        Possiamo ricostruire una soluzione ottima per una barra di lunghezza $n=6$ come segue:
+        Possiamo ricostruire una soluzione ottima per un'asta di lunghezza $n=6$ come segue:
 
         <div class="tabella" markdown="0"><table>
         <tr>

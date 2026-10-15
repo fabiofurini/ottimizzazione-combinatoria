@@ -12,7 +12,7 @@ title: "Esercizi · PD per il problema del cambio monete"
 
 <a id="esercizio-27-1"></a>
 
-!!! esercizio "Esercizio 27.1: Esercizio 1: problema del resto"
+!!! esercizio "Esercizio 27.1: Esercizio 1: problema del cambio monete"
 
     Consideriamo la seguente istanza del CCP, in cui il resto da restituire è $c=6$ e i tagli sono
 
@@ -172,7 +172,7 @@ title: "Esercizi · PD per il problema del cambio monete"
 
 <a id="esercizio-27-2"></a>
 
-!!! esercizio "Esercizio 27.2: Esercizio 2: problema del resto"
+!!! esercizio "Esercizio 27.2: Esercizio 2: problema del cambio monete"
 
     Consideriamo la seguente istanza del CCP, in cui il resto da restituire è $c=11$ e i tagli sono
 
@@ -362,7 +362,7 @@ title: "Esercizi · PD per il problema del cambio monete"
 
 <a id="esercizio-27-3"></a>
 
-!!! esercizio "Esercizio 27.3: Esercizio 3: problema del resto"
+!!! esercizio "Esercizio 27.3: Esercizio 3: problema del cambio monete"
 
     Consideriamo la seguente istanza del CCP, in cui il resto da restituire è $c=7$ e i tagli sono
 
@@ -469,7 +469,7 @@ title: "Esercizi · PD per il problema del cambio monete"
 
 <a id="esercizio-27-4"></a>
 
-!!! esercizio "Esercizio 27.4: Esercizio 4: problema del resto"
+!!! esercizio "Esercizio 27.4: Esercizio 4: problema del cambio monete"
 
     Consideriamo la seguente istanza del CCP, in cui il resto da restituire è $c=12$ e i tagli sono
 
@@ -673,7 +673,7 @@ title: "Esercizi · PD per il problema del cambio monete"
 
 <a id="esercizio-27-5"></a>
 
-!!! esercizio "Esercizio 27.5: Esercizio 5: problema del resto"
+!!! esercizio "Esercizio 27.5: Esercizio 5: problema del cambio monete"
 
     Consideriamo la seguente istanza del CCP, in cui il resto da restituire è $c=9$ e i tagli sono
 

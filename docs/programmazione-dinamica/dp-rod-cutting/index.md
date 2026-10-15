@@ -28,19 +28,19 @@ title: "PD per il problema del taglio delle aste"
 
     - eseguire a mano l'algoritmo di PD con l'approccio top-down e con quello bottom-up, e con il miglior valore corrente $m$;
 
-    - ricostruire una soluzione ottima dal vettore ${s}$, per la barra e per ogni barra più corta;
+    - ricostruire una soluzione ottima dal vettore ${s}$, per l'asta e per ogni asta più corta;
 
-    - scrivere la seconda ricorrenza $v(j,\ell)$ sulle coppie (lunghezza massima dei pezzi, lunghezza della barra) e contare i passi dell'algoritmo di PD.
+    - scrivere la seconda ricorrenza $v(j,\ell)$ sulle coppie (lunghezza massima dei pezzi, lunghezza dell'asta) e contare i passi dell'algoritmo di PD.
 
-Il problema di questo capitolo è il [problema del taglio delle barre (RCP)](../../catalogo/rod-cutting-problem.md): la sua definizione è nella sua pagina.
+Il problema di questo capitolo è il [problema del taglio delle aste (RCP)](../../catalogo/rod-cutting-problem.md): la sua definizione è nella sua pagina.
 
 ## 28.1 Istanze e soluzioni ammissibili
 
 <a id="box-1-texexpbox1"></a>
 
-!!! esempio "Esempio 28.1: Problema del taglio delle barre"
+!!! esempio "Esempio 28.1: Problema del taglio delle aste"
 
-    Consideriamo una barra di lunghezza $n = 4$ e un insieme $\{1,2,3,4\}$ di $4$ possibili lunghezze dei pezzi con i seguenti profitti:
+    Consideriamo un'asta di lunghezza $n = 4$ e un insieme $\{1,2,3,4\}$ di $4$ possibili lunghezze dei pezzi con i seguenti profitti:
 
     $$
     \begin{array}{l|rrrrrrr}
@@ -54,9 +54,9 @@ Il problema di questo capitolo è il [problema del taglio delle barre (RCP)](../
 
 !!! chiave ""
 
-    Il numero di possibili soluzioni dell'RCP è $2^{n-1}$, perché possiamo tagliare una barra di lunghezza $n$ in $2^{n-1}$ modi diversi, con una scelta indipendente di tagliare (o no) in ogni possibile posizione di taglio.
+    Il numero di possibili soluzioni dell'RCP è $2^{n-1}$, perché possiamo tagliare un'asta di lunghezza $n$ in $2^{n-1}$ modi diversi, con una scelta indipendente di tagliare (o no) in ogni possibile posizione di taglio.
 
-- Il numero di possibili soluzioni dell'RCP cresce esponenzialmente con la lunghezza $n$ della barra:
+- Il numero di possibili soluzioni dell'RCP cresce esponenzialmente con la lunghezza $n$ dell'asta:
 
     $$
     2^{n-1} = O(2^n).
@@ -68,7 +68,7 @@ Il problema di questo capitolo è il [problema del taglio delle barre (RCP)](../
 
 !!! chiave ""
 
-    Una <em>soluzione ammissibile</em> dell'RCP è un modo di tagliare la barra in pezzi, tale che la lunghezza totale dei pezzi sia uguale alla lunghezza della barra.
+    Una <em>soluzione ammissibile</em> dell'RCP è un modo di tagliare l'asta in pezzi, tale che la lunghezza totale dei pezzi sia uguale alla lunghezza dell'asta.
 
 - Una soluzione ammissibile dell'RCP si può descrivere con un vettore soluzione intero
 
@@ -89,7 +89,7 @@ Il problema di questo capitolo è il [problema del taglio delle barre (RCP)](../
     \sum_{\ell=1}^{n} x_\ell.
     $$
 
-    Poiché la soluzione è ammissibile, la lunghezza totale dei pezzi deve essere uguale alla lunghezza della barra:
+    Poiché la soluzione è ammissibile, la lunghezza totale dei pezzi deve essere uguale alla lunghezza dell'asta:
 
     $$
     \sum_{\ell=1}^{n} \ell \, x_\ell = n.
@@ -109,7 +109,7 @@ Il problema di questo capitolo è il [problema del taglio delle barre (RCP)](../
 
 !!! esempio "Esempio 28.2: Enumerazione di tutte le possibili soluzioni dell'RCP"
 
-    Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](#box-1-texexpbox1)</span>, con una barra di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
+    Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](#box-1-texexpbox1)</span>, con un'asta di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
 
     $$
     \begin{array}{l|rrrrrrr}
@@ -119,9 +119,9 @@ Il problema di questo capitolo è il [problema del taglio delle barre (RCP)](../
     \end{array}
     $$
 
-    Ci sono $2^{4-1} = 8$ soluzioni ammissibili, corrispondenti ai diversi modi di tagliare la barra.
+    Ci sono $2^{4-1} = 8$ soluzioni ammissibili, corrispondenti ai diversi modi di tagliare l'asta.
 
-    Nel seguente albero binario ogni livello corrisponde a una possibile posizione di taglio: un arco con etichetta $1$ indica che la barra viene tagliata a quella lunghezza, mentre un arco con etichetta $0$ indica che non viene tagliata a quella lunghezza. Ogni foglia rappresenta uno schema di taglio completo e riporta il vettore corrispondente.
+    Nel seguente albero binario ogni livello corrisponde a una possibile posizione di taglio: un arco con etichetta $1$ indica che l'asta viene tagliata a quella lunghezza, mentre un arco con etichetta $0$ indica che non viene tagliata a quella lunghezza. Ogni foglia rappresenta uno schema di taglio completo e riporta il vettore corrispondente.
 
     ![Figura 1](../../img/dp-rod-cutting/fig01.svg){ .fig .ovale loading=lazy style="width:100%" }
 

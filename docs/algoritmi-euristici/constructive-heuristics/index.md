@@ -14,7 +14,7 @@ title: "Euristiche costruttive"
 
     - Da questo modulo, il capitolo [«Algoritmi euristici: definizioni»](../heuristics.md): bound primali e duali, il gap e le quattro istanze di riferimento.
 
-    - Da questo modulo, i capitoli sui problemi: il KP, il BPP, $P\,||\,C_{\max}$ e il TSP.
+    - Da questo modulo, i capitoli sui problemi: il KP, il BPP, $P\,||\,C_{\max}$, il TSP e il VCP.
 
 !!! chiave "Obiettivi"
 

@@ -32,7 +32,7 @@ title: "PD per il problema del cambio monete"
 
     - contare i passi dell'algoritmo di PD.
 
-Il problema di questo capitolo è il [problema del resto (CCP)](../catalogo/coin-change-problem.md): la sua definizione è nella sua pagina.
+Il problema di questo capitolo è il [problema del cambio monete (CCP)](../catalogo/coin-change-problem.md): la sua definizione è nella sua pagina.
 
 ## 27.1 Istanze e soluzioni ammissibili
 

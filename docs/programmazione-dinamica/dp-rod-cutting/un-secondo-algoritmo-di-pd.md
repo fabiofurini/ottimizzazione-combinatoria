@@ -16,7 +16,7 @@ title: "Un secondo algoritmo di PD"
 
         Per ogni $j \in \{0,1,\dots,n\}$ e $\ell \in \{0,1,\dots,n\}$, sia $v(j,\ell)$ il valore ottimo della sottoistanza dell'RCP data da:
 
-        1. una barra di lunghezza $\ell$,
+        1. un'asta di lunghezza $\ell$,
 
         2. un insieme $\{1,2,\dots,j\}$ di $j$ possibili lunghezze dei pezzi,
 
@@ -34,15 +34,15 @@ title: "Un secondo algoritmo di PD"
         \end{array} \right. \tag{28.2}
         \end{equation*}
 
-    - Il processo di decomposizione ricorsiva della formula $\eqref{eq:rcpalt}$ genera al più $2$ <strong>sottoproblemi indipendenti</strong>, corrispondenti alla scelta di tagliare o no un pezzo di lunghezza $j$ da una barra di lunghezza $\ell$. Se $j>\ell$, un pezzo di lunghezza $j$ non si può tagliare dalla barra, e quindi l'unica opzione ammissibile è non tagliarlo.
+    - Il processo di decomposizione ricorsiva della formula $\eqref{eq:rcpalt}$ genera al più $2$ <strong>sottoproblemi indipendenti</strong>, corrispondenti alla scelta di tagliare o no un pezzo di lunghezza $j$ da un'asta di lunghezza $\ell$. Se $j>\ell$, un pezzo di lunghezza $j$ non si può tagliare dall'asta, e quindi l'unica opzione ammissibile è non tagliarlo.
 
-    - Qui $v(j,0)=0$, perché una barra di lunghezza $0$ non si può tagliare e ha profitto $0$.
+    - Qui $v(j,0)=0$, perché un'asta di lunghezza $0$ non si può tagliare e ha profitto $0$.
 
-    - Inoltre, $v(0,\ell)=-\infty$ per $\ell>0$: in questo caso non è disponibile alcuna lunghezza positiva dei pezzi, quindi non esiste una soluzione ammissibile per una barra di lunghezza positiva. Il valore $-\infty$ serve a escludere questo caso inammissibile.
+    - Inoltre, $v(0,\ell)=-\infty$ per $\ell>0$: in questo caso non è disponibile alcuna lunghezza positiva dei pezzi, quindi non esiste una soluzione ammissibile per un'asta di lunghezza positiva. Il valore $-\infty$ serve a escludere questo caso inammissibile.
 
     - Se $1 \le j \le \ell$, il valore ottimo $v(j,\ell)$ si ottiene provando le due opzioni possibili, tagliare o non tagliare un primo pezzo di lunghezza $j$, e scegliendo quella che massimizza il profitto. I valori corrispondenti sono rispettivamente $p_j+v(j,\ell-j)$ e $v(j-1,\ell)$. Se $1 \le \ell < j$, la lunghezza $j$ non si può usare, e quindi $v(j,\ell)=v(j-1,\ell)$.
 
-    - Quindi una soluzione ottima per una barra di lunghezza $\ell$, con lunghezza massima disponibile dei pezzi $j$, si costruisce combinando la decisione presa sulla lunghezza $j$ con una soluzione ottima del sottoproblema residuo corrispondente.
+    - Quindi una soluzione ottima per un'asta di lunghezza $\ell$, con lunghezza massima disponibile dei pezzi $j$, si costruisce combinando la decisione presa sulla lunghezza $j$ con una soluzione ottima del sottoproblema residuo corrispondente.
 
         $\rightsquigarrow$ <strong>Sottostruttura ottima verificata!</strong>
 
@@ -50,7 +50,7 @@ title: "Un secondo algoritmo di PD"
 
         $\rightsquigarrow$ <strong>Sottoproblemi sovrapposti verificati!</strong>
 
-    - Un <strong>primo metodo</strong> per calcolare il valore ottimo $v(n,n)$ dell'istanza dell'RCP è l'<strong>approccio top-down</strong>. Il metodo parte dalla chiamata con $(j,\ell)=(n,n)$ e valuta ricorsivamente la formula $\eqref{eq:rcpalt}$: ogni chiamata per una barra di lunghezza $\ell$ e lunghezza massima disponibile dei pezzi $j$ genera altre chiamate, corrispondenti alle decisioni ammissibili sulla lunghezza $j$, fino a raggiungere uno dei casi base $v(j,0)$ o $v(0,\ell)$.
+    - Un <strong>primo metodo</strong> per calcolare il valore ottimo $v(n,n)$ dell'istanza dell'RCP è l'<strong>approccio top-down</strong>. Il metodo parte dalla chiamata con $(j,\ell)=(n,n)$ e valuta ricorsivamente la formula $\eqref{eq:rcpalt}$: ogni chiamata per un'asta di lunghezza $\ell$ e lunghezza massima disponibile dei pezzi $j$ genera altre chiamate, corrispondenti alle decisioni ammissibili sulla lunghezza $j$, fino a raggiungere uno dei casi base $v(j,0)$ o $v(0,\ell)$.
 
     - L'<strong>albero di ricorsione</strong> della funzione $v$ ha un nodo per ogni chiamata ricorsiva, etichettato con la chiamata che rappresenta. La radice rappresenta la chiamata iniziale. I figli di un nodo rappresentano le chiamate ricorsive fatte da quella chiamata. Le foglie rappresentano i casi base.
 
@@ -72,7 +72,7 @@ title: "Un secondo algoritmo di PD"
 
         !!! esempio "Esempio 28.10: Calcolo dei valori della funzione $v$"
 
-            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con una barra di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
+            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con un'asta di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -152,7 +152,7 @@ title: "Un secondo algoritmo di PD"
 
     - Possiamo evitare di risolvere ripetutamente gli stessi sottoproblemi memorizzando il valore di ogni sottoproblema appena calcolato. I valori si memorizzano in una <strong>tabella di lookup</strong>.
 
-    - Poiché la soluzione di ogni sottoproblema dipende solo dai sottoproblemi con un valore minore di $j$, o con lo stesso valore di $j$ e una lunghezza della barra minore, possiamo risolvere i sottoproblemi in ordine crescente di $j$ e, per ogni valore fissato di $j$, in ordine crescente di lunghezza della barra, partendo dai casi base $v(0,0)=0$ e $v(0,\ell)=-\infty$ per ogni $\ell \in \{1,\dots,n\}$ fino ad arrivare a $v(n,n)$.
+    - Poiché la soluzione di ogni sottoproblema dipende solo dai sottoproblemi con un valore minore di $j$, o con lo stesso valore di $j$ e una lunghezza dell'asta minore, possiamo risolvere i sottoproblemi in ordine crescente di $j$ e, per ogni valore fissato di $j$, in ordine crescente di lunghezza dell'asta, partendo dai casi base $v(0,0)=0$ e $v(0,\ell)=-\infty$ per ogni $\ell \in \{1,\dots,n\}$ fino ad arrivare a $v(n,n)$.
 
     - Questa osservazione porta in modo naturale a un <strong>metodo molto più efficiente</strong> per calcolare il valore ottimo $v(n,n)$ dell'istanza dell'RCP.
 
@@ -162,15 +162,15 @@ title: "Un secondo algoritmo di PD"
 
         !!! algoritmo "Algoritmo: DP2"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> Un'istanza dell'RCP data dalla lunghezza <span class="arithmatex">\(n\)</span> della barra e da un array <span class="arithmatex">\(p[1..n]\)</span> dei profitti dei pezzi</div><div class="pc" style="--liv:0"><strong>Output:</strong> Il valore ottimo dell'istanza dell'RCP</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1" id="box-20-bu2-a"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n][0..n]\)</span></div><div class="pc" style="--liv:1" id="box-21-bu2-b"><span class="pc-n">3</span><span class="arithmatex">\({v}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-22-bu2-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-23-bu2-d"><span class="pc-n">5</span><span class="arithmatex">\({v}[0][\ell] \leftarrow -\infty\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-24-bu2-e"><span class="pc-n">7</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-25-bu2-f"><span class="pc-n">8</span><strong>for</strong> <span class="arithmatex">\(\ell := 0\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-26-bu2-g"><span class="pc-n">9</span><strong>if</strong> <span class="arithmatex">\(j > \ell\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-27-bu2-h"><span class="pc-n">10</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">11</span><strong>else</strong></div><div class="pc" style="--liv:4" id="box-28-bu2-i"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(p[j] + {v}[j][\ell-j] > {v}[j-1][\ell]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:5" id="box-29-bu2-j"><span class="pc-n">13</span><span class="arithmatex">\({v}[j][\ell] \leftarrow p[j] + {v}[j][\ell-j]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>else</strong></div><div class="pc" style="--liv:5" id="box-30-bu2-k"><span class="pc-n">15</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">18</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-31-bu2-l"><span class="pc-n">20</span><strong>return</strong> <span class="arithmatex">\({v}[n][n]\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> Un'istanza dell'RCP data dalla lunghezza <span class="arithmatex">\(n\)</span> dell'asta e da un array <span class="arithmatex">\(p[1..n]\)</span> dei profitti dei pezzi</div><div class="pc" style="--liv:0"><strong>Output:</strong> Il valore ottimo dell'istanza dell'RCP</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1" id="box-20-bu2-a"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n][0..n]\)</span></div><div class="pc" style="--liv:1" id="box-21-bu2-b"><span class="pc-n">3</span><span class="arithmatex">\({v}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-22-bu2-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-23-bu2-d"><span class="pc-n">5</span><span class="arithmatex">\({v}[0][\ell] \leftarrow -\infty\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-24-bu2-e"><span class="pc-n">7</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-25-bu2-f"><span class="pc-n">8</span><strong>for</strong> <span class="arithmatex">\(\ell := 0\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-26-bu2-g"><span class="pc-n">9</span><strong>if</strong> <span class="arithmatex">\(j > \ell\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-27-bu2-h"><span class="pc-n">10</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">11</span><strong>else</strong></div><div class="pc" style="--liv:4" id="box-28-bu2-i"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(p[j] + {v}[j][\ell-j] > {v}[j-1][\ell]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:5" id="box-29-bu2-j"><span class="pc-n">13</span><span class="arithmatex">\({v}[j][\ell] \leftarrow p[j] + {v}[j][\ell-j]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>else</strong></div><div class="pc" style="--liv:5" id="box-30-bu2-k"><span class="pc-n">15</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">18</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-31-bu2-l"><span class="pc-n">20</span><strong>return</strong> <span class="arithmatex">\({v}[n][n]\)</span></div></div>
 
         - La matrice ${v}[0..n][0..n]$ è la <strong>tabella di lookup</strong>: memorizza i valori ottimi di tutti i sottoproblemi.
 
-        - L'inizializzazione pone ${v}[0][0]=0$ e ${v}[0][\ell]=-\infty$ per ogni lunghezza della barra $\ell \in \{1,\dots,n\}$, perché una lunghezza positiva non si può riempire se non è disponibile alcuna lunghezza dei pezzi.
+        - L'inizializzazione pone ${v}[0][0]=0$ e ${v}[0][\ell]=-\infty$ per ogni lunghezza dell'asta $\ell \in \{1,\dots,n\}$, perché una lunghezza positiva non si può riempire se non è disponibile alcuna lunghezza dei pezzi.
 
         - Il ciclo esterno, su $j \in \{1,2,\dots,n\}$, considera le lunghezze dei pezzi disponibili in ordine crescente.
 
-        - Il ciclo interno, su $\ell \in \{0,1,\dots,n\}$, calcola il valore migliore per ogni lunghezza della barra usando solo pezzi di lunghezza al più $j$.
+        - Il ciclo interno, su $\ell \in \{0,1,\dots,n\}$, calcola il valore migliore per ogni lunghezza dell'asta usando solo pezzi di lunghezza al più $j$.
 
         - Se $j>\ell$, la lunghezza $j$ non si può usare, e quindi ${v}[j][\ell] \leftarrow {v}[j-1][\ell]$.
 
@@ -182,7 +182,7 @@ title: "Un secondo algoritmo di PD"
 
         !!! esempio "Esempio 28.11: Esecuzione dell'algoritmo di PD"
 
-            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con una barra di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
+            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con un'asta di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -373,15 +373,15 @@ title: "Un secondo algoritmo di PD"
 
     - Per calcolare una soluzione ottima è necessario memorizzare alcune informazioni aggiuntive.
 
-    - Per ogni valore $j$ della lunghezza massima disponibile dei pezzi e per ogni lunghezza della barra $\ell$, oltre al valore ottimo ${v}[j][\ell]$, memorizziamo ${s}[j][\ell]$, che vale $1$ se si usa un pezzo di lunghezza $j$ e $0$ altrimenti.
+    - Per ogni valore $j$ della lunghezza massima disponibile dei pezzi e per ogni lunghezza dell'asta $\ell$, oltre al valore ottimo ${v}[j][\ell]$, memorizziamo ${s}[j][\ell]$, che vale $1$ se si usa un pezzo di lunghezza $j$ e $0$ altrimenti.
 
-    - Partendo da $j=n$ e $\ell=n$, se ${s}[j][\ell]=0$ la lunghezza $j$ non viene usata e $j$ diminuisce di $1$. Se ${s}[j][\ell]=1$, si usa un pezzo di lunghezza $j$ e la lunghezza residua della barra diventa $\ell-j$. La procedura si ferma quando la lunghezza residua arriva a $0$.
+    - Partendo da $j=n$ e $\ell=n$, se ${s}[j][\ell]=0$ la lunghezza $j$ non viene usata e $j$ diminuisce di $1$. Se ${s}[j][\ell]=1$, si usa un pezzo di lunghezza $j$ e la lunghezza residua dell'asta diventa $\ell-j$. La procedura si ferma quando la lunghezza residua arriva a $0$.
 
         Questo è lo pseudocodice dell'<strong>algoritmo di PD con l'approccio bottom-up</strong>, con la memorizzazione delle informazioni necessarie per calcolare una soluzione ottima:
 
         !!! algoritmo "Algoritmo: DP2\_InfoSol"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> Un'istanza dell'RCP data dalla lunghezza <span class="arithmatex">\(n\)</span> della barra e da un array <span class="arithmatex">\(p[1..n]\)</span> dei profitti dei pezzi</div><div class="pc" style="--liv:0"><strong>Output:</strong> Il valore ottimo dell'istanza dell'RCP e la matrice di informazioni binarie <span class="arithmatex">\({s}[0..n][0..n]\)</span></div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2_InfoSol(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n][0..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\({s} := \textnormal{new array}[0..n][0..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><span class="arithmatex">\({v}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><span class="arithmatex">\({s}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">7</span><span class="arithmatex">\({v}[0][\ell] \leftarrow -\infty\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\({s}[0][\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><strong>for</strong> <span class="arithmatex">\(\ell := 0\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(j > \ell\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">13</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">14</span><span class="arithmatex">\({s}[j][\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>else</strong></div><div class="pc" style="--liv:4"><span class="pc-n">16</span><strong>if</strong> <span class="arithmatex">\(p[j] + {v}[j][\ell-j] > {v}[j-1][\ell]\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">17</span><span class="arithmatex">\({v}[j][\ell] \leftarrow p[j] + {v}[j][\ell-j]\)</span></div><div class="pc" style="--liv:5"><span class="pc-n">18</span><span class="arithmatex">\({s}[j][\ell] \leftarrow 1\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">19</span><strong>else</strong></div><div class="pc" style="--liv:5"><span class="pc-n">20</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:5"><span class="pc-n">21</span><span class="arithmatex">\({s}[j][\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">22</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">23</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">24</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">25</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">26</span><strong>return</strong> <span class="arithmatex">\({v}[n][n], {s}\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> Un'istanza dell'RCP data dalla lunghezza <span class="arithmatex">\(n\)</span> dell'asta e da un array <span class="arithmatex">\(p[1..n]\)</span> dei profitti dei pezzi</div><div class="pc" style="--liv:0"><strong>Output:</strong> Il valore ottimo dell'istanza dell'RCP e la matrice di informazioni binarie <span class="arithmatex">\({s}[0..n][0..n]\)</span></div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2_InfoSol(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n][0..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\({s} := \textnormal{new array}[0..n][0..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><span class="arithmatex">\({v}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><span class="arithmatex">\({s}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">7</span><span class="arithmatex">\({v}[0][\ell] \leftarrow -\infty\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\({s}[0][\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><strong>for</strong> <span class="arithmatex">\(\ell := 0\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(j > \ell\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">13</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">14</span><span class="arithmatex">\({s}[j][\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>else</strong></div><div class="pc" style="--liv:4"><span class="pc-n">16</span><strong>if</strong> <span class="arithmatex">\(p[j] + {v}[j][\ell-j] > {v}[j-1][\ell]\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">17</span><span class="arithmatex">\({v}[j][\ell] \leftarrow p[j] + {v}[j][\ell-j]\)</span></div><div class="pc" style="--liv:5"><span class="pc-n">18</span><span class="arithmatex">\({s}[j][\ell] \leftarrow 1\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">19</span><strong>else</strong></div><div class="pc" style="--liv:5"><span class="pc-n">20</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:5"><span class="pc-n">21</span><span class="arithmatex">\({s}[j][\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">22</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">23</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">24</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">25</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">26</span><strong>return</strong> <span class="arithmatex">\({v}[n][n], {s}\)</span></div></div>
 
         - L'algoritmo di PD usa la matrice aggiuntiva ${s}$, che tiene traccia della decisione presa quando si calcola ${v}[j][\ell]$. Se si sceglie un pezzo di lunghezza $j$, ${s}[j][\ell]\leftarrow 1$ memorizza questa decisione; altrimenti ${s}[j][\ell]\leftarrow 0$ registra che la lunghezza $j$ non viene usata.
 
@@ -389,7 +389,7 @@ title: "Un secondo algoritmo di PD"
 
         !!! esempio "Esempio 28.12: Calcolo delle informazioni aggiuntive"
 
-            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con una barra di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
+            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con un'asta di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -574,7 +574,7 @@ title: "Un secondo algoritmo di PD"
             \end{array}
             $$
 
-    - Calcolata la matrice ${s}$, si può calcolare una soluzione ottima per una barra di lunghezza $n$ applicando ripetutamente la seguente regola, partendo da $(j,\ell)=(n,n)$ e da $x_h=0$ per ogni $h \in \{1,2,\dots,n\}$:
+    - Calcolata la matrice ${s}$, si può calcolare una soluzione ottima per un'asta di lunghezza $n$ applicando ripetutamente la seguente regola, partendo da $(j,\ell)=(n,n)$ e da $x_h=0$ per ogni $h \in \{1,2,\dots,n\}$:
 
         $$
         \begin{array}{ll}
@@ -589,7 +589,7 @@ title: "Un secondo algoritmo di PD"
 
         !!! algoritmo "Algoritmo: DP2\_SolComputation"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> La lunghezza <span class="arithmatex">\(n\)</span> della barra e la matrice <span class="arithmatex">\({s}[0..n][0..n]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> Una soluzione ottima dell'istanza dell'RCP</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2_SolComputation(<span class="arithmatex">\(n,{s}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(h := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[h] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(j := n\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><span class="arithmatex">\(\ell := n\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">8</span><strong>while</strong> <span class="arithmatex">\(\ell > 0\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><strong>if</strong> <span class="arithmatex">\({s}[j][\ell] = 0\)</span> <strong>then</strong></div><div class="pc" style="--liv:3"><span class="pc-n">10</span><span class="arithmatex">\(j \leftarrow j-1\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><strong>else</strong></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><span class="arithmatex">\(x[j] \leftarrow x[j]+1\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">13</span><span class="arithmatex">\(\ell \leftarrow \ell-j\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">14</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">15</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">16</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> La lunghezza <span class="arithmatex">\(n\)</span> dell'asta e la matrice <span class="arithmatex">\({s}[0..n][0..n]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> Una soluzione ottima dell'istanza dell'RCP</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2_SolComputation(<span class="arithmatex">\(n,{s}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(h := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[h] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(j := n\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><span class="arithmatex">\(\ell := n\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">8</span><strong>while</strong> <span class="arithmatex">\(\ell > 0\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><strong>if</strong> <span class="arithmatex">\({s}[j][\ell] = 0\)</span> <strong>then</strong></div><div class="pc" style="--liv:3"><span class="pc-n">10</span><span class="arithmatex">\(j \leftarrow j-1\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><strong>else</strong></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><span class="arithmatex">\(x[j] \leftarrow x[j]+1\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">13</span><span class="arithmatex">\(\ell \leftarrow \ell-j\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">14</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">15</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">16</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
         <a id="box-34-texrcpaltsolvector"></a>
 
@@ -609,7 +609,7 @@ title: "Un secondo algoritmo di PD"
             \end{array}
             $$
 
-            Possiamo calcolare una soluzione ottima per una barra di lunghezza $n=4$ come segue:
+            Possiamo calcolare una soluzione ottima per un'asta di lunghezza $n=4$ come segue:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -675,7 +675,7 @@ title: "Un secondo algoritmo di PD"
             (0,2,0,0)
             $$
 
-    - La stessa procedura di calcolo, basata sulla matrice ${s}$, si può applicare a qualunque lunghezza della barra $\ell \le n$ partendo da $j=n$.
+    - La stessa procedura di calcolo, basata sulla matrice ${s}$, si può applicare a qualunque lunghezza dell'asta $\ell \le n$ partendo da $j=n$.
 
         <a id="box-35-texrcpaltsolvector32"></a>
 
@@ -695,7 +695,7 @@ title: "Un secondo algoritmo di PD"
             \end{array}
             $$
 
-            Possiamo calcolare una soluzione ottima per una barra di lunghezza $\ell=3$ come segue:
+            Possiamo calcolare una soluzione ottima per un'asta di lunghezza $\ell=3$ come segue:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -739,7 +739,7 @@ title: "Un secondo algoritmo di PD"
             (0,0,1,0)
             $$
 
-            Possiamo calcolare una soluzione ottima per una barra di lunghezza $\ell=2$ come segue:
+            Possiamo calcolare una soluzione ottima per un'asta di lunghezza $\ell=2$ come segue:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -796,7 +796,7 @@ title: "Un secondo algoritmo di PD"
 
 ## 28.3.1 Numero di passi
 
-- Sia $S(n)$ il numero di passi eseguiti da <code>DP2</code> nel caso peggiore, dove $n$ è la lunghezza della barra. Calcoliamo $S(n)$ contando quante volte vengono eseguite le righe dello pseudocodice di <code>DP2</code>.
+- Sia $S(n)$ il numero di passi eseguiti da <code>DP2</code> nel caso peggiore, dove $n$ è la lunghezza dell'asta. Calcoliamo $S(n)$ contando quante volte vengono eseguite le righe dello pseudocodice di <code>DP2</code>.
 
 - Il numero di volte in cui viene eseguita ogni riga di codice è:
 

@@ -16,7 +16,7 @@ title: "Un primo algoritmo di PD"
 
         Per ogni $\ell \in \{0,1,\dots,n\}$, sia $v(\ell)$ il valore ottimo della sottoistanza dell'RCP data da:
 
-        1. una barra di lunghezza $\ell$,
+        1. un'asta di lunghezza $\ell$,
 
         2. un insieme $\{1,2,\dots,\ell\}$ di $\ell$ possibili lunghezze dei pezzi,
 
@@ -32,11 +32,11 @@ title: "Un primo algoritmo di PD"
         \end{array} \right. \tag{28.1}
         \end{equation*}
 
-    - Il processo di decomposizione ricorsiva della formula $\eqref{eq:1}$ genera $\ell$ <strong>sottoproblemi indipendenti</strong>, ciascuno corrispondente a una possibile scelta di tagliare un primo pezzo di lunghezza $j$ da una barra di lunghezza $\ell$.  Qui $v(0)=0$, perché una barra di lunghezza $0$ non si può tagliare e ha profitto $0$.
+    - Il processo di decomposizione ricorsiva della formula $\eqref{eq:1}$ genera $\ell$ <strong>sottoproblemi indipendenti</strong>, ciascuno corrispondente a una possibile scelta di tagliare un primo pezzo di lunghezza $j$ da un'asta di lunghezza $\ell$.  Qui $v(0)=0$, perché un'asta di lunghezza $0$ non si può tagliare e ha profitto $0$.
 
     - Il valore ottimo $v(\ell)$ si ottiene provando tutte le possibili lunghezze del primo pezzo e scegliendo quella che massimizza la somma $p_j+v(\ell-j)$ del profitto del primo pezzo e del valore ottimo del sottoproblema residuo.
 
-    - Quindi una soluzione ottima per una barra di lunghezza $\ell$ si costruisce combinando il primo pezzo scelto, di lunghezza $j$, con una soluzione ottima del sottoproblema residuo di lunghezza $\ell-j$.
+    - Quindi una soluzione ottima per un'asta di lunghezza $\ell$ si costruisce combinando il primo pezzo scelto, di lunghezza $j$, con una soluzione ottima del sottoproblema residuo di lunghezza $\ell-j$.
 
         $\rightsquigarrow$ <strong>Sottostruttura ottima verificata!</strong>
 
@@ -44,7 +44,7 @@ title: "Un primo algoritmo di PD"
 
         $\rightsquigarrow$ <strong>Sottoproblemi sovrapposti verificati!</strong>
 
-    - Un <strong>primo metodo</strong> per calcolare il valore ottimo $v(n)$ dell'istanza dell'RCP è l'<strong>approccio top-down</strong>. Il metodo parte dalla chiamata con $\ell=n$ e valuta ricorsivamente la formula $\eqref{eq:1}$: ogni chiamata per una barra di lunghezza $\ell$ genera altre chiamate per barre di lunghezza $\ell-j$, per ogni $j \in \{1,2,\dots,\ell\}$, fino a raggiungere il caso base $v(0)$.
+    - Un <strong>primo metodo</strong> per calcolare il valore ottimo $v(n)$ dell'istanza dell'RCP è l'<strong>approccio top-down</strong>. Il metodo parte dalla chiamata con $\ell=n$ e valuta ricorsivamente la formula $\eqref{eq:1}$: ogni chiamata per un'asta di lunghezza $\ell$ genera altre chiamate per aste di lunghezza $\ell-j$, per ogni $j \in \{1,2,\dots,\ell\}$, fino a raggiungere il caso base $v(0)$.
 
     - L'<strong>albero di ricorsione</strong> della funzione $v$ ha un nodo per ogni chiamata ricorsiva, etichettato con la chiamata che rappresenta. La radice rappresenta la chiamata iniziale. I figli di un nodo rappresentano le chiamate ricorsive fatte da quella chiamata. Le foglie rappresentano i casi base.
 
@@ -58,13 +58,13 @@ title: "Un primo algoritmo di PD"
 
             La funzione $v$ viene chiamata $16$ volte, e gli stessi sottoproblemi vengono risolti più volte: $v(2)$ viene chiamata $2$ volte, $v(1)$ viene chiamata $4$ volte e $v(0)$ viene chiamata $8$ volte. Tutte le altre chiamate vengono fatte una sola volta.
 
-    - Il valore $v(\ell)$, per una generica lunghezza della barra $\ell$, si può calcolare una volta noti i valori $v(j)$ per tutte le lunghezze minori $j<\ell$.
+    - Il valore $v(\ell)$, per una generica lunghezza dell'asta $\ell$, si può calcolare una volta noti i valori $v(j)$ per tutte le lunghezze minori $j<\ell$.
 
         <a id="box-4-texrcpsmallervalues"></a>
 
         !!! esempio "Esempio 28.4: Calcolo dei valori della funzione $v$"
 
-            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con una barra di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
+            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con un'asta di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -104,17 +104,17 @@ title: "Un primo algoritmo di PD"
 
     - Poiché la soluzione di un sottoproblema di valore $v(\ell)$ dipende solo dai sottoproblemi di valore $v(j)$, con $j<\ell$, possiamo risolvere i sottoproblemi per valori crescenti di $\ell$, partendo dal caso base $v(0)=0$ fino ad arrivare a $v(n)$: questa osservazione porta in modo naturale a un <strong>metodo molto più efficiente</strong> per calcolare il valore ottimo $v(n)$ dell'istanza dell'RCP.
 
-    - Un <strong>secondo metodo</strong> per calcolare il valore ottimo $v(n)$ dell'istanza dell'RCP è l'<strong>approccio bottom-up</strong>. Il metodo parte dal caso base $v(0)=0$ e valuta la formula $\eqref{eq:1}$ per lunghezze crescenti della barra $\ell \in \{1,2,\dots,n\}$: ogni valore $v(\ell)$ si calcola con i valori già calcolati $v(0), v(1), \dots, v(\ell-1)$, fino a ottenere il valore $v(n)$ dell'istanza dell'RCP.
+    - Un <strong>secondo metodo</strong> per calcolare il valore ottimo $v(n)$ dell'istanza dell'RCP è l'<strong>approccio bottom-up</strong>. Il metodo parte dal caso base $v(0)=0$ e valuta la formula $\eqref{eq:1}$ per lunghezze crescenti dell'asta $\ell \in \{1,2,\dots,n\}$: ogni valore $v(\ell)$ si calcola con i valori già calcolati $v(0), v(1), \dots, v(\ell-1)$, fino a ottenere il valore $v(n)$ dell'istanza dell'RCP.
 
         Questo è lo pseudocodice dell'<strong>algoritmo di PD con l'approccio bottom-up</strong>:
 
         !!! algoritmo "Algoritmo: DP1"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> Un'istanza dell'RCP data dalla lunghezza <span class="arithmatex">\(n\)</span> della barra e da un array <span class="arithmatex">\(p[1..n]\)</span> dei profitti dei pezzi</div><div class="pc" style="--liv:0"><strong>Output:</strong> Il valore ottimo dell'istanza dell'RCP</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP1(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1" id="box-5-bu-a"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n]\)</span></div><div class="pc" style="--liv:1" id="box-6-bu-b"><span class="pc-n">3</span><span class="arithmatex">\({v}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-7-bu-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-8-bu-d"><span class="pc-n">5</span><span class="arithmatex">\(\mathit{m} := 0\)</span></div><div class="pc" style="--liv:2" id="box-9-bu-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(\ell\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-10-bu-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(\mathit{m} < p[j] + {v}[\ell-j]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-11-bu-g"><span class="pc-n">8</span><span class="arithmatex">\(\mathit{m} \leftarrow p[j] + {v}[\ell-j]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-12-bu-h"><span class="pc-n">11</span><span class="arithmatex">\({v}[\ell] \leftarrow \mathit{m}\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-13-bu-i"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\({v}[n]\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> Un'istanza dell'RCP data dalla lunghezza <span class="arithmatex">\(n\)</span> dell'asta e da un array <span class="arithmatex">\(p[1..n]\)</span> dei profitti dei pezzi</div><div class="pc" style="--liv:0"><strong>Output:</strong> Il valore ottimo dell'istanza dell'RCP</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP1(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1" id="box-5-bu-a"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n]\)</span></div><div class="pc" style="--liv:1" id="box-6-bu-b"><span class="pc-n">3</span><span class="arithmatex">\({v}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-7-bu-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-8-bu-d"><span class="pc-n">5</span><span class="arithmatex">\(\mathit{m} := 0\)</span></div><div class="pc" style="--liv:2" id="box-9-bu-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(\ell\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-10-bu-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(\mathit{m} < p[j] + {v}[\ell-j]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-11-bu-g"><span class="pc-n">8</span><span class="arithmatex">\(\mathit{m} \leftarrow p[j] + {v}[\ell-j]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-12-bu-h"><span class="pc-n">11</span><span class="arithmatex">\({v}[\ell] \leftarrow \mathit{m}\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-13-bu-i"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\({v}[n]\)</span></div></div>
 
         - Il vettore ${v}[0..n]$ è la <strong>tabella di lookup</strong>: memorizza i valori ottimi di tutti i sottoproblemi, con il caso base ${v}[0]=0$.
 
-        - Il ciclo esterno, su $\ell \in \{1,2,\dots,n\}$, calcola ${v}[\ell]$ in ordine crescente di lunghezza della barra.
+        - Il ciclo esterno, su $\ell \in \{1,2,\dots,n\}$, calcola ${v}[\ell]$ in ordine crescente di lunghezza dell'asta.
 
         - Il ciclo interno, su $j \in \{1,2,\dots,\ell\}$, valuta tutte le possibili lunghezze del primo pezzo e tiene in $\mathit{m}$ il valore massimo di $p[j]+{v}[\ell-j]$.
 
@@ -126,7 +126,7 @@ title: "Un primo algoritmo di PD"
 
         !!! esempio "Esempio 28.5: Esecuzione dell'algoritmo di PD"
 
-            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con una barra di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
+            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con un'asta di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -291,21 +291,21 @@ title: "Un primo algoritmo di PD"
             \end{array}
             $$
 
-    - Dopo l'esecuzione dell'algoritmo di PD, il vettore ${v}$ contiene il valore ottimo ${v}[\ell]$ per ogni lunghezza della barra.
+    - Dopo l'esecuzione dell'algoritmo di PD, il vettore ${v}$ contiene il valore ottimo ${v}[\ell]$ per ogni lunghezza dell'asta.
 
 - <u>Passo 2</u>: calcolo di una soluzione ottima
 
     - Per calcolare una soluzione ottima è necessario memorizzare alcune informazioni aggiuntive.
 
-    - Per ogni lunghezza della barra $\ell$, oltre al valore ottimo ${v}[\ell]$, memorizziamo ${s}[\ell]$, la lunghezza del primo pezzo da tagliare in una soluzione ottima per una barra di lunghezza $\ell$.
+    - Per ogni lunghezza dell'asta $\ell$, oltre al valore ottimo ${v}[\ell]$, memorizziamo ${s}[\ell]$, la lunghezza del primo pezzo da tagliare in una soluzione ottima per un'asta di lunghezza $\ell$.
 
-    - Partendo da $\ell=n$, il valore ${s}[\ell]$ dà la lunghezza del primo pezzo da tagliare; la barra rimanente ha lunghezza $\ell-{s}[\ell]$, e la stessa regola si può applicare di nuovo, e così via, finché la lunghezza residua arriva a $0$.
+    - Partendo da $\ell=n$, il valore ${s}[\ell]$ dà la lunghezza del primo pezzo da tagliare; l'asta rimanente ha lunghezza $\ell-{s}[\ell]$, e la stessa regola si può applicare di nuovo, e così via, finché la lunghezza residua arriva a $0$.
 
         Questo è lo pseudocodice dell'<strong>algoritmo di PD con l'approccio bottom-up</strong>, con la memorizzazione delle informazioni necessarie per calcolare una soluzione ottima:
 
         !!! algoritmo "Algoritmo: DP1\_InfoSol"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> Un'istanza dell'RCP data dalla lunghezza <span class="arithmatex">\(n\)</span> della barra e da un array <span class="arithmatex">\(p[1..n]\)</span> dei profitti dei pezzi</div><div class="pc" style="--liv:0"><strong>Output:</strong> Il valore ottimo dell'istanza dell'RCP e il vettore di informazioni <span class="arithmatex">\({s}[1..n]\)</span></div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP1_InfoSol(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\({s} := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><span class="arithmatex">\({v}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><span class="arithmatex">\(\mathit{m} := 0\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">7</span><span class="arithmatex">\(\mathit{t} := 0\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(\ell\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>if</strong> <span class="arithmatex">\(\mathit{m} < p[j] + {v}[\ell-j]\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">10</span><span class="arithmatex">\(\mathit{m} \leftarrow p[j] + {v}[\ell-j]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">11</span><span class="arithmatex">\(\mathit{t} \leftarrow j\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">13</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">14</span><span class="arithmatex">\({v}[\ell] \leftarrow \mathit{m}\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">15</span><span class="arithmatex">\({s}[\ell] \leftarrow \mathit{t}\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">17</span><strong>return</strong> <span class="arithmatex">\({v}[n], {s}\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> Un'istanza dell'RCP data dalla lunghezza <span class="arithmatex">\(n\)</span> dell'asta e da un array <span class="arithmatex">\(p[1..n]\)</span> dei profitti dei pezzi</div><div class="pc" style="--liv:0"><strong>Output:</strong> Il valore ottimo dell'istanza dell'RCP e il vettore di informazioni <span class="arithmatex">\({s}[1..n]\)</span></div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP1_InfoSol(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\({s} := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><span class="arithmatex">\({v}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><span class="arithmatex">\(\mathit{m} := 0\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">7</span><span class="arithmatex">\(\mathit{t} := 0\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(\ell\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>if</strong> <span class="arithmatex">\(\mathit{m} < p[j] + {v}[\ell-j]\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">10</span><span class="arithmatex">\(\mathit{m} \leftarrow p[j] + {v}[\ell-j]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">11</span><span class="arithmatex">\(\mathit{t} \leftarrow j\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">13</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">14</span><span class="arithmatex">\({v}[\ell] \leftarrow \mathit{m}\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">15</span><span class="arithmatex">\({s}[\ell] \leftarrow \mathit{t}\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">17</span><strong>return</strong> <span class="arithmatex">\({v}[n], {s}\)</span></div></div>
 
         - L'algoritmo di PD usa la variabile temporanea aggiuntiva $\mathit{t}$ per tenere traccia della decisione presa quando $\mathit{m}$ viene aggiornato. Se si sceglie un primo pezzo di lunghezza $j$, $\mathit{t}\leftarrow j$ memorizza questa decisione. Alla fine del ciclo interno, ${s}[\ell]\leftarrow \mathit{t}$ memorizza la lunghezza del primo pezzo scelto, insieme al valore ottimo ${v}[\ell]\leftarrow \mathit{m}$.
 
@@ -313,7 +313,7 @@ title: "Un primo algoritmo di PD"
 
         !!! esempio "Esempio 28.6: Calcolo delle informazioni aggiuntive"
 
-            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con una barra di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
+            Consideriamo l'istanza dell'RCP dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, con un'asta di lunghezza $n = 4$; i profitti associati alle possibili lunghezze dei pezzi sono:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -512,7 +512,7 @@ title: "Un primo algoritmo di PD"
 
         !!! algoritmo "Algoritmo: DP1\_SolComputation"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> La lunghezza <span class="arithmatex">\(n\)</span> della barra dell'istanza dell'RCP e il vettore <span class="arithmatex">\({s}[1..n]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> Una soluzione ottima dell'istanza dell'RCP</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP1_SolComputation(<span class="arithmatex">\(n,{s}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(j := n\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>while</strong> <span class="arithmatex">\(j > 0\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\(x[{s}[j]] \leftarrow x[{s}[j]]+1\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><span class="arithmatex">\(j \leftarrow j - {s}[j]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> La lunghezza <span class="arithmatex">\(n\)</span> dell'asta dell'istanza dell'RCP e il vettore <span class="arithmatex">\({s}[1..n]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> Una soluzione ottima dell'istanza dell'RCP</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP1_SolComputation(<span class="arithmatex">\(n,{s}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(j := n\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>while</strong> <span class="arithmatex">\(j > 0\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\(x[{s}[j]] \leftarrow x[{s}[j]]+1\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><span class="arithmatex">\(j \leftarrow j - {s}[j]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
         <a id="box-16-texrcpsolvector"></a>
 
@@ -528,7 +528,7 @@ title: "Un primo algoritmo di PD"
             \end{array}
             $$
 
-            Possiamo calcolare una soluzione ottima per una barra di lunghezza $n=4$ come segue:
+            Possiamo calcolare una soluzione ottima per un'asta di lunghezza $n=4$ come segue:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -579,11 +579,11 @@ title: "Un primo algoritmo di PD"
             (0,2,0,0)
             $$
 
-    - La stessa procedura di calcolo, basata sul vettore $s$, si può applicare partendo da qualunque lunghezza della barra $\ell$.
+    - La stessa procedura di calcolo, basata sul vettore $s$, si può applicare partendo da qualunque lunghezza dell'asta $\ell$.
 
         <a id="box-17-texrcpsolvector32"></a>
 
-        !!! esempio "Esempio 28.8: Calcolo di soluzioni ottime per le lunghezze della barra 3 e 2"
+        !!! esempio "Esempio 28.8: Calcolo di soluzioni ottime per le lunghezze dell'asta 3 e 2"
 
             Dopo l'esecuzione dell'algoritmo di PD sull'istanza dell'<span style="color:#1971c2">[Esempio 28.1](index.md#box-1-texexpbox1)</span>, abbiamo il seguente vettore ${s}$:
 
@@ -595,7 +595,7 @@ title: "Un primo algoritmo di PD"
             \end{array}
             $$
 
-            Possiamo calcolare una soluzione ottima per una barra di lunghezza $3$ come segue:
+            Possiamo calcolare una soluzione ottima per un'asta di lunghezza $3$ come segue:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -636,7 +636,7 @@ title: "Un primo algoritmo di PD"
             (0,0,1,0)
             $$
 
-            Possiamo calcolare una soluzione ottima per una barra di lunghezza $2$ come segue:
+            Possiamo calcolare una soluzione ottima per un'asta di lunghezza $2$ come segue:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -679,7 +679,7 @@ title: "Un primo algoritmo di PD"
 
 ## 28.2.1 Numero di passi
 
-- Sia $S(n)$ il numero di passi eseguiti da <code>DP1</code> nel caso peggiore, dove $n$ è la lunghezza della barra. Calcoliamo $S(n)$ contando quante volte vengono eseguite le <span style="color:#e03131">Righe</span> [2](#box-5-bu-a)–<span style="color:#e03131">Riga</span> [13](#box-13-bu-i).
+- Sia $S(n)$ il numero di passi eseguiti da <code>DP1</code> nel caso peggiore, dove $n$ è la lunghezza dell'asta. Calcoliamo $S(n)$ contando quante volte vengono eseguite le <span style="color:#e03131">Righe</span> [2](#box-5-bu-a)–<span style="color:#e03131">Riga</span> [13](#box-13-bu-i).
 
 - Nel caso peggiore, la condizione alla riga [7](#box-10-bu-f) è vera a ogni iterazione del ciclo interno, e quindi la riga [8](#box-11-bu-g) viene eseguita tante volte quanto la riga [7](#box-10-bu-f). Il numero di esecuzioni delle righe rilevanti è:
 
