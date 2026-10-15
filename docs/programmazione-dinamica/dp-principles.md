@@ -6,7 +6,7 @@ title: "Principi della programmazione dinamica"
 
 <div class="info-capitolo" markdown>
 
-**Parte 3 · Programmazione dinamica · Capitolo 16** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-pencil: Esercizi: Principi](../esercizi/dp-principles.md)
+**Parte 3 · Programmazione dinamica · Capitolo 16** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-presentation: Slide](../pdf/slide-dp-principles.pdf) · [:material-pencil: Esercizi: Principi](../esercizi/dp-principles.md)
 
 </div>
 

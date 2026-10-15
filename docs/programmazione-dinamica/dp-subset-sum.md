@@ -6,7 +6,7 @@ title: "PD per il problema del subset sum"
 
 <div class="info-capitolo" markdown>
 
-**Parte 3 · Programmazione dinamica · Capitolo 20** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-pencil: Esercizi: Subset sum (SSP)](../esercizi/dp-subset-sum.md) · [:material-gesture-tap: App: Tabelle della PD per i problemi di zaino](../laboratorio/tabella-pd-zaino.md)
+**Parte 3 · Programmazione dinamica · Capitolo 20** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-presentation: Slide](../pdf/slide-dp-subset-sum.pdf) · [:material-pencil: Esercizi: Subset sum (SSP)](../esercizi/dp-subset-sum.md) · [:material-gesture-tap: App: Tabelle della PD per i problemi di zaino](../laboratorio/tabella-pd-zaino.md)
 
 </div>
 

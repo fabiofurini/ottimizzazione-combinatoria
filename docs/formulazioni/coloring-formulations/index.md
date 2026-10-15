@@ -6,7 +6,7 @@ title: "Formulazioni dei problemi di colorazione"
 
 <div class="info-capitolo" markdown>
 
-**Parte 2 · Formulazioni dei problemi e loro proprietà · Capitolo 11** · [:material-file-pdf-box: Dispensa, volume 2 (PDF)](../../pdf/dispensa-2-formulazioni.pdf) · [:material-pencil: Esercizi: Problemi di colorazione](../../esercizi/coloring-formulations.md)
+**Parte 2 · Formulazioni dei problemi e loro proprietà · Capitolo 11** · [:material-file-pdf-box: Dispensa, volume 2 (PDF)](../../pdf/dispensa-2-formulazioni.pdf) · [:material-presentation: Slide](../../pdf/slide-coloring-formulations.pdf) · [:material-pencil: Esercizi: Problemi di colorazione](../../esercizi/coloring-formulations.md)
 
 </div>
 

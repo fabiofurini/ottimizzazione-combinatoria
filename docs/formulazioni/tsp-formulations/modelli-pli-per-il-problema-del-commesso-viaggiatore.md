@@ -6,7 +6,7 @@ title: "Commesso viaggiatore"
 
 <div class="info-capitolo" markdown>
 
-**Parte 2 · Formulazioni dei problemi e loro proprietà · Capitolo 13** · [:material-book-open-variant: Capitolo 13: Problemi di routing](index.md) · [:material-file-pdf-box: Dispensa, volume 2 (PDF)](../../pdf/dispensa-2-formulazioni.pdf) · [:material-pencil: Esercizi: Problemi di routing](../../esercizi/tsp-formulations.md)
+**Parte 2 · Formulazioni dei problemi e loro proprietà · Capitolo 13** · [:material-book-open-variant: Capitolo 13: Problemi di routing](index.md) · [:material-file-pdf-box: Dispensa, volume 2 (PDF)](../../pdf/dispensa-2-formulazioni.pdf) · [:material-presentation: Slide](../../pdf/slide-tsp-formulations.pdf) · [:material-pencil: Esercizi: Problemi di routing](../../esercizi/tsp-formulations.md)
 
 </div>
 

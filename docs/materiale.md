@@ -52,6 +52,17 @@ Le slide delle lezioni, un PDF per capitolo, con le stesse definizioni ed esempi
 | 6 | [Problemi di routing](problemi-di-ottimizzazione-combinatoria/tsp/index.md) | [:material-file-pdf-box: PDF](pdf/slide-tsp.pdf) (0.4 MB) |
 | 7 | [Problemi di scheduling](problemi-di-ottimizzazione-combinatoria/pcmax/index.md) | [:material-file-pdf-box: PDF](pdf/slide-pcmax.pdf) (0.4 MB) |
 | 8 | [Problemi di lot sizing](problemi-di-ottimizzazione-combinatoria/lot-sizing/index.md) | [:material-file-pdf-box: PDF](pdf/slide-lot-sizing.pdf) (0.4 MB) |
+| 9 | [Formulazioni dei problemi di zaino](formulazioni/knapsack-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slide-knapsack-formulations.pdf) (0.6 MB) |
+| 10 | [Formulazioni dei problemi di packing](formulazioni/bin-packing-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slide-bin-packing-formulations.pdf) (0.5 MB) |
+| 11 | [Formulazioni dei problemi di colorazione](formulazioni/coloring-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slide-coloring-formulations.pdf) (0.4 MB) |
+| 12 | [Formulazioni dei problemi di clique](formulazioni/clique-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slide-clique-formulations.pdf) (0.5 MB) |
+| 13 | [Formulazioni dei problemi di routing](formulazioni/tsp-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slide-tsp-formulations.pdf) (0.4 MB) |
+| 14 | [Formulazioni dei problemi di scheduling](formulazioni/pcmax-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slide-pcmax-formulations.pdf) (0.4 MB) |
+| 16 | [Principi della programmazione dinamica](programmazione-dinamica/dp-principles.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-principles.pdf) (0.3 MB) |
+| 20 | [PD per il problema del subset sum](programmazione-dinamica/dp-subset-sum.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-subset-sum.pdf) (0.4 MB) |
+| 21 | [PD per il problema dello zaino a scelta multipla](programmazione-dinamica/dp-multiple-choice-knapsack.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-multiple-choice-knapsack.pdf) (0.4 MB) |
+| 22 | [PD per il problema dello zaino multidimensionale](programmazione-dinamica/dp-multidimensional-knapsack.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-multidimensional-knapsack.pdf) (0.4 MB) |
+| 24 | [PD per il problema degli zaini multipli](programmazione-dinamica/dp-multiple-knapsack.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-multiple-knapsack.pdf) (0.4 MB) |
 
 </div>
 

@@ -6,7 +6,7 @@ title: "PD per il problema dello zaino multidimensionale"
 
 <div class="info-capitolo" markdown>
 
-**Parte 3 · Programmazione dinamica · Capitolo 22** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-pencil: Esercizi: Zaino multidimensionale (MDKP)](../esercizi/dp-multidimensional-knapsack.md)
+**Parte 3 · Programmazione dinamica · Capitolo 22** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-programmazione-dinamica.pdf) · [:material-presentation: Slide](../pdf/slide-dp-multidimensional-knapsack.pdf) · [:material-pencil: Esercizi: Zaino multidimensionale (MDKP)](../esercizi/dp-multidimensional-knapsack.md)
 
 </div>
 
