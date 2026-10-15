@@ -6,7 +6,7 @@ title: "Zaino: branch-and-bound sull'elemento critico"
 
 <div class="info-capitolo" markdown>
 
-**Parte 6 · Algoritmi ad hoc · Capitolo 41** · [:material-file-pdf-box: Dispensa, volume 6 (PDF)](../pdf/dispensa-6-algoritmi-specializzati.pdf) · [:material-pencil: Esercizi: Zaino 0/1 (KP)](../esercizi/knapsack-branch-and-bound.md) · [:material-gesture-tap: App: Branch-and-bound per lo zaino](../laboratorio/branch-and-bound-zaino.md)
+**Parte 6 · Algoritmi ad hoc · Capitolo 41** · [:material-file-pdf-box: Dispensa, volume 6 (PDF)](../pdf/dispensa-6-algoritmi-specializzati.pdf) · [:material-presentation: Slide](../pdf/slide-knapsack-branch-and-bound.pdf) · [:material-pencil: Esercizi: Zaino 0/1 (KP)](../esercizi/knapsack-branch-and-bound.md) · [:material-gesture-tap: App: Branch-and-bound per lo zaino](../laboratorio/branch-and-bound-zaino.md)
 
 </div>
 

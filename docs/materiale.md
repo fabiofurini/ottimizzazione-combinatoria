@@ -76,10 +76,12 @@ Le slide delle lezioni, un PDF per capitolo, con le stesse definizioni ed esempi
 | 29 | [Algoritmi euristici: definizioni](algoritmi-euristici/heuristics.md) | [:material-file-pdf-box: PDF](pdf/slide-heuristics.pdf) (0.4 MB) |
 | 33 | [Euristiche MIP per i problemi classici](algoritmi-euristici/mip-heuristics-classical.md) | [:material-file-pdf-box: PDF](pdf/slide-mip-heuristics-classical.pdf) (0.8 MB) |
 | 34 | [Principi degli algoritmi di approssimazione](algoritmi-di-approssimazione/approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-approximation.pdf) (0.4 MB) |
+| 36 | [Algoritmi di approssimazione per il bin packing](algoritmi-di-approssimazione/bin-packing-approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-bin-packing-approximation.pdf) (0.6 MB) |
 | 37 | [Colorazione dei vertici: limiti dell'approssimazione](algoritmi-di-approssimazione/coloring-inapproximability.md) | [:material-file-pdf-box: PDF](pdf/slide-coloring-inapproximability.pdf) (0.4 MB) |
 | 38 | [Clique massima: limiti dell'approssimazione](algoritmi-di-approssimazione/clique-inapproximability.md) | [:material-file-pdf-box: PDF](pdf/slide-clique-inapproximability.pdf) (0.3 MB) |
 | 39 | [TSP: il caso generale e il caso metrico](algoritmi-di-approssimazione/tsp-approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-tsp-approximation.pdf) (0.5 MB) |
 | 40 | [Approssimazione per $P\|C_{\max}$](algoritmi-di-approssimazione/pcmax-approximation.md) | [:material-file-pdf-box: PDF](pdf/slide-pcmax-approximation.pdf) (0.4 MB) |
+| 41 | [Zaino: branch-and-bound sull'elemento critico](algoritmi-specializzati/knapsack-branch-and-bound.md) | [:material-file-pdf-box: PDF](pdf/slide-knapsack-branch-and-bound.pdf) (0.5 MB) |
 
 </div>
 

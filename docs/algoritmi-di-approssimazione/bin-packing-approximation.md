@@ -6,7 +6,7 @@ title: "Algoritmi di approssimazione per il bin packing"
 
 <div class="info-capitolo" markdown>
 
-**Parte 5 · Algoritmi di approssimazione · Capitolo 36** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-pencil: Esercizi: Bin packing (BPP)](../esercizi/bin-packing-approximation.md) · [:material-gesture-tap: App: Istanze tight](../laboratorio/istanze-tight.md)
+**Parte 5 · Algoritmi di approssimazione · Capitolo 36** · [:material-file-pdf-box: Dispensa, volume 5 (PDF)](../pdf/dispensa-5-algoritmi-di-approssimazione.pdf) · [:material-presentation: Slide](../pdf/slide-bin-packing-approximation.pdf) · [:material-pencil: Esercizi: Bin packing (BPP)](../esercizi/bin-packing-approximation.md) · [:material-gesture-tap: App: Istanze tight](../laboratorio/istanze-tight.md)
 
 </div>
 
@@ -38,7 +38,7 @@ Il problema di questo capitolo è il [problema del bin packing (BPP)](../problem
 
 - Come nella pagina del problema, $c$ è la capacità dei contenitori e $\mathscr{I}=\{1,2,\dots,n\}$ l'insieme degli oggetti; in questo capitolo l'oggetto $i\in\mathscr{I}$ ha peso $w_i$.
 
-- Una <strong>soluzione ammissibile del BPP</strong> è una partizione di $\mathscr{I}$ in <strong>schema di carico</strong> (di impacchettamento) non vuoti, cioè sottoinsiemi di oggetti assegnati ciascuno a un contenitore, tali che il peso totale di ogni schema di carico non superi la capacità $c$ dei contenitori.
+- Una <strong>soluzione ammissibile del BPP</strong> è una partizione di $\mathscr{I}$ in <strong>schemi di carico</strong> (di impacchettamento) non vuoti, cioè sottoinsiemi di oggetti assegnati ciascuno a un contenitore, tali che il peso totale di ogni schema di carico non superi la capacità $c$ dei contenitori.
 
 - Indichiamo con $z(I)$ il <strong>valore ottimo</strong> del BPP sull'istanza $I$, cioè il numero minimo di contenitori, e con $\mathscr{A}(I)$ il numero di contenitori usati dalla soluzione ammissibile restituita da un algoritmo euristico $\mathscr{A}$. Poiché ogni algoritmo euristico di questo capitolo restituisce una soluzione ammissibile,
 
