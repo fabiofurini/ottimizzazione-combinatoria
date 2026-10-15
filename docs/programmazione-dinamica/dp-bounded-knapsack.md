@@ -79,7 +79,7 @@ Il problema di questo capitolo è il [problema dello zaino limitato (BKP)](../pr
     dove ogni componente ha il seguente significato:
 
     $$
-    x_j = \text{numero di copie selezionate del tipo di oggetto } j \text{}, \qquad \forall j \in \{1,2,\dots,n\}, \quad 0 \le x_j \le b_j.
+    \begin{gathered} x_j = \text{numero di copie selezionate del tipo di oggetto } j, \\ \forall j \in \{1,2,\dots,n\}, \quad 0 \le x_j \le b_j. \end{gathered}
     $$
 
     Poiché la soluzione è ammissibile, il peso totale degli oggetti selezionati non deve superare la capacità dello zaino:

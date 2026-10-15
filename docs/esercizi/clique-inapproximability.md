@@ -17,9 +17,9 @@ title: "Esercizi · Clique massima: limiti dell'approssimazione"
     \begin{align*}
     &\text{prodotto forte:} && (u,x)\sim(v,y) \iff (u=v \text{ oppure } \{u,v\}\in E) \text{ e } (x=y \text{ oppure } \{x,y\}\in F); \tag{Q1}\\
     &\text{numero di clique:} && \omega(G\boxtimes H)=\omega(G)\,\omega(H),\quad |K|\le|p(K)|\cdot\max_u|K_u|; \tag{Q2}\\
-    &\text{amplificazione:} && \text{rapporto } \alpha \text{ su } G\boxtimes G \ \Rightarrow\ \text{rapporto } \sqrt{\alpha} \text{ su } G;\ t \text{ prodotti: } \alpha^{1/2^t}; \tag{Q3}\\
+    &\text{amplificazione:} && \text{rapporto } \alpha \text{ su } G\boxtimes G \ \Rightarrow\ \text{rapporto } \sqrt{\alpha} \text{ su } G;\\ &&& t \text{ prodotti: } \alpha^{1/2^t}; \tag{Q3}\\
     &\text{grado limitato:} && \omega(G)\le\Delta(G)+1, \text{ enumerazione di } \textstyle\sum_{v} 2^{\deg(v)} \text{ sottoinsiemi}; \tag{Q4}\\
-    &\text{insiemi stabili:} && \alpha(G)=\omega(\overline{G}),\quad \text{un insieme stabile massimale } S \text{ ha } \tfrac{\alpha(G)}{|S|}\le\Delta(G)+1. \tag{Q5}
+    &\text{insiemi stabili:} && \alpha(G)=\omega(\overline{G}),\\ &&& \text{un insieme stabile massimale } S \text{ ha } \tfrac{\alpha(G)}{|S|}\le\Delta(G)+1. \tag{Q5}
     \end{align*}
 
 <a id="esercizio-38-1"></a>

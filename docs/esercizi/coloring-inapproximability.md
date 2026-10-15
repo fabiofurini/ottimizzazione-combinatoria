@@ -15,7 +15,7 @@ title: "Esercizi · Colorazione dei vertici: limiti dell'approssimazione"
     Dal capitolo [Colorazione dei vertici: limiti dell'approssimazione](../algoritmi-di-approssimazione/coloring-inapproximability.md), per un grafo $G=(V,E)$ con $n$ vertici, $m$ spigoli e grado massimo $\Delta(G)$:
 
     \begin{align*}
-    &\text{nessun rapporto sotto } \tfrac43\text{:} && \tfrac{\mathscr{A}(I)}{\chi(G)}<\tfrac43 \text{ su ogni grafo deciderebbe } \chi(G)\le 3 \text{, a meno che } P=NP; \tag{C1}\\
+    &\text{nessun rapporto sotto } \tfrac43\text{:} && \tfrac{\mathscr{A}(I)}{\chi(G)}<\tfrac43 \text{ su ogni grafo deciderebbe } \chi(G)\le 3\text{,}\\ &&& \text{a meno che } P=NP; \tag{C1}\\
     &\text{grafi bipartiti:} && \chi(G)\le 2 \iff \text{nessun ciclo dispari; visita in ampiezza in } O(n+m); \tag{C2}\\
     &\text{colorazione greedy:} && GC(I)\le\Delta(G)+1 \text{ per ogni ordine dei vertici}; \tag{C3}\\
     &\text{grafi planari:} && m\le 3n-6~(n\ge3),\quad PL(I)-\chi(G)\le 2~(\le 1 \text{ con } 4 \text{ colori}); \tag{C4}\\

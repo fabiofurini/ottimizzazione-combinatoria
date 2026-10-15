@@ -15,12 +15,15 @@ Il problema di questa sezione è il problema del bin packing (BPP), definito nel
 - Dato un upper bound $m \in \Z_{\ge 2}$ sul numero di contenitori usati in una qualunque soluzione ottima del BPP, introduciamo le seguenti $mn$ <strong>variabili binarie</strong>:
 
     $$
+    \begin{gathered}
     x_{jb} =
     \begin{cases}
     1 & \text{se l'oggetto } j \textrm{ è inserito nel contenitore } b \\
     0 & \text{altrimenti}
     \end{cases}
-    \qquad \forall j \in \underbrace{\{1,2,\dots,n\}}_{=\mathscr{I}},~~ \forall b \in \underbrace{\{1,2,\dots,m\}}_{=\mathscr{B}},
+    \\[1ex]
+    \forall j \in \underbrace{\{1,2,\dots,n\}}_{=\mathscr{I}},~~ \forall b \in \underbrace{\{1,2,\dots,m\}}_{=\mathscr{B}},
+    \end{gathered}
     $$
 
     e le seguenti $m$ <strong>variabili binarie</strong>:

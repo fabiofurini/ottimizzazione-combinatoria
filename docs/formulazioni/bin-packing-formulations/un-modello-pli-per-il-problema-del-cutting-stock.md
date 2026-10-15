@@ -15,8 +15,11 @@ Il problema di questa sezione è il problema del cutting stock (CSP), definito n
 - Dato un upper bound $m \in \Z_{\ge 2}$ sul numero di contenitori usati in una qualunque soluzione ottima del CSP, introduciamo le seguenti $mn$ <strong>variabili intere</strong>:
 
     $$
+    \begin{gathered}
     x_{jb} = \text{numero di copie dell'oggetto $j$ inserite nel contenitore $b$}
-    \qquad \forall j \in \mathscr{I},~~ \forall b \in \underbrace{\{1,2,\dots,m\}}_{=\mathscr{B}},
+    \\[1ex]
+    \forall j \in \mathscr{I},~~ \forall b \in \underbrace{\{1,2,\dots,m\}}_{=\mathscr{B}},
+    \end{gathered}
     $$
 
     e le seguenti $m$ <strong>variabili binarie</strong>:
