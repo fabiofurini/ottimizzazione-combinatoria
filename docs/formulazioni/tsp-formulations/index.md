@@ -12,7 +12,7 @@ title: "Formulazioni dei problemi di routing"
 
 !!! nota "Prerequisiti"
 
-    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 1 «Programmazione lineare intera»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/ilp/) e [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/lp-relaxation/): problemi ILP, rilassamenti lineari e bound.
+    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 1 «Programmazione lineare intera»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/ilp/) e [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/lp-relaxation/): problemi ILP, rilassamenti lineari e bound.
 
     - Da questo modulo, [Capitolo 6 «Problemi di routing»](../../problemi-di-ottimizzazione-combinatoria/tsp/index.md): il problema, le sue ipotesi, i giri, la matrice delle distanze e l'istanza dell'Esempio 6.1.
 

@@ -6,7 +6,7 @@ title: "Varianti pesate"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 5** · [:material-book-open-variant: Capitolo 5: Problemi di clique](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Problemi di clique](../../esercizi/clique.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 5** · [:material-book-open-variant: Capitolo 5: Problemi di clique](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-clique.pdf) · [:material-pencil: Esercizi: Problemi di clique](../../esercizi/clique.md)
 
 </div>
 
@@ -34,7 +34,7 @@ title: "Varianti pesate"
 
 !!! esempio "Esempio 5.3: problema della clique massima pesata sui vertici"
 
-    Aggiungiamo al grafo dell'<span style="color:#1971c2">[Esempio 5.2](il-problema-della-cricca-massima.md#box-7-mcpP-ex2)</span> i pesi dei vertici in blu. La clique massima pesata sui vertici è $\{2,3,5,8\}$, con peso $8+9+6+9=32$: è unica, e non è la clique massima in rosso dell'<span style="color:#1971c2">[Esempio 5.2](il-problema-della-cricca-massima.md#box-7-mcpP-ex2)</span>, il cui peso è $5+9+5+5=24$.
+    Aggiungiamo al grafo dell'<span style="color:#1971c2">[Esempio 5.2](il-problema-della-clique-massima.md#box-7-mcpP-ex2)</span> i pesi dei vertici in blu. La clique massima pesata sui vertici è $\{2,3,5,8\}$, con peso $8+9+6+9=32$: è unica, e non è la clique massima in rosso dell'<span style="color:#1971c2">[Esempio 5.2](il-problema-della-clique-massima.md#box-7-mcpP-ex2)</span>, il cui peso è $5+9+5+5=24$.
 
     ![Figura 3](../../img/clique/fig03.svg){ .fig loading=lazy  }
 
@@ -44,7 +44,7 @@ title: "Varianti pesate"
 
 !!! esempio "Esempio 5.4: problema della clique massima pesata sui lati"
 
-    Aggiungiamo al grafo dell'<span style="color:#1971c2">[Esempio 5.2](il-problema-della-cricca-massima.md#box-7-mcpP-ex2)</span> i pesi dei lati in rosso. La clique massima pesata sui lati è $\{2,5,7,8\}$, in arancione: i suoi sei lati pesano $6+4+9+7+3+8=37$, e l'enumerazione delle $16$ clique massime mostra che è l'unica soluzione ottima.
+    Aggiungiamo al grafo dell'<span style="color:#1971c2">[Esempio 5.2](il-problema-della-clique-massima.md#box-7-mcpP-ex2)</span> i pesi dei lati in rosso. La clique massima pesata sui lati è $\{2,5,7,8\}$, in arancione: i suoi sei lati pesano $6+4+9+7+3+8=37$, e l'enumerazione delle $16$ clique massime mostra che è l'unica soluzione ottima.
 
     ![Figura 4](../../img/clique/fig04.svg){ .fig loading=lazy  }
 
@@ -66,7 +66,7 @@ title: "Varianti pesate"
 
 !!! attenzione "Attenzione"
 
-    - <strong>Confondere una clique massimale con una clique massima.</strong> Una clique è massimale quando non le si può aggiungere alcun vertice; è massima quando nessuna clique è più grande. Nell'<span style="color:#1971c2">[Esempio 5.1](il-problema-della-cricca-massima.md#box-6-mcpP-ex1)</span>, $\{4,5\}$ è massimale ma non massima.
+    - <strong>Confondere una clique massimale con una clique massima.</strong> Una clique è massimale quando non le si può aggiungere alcun vertice; è massima quando nessuna clique è più grande. Nell'<span style="color:#1971c2">[Esempio 5.1](il-problema-della-clique-massima.md#box-6-mcpP-ex1)</span>, $\{4,5\}$ è massimale ma non massima.
 
     - <strong>Costruire il grafo complementare con i lati di $G$.</strong> I lati di $\overline{G}$ sono esattamente le coppie che <em>non</em> sono lati di $G$: sono $\binom{n}{2}-m$.
 
@@ -96,13 +96,13 @@ title: "Varianti pesate"
     <th>da</th>
     </tr>
     <tr>
-    <td><span style="color:#1971c2"><a href="../il-problema-della-cricca-massima/#box-6-mcpP-ex1">Esempio 5.1</a></span> (ciclo con corda)</td>
+    <td><span style="color:#1971c2"><a href="../il-problema-della-clique-massima/#box-6-mcpP-ex1">Esempio 5.1</a></span> (ciclo con corda)</td>
     <td><span class="arithmatex">\(3\)</span> (a mano)</td>
     <td><span class="arithmatex">\(3\)</span> (conteggio dei gradi, colorazione)</td>
     <td>questo capitolo</td>
     </tr>
     <tr>
-    <td><span style="color:#1971c2"><a href="../il-problema-della-cricca-massima/#box-7-mcpP-ex2">Esempio 5.2</a></span> (grafo denso)</td>
+    <td><span style="color:#1971c2"><a href="../il-problema-della-clique-massima/#box-7-mcpP-ex2">Esempio 5.2</a></span> (grafo denso)</td>
     <td><span class="arithmatex">\(4\)</span> (a mano)</td>
     <td><span class="arithmatex">\(4\)</span> (colorazione)</td>
     <td>questo capitolo</td>

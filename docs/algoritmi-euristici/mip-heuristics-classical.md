@@ -12,7 +12,7 @@ title: "Euristiche MIP per i problemi classici"
 
 !!! nota "Prerequisiti"
 
-    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/): i metodi di questo capitolo (arrotondamento, diving, feasibility pump, RINS, local branching, proximity search, relax-and-fix e fix-and-optimize), i loro pseudocodici e le condizioni in cui funzionano.
+    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/): i metodi di questo capitolo (arrotondamento, diving, feasibility pump, RINS, local branching, proximity search, relax-and-fix e fix-and-optimize), i loro pseudocodici e le condizioni in cui funzionano.
 
     - Da questo modulo, i capitoli sulle formulazioni dei problemi classici (parte «Formulazioni e loro proprietà»): i modelli del problema dello zaino 0/1, del problema del bin packing, del problema del commesso viaggiatore, di $P\,||\,C_{\max}$ e del lot sizing.
 
@@ -40,7 +40,7 @@ title: "Euristiche MIP per i problemi classici"
 
     Un algoritmo euristico per un problema con un modello MIP è <strong>basato sulla PLI</strong> (una <strong>matheuristica</strong>) se usa il rilassamento lineare del modello e un solver MIP per cercare una soluzione ammissibile.
 
-- Le euristiche basate sulla PLI sono definite nel modulo <em>Programmazione lineare intera</em>, [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/). In questo capitolo le applichiamo ai problemi classici, con le istanze di riferimento dei capitoli precedenti.
+- Le euristiche basate sulla PLI sono definite nel modulo <em>Programmazione lineare intera</em>, [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/). In questo capitolo le applichiamo ai problemi classici, con le istanze di riferimento dei capitoli precedenti.
 
 - La notazione è quella di quel capitolo: un MIP con variabili intere $\mathscr{D}$, $\tilde{\vet x}$ è una soluzione ottima del rilassamento lineare, $\bar{\vet x}$ una soluzione ammissibile (la soluzione incumbent), $\rnd{v}=\lfloor v+\frac12\rfloor$ l'arrotondamento all'intero più vicino, $\Delta(\vet x,\bar{\vet x})=\sum_{j\in\mathscr{D}}|x_j-\bar x_j|$ la distanza da un punto intero. Un problema di massimo, come il KP, si tratta scambiando $\min$ e $\max$, $\le$ e $\ge$ nei confronti fra valori obiettivo.
 
@@ -235,7 +235,7 @@ title: "Euristiche MIP per i problemi classici"
 
 ## 33.3 Arrotondamento { #sez-sec-rounding }
 
-- L'<em>arrotondamento</em> arrotonda la soluzione LP al punto intero più vicino e completa le variabili continue; fallisce se il punto arrotondato viola un vincolo. L'arrotondamento per difetto è sempre ammissibile quando tutti i coefficienti di $A$ sono non negativi e $b\ge0$ (l'osservazione sull'arrotondamento per difetto del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>); un vincolo di uguaglianza, come i vincoli di assegnamento del BPP e di $P\,||\,C_{\max}$, è quasi sempre violato da arrotondamenti indipendenti.
+- L'<em>arrotondamento</em> arrotonda la soluzione LP al punto intero più vicino e completa le variabili continue; fallisce se il punto arrotondato viola un vincolo. L'arrotondamento per difetto è sempre ammissibile quando tutti i coefficienti di $A$ sono non negativi e $b\ge0$ (l'osservazione sull'arrotondamento per difetto del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>); un vincolo di uguaglianza, come i vincoli di assegnamento del BPP e di $P\,||\,C_{\max}$, è quasi sempre violato da arrotondamenti indipendenti.
 
 <a id="box-3-ex-rounding"></a>
 
@@ -253,7 +253,7 @@ title: "Euristiche MIP per i problemi classici"
 
     <strong>BPP.</strong> Arrotondando la soluzione LP dell'[Esempio 33.1](#box-2-ex-lpsol) otteniamo $\bar{\vet y}=(0,0,1,1,0,1)$ e mettiamo l'oggetto $3$ nel contenitore $3$. Due vincoli di capacità $\eqref{eq:bpp-cap}$ sono violati: il contenitore $1$ contiene l'oggetto $5$ ma $\bar y_1=0$ ($-2+7\cdot 0\ge 0$ è falso), e il contenitore $3$ contiene gli oggetti $3$ e $6$ ($-(5+3)+7\cdot 1\ge 0$ è falso). <strong>L'arrotondamento fallisce</strong>.
 
-- I tre esiti riassumono il metodo: sul KP, con un solo vincolo di packing, l'arrotondamento è sicuro (l'osservazione sull'arrotondamento per difetto del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>); sui problemi con vincoli di assegnamento fallisce, perché il LP distribuisce un lavoro o un oggetto su più macchine o contenitori, e l'arrotondamento non può decidere dove vada.
+- I tre esiti riassumono il metodo: sul KP, con un solo vincolo di packing, l'arrotondamento è sicuro (l'osservazione sull'arrotondamento per difetto del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>); sui problemi con vincoli di assegnamento fallisce, perché il LP distribuisce un lavoro o un oggetto su più macchine o contenitori, e l'arrotondamento non può decidere dove vada.
 
 ## 33.4 Diving { #sez-sec-diving }
 
@@ -628,13 +628,13 @@ title: "Euristiche MIP per i problemi classici"
 
 ### 33.6.3 Proximity search
 
-- Un sotto-MIP di proximity inammissibile con $\theta=1$ dimostra che la soluzione incumbent è ottima, quando l'obiettivo assume valori interi (la proposizione del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>).
+- Un sotto-MIP di proximity inammissibile con $\theta=1$ dimostra che la soluzione incumbent è ottima, quando l'obiettivo assume valori interi (la proposizione del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>).
 
 <a id="box-14-ex-pskp"></a>
 
 !!! esempio "Esempio 33.12: Proximity search sul KP"
 
-    Da $\bar{\vet x}=(1,0,1,0)$, di profitto $16$: la soluzione più vicina di profitto almeno $17$ è $(1,1,0,0)$, a distanza $2$ (esce l'oggetto $3$, entra l'oggetto $2$), di profitto $17$. Attorno a essa nessuna soluzione ha profitto almeno $18$: per la condizione di ottimalità della proximity search ([Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>), $\{1,2\}$ è <strong>ottima</strong>.
+    Da $\bar{\vet x}=(1,0,1,0)$, di profitto $16$: la soluzione più vicina di profitto almeno $17$ è $(1,1,0,0)$, a distanza $2$ (esce l'oggetto $3$, entra l'oggetto $2$), di profitto $17$. Attorno a essa nessuna soluzione ha profitto almeno $18$: per la condizione di ottimalità della proximity search ([Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>), $\{1,2\}$ è <strong>ottima</strong>.
 
 <a id="box-15-ex-pspcm"></a>
 
@@ -673,7 +673,7 @@ title: "Euristiche MIP per i problemi classici"
     </tr>
     </table></div>
 
-    Per l'[Osservazione 33.2](#box-11-obs-assign), distanza $4$ significa due lavori riassegnati: i lavori $1$ e $6$ alla prima iterazione, i lavori $2$ e $4$ alla seconda. Nessuna soluzione a distanza $2$ migliora il makespan, come per il local branching con $k=2$. Alla terza iterazione il sotto-MIP è inammissibile, e la condizione di ottimalità della proximity search ([Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>) dimostra che il makespan $9$ è ottimo.
+    Per l'[Osservazione 33.2](#box-11-obs-assign), distanza $4$ significa due lavori riassegnati: i lavori $1$ e $6$ alla prima iterazione, i lavori $2$ e $4$ alla seconda. Nessuna soluzione a distanza $2$ migliora il makespan, come per il local branching con $k=2$. Alla terza iterazione il sotto-MIP è inammissibile, e la condizione di ottimalità della proximity search ([Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>) dimostra che il makespan $9$ è ottimo.
 
 - La dimostrazione di ottimalità viene dal solver, che dimostra l'inammissibilità dell'ultimo sotto-MIP con i propri bound duali: la proximity search, usata con $\theta=1$, è un metodo esatto che migliora la soluzione incumbent strada facendo.
 
@@ -803,7 +803,7 @@ title: "Euristiche MIP per i problemi classici"
 
 ## 33.8 Le euristiche dentro il solver { #sez-sec-gurobi }
 
-- Le euristiche di Gurobi, i loro parametri e il MIP start sono descritti nel [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/) e nel [Capitolo 9 «I solver MIP: che cosa fanno»](https://fabiofurini.github.io/programmazione-lineare-intera/solver/mip-solvers/) del modulo <em>Programmazione lineare intera</em>. Una soluzione euristica calcolata fuori dal solver (con $FFD$, $LPT$, una ricerca locale) si può passare al solver come MIP start (l'attributo <code>Start</code> delle variabili).
+- Le euristiche di Gurobi, i loro parametri e il MIP start sono descritti nel [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/) e nel [Capitolo 9 «I solver MIP: che cosa fanno»](https://fabiofurini.github.io/programmazione-lineare-intera/solvers/mip-solvers/) del modulo <em>Programmazione lineare intera</em>. Una soluzione euristica calcolata fuori dal solver (con $FFD$, $LPT$, una ricerca locale) si può passare al solver come MIP start (l'attributo <code>Start</code> delle variabili).
 
 <a id="box-19-ex-gurobi"></a>
 
@@ -966,7 +966,7 @@ title: "Euristiche MIP per i problemi classici"
 </tr>
 </table></div>
 
-- Sul KP l'arrotondamento intero del valore LP è $\lfloor 17.75\rfloor=17$, e la proximity search dimostra da sola l'ottimalità di $17$, per la condizione di ottimalità della proximity search ([Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>). Sull'istanza di lot sizing capacitato il bound LP è debole, e il gap è chiuso dal branch-and-bound del solver, che dimostra che $160$ è ottimo.
+- Sul KP l'arrotondamento intero del valore LP è $\lfloor 17.75\rfloor=17$, e la proximity search dimostra da sola l'ottimalità di $17$, per la condizione di ottimalità della proximity search ([Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>). Sull'istanza di lot sizing capacitato il bound LP è debole, e il gap è chiuso dal branch-and-bound del solver, che dimostra che $160$ è ottimo.
 
 !!! chiave ""
 
@@ -986,7 +986,7 @@ title: "Euristiche MIP per i problemi classici"
 
     - <strong>Dimenticare il vincolo di cutoff.</strong> Senza $f(\vet x)\le f(\bar{\vet x})-\theta$ il sotto-MIP restituisce di nuovo la soluzione incumbent; con esso, un sotto-MIP inammissibile dimostra un ottimo locale.
 
-    - <strong>Dichiarare l'ottimalità senza le condizioni.</strong> La condizione di ottimalità della proximity search ([Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>) richiede $\theta=1$ e valori obiettivo interi su tutte le soluzioni ammissibili.
+    - <strong>Dichiarare l'ottimalità senza le condizioni.</strong> La condizione di ottimalità della proximity search ([Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/) del modulo <em>Programmazione lineare intera</em>) richiede $\theta=1$ e valori obiettivo interi su tutte le soluzioni ammissibili.
 
     - <strong>Ignorare la miopia di relax-and-fix.</strong> Il futuro rilassato è ottimistico: una decisione che sembra economica può imporre un setup più avanti.
 
@@ -996,7 +996,7 @@ title: "Euristiche MIP per i problemi classici"
 
 !!! chiave "In sintesi"
 
-    - Le euristiche basate sulla PLI del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/euristiche-mip/mip-heuristics/) del modulo <em>Programmazione lineare intera</em> si applicano ai problemi classici attraverso i loro modelli MIP.
+    - Le euristiche basate sulla PLI del [Capitolo 10 «Euristiche MIP»](https://fabiofurini.github.io/programmazione-lineare-intera/mip-heuristics/mip-heuristics/) del modulo <em>Programmazione lineare intera</em> si applicano ai problemi classici attraverso i loro modelli MIP.
 
     - L'arrotondamento e il diving costruiscono una soluzione a partire dal LP; la feasibility pump cerca solo l'ammissibilità; RINS, local branching e proximity search migliorano una soluzione incumbent con un sotto-MIP.
 

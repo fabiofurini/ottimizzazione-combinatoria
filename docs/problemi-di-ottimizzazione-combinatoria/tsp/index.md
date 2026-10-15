@@ -6,7 +6,7 @@ title: "Problemi di routing"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 6** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Problemi di routing](../../esercizi/tsp.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 6** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-tsp.pdf) · [:material-pencil: Esercizi: Problemi di routing](../../esercizi/tsp.md)
 
 </div>
 

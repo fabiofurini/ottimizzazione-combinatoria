@@ -14,7 +14,7 @@ title: "Formulazioni dei problemi di scheduling"
 
     - Dal modulo <em>Programmazione lineare</em>, [Capitolo 9 «Teoria della dualità»](https://fabiofurini.github.io/programmazione-lineare/dualita/09-dualita/): il duale di un problema LP, dualità debole e forte.
 
-    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 1 «Programmazione lineare intera»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/ilp/) e [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/lp-relaxation/): problemi ILP, rilassamenti lineari e bound.
+    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 1 «Programmazione lineare intera»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/ilp/) e [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/lp-relaxation/): problemi ILP, rilassamenti lineari e bound.
 
     - Da questo modulo, [Capitolo 7 «Problemi di scheduling»](../../problemi-di-ottimizzazione-combinatoria/pcmax/index.md): il problema, la sua ipotesi, il makespan e l'istanza dell'Esempio 7.1.
 

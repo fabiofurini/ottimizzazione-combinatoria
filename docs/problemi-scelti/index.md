@@ -46,9 +46,9 @@ Le famiglie di problemi su cui si concentra tutto il corso: ogni famiglia si apr
 
     ---
 
-    Trovare un insieme di cardinalità massima di vertici a due a due adiacenti di un grafo: clique massima, insieme stabile massimo e le varianti pesate.
+    Trovare un insieme di cardinalità massima di vertici a due a due adiacenti di un grafo: cricca massima, insieme stabile massimo e le varianti pesate.
 
-    [Clique massima (MCP)](../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima.md) · [Clique massima pesata](../problemi-di-ottimizzazione-combinatoria/clique/varianti-pesate.md)
+    [Clique massima (MCP)](../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-clique-massima.md) · [Clique massima pesata](../problemi-di-ottimizzazione-combinatoria/clique/varianti-pesate.md)
 
     [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/clique/index.md) · [Formulazioni](../formulazioni/clique-formulations/index.md) · [Esercizi](../esercizi/clique.md) · [Catalogo](../catalogo/clique-problems.md)
 

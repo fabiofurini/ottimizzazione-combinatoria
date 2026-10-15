@@ -6,7 +6,7 @@ title: "Categorie di problemi di ottimizzazione combinatoria"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 1** · [:material-book-open-variant: Capitolo 1: Ottimizzazione combinatoria](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Ottimizzazione combinatoria](../../esercizi/combinatorial-optimization.md) · [:material-gesture-tap: App: Forza bruta sul problema dello zaino 0/1](../../laboratorio/zaino-forza-bruta.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 1** · [:material-book-open-variant: Capitolo 1: Ottimizzazione combinatoria](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-combinatorial-optimization.pdf) · [:material-pencil: Esercizi: Ottimizzazione combinatoria](../../esercizi/combinatorial-optimization.md) · [:material-gesture-tap: App: Forza bruta sul problema dello zaino 0/1](../../laboratorio/zaino-forza-bruta.md)
 
 </div>
 
@@ -202,12 +202,12 @@ title: "Categorie di problemi di ottimizzazione combinatoria"
 <td>partizionamento</td>
 </tr>
 <tr>
-<td><a href="../../clique/il-problema-della-cricca-massima/">problema della clique massima (MCP)</a></td>
+<td><a href="../../clique/il-problema-della-clique-massima/">problema della clique massima (MCP)</a></td>
 <td>sottoinsieme di vertici</td>
 <td>IN/OUT</td>
 </tr>
 <tr>
-<td><a href="../../clique/il-problema-della-cricca-massima/">problema dell'insieme stabile massimo (MSSP)</a></td>
+<td><a href="../../clique/il-problema-della-clique-massima/">problema dell'insieme stabile massimo (MSSP)</a></td>
 <td>sottoinsieme di vertici</td>
 <td>IN/OUT</td>
 </tr>

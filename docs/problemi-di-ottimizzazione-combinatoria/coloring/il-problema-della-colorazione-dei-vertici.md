@@ -6,7 +6,7 @@ title: "Colorazione dei vertici"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 4** · [:material-book-open-variant: Capitolo 4: Problemi di colorazione](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Problemi di colorazione](../../esercizi/coloring.md) · [:material-gesture-tap: App: Colorazione: greedy e DSATUR](../../laboratorio/colorazione-greedy-dsatur.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 4** · [:material-book-open-variant: Capitolo 4: Problemi di colorazione](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-coloring.pdf) · [:material-pencil: Esercizi: Problemi di colorazione](../../esercizi/coloring.md) · [:material-gesture-tap: App: Colorazione: greedy e DSATUR](../../laboratorio/colorazione-greedy-dsatur.md)
 
 </div>
 

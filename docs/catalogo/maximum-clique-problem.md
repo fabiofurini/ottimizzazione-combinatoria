@@ -1,12 +1,12 @@
 ---
-title: "Problema della clique massima (MCP)"
+title: "Problema della cricca massima (MCP)"
 ---
 
-# Problema della clique massima (MCP)
+# Problema della cricca massima (MCP)
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogo dei problemi di ottimizzazione combinatoria**](index.md) · [:material-folder-outline: Problemi di clique](clique-problems.md) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
+[:material-view-list: **Catalogo dei problemi di ottimizzazione combinatoria**](index.md) · [:material-folder-outline: Problemi di cricca](clique-problems.md) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "Problema della clique massima (MCP)"
 
 <a id="box-1-def-catdef-mcp"></a>
 
-!!! definizione "Definizione 1: Problema della clique massima"
+!!! definizione "Definizione 1: Problema della cricca massima"
 
     Dato:
 
@@ -53,11 +53,11 @@ title: "Problema della clique massima (MCP)"
 </tr>
 <tr>
 <td><strong>Definizione</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima/#box-2-mcpP-def-MCP">Cap. 5 «Problemi di clique»</a></td>
+<td><a href="../../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-clique-massima/#box-2-mcpP-def-MCP">Cap. 5 «Problemi di clique»</a></td>
 </tr>
 <tr>
 <td><strong>Formulazioni</strong></td>
-<td><a href="../../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-cricca-massima-la-formu/#sez-sec-mcpf-MCP">Cap. 12 «Formulazioni dei problemi di clique»</a></td>
+<td><a href="../../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-clique-massima-la-formu/#sez-sec-mcpf-MCP">Cap. 12 «Formulazioni dei problemi di clique»</a></td>
 </tr>
 <tr>
 <td><strong>Limiti dell'approssimazione</strong></td>
@@ -71,19 +71,19 @@ title: "Problema della clique massima (MCP)"
 
 ### Proprietà { #sez-sec-cat-mcp-properties }
 
-- NP-difficile: decidere se esiste una clique con $k$ vertici è uno dei $21$ problemi NP-completi di Karp ([Cap. 5](../problemi-di-ottimizzazione-combinatoria/clique/index.md)).
+- NP-difficile: decidere se esiste una cricca con $k$ vertici è uno dei $21$ problemi NP-completi di Karp ([Cap. 5](../problemi-di-ottimizzazione-combinatoria/clique/index.md)).
 
-- Upper bound: grado $\Delta+1$, lati, conteggio dei gradi $k^{\max}$ e colorazione $\chi(G)$ ([Cap. 5](../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima.md#box-8-mcpP-obs-degree)).
+- Upper bound: grado $\Delta+1$, lati, conteggio dei gradi $k^{\max}$ e colorazione $\chi(G)$ ([Cap. 5](../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-clique-massima.md#box-8-mcpP-obs-degree)).
 
-- Una prima clique a mano: si parte da un vertice di grado massimo e si aggiungono vertici adiacenti a tutti quelli scelti ([Cap. 5](../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima.md#box-6-mcpP-ex1)).
+- Una prima cricca a mano: si parte da un vertice di grado massimo e si aggiungono vertici adiacenti a tutti quelli scelti ([Cap. 5](../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-clique-massima.md#box-6-mcpP-ex1)).
 
 ### Formulazioni { #sez-sec-cat-mcp-formulations }
 
-- Il modello $\ILP_{\MCP}$ ha una variabile binaria per vertice e un vincolo $x_u+x_v\le1$ per ogni coppia di vertici non adiacenti ([Cap. 12](../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-cricca-massima-la-formu.md#eq-mcpF-ILP)).
+- Il modello $\ILP_{\MCP}$ ha una variabile binaria per vertice e un vincolo $x_u+x_v\le1$ per ogni coppia di vertici non adiacenti ([Cap. 12](../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-clique-massima-la-formu.md#eq-mcpF-ILP)).
 
-- $x_v=\frac12$ per tutti i vertici è ammissibile, quindi $z(\LP_{\MCP})\ge n/2$: il bound del rilassamento lineare può essere arbitrariamente debole ([Cap. 12](../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-cricca-massima-la-formu.md#box-7-mcpF-prop-gap)).
+- $x_v=\frac12$ per tutti i vertici è ammissibile, quindi $z(\LP_{\MCP})\ge n/2$: il bound del rilassamento lineare può essere arbitrariamente debole ([Cap. 12](../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-clique-massima-la-formu.md#box-7-mcpF-prop-gap)).
 
-- Le disuguaglianze di clique sugli insiemi stabili di $G$ rafforzano il modello, e il duale del loro rilassamento è un rilassamento del VCP: $\omega(G)\le z(\LP^{\mathrm{CL}}_{\MCP})\le\chi(G)$ ([Cap. 12](../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-cricca-massima-la-formu.md#box-11-mcpF-prop-dual)).
+- Le disuguaglianze di cricca sugli insiemi stabili di $G$ rafforzano il modello, e il duale del loro rilassamento è un rilassamento del VCP: $\omega(G)\le z(\LP^{\mathrm{CL}}_{\MCP})\le\chi(G)$ ([Cap. 12](../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-clique-massima-la-formu.md#box-11-mcpF-prop-dual)).
 
 ### Approssimazione { #sez-sec-cat-mcp-approximation }
 

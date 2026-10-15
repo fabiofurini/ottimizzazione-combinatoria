@@ -6,7 +6,7 @@ title: "Bound primali, bound duali e gap"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 1** · [:material-book-open-variant: Capitolo 1: Ottimizzazione combinatoria](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Ottimizzazione combinatoria](../../esercizi/combinatorial-optimization.md) · [:material-gesture-tap: App: Forza bruta sul problema dello zaino 0/1](../../laboratorio/zaino-forza-bruta.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 1** · [:material-book-open-variant: Capitolo 1: Ottimizzazione combinatoria](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-combinatorial-optimization.pdf) · [:material-pencil: Esercizi: Ottimizzazione combinatoria](../../esercizi/combinatorial-optimization.md) · [:material-gesture-tap: App: Forza bruta sul problema dello zaino 0/1](../../laboratorio/zaino-forza-bruta.md)
 
 </div>
 
@@ -54,7 +54,7 @@ title: "Bound primali, bound duali e gap"
     gap(I) = \frac{\UB - \LB}{|\LB|}.
     $$
 
-- Il denominatore è sempre il <strong>lower bound</strong>: nella forma di massimo è il valore della soluzione ammissibile, come nel gap di ottimalità del modulo <em>Programmazione lineare intera</em>, [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/lp-relaxation/); nella forma di minimo è il bound duale.
+- Il denominatore è sempre il <strong>lower bound</strong>: nella forma di massimo è il valore della soluzione ammissibile, come nel gap di ottimalità del modulo <em>Programmazione lineare intera</em>, [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/lp-relaxation/); nella forma di minimo è il bound duale.
 
 - Con questa scelta il gap non è mai minore dell'errore relativo $|f(\bar S) - z(I)|/z(I)$ della soluzione ammissibile $\bar S$: un gap del $5\%$ garantisce una soluzione entro il $5\%$ dall'ottimo.
 

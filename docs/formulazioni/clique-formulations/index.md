@@ -16,7 +16,7 @@ title: "Formulazioni dei problemi di clique"
 
     - Da questo modulo, [Capitolo 4 «Problemi di colorazione»](../../problemi-di-ottimizzazione-combinatoria/coloring/index.md) e [Capitolo 11 «Formulazioni dei problemi di colorazione»](../coloring-formulations/index.md): il numero cromatico $\chi(G)$ e un modello PLI con i suoi rilassamenti lineari.
 
-    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/modelli-e-bound/lp-relaxation/), [Capitolo 3 «Formulazioni ideali»](https://fabiofurini.github.io/programmazione-lineare-intera/formulazioni/ideal-formulations/) e [Capitolo 4 «Disuguaglianze valide»](https://fabiofurini.github.io/programmazione-lineare-intera/formulazioni/valid-inequalities/): rilassamenti lineari, formulazioni più forti e disuguaglianze valide.
+    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 2 «Bound primali e duali»](https://fabiofurini.github.io/programmazione-lineare-intera/models-and-bounds/lp-relaxation/), [Capitolo 3 «Formulazioni ideali»](https://fabiofurini.github.io/programmazione-lineare-intera/formulations/ideal-formulations/) e [Capitolo 4 «Disuguaglianze valide»](https://fabiofurini.github.io/programmazione-lineare-intera/formulations/valid-inequalities/): rilassamenti lineari, formulazioni più forti e disuguaglianze valide.
 
     - Dal modulo <em>Programmazione lineare</em>, [Capitolo 9 «Teoria della dualità»](https://fabiofurini.github.io/programmazione-lineare/dualita/09-dualita/): il duale di un problema LP e la dualità debole.
 
@@ -61,19 +61,19 @@ title: "Formulazioni dei problemi di clique"
 <td>MCP</td>
 <td><span class="arithmatex">\(\mathrm{ILP}_{\mathrm{MCP}}\)</span> (formulazione sugli spigoli)</td>
 <td>sui non-spigoli di <span class="arithmatex">\(G\)</span></td>
-<td><a href="un-modello-pli-per-il-problema-della-cricca-massima-la-formu/#sez-sec-mcpf-MCP">12.2</a></td>
+<td><a href="un-modello-pli-per-il-problema-della-clique-massima-la-formu/#sez-sec-mcpf-MCP">12.2</a></td>
 </tr>
 <tr>
 <td>MCP</td>
 <td><span class="arithmatex">\(\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}\)</span> (formulazione a clique)</td>
 <td>sugli insiemi stabili massimali di <span class="arithmatex">\(G\)</span></td>
-<td><a href="un-modello-pli-per-il-problema-della-cricca-massima-la-formu/#sez-sec-mcpf-CL">12.5</a></td>
+<td><a href="un-modello-pli-per-il-problema-della-clique-massima-la-formu/#sez-sec-mcpf-CL">12.5</a></td>
 </tr>
 <tr>
 <td>MSSP</td>
 <td><span class="arithmatex">\(\mathrm{ILP}_{\mathrm{MSSP}}\)</span>, <span class="arithmatex">\(\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}\)</span></td>
 <td>sugli spigoli e sulle clique di <span class="arithmatex">\(G\)</span></td>
-<td><a href="un-modello-pli-per-il-problema-della-cricca-massima-la-formu/#sez-sec-mcpf-MSSP">12.7</a></td>
+<td><a href="un-modello-pli-per-il-problema-della-clique-massima-la-formu/#sez-sec-mcpf-MSSP">12.7</a></td>
 </tr>
 <tr>
 <td>VWMCP</td>
@@ -101,7 +101,7 @@ title: "Formulazioni dei problemi di clique"
 
     Un secondo rilassamento lineare · Disuguaglianze di clique: una formulazione più forte · La relazione con la colorazione dei vertici · Insiemi stabili sul grafo complementare
 
-    [:octicons-arrow-right-24: Apri](un-modello-pli-per-il-problema-della-cricca-massima-la-formu.md)
+    [:octicons-arrow-right-24: Apri](un-modello-pli-per-il-problema-della-clique-massima-la-formu.md)
 
 -   **12.8 Modelli PLI per le varianti pesate**
 
@@ -113,7 +113,7 @@ title: "Formulazioni dei problemi di clique"
 
 ---
 
-**Avanti:** [12.2 Un modello PLI per il problema della clique massima: la formulazione sugli spigoli](un-modello-pli-per-il-problema-della-cricca-massima-la-formu.md)
+**Avanti:** [12.2 Un modello PLI per il problema della clique massima: la formulazione sugli spigoli](un-modello-pli-per-il-problema-della-clique-massima-la-formu.md)
 
 ---
 

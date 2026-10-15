@@ -6,7 +6,7 @@ title: "Scheduling su macchine parallele identiche"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 7** · [:material-book-open-variant: Capitolo 7: Problemi di scheduling](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Problemi di scheduling](../../esercizi/pcmax.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 7** · [:material-book-open-variant: Capitolo 7: Problemi di scheduling](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-pcmax.pdf) · [:material-pencil: Esercizi: Problemi di scheduling](../../esercizi/pcmax.md)
 
 </div>
 

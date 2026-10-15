@@ -12,7 +12,7 @@ title: "Zaino: branch-and-bound sull'elemento critico"
 
 !!! nota "Prerequisiti"
 
-    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 7 «Branch-and-bound»](https://fabiofurini.github.io/programmazione-lineare-intera/metodi-esatti/bb/): operazioni di branching e di bounding, lista dei problemi, criteri di potatura, lower bound $\LB$ e upper bound $\UB$. Qui l'algoritmo generale si applica al problema dello zaino 0/1.
+    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 7 «Branch-and-bound»](https://fabiofurini.github.io/programmazione-lineare-intera/exact-methods/bb/): operazioni di branching e di bounding, lista dei problemi, criteri di potatura, lower bound $\LB$ e upper bound $\UB$. Qui l'algoritmo generale si applica al problema dello zaino 0/1.
 
     - Da questo modulo, [Capitolo 9 «Formulazioni dei problemi di zaino»](../formulazioni/knapsack-formulations/un-modello-pli-per-il-problema-dello-zaino-0-1.md): i modelli $\mathrm{ILP}_{\mathrm{KP}}$ e $\mathrm{LP}_{\mathrm{KP}}$, l'efficienza di un oggetto, l'oggetto critico $s$, la capacità residua $\mathit{rc}$ e il bound di Dantzig.
 
@@ -108,7 +108,7 @@ Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi
 
 ### 41.1.3 Che cosa cambia rispetto all'algoritmo generale
 
-- L'algoritmo è il branch-and-bound basato sulla PL del modulo <em>Programmazione lineare intera</em> ([Capitolo 7 «Branch-and-bound»](https://fabiofurini.github.io/programmazione-lineare-intera/metodi-esatti/bb/)), con la sua lista dei problemi, i suoi criteri di potatura e il suo gap di ottimalità.
+- L'algoritmo è il branch-and-bound basato sulla PL del modulo <em>Programmazione lineare intera</em> ([Capitolo 7 «Branch-and-bound»](https://fabiofurini.github.io/programmazione-lineare-intera/exact-methods/bb/)), con la sua lista dei problemi, i suoi criteri di potatura e il suo gap di ottimalità.
 
 - <strong>Bounding.</strong> Il problema di un nodo si risolve con le formule precedenti. Tutti i profitti sono interi, quindi il bound di un nodo è $\lfloor z(\mathrm{LP}_{\mathrm{KP}}^k)\rfloor$: il nodo è potato per bound se $\lfloor z(\mathrm{LP}_{\mathrm{KP}}^k)\rfloor \le \LB$, per inammissibilità se $c(k)<0$, per interezza se la sua soluzione è intera (e allora $\LB$ si aggiorna quando il valore è maggiore). Un nodo intero è potato per interezza anche quando il suo valore non supera $\LB$.
 

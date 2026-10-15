@@ -12,7 +12,7 @@ title: "Colorazione dei vertici: il branch-and-bound DSATUR"
 
 !!! nota "Prerequisiti"
 
-    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 7 «Branch-and-bound»](https://fabiofurini.github.io/programmazione-lineare-intera/metodi-esatti/bb/): operazioni di branching e di bounding, lista dei problemi, criteri di potatura, bound $\LB$ e $\UB$.
+    - Dal modulo <em>Programmazione lineare intera</em>, [Capitolo 7 «Branch-and-bound»](https://fabiofurini.github.io/programmazione-lineare-intera/exact-methods/bb/): operazioni di branching e di bounding, lista dei problemi, criteri di potatura, bound $\LB$ e $\UB$.
 
     - Da questo modulo, [Capitolo 4 «Problemi di colorazione»](../problemi-di-ottimizzazione-combinatoria/coloring/index.md): il problema della colorazione dei vertici, clique, insiemi stabili e il bound della clique $\omega(G)\le\chi(G)$.
 

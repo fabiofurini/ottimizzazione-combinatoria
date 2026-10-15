@@ -36,6 +36,25 @@ Le dispense, gli eserciziari e il catalogo dei problemi in PDF, con la stessa nu
 
 </div>
 
+## Slide
+
+Le slide delle lezioni, un PDF per capitolo, con le stesse definizioni ed esempi della dispensa.
+
+<div class="tabella-download" markdown>
+
+| Capitolo | Titolo | File |
+|:---:|---|---|
+| 1 | [Problemi di ottimizzazione combinatoria](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md) | [:material-file-pdf-box: PDF](pdf/slide-combinatorial-optimization.pdf) (0.5 MB) |
+| 2 | [Problemi di zaino](problemi-di-ottimizzazione-combinatoria/knapsack/index.md) | [:material-file-pdf-box: PDF](pdf/slide-knapsack.pdf) (0.7 MB) |
+| 3 | [Problemi di packing](problemi-di-ottimizzazione-combinatoria/bin-packing/index.md) | [:material-file-pdf-box: PDF](pdf/slide-bin-packing.pdf) (0.6 MB) |
+| 4 | [Problemi di colorazione](problemi-di-ottimizzazione-combinatoria/coloring/index.md) | [:material-file-pdf-box: PDF](pdf/slide-coloring.pdf) (0.4 MB) |
+| 5 | [Problemi di clique](problemi-di-ottimizzazione-combinatoria/clique/index.md) | [:material-file-pdf-box: PDF](pdf/slide-clique.pdf) (0.5 MB) |
+| 6 | [Problemi di routing](problemi-di-ottimizzazione-combinatoria/tsp/index.md) | [:material-file-pdf-box: PDF](pdf/slide-tsp.pdf) (0.4 MB) |
+| 7 | [Problemi di scheduling](problemi-di-ottimizzazione-combinatoria/pcmax/index.md) | [:material-file-pdf-box: PDF](pdf/slide-pcmax.pdf) (0.4 MB) |
+| 8 | [Problemi di lot sizing](problemi-di-ottimizzazione-combinatoria/lot-sizing/index.md) | [:material-file-pdf-box: PDF](pdf/slide-lot-sizing.pdf) (0.4 MB) |
+
+</div>
+
 ## Catalogo dei problemi
 
 <div class="tabella-download" markdown>

@@ -6,7 +6,7 @@ title: "Problemi di packing"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 3** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Problemi di packing](../../esercizi/bin-packing.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 3** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-bin-packing.pdf) · [:material-pencil: Esercizi: Problemi di packing](../../esercizi/bin-packing.md)
 
 </div>
 

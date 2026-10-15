@@ -6,7 +6,7 @@ title: "Varianti"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 8** · [:material-book-open-variant: Capitolo 8: Problemi di lot sizing](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Problemi di lot sizing](../../esercizi/lot-sizing.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 8** · [:material-book-open-variant: Capitolo 8: Problemi di lot sizing](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-lot-sizing.pdf) · [:material-pencil: Esercizi: Problemi di lot sizing](../../esercizi/lot-sizing.md)
 
 </div>
 

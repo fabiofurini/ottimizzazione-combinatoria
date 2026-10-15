@@ -1,12 +1,12 @@
 ---
-title: "Problema della clique massima pesata sui vertici (VWMCP)"
+title: "Problema della cricca massima pesata sui vertici (VWMCP)"
 ---
 
-# Problema della clique massima pesata sui vertici (VWMCP)
+# Problema della cricca massima pesata sui vertici (VWMCP)
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogo dei problemi di ottimizzazione combinatoria**](index.md) · [:material-folder-outline: Problemi di clique](clique-problems.md) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
+[:material-view-list: **Catalogo dei problemi di ottimizzazione combinatoria**](index.md) · [:material-folder-outline: Problemi di cricca](clique-problems.md) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "Problema della clique massima pesata sui vertici (VWMCP)"
 
 <a id="box-1-def-catdef-vwmcp"></a>
 
-!!! definizione "Definizione 1: Problema della clique massima pesata sui vertici"
+!!! definizione "Definizione 1: Problema della cricca massima pesata sui vertici"
 
     1. Dati un grafo $G$ e un vettore dei pesi dei vertici $\vet{w}$, il <strong>problema della clique massima pesata sui vertici</strong> (VWMCP) chiede di trovare una clique $K$ di $G$ con peso totale dei vertici $w(K)$ massimo.
 

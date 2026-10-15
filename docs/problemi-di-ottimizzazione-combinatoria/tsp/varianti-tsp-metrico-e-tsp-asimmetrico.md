@@ -6,7 +6,7 @@ title: "TSP metrico e TSP asimmetrico"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 6** · [:material-book-open-variant: Capitolo 6: Problemi di routing](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Problemi di routing](../../esercizi/tsp.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 6** · [:material-book-open-variant: Capitolo 6: Problemi di routing](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-tsp.pdf) · [:material-pencil: Esercizi: Problemi di routing](../../esercizi/tsp.md)
 
 </div>
 

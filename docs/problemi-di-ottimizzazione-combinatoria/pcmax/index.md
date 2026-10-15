@@ -6,7 +6,7 @@ title: "Problemi di scheduling"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 7** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Problemi di scheduling](../../esercizi/pcmax.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 7** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-pcmax.pdf) · [:material-pencil: Esercizi: Problemi di scheduling](../../esercizi/pcmax.md)
 
 </div>
 

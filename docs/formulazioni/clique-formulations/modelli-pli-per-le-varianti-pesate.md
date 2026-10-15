@@ -188,7 +188,7 @@ I problemi di questa sezione sono i problemi della clique massima pesata sui ver
 
     - Il duale di $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ è il rilassamento lineare di una formulazione di colorazione, quindi $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le\chi(G)$.
 
-    - Il modello $\mathrm{ILP}_{\mathrm{MSSP}}$ ha un vincolo $x_u+x_v\le 1$ per spigolo di $G$; con le clique massimali di $G$ diventa la formulazione a clique. Sull'<span style="color:#1971c2">[Esempio 12.1](un-modello-pli-per-il-problema-della-cricca-massima-la-formu.md#box-1-mcpF-ex1)</span> il valore ottimo è $\alpha(G)=3$.
+    - Il modello $\mathrm{ILP}_{\mathrm{MSSP}}$ ha un vincolo $x_u+x_v\le 1$ per spigolo di $G$; con le clique massimali di $G$ diventa la formulazione a clique. Sull'<span style="color:#1971c2">[Esempio 12.1](un-modello-pli-per-il-problema-della-clique-massima-la-formu.md#box-1-mcpF-ex1)</span> il valore ottimo è $\alpha(G)=3$.
 
     - Il modello pesato sui vertici cambia solo la funzione obiettivo; il modello pesato sugli spigoli aggiunge una variabile $y_{uv}$ per spigolo, con $y_{uv}\le x_u$ e $y_{uv}\le x_v$. Sulle istanze del Capitolo 5 [«Problemi di clique»](../../problemi-di-ottimizzazione-combinatoria/clique/index.md) i loro valori ottimi sono $32$ e $37$.
 
@@ -202,7 +202,7 @@ I problemi di questa sezione sono i problemi della clique massima pesata sui ver
     <th><span class="arithmatex">\(\omega(G)\)</span></th>
     </tr>
     <tr>
-    <td><span style="color:#1971c2"><a href="../un-modello-pli-per-il-problema-della-cricca-massima-la-formu/#box-1-mcpF-ex1">Esempio 12.1</a></span> (ciclo con una corda)</td>
+    <td><span style="color:#1971c2"><a href="../un-modello-pli-per-il-problema-della-clique-massima-la-formu/#box-1-mcpF-ex1">Esempio 12.1</a></span> (ciclo con una corda)</td>
     <td><span class="arithmatex">\(\frac{7}{2}\)</span></td>
     <td><span class="arithmatex">\(3\)</span></td>
     <td><span class="arithmatex">\(3\)</span></td>

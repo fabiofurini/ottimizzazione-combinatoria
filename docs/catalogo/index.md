@@ -40,13 +40,13 @@ Tutti i problemi definiti nel corso, per famiglia. Ogni problema ha la sua pagin
 
     [:octicons-arrow-right-24: La famiglia](coloring-problems.md)
 
--   **Problemi di clique**
+-   **Problemi di cricca**
 
     ---
 
     Trovare un insieme di vertici a due a due adiacenti di massima cardinalità o di massimo peso.
 
-    [Clique massima (MCP)](maximum-clique-problem.md) · [Insieme stabile massimo (MSSP)](maximum-stable-set-problem.md) · [Clique massima pesata sui vertici (VWMCP)](vertex-weighted-maximum-clique-problem.md) · [Clique massima pesata sui lati (EWMCP)](edge-weighted-maximum-clique-problem.md)
+    [Cricca massima (MCP)](maximum-clique-problem.md) · [Insieme stabile massimo (MSSP)](maximum-stable-set-problem.md) · [Cricca massima pesata sui vertici (VWMCP)](vertex-weighted-maximum-clique-problem.md) · [Cricca massima pesata sui lati (EWMCP)](edge-weighted-maximum-clique-problem.md)
 
     [:octicons-arrow-right-24: La famiglia](clique-problems.md)
 

@@ -6,7 +6,7 @@ title: "Problema dell'insieme stabile massimo (MSSP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogo dei problemi di ottimizzazione combinatoria**](index.md) · [:material-folder-outline: Problemi di clique](clique-problems.md) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
+[:material-view-list: **Catalogo dei problemi di ottimizzazione combinatoria**](index.md) · [:material-folder-outline: Problemi di cricca](clique-problems.md) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
 
 </div>
 
@@ -41,11 +41,11 @@ title: "Problema dell'insieme stabile massimo (MSSP)"
 </tr>
 <tr>
 <td><strong>Definizione</strong></td>
-<td><a href="../../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-cricca-massima/#box-3-mcpP-def-MSSP">Cap. 5 «Problemi di clique»</a></td>
+<td><a href="../../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-clique-massima/#box-3-mcpP-def-MSSP">Cap. 5 «Problemi di clique»</a></td>
 </tr>
 <tr>
 <td><strong>Formulazioni</strong></td>
-<td><a href="../../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-cricca-massima-la-formu/#sez-sec-mcpf-MSSP">Cap. 12 «Formulazioni dei problemi di clique»</a></td>
+<td><a href="../../formulazioni/clique-formulations/un-modello-pli-per-il-problema-della-clique-massima-la-formu/#sez-sec-mcpf-MSSP">Cap. 12 «Formulazioni dei problemi di clique»</a></td>
 </tr>
 <tr>
 <td><strong>Limiti dell'approssimazione</strong></td>

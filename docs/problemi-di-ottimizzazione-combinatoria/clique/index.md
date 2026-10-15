@@ -6,7 +6,7 @@ title: "Problemi di clique"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 5** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil: Esercizi: Problemi di clique](../../esercizi/clique.md)
+**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 5** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-clique.pdf) · [:material-pencil: Esercizi: Problemi di clique](../../esercizi/clique.md)
 
 </div>
 
@@ -63,13 +63,13 @@ title: "Problemi di clique"
 <td>clique massima</td>
 <td>MCP</td>
 <td>massimo numero di vertici di una clique</td>
-<td><a href="il-problema-della-cricca-massima/#sez-sec-mcp-MCP">5.2</a></td>
+<td><a href="il-problema-della-clique-massima/#sez-sec-mcp-MCP">5.2</a></td>
 </tr>
 <tr>
 <td>insieme stabile massimo</td>
 <td>MSSP</td>
 <td>massimo numero di vertici di un insieme stabile</td>
-<td><a href="il-problema-della-cricca-massima/#sez-sec-mcp-MCP">5.2</a></td>
+<td><a href="il-problema-della-clique-massima/#sez-sec-mcp-MCP">5.2</a></td>
 </tr>
 <tr>
 <td>clique massima pesata sui vertici</td>
@@ -97,7 +97,7 @@ title: "Problemi di clique"
 
     Upper bound semplici
 
-    [:octicons-arrow-right-24: Apri](il-problema-della-cricca-massima.md)
+    [:octicons-arrow-right-24: Apri](il-problema-della-clique-massima.md)
 
 -   **5.5 Varianti pesate**
 
@@ -109,7 +109,7 @@ title: "Problemi di clique"
 
 ---
 
-**Avanti:** [5.2 Il problema della clique massima](il-problema-della-cricca-massima.md)
+**Avanti:** [5.2 Il problema della clique massima](il-problema-della-clique-massima.md)
 
 ---
 
