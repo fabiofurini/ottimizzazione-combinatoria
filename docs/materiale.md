@@ -74,6 +74,10 @@ Le slide delle lezioni, un PDF per capitolo, con le stesse definizioni ed esempi
 | 27 | [PD per il problema del cambio monete](programmazione-dinamica/dp-coin-change.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-coin-change.pdf) (0.5 MB) |
 | 28 | [PD per il problema del taglio delle aste](programmazione-dinamica/dp-rod-cutting/index.md) | [:material-file-pdf-box: PDF](pdf/slide-dp-rod-cutting.pdf) (0.5 MB) |
 | 29 | [Algoritmi euristici: definizioni](algoritmi-euristici/heuristics.md) | [:material-file-pdf-box: PDF](pdf/slide-heuristics.pdf) (0.4 MB) |
+| 30 | [Euristiche costruttive](algoritmi-euristici/constructive-heuristics/index.md) (1/2) | [:material-file-pdf-box: PDF](pdf/slide-constructive-heuristics-1.pdf) (0.5 MB) |
+| 30 | [Euristiche costruttive](algoritmi-euristici/constructive-heuristics/index.md) (2/2) | [:material-file-pdf-box: PDF](pdf/slide-constructive-heuristics-2.pdf) (0.6 MB) |
+| 31 | [Ricerca locale](algoritmi-euristici/local-search/index.md) (1/2) | [:material-file-pdf-box: PDF](pdf/slide-local-search-1.pdf) (0.6 MB) |
+| 31 | [Ricerca locale](algoritmi-euristici/local-search/index.md) (2/2) | [:material-file-pdf-box: PDF](pdf/slide-local-search-2.pdf) (0.6 MB) |
 | 32 | [Metaeuristiche](algoritmi-euristici/metaheuristics/index.md) (1/2) | [:material-file-pdf-box: PDF](pdf/slide-metaheuristics-1.pdf) (0.6 MB) |
 | 32 | [Metaeuristiche](algoritmi-euristici/metaheuristics/index.md) (2/2) | [:material-file-pdf-box: PDF](pdf/slide-metaheuristics-2.pdf) (0.6 MB) |
 | 33 | [Euristiche MIP per i problemi classici](algoritmi-euristici/mip-heuristics-classical.md) | [:material-file-pdf-box: PDF](pdf/slide-mip-heuristics-classical.pdf) (0.8 MB) |
