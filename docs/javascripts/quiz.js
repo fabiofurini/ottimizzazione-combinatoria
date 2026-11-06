@@ -178,17 +178,27 @@
       document.head.appendChild(s);
     });
   }
-  /** la cartella del sito (Material scrive la base relativa in #__config) */
+  /** la cartella del sito, ricavata dall'indirizzo di questo script (…/javascripts/quiz.js): vale anche dopo la
+   *  navigazione istantanea di Material, quando #__config resta quello della prima pagina aperta (2026-11-06) */
+  var SCRIPT_QUIZ = (document.currentScript && document.currentScript.src) || "";
   function baseBanca(radice) {
     var rel = radice.getAttribute("data-banca");
+    if (rel) return new URL(rel, location.href).href;
+    var src = SCRIPT_QUIZ;
+    if (!src) {
+      var tag = Array.prototype.find.call(document.getElementsByTagName("script"), function (x) {
+        return /javascripts\/quiz\.js/.test(x.src || "");
+      });
+      src = tag ? tag.src : "";
+    }
+    if (src) return new URL("../quiz/", src).href;
     try {
       var cfg = document.getElementById("__config");
-      if (cfg && !rel) {
-        var base = JSON.parse(cfg.textContent).base || ".";
-        return new URL(base.replace(/\/?$/, "/") + "quiz/", location.href).href;
-      }
-    } catch (e) { /* si usa data-banca */ }
-    return new URL(rel || "quiz/", location.href).href;
+      var base = JSON.parse(cfg.textContent).base || ".";
+      return new URL(base.replace(/\/?$/, "/") + "quiz/", location.href).href;
+    } catch (e) {
+      return new URL("quiz/", location.href).href;
+    }
   }
 
   // ------------------------------------------------------------ banca: caricamento (una volta per modulo)
