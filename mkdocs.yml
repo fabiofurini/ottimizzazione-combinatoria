@@ -309,7 +309,7 @@ nav:
           - "39. Commesso viaggiatore (TSP)": algoritmi-di-approssimazione/tsp-approximation.md
       - "Problemi di scheduling":
           - "40. Macchine parallele identiche (P||Cmax)": algoritmi-di-approssimazione/pcmax-approximation.md
-  - Algoritmi ad hoc:
+  - Ad hoc:
       - algoritmi-specializzati/index.md
       - "Problemi di zaino":
           - "41. Zaino 0/1 (KP)": algoritmi-specializzati/knapsack-branch-and-bound.md
@@ -372,12 +372,12 @@ nav:
               - "39. Commesso viaggiatore (TSP)": esercizi/tsp-approximation.md
           - "Problemi di scheduling":
               - "40. Macchine parallele identiche (P||Cmax)": esercizi/pcmax-approximation.md
-      - "Algoritmi ad hoc":
+      - "Ad hoc":
           - "Problemi di zaino":
               - "41. Zaino 0/1 (KP)": esercizi/knapsack-branch-and-bound.md
           - "Problemi di colorazione":
               - "42. Colorazione dei vertici (VCP)": esercizi/dsatur-branch-and-bound.md
-  - Autovalutazione: autovalutazione.md
+  - Quiz: autovalutazione.md
   - Catalogo:
       - catalogo/index.md
       - "I problemi in sintesi": problemi-di-ottimizzazione-combinatoria/problems.md

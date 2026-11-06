@@ -87,7 +87,7 @@ Esercizi con le **soluzioni svolte**, capitolo per capitolo, con le stesse parti
 
 - [40. Approssimazione per P||Cmax](pcmax-approximation.md) · 3 esercizi
 
-## Algoritmi ad hoc
+## Ad hoc
 
 ### Problemi di zaino
 

@@ -378,7 +378,7 @@ Tutte le pagine del sito, nell'ordine del menu: i capitoli con le loro sezioni, 
     - [40.6 Errori tipici](algoritmi-di-approssimazione/pcmax-approximation.md#406-errori-tipici)
     - [40.7 In sintesi](algoritmi-di-approssimazione/pcmax-approximation.md#407-in-sintesi)
 
-## [Algoritmi ad hoc](algoritmi-specializzati/index.md)
+## [Ad hoc](algoritmi-specializzati/index.md)
 
 ### Problemi di zaino
 

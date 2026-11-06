@@ -19,6 +19,7 @@ Per gli studenti della laurea magistrale in Ingegneria gestionale della Sapienza
 [:material-school: Studia il corso](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md){ .md-button .md-button--primary }
 [:material-star-outline: Esplora i problemi](problemi-scelti/index.md){ .md-button }
 [:material-pencil: Esercitati](esercizi/index.md){ .md-button }
+[:material-clipboard-check-outline: Mettiti alla prova](autovalutazione.md){ .md-button }
 [:material-download: Il materiale](materiale.md){ .md-button }
 
 </div>
@@ -89,7 +90,7 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
 
     [:octicons-arrow-right-24: I capitoli](algoritmi-di-approssimazione/index.md)
 
--   :material-tools: **Algoritmi ad hoc**
+-   :material-tools: **Ad hoc**
 
     ---
 
