@@ -1010,5 +1010,1211 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       };
     }
   });
+  // ================================================================ BATCH 4 (6 novembre 2026): almeno due generatori per capitolo con calcoli
+  function L2(en, it, a) { var s = a ? "#" + a : ""; return L(en + "/" + s, it + "/" + s); }
+  function bitsOf(m, n) { var s = []; for (var j = 0; j < n; j++) if (m & (1 << j)) s.push(j + 1); return s; }
+  function kpAll(p, w, c) { // tutti i sottoinsiemi ammissibili: {z, best:[maschere], vals:{maschera:valore}}
+    var n = p.length, z = -1, best = [], second = -1;
+    for (var m = 0; m < (1 << n); m++) {
+      var pp = 0, ww = 0; for (var j = 0; j < n; j++) if (m & (1 << j)) { pp += p[j]; ww += w[j]; }
+      if (ww > c) continue;
+      if (pp > z) { second = z; z = pp; best = [m]; } else if (pp === z) best.push(m); else if (pp > second) second = pp;
+    }
+    return { z: z, best: best, second: second };
+  }
+  function setKey(s) { return { k: s.join(","), t: "$" + set(s) + "$" }; }
+  function pairKey(a, b, ta, tb) { return { k: a + "|" + b, t: "$" + (ta || a) + "$, $" + (tb || b) + "$" }; }
+  function adjMat(n, E) { var A = []; for (var i = 0; i <= n; i++) { A.push([]); for (var j = 0; j <= n; j++) A[i].push(false); } E.forEach(function (e) { A[e[0]][e[1]] = A[e[1]][e[0]] = true; }); return A; }
+  function cliqueNum(n, A, stable) {
+    var best = 0;
+    for (var m = 1; m < (1 << n); m++) {
+      var S = bitsOf(m, n), ok = true;
+      for (var a = 0; a < S.length && ok; a++) for (var b = a + 1; b < S.length && ok; b++) if (A[S[a]][S[b]] === !!stable) ok = false;
+      if (ok && S.length > best) best = S.length;
+    }
+    return best;
+  }
+  function chromatic(n, A) {
+    for (var k = 1; k <= n; k++) {
+      var col = new Array(n + 1).fill(0);
+      var ok = (function rec(v) {
+        if (v > n) return true;
+        for (var c = 1; c <= k; c++) {
+          var f = true; for (var u = 1; u < v; u++) if (A[u][v] && col[u] === c) { f = false; break; }
+          if (f) { col[v] = c; if (rec(v + 1)) return true; }
+        }
+        col[v] = 0; return false;
+      })(1);
+      if (ok) return k;
+    }
+    return n;
+  }
+  function degs(n, E) { var d = new Array(n + 1).fill(0); E.forEach(function (e) { d[e[0]]++; d[e[1]]++; }); return d; }
+  function kmaxOf(n, d) { var km = 0; for (var k = 1; k <= n; k++) { var c = 0; for (var v = 1; v <= n; v++) if (d[v] >= k - 1) c++; if (c >= k) km = k; } return km; }
+  function twoEdgeSum(d, n) { var s = 0; for (var i = 1; i <= n; i++) { var r = []; for (var j = 1; j <= n; j++) if (j !== i) r.push(d[i][j]); r.sort(function (a, b) { return a - b; }); s += r[0] + r[1]; } return s; }
+  function tspOpt(d, n) { // giri con la città 1 fissata: tutte le permutazioni di 2..n
+    var best = Infinity, lens = [];
+    (function perm(arr, k) {
+      if (k === arr.length) { var L0 = tourLen(d, [1].concat(arr)); lens.push(L0); if (L0 < best) best = L0; return; }
+      for (var i = k; i < arr.length; i++) { var t = arr[k]; arr[k] = arr[i]; arr[i] = t; perm(arr, k + 1); t = arr[k]; arr[k] = arr[i]; arr[i] = t; }
+    })(range1(n).slice(1), 0);
+    return { z: best, lens: lens };
+  }
+  function pcmaxOpt(t, m) { var n = t.length, best = Infinity; for (var a = 0; a < Math.pow(m, n); a++) { var L0 = new Array(m).fill(0), x = a; for (var j = 0; j < n; j++) { L0[x % m] += t[j]; x = Math.floor(x / m); } best = Math.min(best, Math.max.apply(null, L0)); } return best; }
+  function binsOpt(w, c) { // minimo numero di contenitori, ricerca esaustiva
+    var n = w.length, best = n, loads = [];
+    (function rec(i) {
+      if (loads.length >= best) return;
+      if (i === n) { best = loads.length; return; }
+      for (var b = 0; b < loads.length; b++) if (loads[b] + w[i] <= c) { loads[b] += w[i]; rec(i + 1); loads[b] -= w[i]; }
+      loads.push(w[i]); rec(i + 1); loads.pop();
+    })(0);
+    return best;
+  }
+  function binsOf(P) { return P.nb; }
+  function metricDist(rng, n) { // punti su una griglia, distanze di Manhattan (metriche), tutte diverse
+    var P = []; for (var i = 0; i < n; i++) P.push([ri(rng, 0, 9), ri(rng, 0, 9)]);
+    var d = [[]], seen = {};
+    for (i = 1; i <= n; i++) { d.push([]); for (var j = 0; j <= n; j++) d[i].push(0); }
+    for (i = 1; i <= n; i++) for (j = i + 1; j <= n; j++) {
+      var x = Math.abs(P[i - 1][0] - P[j - 1][0]) + Math.abs(P[i - 1][1] - P[j - 1][1]);
+      if (x === 0 || seen[x]) return null; seen[x] = 1; d[i][j] = d[j][i] = x;
+    }
+    return d;
+  }
+  function primMST(d, n) { // archi dell'albero (padre, figlio), radice 1
+    var inT = new Array(n + 1).fill(false), best = new Array(n + 1).fill(Infinity), par = new Array(n + 1).fill(0), w = 0, edges = [];
+    best[1] = 0;
+    for (var it = 0; it < n; it++) {
+      var u = -1; for (var v = 1; v <= n; v++) if (!inT[v] && (u < 0 || best[v] < best[u])) u = v;
+      inT[u] = true; if (par[u]) { w += d[par[u]][u]; edges.push([par[u], u]); }
+      for (v = 1; v <= n; v++) if (!inT[v] && d[u][v] < best[v]) { best[v] = d[u][v]; par[v] = u; }
+    }
+    return { w: w, edges: edges };
+  }
+  function preorder(n, edges) { var ch = {}; edges.forEach(function (e) { (ch[e[0]] = ch[e[0]] || []).push(e[1]); }); var out = []; (function vis(u) { out.push(u); (ch[u] || []).sort(function (a, b) { return a - b; }).forEach(vis); })(1); return out; }
+  function greedyClique(n, A, d) { var ord = range1(n).sort(function (a, b) { return d[b] - d[a] || a - b; }), K = []; ord.forEach(function (v) { if (K.every(function (u) { return A[u][v]; })) K.push(v); }); return K; }
+  function lsCost(d, x, sc, vc, hc) { var s = 0, st = 0; for (var t = 0; t < d.length; t++) { st += x[t] - d[t]; if (st < 0) return null; s += (x[t] > 0 ? sc[t] : 0) + vc[t] * x[t] + hc[t] * st; } return st === 0 ? s : null; }
+  function clsAll(d, cap, sc, vc, hc) { // tutti i piani ammissibili (m piccolo)
+    var m = d.length, res = [];
+    (function rec(t, x) {
+      if (t === m) { var c0 = lsCost(d, x, sc, vc, hc); if (c0 !== null) res.push({ c: c0, x: x.slice() }); return; }
+      for (var q = 0; q <= cap[t]; q++) { x.push(q); rec(t + 1, x); x.pop(); }
+    })(0, []);
+    res.sort(function (a, b) { return a.c - b.c; });
+    return res;
+  }
+  function frPct(f) { return "\\frac{" + f.n + "}{" + f.d + "}"; }
+
+  // ---- B4.1 UKP: valore e soluzione ottima (cap. 18)
+  add({
+    id: "oc-g-ukp-sol", livello: "media", capitolo: "dp-unbounded-knapsack",
+    link: L2("dynamic-programming/dp-unbounded-knapsack/a-first-dp-algorithm", "programmazione-dinamica/dp-unbounded-knapsack/un-primo-algoritmo-di-pd", "box-14-texukpbu"),
+    genera: function (rng, lingua) {
+      var n = 3, p = [], w = [];
+      for (var j = 0; j < n; j++) { w.push(ri(rng, 2, 6)); p.push(w[j] * ri(rng, 1, 3) + ri(rng, 0, 3)); }
+      var c = ri(rng, 10, 15), best = -1, sols = [];
+      for (var a = 0; a <= c / w[0]; a++) for (var b = 0; b <= c / w[1]; b++) for (var e = 0; e <= c / w[2]; e++) {
+        if (a * w[0] + b * w[1] + e * w[2] > c) continue;
+        var z = a * p[0] + b * p[1] + e * p[2];
+        if (z > best) { best = z; sols = [[a, b, e]]; } else if (z === best) sols.push([a, b, e]);
+      }
+      if (sols.length !== 1) return null;
+      var x = sols[0], o = effOrder(p, w), rc = c, g = [0, 0, 0];
+      o.forEach(function (i) { g[i] = Math.floor(rc / w[i]); rc -= g[i] * w[i]; });
+      var gz = g[0] * p[0] + g[1] * p[1] + g[2] * p[2];
+      var kp = kpAll(p, w, c), kx = bitsOf(kp.best[0], n), kv = [0, 0, 0]; kx.forEach(function (i) { kv[i - 1] = 1; });
+      var i1 = 0; for (j = 1; j < n; j++) if (Math.floor(c / w[j]) * p[j] > Math.floor(c / w[i1]) * p[i1]) i1 = j;
+      var sv = [0, 0, 0]; sv[i1] = Math.floor(c / w[i1]);
+      var key = function (z, v) { return { k: z + "|" + v.join(","), t: "$" + z + "$ con $x=" + vec(v) + "$" }; };
+      var keyE = function (z, v) { return { k: z + "|" + v.join(","), t: "$" + z + "$ with $x=" + vec(v) + "$" }; };
+      var K = lingua === "it" ? key : keyE;
+      var bb = build(rng, K(best, x), [K(gz, g), K(kp.z, kv), K(sv[i1] * p[i1], sv), K(best, g)]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Zaino illimitato (UKP): $n=3$ tipi di oggetto, ciascuno in copie illimitate, " + itemTab(lingua, p, w) + ", capacità $c=" + c + "$; $x_j$ è il numero di copie del tipo $j$. Qual è il valore ottimo, e con quale vettore $x$ (unico) si ottiene?",
+          "Unbounded knapsack (UKP): $n=3$ item types, each in unlimited copies, " + itemTab(lingua, p, w) + ", capacity $c=" + c + "$; $x_j$ is the number of copies of type $j$. What is the optimal value, and with which (unique) vector $x$ is it obtained?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "La PD $v(k)=\\max_j\\{p_j+v(k-w_j)\\}$ dà $v(" + c + ")=" + best + "$, ottenuto con $x=" + vec(x) + "$. Il greedy per efficienza con ripetizioni dà $" + gz + "$ e lo zaino 0-1 $" + kp.z + "$.",
+          "The DP $v(k)=\\max_j\\{p_j+v(k-w_j)\\}$ gives $v(" + c + ")=" + best + "$, attained by $x=" + vec(x) + "$. The greedy by efficiency with repetitions gives $" + gz + "$ and the 0-1 knapsack $" + kp.z + "$."),
+        _v: { dati: { p: p, w: w, c: c }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.2 subset sum: quante somme raggiungibili (cap. 20)
+  add({
+    id: "oc-g-ssp-count", livello: "media", capitolo: "dp-subset-sum",
+    link: L2("dynamic-programming/dp-subset-sum", "programmazione-dinamica/dp-subset-sum", "box-12-texsspbu"),
+    genera: function (rng, lingua) {
+      var n = 4, w = []; for (var j = 0; j < n; j++) w.push(ri(rng, 2, 9));
+      var c = ri(rng, 10, 18);
+      var r = [true]; for (var k = 1; k <= c; k++) r.push(false);
+      w.forEach(function (x) { for (var k2 = c; k2 >= x; k2--) if (r[k2 - x]) r[k2] = true; });
+      var cnt = r.filter(function (b) { return b; }).length, subs = 0;
+      for (var m = 0; m < (1 << n); m++) { var s = 0; bitsOf(m, n).forEach(function (i) { s += w[i - 1]; }); if (s <= c) subs++; }
+      var bb = build(rng, num(cnt), [num(cnt - 1), num(subs), num(c + 1), num(cnt + 1)]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Subset sum con pesi $w=" + vec(w) + "$ e obiettivo $c=" + c + "$. $r(j,k)$ è vero se un sottoinsieme dei primi $j$ pesi ha somma esattamente $k$ (il sottoinsieme vuoto dà $k=0$). Per quanti valori $k\\in\\{0,1,\\dots," + c + "\\}$ la cella $r(" + n + ",k)$ è vera?",
+          "Subset sum with weights $w=" + vec(w) + "$ and target $c=" + c + "$. $r(j,k)$ is true if a subset of the first $j$ weights sums to exactly $k$ (the empty subset gives $k=0$). For how many values $k\\in\\{0,1,\\dots," + c + "\\}$ is the cell $r(" + n + ",k)$ true?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Le somme raggiungibili fino a $" + c + "$ sono $" + cnt + "$, compreso $k=0$. Sottoinsiemi diversi possono dare la stessa somma: i sottoinsiemi con somma al più $" + c + "$ sono $" + subs + "$.",
+          "The reachable sums up to $" + c + "$ are $" + cnt + "$, including $k=0$. Different subsets may give the same sum: the subsets with sum at most $" + c + "$ are $" + subs + "$."),
+        _v: { dati: { w: w, c: c }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.3 cambio monete: resti non ottenibili (cap. 27)
+  add({
+    id: "oc-g-ccp-unreach", livello: "media", capitolo: "dp-coin-change",
+    link: L2("dynamic-programming/dp-coin-change", "programmazione-dinamica/dp-coin-change", "box-13-texccpbu"),
+    genera: function (rng, lingua) {
+      var a = ri(rng, 3, 5), b = ri(rng, a + 1, 9), c = ri(rng, 10, 20), w = [a, b];
+      var v = [0]; for (var k = 1; k <= c; k++) { var m = Infinity; w.forEach(function (x) { if (x <= k && v[k - x] + 1 < m) m = v[k - x] + 1; }); v.push(m); }
+      var cnt = 0, nm = 0; for (k = 1; k <= c; k++) { if (v[k] === Infinity) cnt++; if (k % a && k % b) nm++; }
+      if (cnt === 0) return null;
+      var bb = build(rng, num(cnt), [num(nm), num(cnt + 1), num(cnt - 1), num(c - cnt)]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Cambio monete (CCP) con tagli $w=" + vec(w) + "$ in quantità illimitata. $v(k)$ è il minimo numero di monete per dare esattamente il resto $k$: $v(0)=0$, $v(k)=\\min_{j:\\,w_j\\le k}\\{1+v(k-w_j)\\}$, e $v(k)=+\\infty$ se il resto non si può dare. Per quanti valori $k\\in\\{1,\\dots," + c + "\\}$ si ha $v(k)=+\\infty$?",
+          "Coin change (CCP) with denominations $w=" + vec(w) + "$ in unlimited supply. $v(k)$ is the minimum number of coins to pay exactly the amount $k$: $v(0)=0$, $v(k)=\\min_{j:\\,w_j\\le k}\\{1+v(k-w_j)\\}$, and $v(k)=+\\infty$ if the amount cannot be paid. For how many values $k\\in\\{1,\\dots," + c + "\\}$ is $v(k)=+\\infty$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Calcolando $v(1),\\dots,v(" + c + ")$ si trovano $" + cnt + "$ resti non ottenibili. Non basta escludere i multipli di $" + a + "$ e di $" + b + "$: anche le loro somme sono ottenibili.",
+          "Computing $v(1),\\dots,v(" + c + ")$ one finds $" + cnt + "$ unobtainable amounts. Excluding the multiples of $" + a + "$ and $" + b + "$ is not enough: their sums are obtainable too."),
+        _v: { dati: { w: w, c: c }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.4 taglio delle aste: valore e pezzi (cap. 28)
+  add({
+    id: "oc-g-rcp-sol", livello: "media", capitolo: "dp-rod-cutting",
+    link: L2("dynamic-programming/dp-rod-cutting/a-first-dp-algorithm", "programmazione-dinamica/dp-rod-cutting/un-primo-algoritmo-di-pd", "box-14-texrcpbu"),
+    genera: function (rng, lingua) {
+      var n = ri(rng, 5, 6), p = [], last = 0;
+      for (var j = 1; j <= n; j++) { last += ri(rng, 1, 5); p.push(last); }
+      var parts = [];
+      (function gen(rem, mx, acc) { if (rem === 0) { parts.push(acc.slice()); return; } for (var q = Math.min(rem, mx); q >= 1; q--) { acc.push(q); gen(rem - q, q, acc); acc.pop(); } })(n, n, []);
+      var val = function (P) { var s = 0; P.forEach(function (q) { s += p[q - 1]; }); return s; };
+      parts.sort(function (A, B) { return val(B) - val(A); });
+      if (val(parts[0]) === val(parts[1])) return null;
+      var key = function (P) { return { k: val(P) + "|" + P.join(","), t: "$" + val(P) + "$: " + T(lingua, "pezzi ", "pieces ") + "$" + P.join("+") + "$" }; };
+      var bb = build(rng, key(parts[0]), [key([n]), key(parts[1]), key(parts[2]), key(range1(n).map(function () { return 1; }))]);
+      if (!bb) return null;
+      var head = ["j"].concat(range1(n).map(String));
+      return {
+        testo: T(lingua, "Taglio delle aste (RCP): un'asta di lunghezza $n=" + n + "$ si taglia in pezzi di lunghezza intera, e il pezzo di lunghezza $j$ si vende a $p_j$: " + tab(head, [["p_j"].concat(p)]) + ". Qual è il ricavo massimo e con quali pezzi (taglio ottimo unico, a meno dell'ordine)?",
+          "Rod cutting (RCP): a rod of length $n=" + n + "$ is cut into pieces of integer length, and the piece of length $j$ sells at $p_j$: " + tab(head, [["p_j"].concat(p)]) + ". What is the largest revenue and with which pieces (unique optimal cut, up to order)?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "La PD $v(\\ell)=\\max_j\\{p_j+v(\\ell-j)\\}$ dà $v(" + n + ")=" + val(parts[0]) + "$ con i pezzi $" + parts[0].join("+") + "$. Vendere l'asta intera dà $" + p[n - 1] + "$.",
+          "The DP $v(\\ell)=\\max_j\\{p_j+v(\\ell-j)\\}$ gives $v(" + n + ")=" + val(parts[0]) + "$ with pieces $" + parts[0].join("+") + "$. Selling the whole rod gives $" + p[n - 1] + "$."),
+        _v: { dati: { p: p, n: n }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.5-6 zaino limitato (cap. 19)
+  function bkpBest(p, w, b, c, types) {
+    var best = 0, n = types; (function rec(j, cap, val) { if (j === n) { if (val > best) best = val; return; } for (var d = 0; d <= b[j] && d * w[j] <= cap; d++) rec(j + 1, cap - d * w[j], val + d * p[j]); })(0, c, 0);
+    return best;
+  }
+  function bkpInst(rng) { var p = [], w = [], b = []; for (var j = 0; j < 3; j++) { w.push(ri(rng, 2, 5)); p.push(ri(rng, 3, 12)); b.push(ri(rng, 1, 3)); } return { p: p, w: w, b: b }; }
+  function bkpTab(lingua, I) { return tab(["j", "1", "2", "3"], [["p_j"].concat(I.p), ["w_j"].concat(I.w), ["b_j"].concat(I.b)]); }
+  add({
+    id: "oc-g-bkp-dp", livello: "facile", capitolo: "dp-bounded-knapsack",
+    link: L2("dynamic-programming/dp-bounded-knapsack", "programmazione-dinamica/dp-bounded-knapsack", "box-15-texbkpbu"),
+    genera: function (rng, lingua) {
+      var I = bkpInst(rng), c = ri(rng, 8, 12);
+      var z = bkpBest(I.p, I.w, I.b, c, 3), kp = kpAll(I.p, I.w, c).z, uk = ukp(I.p, I.w, c)[c];
+      var bb = build(rng, num(z), [num(kp), num(uk), num(z + 1), num(z - 1)]);
+      if (!bb || z === kp) return null;
+      return {
+        testo: T(lingua, "Zaino limitato (BKP): il tipo $j$ ha profitto $p_j$, peso $w_j$ e $b_j$ copie disponibili, " + bkpTab(lingua, I) + ", capacità $c=" + c + "$. Con $v(j,k)=\\max_{0\\le d\\le\\min\\{b_j,\\lfloor k/w_j\\rfloor\\}}\\{d\\,p_j+v(j-1,k-d\\,w_j)\\}$ e $v(0,k)=0$, quanto vale il valore ottimo $v(3," + c + ")$?",
+          "Bounded knapsack (BKP): type $j$ has profit $p_j$, weight $w_j$ and $b_j$ available copies, " + bkpTab(lingua, I) + ", capacity $c=" + c + "$. With $v(j,k)=\\max_{0\\le d\\le\\min\\{b_j,\\lfloor k/w_j\\rfloor\\}}\\{d\\,p_j+v(j-1,k-d\\,w_j)\\}$ and $v(0,k)=0$, what is the optimal value $v(3," + c + ")$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "La PD dà $v(3," + c + ")=" + z + "$. Con una sola copia per tipo (KP) si avrebbe $" + kp + "$, con copie illimitate (UKP) $" + uk + "$.",
+          "The DP gives $v(3," + c + ")=" + z + "$. With one copy per type (KP) one would get $" + kp + "$, with unlimited copies (UKP) $" + uk + "$."),
+        _v: { dati: { p: I.p, w: I.w, b: I.b, c: c, j: 3, k: c }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-bkp-cella", livello: "media", capitolo: "dp-bounded-knapsack",
+    link: L2("dynamic-programming/dp-bounded-knapsack", "programmazione-dinamica/dp-bounded-knapsack", "box-3-texbkpvalues"),
+    genera: function (rng, lingua) {
+      var I = bkpInst(rng), c = ri(rng, 9, 12), k = ri(rng, 5, c);
+      var x = bkpBest(I.p, I.w, I.b, k, 2), x1 = bkpBest(I.p, I.w, I.b, k, 1), x3 = bkpBest(I.p, I.w, I.b, k, 3);
+      var uk = ukp(I.p.slice(0, 2), I.w.slice(0, 2), k)[k], kp = kpAll(I.p.slice(0, 2), I.w.slice(0, 2), k).z;
+      var bb = build(rng, num(x), [num(x1), num(x3), num(uk), num(kp)]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Zaino limitato (BKP): il tipo $j$ ha profitto $p_j$, peso $w_j$ e $b_j$ copie, " + bkpTab(lingua, I) + ", capacità $c=" + c + "$. $v(j,k)$ è il massimo profitto con i soli tipi $1,\\dots,j$ e capacità $k$, con al più $b_j$ copie del tipo $j$. Quanto vale $v(2," + k + ")$?",
+          "Bounded knapsack (BKP): type $j$ has profit $p_j$, weight $w_j$ and $b_j$ copies, " + bkpTab(lingua, I) + ", capacity $c=" + c + "$. $v(j,k)$ is the largest profit with types $1,\\dots,j$ only and capacity $k$, with at most $b_j$ copies of type $j$. What is $v(2," + k + ")$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Con i tipi $1$ e $2$ e capacità $" + k + "$, rispettando i limiti $b_1=" + I.b[0] + "$ e $b_2=" + I.b[1] + "$, il massimo è $" + x + "$. Senza limiti sulle copie si avrebbe $" + uk + "$.",
+          "With types $1$ and $2$ and capacity $" + k + "$, respecting the bounds $b_1=" + I.b[0] + "$ and $b_2=" + I.b[1] + "$, the maximum is $" + x + "$. Without bounds on the copies one would get $" + uk + "$."),
+        _v: { dati: { p: I.p, w: I.w, b: I.b, c: c, j: 2, k: k }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.7-8 zaino a scelta multipla (cap. 21)
+  function mckpInst(rng) {
+    var p = [], w = []; for (var j = 0; j < 6; j++) { p.push(ri(rng, 2, 9)); w.push(ri(rng, 1, 6)); }
+    var mins = 0; for (var h = 0; h < 3; h++) mins += Math.min(w[2 * h], w[2 * h + 1]);
+    return { p: p, w: w, c: mins + ri(rng, 1, 6) };
+  }
+  function mckpAll(I, atMost) {
+    var res = [], ch = atMost ? [-1, 0, 1] : [0, 1];
+    ch.forEach(function (a) { ch.forEach(function (b) { ch.forEach(function (e) {
+      var s = [a, b, e], pp = 0, ww = 0, pick = [];
+      s.forEach(function (x, h) { if (x >= 0) { pp += I.p[2 * h + x]; ww += I.w[2 * h + x]; pick.push(2 * h + x + 1); } });
+      if (ww <= I.c) res.push({ z: pp, pick: pick });
+    }); }); });
+    res.sort(function (A, B) { return B.z - A.z; });
+    return res;
+  }
+  function mckpText(lingua, I) {
+    return T(lingua, "Zaino a scelta multipla (MCKP): classi $\\mathscr{J}_1=\\{1,2\\}$, $\\mathscr{J}_2=\\{3,4\\}$, $\\mathscr{J}_3=\\{5,6\\}$, oggetti " + itemTab(lingua, I.p, I.w) + ", capacità $c=" + I.c + "$; si sceglie esattamente un oggetto per classe.",
+      "Multiple-choice knapsack (MCKP): classes $\\mathscr{J}_1=\\{1,2\\}$, $\\mathscr{J}_2=\\{3,4\\}$, $\\mathscr{J}_3=\\{5,6\\}$, items " + itemTab(lingua, I.p, I.w) + ", capacity $c=" + I.c + "$; exactly one item per class is chosen.");
+  }
+  add({
+    id: "oc-g-mckp-dp", livello: "facile", capitolo: "dp-multiple-choice-knapsack",
+    link: L2("dynamic-programming/dp-multiple-choice-knapsack", "programmazione-dinamica/dp-multiple-choice-knapsack", "box-13-texmckpbu"),
+    genera: function (rng, lingua) {
+      var I = mckpInst(rng), R = mckpAll(I, false), z = R[0].z, le = mckpAll(I, true)[0].z;
+      var nocap = 0; for (var h = 0; h < 3; h++) nocap += Math.max(I.p[2 * h], I.p[2 * h + 1]);
+      var light = 0; for (h = 0; h < 3; h++) light += I.w[2 * h] <= I.w[2 * h + 1] ? I.p[2 * h] : I.p[2 * h + 1];
+      var bb = build(rng, num(z), [num(nocap), num(le), num(light), num(z - 1)]);
+      if (!bb) return null;
+      return {
+        testo: mckpText(lingua, I) + T(lingua, " Con $v(h,k)=\\max_{j\\in\\mathscr{J}_h:\\,w_j\\le k}\\{p_j+v(h-1,k-w_j)\\}$, $v(0,k)=0$, quanto vale il valore ottimo $v(3," + I.c + ")$?",
+          " With $v(h,k)=\\max_{j\\in\\mathscr{J}_h:\\,w_j\\le k}\\{p_j+v(h-1,k-w_j)\\}$, $v(0,k)=0$, what is the optimal value $v(3," + I.c + ")$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Il valore ottimo è $" + z + "$. Ignorando la capacità si prenderebbe il miglior oggetto di ogni classe ($" + nocap + "$); con «al più un oggetto per classe» si risolverebbe un altro problema ($" + le + "$).",
+          "The optimal value is $" + z + "$. Ignoring the capacity one would take the best item of every class ($" + nocap + "$); with «at most one item per class» another problem would be solved ($" + le + "$)."),
+        _v: { dati: { p: I.p, w: I.w, c: I.c }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-mckp-sol", livello: "media", capitolo: "dp-multiple-choice-knapsack",
+    link: L2("dynamic-programming/dp-multiple-choice-knapsack", "programmazione-dinamica/dp-multiple-choice-knapsack", "box-14-texmckpsol"),
+    genera: function (rng, lingua) {
+      var I = mckpInst(rng), R = mckpAll(I, false);
+      if (R.length < 3 || R[0].z === R[1].z) return null;
+      var key = function (r) { return { k: r.z + "|" + r.pick.join(","), t: "$" + set(r.pick) + "$, " + T(lingua, "valore", "value") + " $" + r.z + "$" }; };
+      var cands = R.slice(1, 4).map(key);
+      var bb = build(rng, key(R[0]), cands.concat([{ k: (R[0].z + 1) + "|" + R[0].pick.join(","), t: "$" + set(R[0].pick) + "$, " + T(lingua, "valore", "value") + " $" + (R[0].z + 1) + "$" }]));
+      if (!bb) return null;
+      return {
+        testo: mckpText(lingua, I) + T(lingua, " Quale scelta di oggetti è ottima (la soluzione ottima è unica), e quanto vale?", " Which choice of items is optimal (the optimal solution is unique), and what is its value?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "La PD per classi e la ricostruzione all'indietro danno $" + set(R[0].pick) + "$, di valore $" + R[0].z + "$; la seconda migliore scelta ammissibile vale $" + R[1].z + "$.",
+          "The DP by classes and the backward reconstruction give $" + set(R[0].pick) + "$, of value $" + R[0].z + "$; the second best feasible choice is worth $" + R[1].z + "$."),
+        _v: { dati: { p: I.p, w: I.w, c: I.c }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.9-10 zaino multidimensionale (cap. 22)
+  function mdkpInst(rng) { var p = [], w1 = [], w2 = []; for (var j = 0; j < 4; j++) { p.push(ri(rng, 3, 10)); w1.push(ri(rng, 1, 6)); w2.push(ri(rng, 1, 6)); } return { p: p, w1: w1, w2: w2, c1: ri(rng, 7, 11), c2: ri(rng, 7, 11) }; }
+  function mdkpAll(I) { var res = []; for (var m = 0; m < 16; m++) { var S = bitsOf(m, 4), pp = 0, a = 0, b = 0; S.forEach(function (j) { pp += I.p[j - 1]; a += I.w1[j - 1]; b += I.w2[j - 1]; }); if (a <= I.c1 && b <= I.c2) res.push({ z: pp, S: S }); } res.sort(function (A, B) { return B.z - A.z; }); return res; }
+  function mdkpText(lingua, I) {
+    var t = tab(["j", "1", "2", "3", "4"], [["p_j"].concat(I.p), ["w_{1j}"].concat(I.w1), ["w_{2j}"].concat(I.w2)]);
+    return T(lingua, "Zaino multidimensionale (MDKP) con due dimensioni di capacità $c_1=" + I.c1 + "$ e $c_2=" + I.c2 + "$; l'oggetto $j$ ha profitto $p_j$ e pesi $w_{1j}$, $w_{2j}$: " + t + ". Ogni oggetto si prende al più una volta.",
+      "Multidimensional knapsack (MDKP) with two dimensions of capacity $c_1=" + I.c1 + "$ and $c_2=" + I.c2 + "$; item $j$ has profit $p_j$ and weights $w_{1j}$, $w_{2j}$: " + t + ". Every item is taken at most once.");
+  }
+  add({
+    id: "oc-g-mdkp-dp", livello: "facile", capitolo: "dp-multidimensional-knapsack",
+    link: L2("dynamic-programming/dp-multidimensional-knapsack", "programmazione-dinamica/dp-multidimensional-knapsack", "box-11-texmdkpbu"),
+    genera: function (rng, lingua) {
+      var I = mdkpInst(rng), z = mdkpAll(I)[0].z;
+      var k1 = kpAll(I.p, I.w1, I.c1).z, k2 = kpAll(I.p, I.w2, I.c2).z;
+      var ag = kpAll(I.p, I.w1.map(function (x, j) { return x + I.w2[j]; }), I.c1 + I.c2).z;
+      var bb = build(rng, num(z), [num(k1), num(k2), num(ag), num(z + 1)]);
+      if (!bb || (k1 === z && k2 === z)) return null;
+      return {
+        testo: mdkpText(lingua, I) + T(lingua, " Con la PD $v(j,(k_1,k_2))$ su entrambe le capacità, quanto vale il valore ottimo?", " With the DP $v(j,(k_1,k_2))$ on both capacities, what is the optimal value?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Il valore ottimo è $" + z + "$. Considerando una sola dimensione si otterrebbe $" + k1 + "$ o $" + k2 + "$, e sommando i vincoli $" + ag + "$: sono rilassamenti, non soluzioni dell'MDKP.",
+          "The optimal value is $" + z + "$. Considering a single dimension one would get $" + k1 + "$ or $" + k2 + "$, and adding the constraints $" + ag + "$: these are relaxations, not MDKP solutions."),
+        _v: { dati: { p: I.p, w1: I.w1, w2: I.w2, c1: I.c1, c2: I.c2 }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-mdkp-sol", livello: "media", capitolo: "dp-multidimensional-knapsack",
+    link: L2("dynamic-programming/dp-multidimensional-knapsack", "programmazione-dinamica/dp-multidimensional-knapsack", "box-13-texmdkpsol"),
+    genera: function (rng, lingua) {
+      var I = mdkpInst(rng), R = mdkpAll(I);
+      if (R.length < 4 || R[0].z === R[1].z) return null;
+      var k1 = kpAll(I.p, I.w1, I.c1);
+      var bb = build(rng, setKey(R[0].S), [setKey(R[1].S), setKey(R[2].S), setKey(bitsOf(k1.best[0], 4)), setKey(R[3].S)]);
+      if (!bb) return null;
+      return {
+        testo: mdkpText(lingua, I) + T(lingua, " Quale insieme di oggetti è la soluzione ottima (unica)?", " Which set of items is the (unique) optimal solution?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$" + set(R[0].S) + "$ rispetta entrambe le capacità e vale $" + R[0].z + "$; la seconda migliore soluzione ammissibile vale $" + R[1].z + "$.",
+          "$" + set(R[0].S) + "$ respects both capacities and is worth $" + R[0].z + "$; the second best feasible solution is worth $" + R[1].z + "$."),
+        _v: { dati: { p: I.p, w1: I.w1, w2: I.w2, c1: I.c1, c2: I.c2 }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.11-12 zaino con setup (cap. 23)
+  function kpsInst(rng) { var p = [], w = []; for (var j = 0; j < 4; j++) { p.push(ri(rng, 3, 9)); w.push(ri(rng, 1, 5)); } return { p: p, w: w, f: [ri(rng, 1, 4), ri(rng, 1, 4)], s: [ri(rng, 1, 3), ri(rng, 1, 3)], c: ri(rng, 8, 12) }; }
+  function kpsAll(I, mode) { // mode: "ok" | "nof" | "nos" | "peritem"
+    var res = [];
+    for (var m = 0; m < 16; m++) {
+      var S = bitsOf(m, 4), pp = 0, ww = 0, open = [false, false];
+      S.forEach(function (j) { pp += I.p[j - 1]; ww += I.w[j - 1]; open[j <= 2 ? 0 : 1] = true; if (mode === "peritem") { pp -= I.f[j <= 2 ? 0 : 1]; ww += I.s[j <= 2 ? 0 : 1]; } });
+      if (mode !== "peritem") for (var h = 0; h < 2; h++) if (open[h]) { if (mode !== "nof") pp -= I.f[h]; if (mode !== "nos") ww += I.s[h]; }
+      if (ww <= I.c) res.push({ z: pp, S: S });
+    }
+    res.sort(function (A, B) { return B.z - A.z; });
+    return res;
+  }
+  function kpsText(lingua, I) {
+    return T(lingua, "Zaino con setup (KPS): classi $\\mathscr{J}_1=\\{1,2\\}$ e $\\mathscr{J}_2=\\{3,4\\}$, oggetti " + itemTab(lingua, I.p, I.w) + ", capacità $c=" + I.c + "$. Usare la classe $h$ costa una volta il profitto di setup $f_h$ e il peso di setup $s_h$, con $f=" + vec(I.f) + "$ e $s=" + vec(I.s) + "$; si massimizza il profitto degli oggetti meno i setup pagati.",
+      "Knapsack with setups (KPS): classes $\\mathscr{J}_1=\\{1,2\\}$ and $\\mathscr{J}_2=\\{3,4\\}$, items " + itemTab(lingua, I.p, I.w) + ", capacity $c=" + I.c + "$. Using class $h$ costs once the setup profit $f_h$ and the setup weight $s_h$, with $f=" + vec(I.f) + "$ and $s=" + vec(I.s) + "$; the profit of the items minus the paid setups is maximized.");
+  }
+  add({
+    id: "oc-g-kps-dp", livello: "facile", capitolo: "dp-knapsack-setups",
+    link: L2("dynamic-programming/dp-knapsack-setups", "programmazione-dinamica/dp-knapsack-setups", "box-21-texkpsbu"),
+    genera: function (rng, lingua) {
+      var I = kpsInst(rng), z = kpsAll(I, "ok")[0].z;
+      if (z <= 0) return null;
+      var bb = build(rng, num(z), [num(kpsAll(I, "nof")[0].z), num(kpsAll(I, "nos")[0].z), num(kpsAll(I, "peritem")[0].z), num(z + 1)]);
+      if (!bb) return null;
+      return {
+        testo: kpsText(lingua, I) + T(lingua, " Quanto vale il valore ottimo?", " What is the optimal value?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Il valore ottimo è $" + z + "$. Dimenticare i costi di setup dà $" + kpsAll(I, "nof")[0].z + "$, dimenticare i pesi di setup $" + kpsAll(I, "nos")[0].z + "$, pagare il setup per ogni oggetto $" + kpsAll(I, "peritem")[0].z + "$.",
+          "The optimal value is $" + z + "$. Forgetting the setup costs gives $" + kpsAll(I, "nof")[0].z + "$, forgetting the setup weights $" + kpsAll(I, "nos")[0].z + "$, paying the setup for every item $" + kpsAll(I, "peritem")[0].z + "$."),
+        _v: { dati: { p: I.p, w: I.w, f: I.f, s: I.s, c: I.c }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-kps-sol", livello: "media", capitolo: "dp-knapsack-setups",
+    link: L2("dynamic-programming/dp-knapsack-setups", "programmazione-dinamica/dp-knapsack-setups", "box-23-texkpssol"),
+    genera: function (rng, lingua) {
+      var I = kpsInst(rng), R = kpsAll(I, "ok");
+      if (R[0].z <= 0 || R[0].z === R[1].z || R.length < 4) return null;
+      var bb = build(rng, setKey(R[0].S), [setKey(R[1].S), setKey(R[2].S), setKey(kpsAll(I, "nof")[0].S), setKey(R[3].S)]);
+      if (!bb) return null;
+      return {
+        testo: kpsText(lingua, I) + T(lingua, " Quale insieme di oggetti è la soluzione ottima (unica)?", " Which set of items is the (unique) optimal solution?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$" + set(R[0].S) + "$ vale $" + R[0].z + "$, setup compresi; la seconda migliore soluzione vale $" + R[1].z + "$.",
+          "$" + set(R[0].S) + "$ is worth $" + R[0].z + "$, setups included; the second best solution is worth $" + R[1].z + "$."),
+        _v: { dati: { p: I.p, w: I.w, f: I.f, s: I.s, c: I.c }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.13-14 zaino multiplo (cap. 24)
+  function mkpInst(rng) { var p = [], w = []; for (var j = 0; j < 4; j++) { p.push(ri(rng, 3, 10)); w.push(ri(rng, 2, 5)); } return { p: p, w: w, c: [ri(rng, 4, 8), ri(rng, 4, 8)] }; }
+  function mkpAll(I) { // assegnamenti: 0 fuori, 1 o 2 zaino
+    var res = [];
+    for (var a = 0; a < 81; a++) { var x = a, L0 = [0, 0, 0], pp = 0, S = []; for (var j = 0; j < 4; j++) { var k = x % 3; x = Math.floor(x / 3); if (k) { L0[k] += I.w[j]; pp += I.p[j]; S.push(j + 1); } } if (L0[1] <= I.c[0] && L0[2] <= I.c[1]) res.push({ z: pp, S: S }); }
+    res.sort(function (A, B) { return B.z - A.z; });
+    return res;
+  }
+  function mkpText(lingua, I) {
+    return T(lingua, "Zaino multiplo (MKP): due zaini di capacità $c_1=" + I.c[0] + "$ e $c_2=" + I.c[1] + "$, oggetti " + itemTab(lingua, I.p, I.w) + "; ogni oggetto va in al più uno zaino.",
+      "Multiple knapsack (MKP): two knapsacks of capacity $c_1=" + I.c[0] + "$ and $c_2=" + I.c[1] + "$, items " + itemTab(lingua, I.p, I.w) + "; every item goes into at most one knapsack.");
+  }
+  add({
+    id: "oc-g-mkp-dp", livello: "facile", capitolo: "dp-multiple-knapsack",
+    link: L2("dynamic-programming/dp-multiple-knapsack", "programmazione-dinamica/dp-multiple-knapsack", "box-12-texmkpbu"),
+    genera: function (rng, lingua) {
+      var I = mkpInst(rng), z = mkpAll(I)[0].z, one = kpAll(I.p, I.w, I.c[0] + I.c[1]).z, big = kpAll(I.p, I.w, Math.max(I.c[0], I.c[1])).z;
+      var bb = build(rng, num(z), [num(one), num(big), num(z - 1), num(z + 1)]);
+      if (!bb || one === z) return null;
+      return {
+        testo: mkpText(lingua, I) + T(lingua, " Con la PD sugli stati $(j,(k_1,k_2))$ delle capacità residue, quanto vale il valore ottimo?", " With the DP on the states $(j,(k_1,k_2))$ of residual capacities, what is the optimal value?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Il valore ottimo è $" + z + "$. Un solo zaino di capacità $" + (I.c[0] + I.c[1]) + "$ darebbe $" + one + "$: è un upper bound, perché quella soluzione non si divide fra i due zaini.",
+          "The optimal value is $" + z + "$. A single knapsack of capacity $" + (I.c[0] + I.c[1]) + "$ would give $" + one + "$: it is an upper bound, since that solution cannot be split between the two knapsacks."),
+        _v: { dati: { p: I.p, w: I.w, c: I.c }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-mkp-sol", livello: "media", capitolo: "dp-multiple-knapsack",
+    link: L2("dynamic-programming/dp-multiple-knapsack", "programmazione-dinamica/dp-multiple-knapsack", "box-14-texmkpsol"),
+    genera: function (rng, lingua) {
+      var I = mkpInst(rng), R = mkpAll(I), sets = [], seen = {};
+      R.forEach(function (r) { var k = r.S.join(","); if (!seen[k]) { seen[k] = 1; sets.push(r); } });
+      if (sets.length < 4 || sets[0].z === sets[1].z) return null;
+      var one = kpAll(I.p, I.w, I.c[0] + I.c[1]);
+      var bb = build(rng, setKey(sets[0].S), [setKey(bitsOf(one.best[0], 4)), setKey(sets[1].S), setKey(sets[2].S), setKey(sets[3].S)]);
+      if (!bb) return null;
+      return {
+        testo: mkpText(lingua, I) + T(lingua, " Quale insieme di oggetti viene inserito negli zaini nella soluzione ottima (l'insieme ottimo è unico)?", " Which set of items is inserted into the knapsacks in the optimal solution (the optimal set is unique)?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "L'insieme $" + set(sets[0].S) + "$, di valore $" + sets[0].z + "$, si divide fra i due zaini rispettando le capacità; il secondo miglior insieme vale $" + sets[1].z + "$.",
+          "The set $" + set(sets[0].S) + "$, of value $" + sets[0].z + "$, can be split between the two knapsacks respecting the capacities; the second best set is worth $" + sets[1].z + "$."),
+        _v: { dati: { p: I.p, w: I.w, c: I.c }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.15-16 lot sizing con capacità (cap. 26)
+  function clsInst(rng) { var d = [], cap = [], sc = [], hc = [], vc = [0, 0, 0]; for (var t = 0; t < 3; t++) { d.push(ri(rng, 1, 5)); cap.push(ri(rng, 3, 7)); sc.push(ri(rng, 5, 15)); hc.push(ri(rng, 1, 3)); } return { d: d, cap: cap, sc: sc, vc: vc, hc: hc }; }
+  function clsText(lingua, I) {
+    var t = tab(["t", "1", "2", "3"], [["d_t"].concat(I.d), ["cap_t"].concat(I.cap), ["sc_t"].concat(I.sc), ["hc_t"].concat(I.hc)]);
+    return T(lingua, "Lot sizing con capacità (CLS) su $3$ periodi: domanda $d_t$, capacità $cap_t$, costo di setup $sc_t$ (pagato se si produce nel periodo $t$) e costo $hc_t$ per unità di scorta a fine periodo, costo variabile nullo, scorte iniziale e finale nulle: " + t + ".",
+      "Capacitated lot sizing (CLS) over $3$ periods: demand $d_t$, capacity $cap_t$, setup cost $sc_t$ (paid if we produce in period $t$) and cost $hc_t$ per unit of stock at the end of a period, zero variable cost, zero initial and final stock: " + t + ".");
+  }
+  add({
+    id: "oc-g-cls-dp", livello: "facile", capitolo: "dp-capacitated-lot-sizing",
+    link: L2("dynamic-programming/dp-capacitated-lot-sizing", "programmazione-dinamica/dp-capacitated-lot-sizing", "box-18-texclsbu"),
+    genera: function (rng, lingua) {
+      var I = clsInst(rng), R = clsAll(I.d, I.cap, I.sc, I.vc, I.hc);
+      if (!R.length) return null;
+      var l4l = lsCost(I.d, I.d, I.sc, I.vc, I.hc), big = [99, 99, 99], U = clsAll(I.d, big.map(function () { return sum(I.d); }), I.sc, I.vc, I.hc)[0].c;
+      if (l4l === null || I.d.some(function (x, t) { return x > I.cap[t]; })) return null;
+      var bb = build(rng, num(R[0].c), [num(l4l), num(U), num(R[0].c + 1), num(R.length > 1 ? R[1].c : R[0].c + 2)]);
+      if (!bb) return null;
+      return {
+        testo: clsText(lingua, I) + T(lingua, " Con la PD sugli stati $(t,k)$ (periodo, scorta finale), quanto vale il costo ottimo $v(3,0)$?", " With the DP on the states $(t,k)$ (period, final stock), what is the optimal cost $v(3,0)$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Il costo ottimo è $" + R[0].c + "$, con il piano $x=" + vec(R[0].x) + "$. Il piano lot-for-lot costa $" + l4l + "$; ignorando le capacità si otterrebbe $" + U + "$.",
+          "The optimal cost is $" + R[0].c + "$, with the plan $x=" + vec(R[0].x) + "$. The lot-for-lot plan costs $" + l4l + "$; ignoring the capacities one would get $" + U + "$."),
+        _v: { dati: { d: I.d, cap: I.cap, sc: I.sc, vc: I.vc, hc: I.hc }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-cls-plan", livello: "complessa", capitolo: "dp-capacitated-lot-sizing",
+    link: L2("dynamic-programming/dp-capacitated-lot-sizing", "programmazione-dinamica/dp-capacitated-lot-sizing", "box-20-texclssolvector"),
+    genera: function (rng, lingua) {
+      var I = clsInst(rng), R = clsAll(I.d, I.cap, I.sc, I.vc, I.hc);
+      if (R.length < 4 || R[0].c === R[1].c) return null;
+      var key = function (r) { return { k: r.c + "|" + r.x.join(","), t: "$x=" + vec(r.x) + "$, " + T(lingua, "costo", "cost") + " $" + r.c + "$" }; };
+      var l4l = lsCost(I.d, I.d, I.sc, I.vc, I.hc);
+      var cands = [key(R[1]), key(R[2]), key(R[3])];
+      if (l4l !== null && I.d.every(function (x, t) { return x <= I.cap[t]; })) cands.unshift(key({ c: l4l, x: I.d }));
+      var bb = build(rng, key(R[0]), cands);
+      if (!bb) return null;
+      return {
+        testo: clsText(lingua, I) + T(lingua, " Quale piano di produzione $x=(x_1,x_2,x_3)$ è ottimo (il piano ottimo è unico), e quanto costa?", " Which production plan $x=(x_1,x_2,x_3)$ is optimal (the optimal plan is unique), and what does it cost?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "La PD sulle scorte e la ricostruzione danno $x=" + vec(R[0].x) + "$ con costo $" + R[0].c + "$; il secondo miglior piano costa $" + R[1].c + "$. Con le capacità la produzione può anticipare la domanda anche con scorta in ingresso positiva.",
+          "The DP on stocks and the reconstruction give $x=" + vec(R[0].x) + "$ with cost $" + R[0].c + "$; the second best plan costs $" + R[1].c + "$. With capacities production can anticipate demand even with positive incoming stock."),
+        _v: { dati: { d: I.d, cap: I.cap, sc: I.sc, vc: I.vc, hc: I.hc }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.17 gap relativo (cap. 1)
+  add({
+    id: "oc-g-co-gap", livello: "facile", capitolo: "combinatorial-optimization",
+    link: L2("combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap", "problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/bound-primali-bound-duali-e-gap", "box-8-def-gap"),
+    genera: function (rng, lingua) {
+      var mx = rng() < 0.5, LB = ri(rng, 10, 40), UB = LB + ri(rng, 1, 12);
+      var g = fr(UB - LB, LB), g2 = fr(UB - LB, UB), g3 = fr(UB, LB);
+      var bb = build(rng, numF(g), [numF(g2), num(UB - LB), numF(g3), numF(fr(LB, UB))]);
+      if (!bb) return null;
+      var who = mx ? T(lingua, "massimo; una soluzione ammissibile vale $\\mathrm{LB}=" + LB + "$ e un bound duale vale $\\mathrm{UB}=" + UB + "$", "maximization; a feasible solution is worth $\\mathrm{LB}=" + LB + "$ and a dual bound is $\\mathrm{UB}=" + UB + "$")
+                   : T(lingua, "minimo; un bound duale vale $\\mathrm{LB}=" + LB + "$ e una soluzione ammissibile vale $\\mathrm{UB}=" + UB + "$", "minimization; a dual bound is $\\mathrm{LB}=" + LB + "$ and a feasible solution is worth $\\mathrm{UB}=" + UB + "$");
+      return {
+        testo: T(lingua, "Istanza di un problema di ottimizzazione combinatoria in forma di " + who + ". Il gap relativo è $\\frac{\\mathrm{UB}-\\mathrm{LB}}{|\\mathrm{LB}|}$. Quanto vale?",
+          "Instance of a combinatorial optimization problem in " + who + ". The relative gap is $\\frac{\\mathrm{UB}-\\mathrm{LB}}{|\\mathrm{LB}|}$. What is it?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$\\frac{" + UB + "-" + LB + "}{" + LB + "}=" + frTex(g) + "$. $" + (UB - LB) + "$ è il gap assoluto; dividere per $\\mathrm{UB}$ dà $" + frTex(g2) + "$.",
+          "$\\frac{" + UB + "-" + LB + "}{" + LB + "}=" + frTex(g) + "$. $" + (UB - LB) + "$ is the absolute gap; dividing by $\\mathrm{UB}$ gives $" + frTex(g2) + "$."),
+        _v: { dati: { LB: LB, UB: UB, max: mx }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.18 contare le soluzioni (cap. 1)
+  function stirling(n, k) { if (n === 0 && k === 0) return 1; if (n === 0 || k === 0) return 0; return k * stirling(n - 1, k) + stirling(n - 1, k - 1); }
+  function fact(n) { return n <= 1 ? 1 : n * fact(n - 1); }
+  add({
+    id: "oc-g-co-count", livello: "facile", capitolo: "combinatorial-optimization",
+    link: L2("combinatorial-optimization-problems/combinatorial-optimization/counting-the-solutions", "problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/contare-le-soluzioni", ""),
+    genera: function (rng, lingua) {
+      var kind = pickOne(rng, ["kp", "tsp", "pcm"]), n, m = 0, x, cand, txt;
+      if (kind === "kp") { n = ri(rng, 5, 10); x = Math.pow(2, n); cand = [fact(n), Math.pow(2, n) - 1, n * n, Math.pow(2, n - 1)];
+        txt = T(lingua, "Nel problema dello zaino 0-1 con $n=" + n + "$ oggetti una soluzione candidata è un sottoinsieme qualsiasi degli oggetti, prima di controllare la capacità. Quante sono le soluzioni candidate?",
+          "In the 0-1 knapsack with $n=" + n + "$ items a candidate solution is any subset of the items, before checking the capacity. How many candidate solutions are there?"); }
+      else if (kind === "tsp") { n = ri(rng, 5, 8); x = fact(n - 1) / 2; cand = [fact(n), fact(n - 1), fact(n) / 2, Math.pow(2, n)];
+        txt = T(lingua, "Nel TSP simmetrico con $n=" + n + "$ città un giro visita ogni città una volta e torna alla partenza; due giri sono uguali se usano gli stessi lati. Quanti giri distinti ci sono?",
+          "In the symmetric TSP with $n=" + n + "$ cities a tour visits every city once and returns to the start; two tours are equal if they use the same edges. How many distinct tours are there?"); }
+      else { n = ri(rng, 4, 6); m = ri(rng, 2, 3); x = 0; for (var k = 1; k <= m; k++) x += stirling(n, k); cand = [Math.pow(m, n), stirling(n, m), Math.pow(m, n) / fact(m), x + 1];
+        txt = T(lingua, "Nello scheduling $P\\,||\\,C_{\\max}$ con $n=" + n + "$ lavori e $m=" + m + "$ macchine identiche, uno schedule è una partizione dei lavori in al più $m$ insiemi (le macchine non hanno nome). Quanti schedule distinti ci sono?",
+          "In scheduling $P\\,||\\,C_{\\max}$ with $n=" + n + "$ jobs and $m=" + m + "$ identical machines, a schedule is a partition of the jobs into at most $m$ sets (machines have no names). How many distinct schedules are there?"); }
+      var bb = build(rng, num(x), cand.filter(function (v) { return v === Math.floor(v); }).map(num));
+      if (!bb) return null;
+      return {
+        testo: txt, opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: kind === "kp" ? T(lingua, "Ogni oggetto è dentro o fuori: $2^{" + n + "}=" + x + "$ sottoinsiemi.", "Every item is in or out: $2^{" + n + "}=" + x + "$ subsets.")
+          : kind === "tsp" ? T(lingua, "Si fissa la città di partenza e si identifica un giro con il suo inverso: $\\frac{(n-1)!}{2}=" + x + "$.", "The starting city is fixed and a tour is identified with its reverse: $\\frac{(n-1)!}{2}=" + x + "$.")
+          : T(lingua, "Le partizioni in al più $m$ insiemi sono $\\sum_{k=1}^{m}S(n,k)=" + x + "$, con $S(n,k)$ numeri di Stirling di seconda specie; $m^n=" + Math.pow(m, n) + "$ conta gli assegnamenti.", "The partitions into at most $m$ sets are $\\sum_{k=1}^{m}S(n,k)=" + x + "$, with $S(n,k)$ Stirling numbers of the second kind; $m^n=" + Math.pow(m, n) + "$ counts the assignments."),
+        _v: { dati: { kind: kind, n: n, m: m }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.19-20 zaino: bound di cardinalità e ottimo (cap. 2)
+  add({
+    id: "oc-g-kp-card", livello: "facile", capitolo: "knapsack",
+    link: L2("combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem", "problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-0-1", "box-3-obs-kp-card"),
+    genera: function (rng, lingua) {
+      var n = 6, p = [], w = []; for (var j = 0; j < n; j++) { p.push(ri(rng, 3, 12)); w.push(ri(rng, 2, 9)); }
+      var c = ri(rng, 9, 16), ws = w.slice().sort(function (a, b) { return a - b; }), kb = 0, s = 0;
+      while (kb < n && s + ws[kb] <= c) { s += ws[kb]; kb++; }
+      if (kb === 0 || kb === n) return null;
+      var ps = p.slice().sort(function (a, b) { return b - a; }), ub = 0; for (j = 0; j < kb; j++) ub += ps[j];
+      var light = range1(n).map(function (i) { return i - 1; }).sort(function (a, b) { return w[a] - w[b] || a - b; }), ul = 0; for (j = 0; j < kb; j++) ul += p[light[j]];
+      var bb = build(rng, num(ub), [num(ul), num(ub + ps[kb]), num(kb), num(ub - ps[kb - 1])]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Zaino 0-1 con capacità $c=" + c + "$ e oggetti " + itemTab(lingua, p, w) + ". Sia $\\bar k$ il più grande intero tale che i $\\bar k$ oggetti più leggeri pesino in tutto al più $c$; il bound di cardinalità è la somma dei $\\bar k$ profitti più grandi. Quanto vale?",
+          "0-1 knapsack with capacity $c=" + c + "$ and items " + itemTab(lingua, p, w) + ". Let $\\bar k$ be the largest integer such that the $\\bar k$ lightest items weigh in total at most $c$; the cardinality bound is the sum of the $\\bar k$ largest profits. What is it?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "I pesi ordinati danno $\\bar k=" + kb + "$; i $" + kb + "$ profitti più grandi sommano a $" + ub + "$. Sommare i profitti degli oggetti più leggeri ($" + ul + "$) non dà un upper bound.",
+          "The sorted weights give $\\bar k=" + kb + "$; the $" + kb + "$ largest profits add up to $" + ub + "$. Adding the profits of the lightest items ($" + ul + "$) does not give an upper bound."),
+        _v: { dati: { p: p, w: w, c: c }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-kp-brute", livello: "media", capitolo: "knapsack",
+    link: L2("combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem", "problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-0-1", "box-1-defKP"),
+    genera: function (rng, lingua) {
+      var n = 5, p = [], w = []; for (var j = 0; j < n; j++) { p.push(ri(rng, 3, 15)); w.push(ri(rng, 2, 9)); }
+      var c = ri(rng, 10, 18), K = kpAll(p, w, c);
+      if (K.best.length !== 1 || sum(w) <= c) return null;
+      var g = greedyOrder(effOrder(p, w), p, w, c), gp = greedyOrder(range1(n).map(function (i) { return i - 1; }).sort(function (a, b) { return p[b] - p[a] || a - b; }), p, w, c);
+      var sec = []; for (var m = 0; m < (1 << n); m++) { var pp = 0, ww = 0; bitsOf(m, n).forEach(function (i) { pp += p[i - 1]; ww += w[i - 1]; }); if (ww <= c && pp === K.second) { sec = bitsOf(m, n); break; } }
+      var bb = build(rng, setKey(bitsOf(K.best[0], n)), [setKey(g.set), setKey(gp.set), setKey(sec), setKey(range1(n).filter(function (i) { return w[i - 1] <= 3; }))]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Zaino 0-1 (si sceglie un sottoinsieme di oggetti di profitto massimo con peso totale al più $c$) con capacità $c=" + c + "$ e oggetti " + itemTab(lingua, p, w) + ". Quale sottoinsieme è la soluzione ottima (unica)?",
+          "0-1 knapsack (choose a subset of items of maximum profit with total weight at most $c$) with capacity $c=" + c + "$ and items " + itemTab(lingua, p, w) + ". Which subset is the (unique) optimal solution?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Elencando i $2^5=32$ sottoinsiemi, l'ottimo è $" + set(bitsOf(K.best[0], n)) + "$ con valore $" + K.z + "$. Il greedy per efficienza dà $" + set(g.set) + "$ (valore $" + g.z + "$).",
+          "Listing the $2^5=32$ subsets, the optimum is $" + set(bitsOf(K.best[0], n)) + "$ with value $" + K.z + "$. The greedy by efficiency gives $" + set(g.set) + "$ (value $" + g.z + "$)."),
+        _v: { dati: { p: p, w: w, c: c }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.21 bin packing: valore ottimo (cap. 3)
+  add({
+    id: "oc-g-bpp-opt", livello: "media", capitolo: "bin-packing",
+    link: L2("combinatorial-optimization-problems/bin-packing/the-bin-packing-problem", "problemi-di-ottimizzazione-combinatoria/bin-packing/il-problema-del-bin-packing", "box-3-obs-bpp-l1"),
+    genera: function (rng, lingua) {
+      var n = 6, c = 10, w = []; for (var j = 0; j < n; j++) w.push(ri(rng, 2, 7));
+      var z = binsOpt(w, c), lb = Math.ceil(sum(w) / c), ff = binsOf(packing(w, c, "FF")), nf = binsOf(packing(w, c, "NF"));
+      var bb = build(rng, num(z), [num(lb), num(ff), num(nf), num(z + 1), num(z - 1)]);
+      if (!bb || z === lb && ff === z) return null;
+      return {
+        testo: T(lingua, "Bin packing: oggetti di peso $w=" + vec(w) + "$ da sistemare nel minimo numero di contenitori di capacità $c=" + c + "$. Quanto vale il valore ottimo $z(I)$?",
+          "Bin packing: items of weight $w=" + vec(w) + "$ to be packed into the minimum number of bins of capacity $c=" + c + "$. What is the optimal value $z(I)$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$z(I)=" + z + "$. Il bound sul peso vale $\\lceil " + sum(w) + "/" + c + "\\rceil=" + lb + "$ e First Fit nell'ordine dato usa $" + ff + "$ contenitori: il primo è un lower bound, il secondo un upper bound.",
+          "$z(I)=" + z + "$. The weight bound is $\\lceil " + sum(w) + "/" + c + "\\rceil=" + lb + "$ and First Fit in the given order uses $" + ff + "$ bins: the first is a lower bound, the second an upper bound."),
+        _v: { dati: { w: w, c: c }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.22-23 colorazione (cap. 4)
+  function graphQ(rng, n, pE) { var G = randGraph(rng, n, pE); if (G.E.length < n) return null; G.A = adjMat(n, G.E); G.n = n; return G; }
+  function gTxt(lingua, G) { return T(lingua, "Grafo $G=(V,E)$ con $V=\\{1,\\dots," + G.n + "\\}$ e " + edgeTex(G.E) + ".", "Graph $G=(V,E)$ with $V=\\{1,\\dots," + G.n + "\\}$ and " + edgeTex(G.E) + "."); }
+  add({
+    id: "oc-g-vcp-bounds", livello: "facile", capitolo: "coloring",
+    link: L2("combinatorial-optimization-problems/coloring/the-vertex-coloring-problem", "problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici", "box-7-obs-stable-bound"),
+    genera: function (rng, lingua) {
+      var G = graphQ(rng, 6, 0.5); if (!G) return null;
+      var om = cliqueNum(6, G.A, false), al = cliqueNum(6, G.A, true), sb = Math.ceil(6 / al), dg = degs(6, G.E), D = Math.max.apply(null, dg);
+      var bb = build(rng, pairKey(om, sb), [pairKey(D + 1, sb), pairKey(al, Math.ceil(6 / om)), pairKey(om, Math.floor(6 / al)), pairKey(om, al)]);
+      if (!bb) return null;
+      return {
+        testo: gTxt(lingua, G) + T(lingua, " Per il numero cromatico $\\chi(G)$ valgono il bound della clique $\\omega(G)$ (clique massima) e il bound dell'insieme stabile $\\lceil n/\\alpha(G)\\rceil$ ($\\alpha(G)$ insieme stabile massimo). Quanto valgono, nell'ordine?",
+          " For the chromatic number $\\chi(G)$ the clique bound $\\omega(G)$ (maximum clique) and the stable set bound $\\lceil n/\\alpha(G)\\rceil$ ($\\alpha(G)$ maximum stable set) hold. What are they, in this order?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$\\omega(G)=" + om + "$ e $\\alpha(G)=" + al + "$, quindi $\\lceil 6/" + al + "\\rceil=" + sb + "$: $\\chi(G)\\ge" + Math.max(om, sb) + "$. Il grado massimo dà invece l'upper bound $\\Delta+1=" + (D + 1) + "$.",
+          "$\\omega(G)=" + om + "$ and $\\alpha(G)=" + al + "$, hence $\\lceil 6/" + al + "\\rceil=" + sb + "$: $\\chi(G)\\ge" + Math.max(om, sb) + "$. The largest degree gives instead the upper bound $\\Delta+1=" + (D + 1) + "$."),
+        _v: { dati: { n: 6, E: G.E }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-vcp-chi", livello: "media", capitolo: "coloring",
+    link: L2("combinatorial-optimization-problems/coloring/the-vertex-coloring-problem", "problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici", "box-3-defVCP"),
+    genera: function (rng, lingua) {
+      var G = graphQ(rng, 6, 0.55); if (!G) return null;
+      var chi = chromatic(6, G.A), om = cliqueNum(6, G.A, false), gc = Math.max.apply(null, gcColor(G.adj, 6, range1(6)));
+      var dg = degs(6, G.E);
+      var bb = build(rng, num(chi), [num(om), num(gc), num(Math.max.apply(null, dg) + 1), num(chi + 1), num(chi - 1)]);
+      if (!bb) return null;
+      return {
+        testo: gTxt(lingua, G) + T(lingua, " Nella colorazione dei vertici si assegnano colori diversi ai vertici adiacenti usando il minimo numero di colori. Quanto vale il numero cromatico $\\chi(G)$?",
+          " In vertex coloring adjacent vertices get different colors and the number of colors is minimized. What is the chromatic number $\\chi(G)$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$\\chi(G)=" + chi + "$: esiste una colorazione con $" + chi + "$ colori e nessuna con meno. La clique massima ha $" + om + "$ vertici; la colorazione greedy con l'ordine $1,\\dots,6$ usa $" + gc + "$ colori.",
+          "$\\chi(G)=" + chi + "$: a coloring with $" + chi + "$ colors exists and none with fewer. The maximum clique has $" + om + "$ vertices; the greedy coloring with order $1,\\dots,6$ uses $" + gc + "$ colors."),
+        _v: { dati: { n: 6, E: G.E }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.24-25 clique (cap. 5)
+  add({
+    id: "oc-g-mcp-bounds", livello: "facile", capitolo: "clique",
+    link: L2("combinatorial-optimization-problems/clique/the-maximum-clique-problem", "problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-clique-massima", "box-10-mcpP-obs-count"),
+    genera: function (rng, lingua) {
+      var G = graphQ(rng, 7, 0.45); if (!G) return null;
+      var dg = degs(7, G.E), D = Math.max.apply(null, dg), km = kmaxOf(7, dg);
+      var bb = build(rng, pairKey(D + 1, km), [pairKey(D, km), pairKey(D + 1, km + 1), pairKey(km, D + 1), pairKey(D + 1, km - 1)]);
+      if (!bb) return null;
+      return {
+        testo: gTxt(lingua, G) + T(lingua, " Per la clique massima $\\omega(G)$ valgono il bound del grado $\\Delta+1$ ($\\Delta$ grado massimo) e il bound $k^{\\max}$, il più grande $k$ tale che almeno $k$ vertici abbiano grado almeno $k-1$. Quanto valgono, nell'ordine?",
+          " For the maximum clique $\\omega(G)$ the degree bound $\\Delta+1$ ($\\Delta$ largest degree) and the bound $k^{\\max}$, the largest $k$ such that at least $k$ vertices have degree at least $k-1$, hold. What are they, in this order?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "I gradi sono $" + vec(dg.slice(1)) + "$: $\\Delta+1=" + (D + 1) + "$ e $k^{\\max}=" + km + "$, che non è mai più debole.",
+          "The degrees are $" + vec(dg.slice(1)) + "$: $\\Delta+1=" + (D + 1) + "$ and $k^{\\max}=" + km + "$, which is never weaker."),
+        _v: { dati: { n: 7, E: G.E }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-mcp-omega", livello: "media", capitolo: "clique",
+    link: L2("combinatorial-optimization-problems/clique/the-maximum-clique-problem", "problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-clique-massima", "box-2-mcpP-def-MCP"),
+    genera: function (rng, lingua) {
+      var G = graphQ(rng, 7, 0.55); if (!G) return null;
+      var om = cliqueNum(7, G.A, false), dg = degs(7, G.E), km = kmaxOf(7, dg), al = cliqueNum(7, G.A, true);
+      var bb = build(rng, num(om), [num(km), num(Math.max.apply(null, dg) + 1), num(al), num(om + 1), num(om - 1)]);
+      if (!bb) return null;
+      return {
+        testo: gTxt(lingua, G) + T(lingua, " Una clique è un insieme di vertici a due a due adiacenti. Quanti vertici ha una clique massima, cioè quanto vale $\\omega(G)$?",
+          " A clique is a set of pairwise adjacent vertices. How many vertices does a maximum clique have, i.e., what is $\\omega(G)$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$\\omega(G)=" + om + "$. I bound $k^{\\max}=" + km + "$ e $\\Delta+1=" + (Math.max.apply(null, dg) + 1) + "$ sono solo upper bound; $" + al + "$ è l'insieme stabile massimo.",
+          "$\\omega(G)=" + om + "$. The bounds $k^{\\max}=" + km + "$ and $\\Delta+1=" + (Math.max.apply(null, dg) + 1) + "$ are only upper bounds; $" + al + "$ is the maximum stable set."),
+        _v: { dati: { n: 7, E: G.E }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.26-27 TSP (cap. 6)
+  add({
+    id: "oc-g-tsp-lb", livello: "facile", capitolo: "tsp",
+    link: L2("combinatorial-optimization-problems/tsp/the-travelling-salesman-problem", "problemi-di-ottimizzazione-combinatoria/tsp/il-problema-del-commesso-viaggiatore", "box-6-obs-tsp-lb"),
+    genera: function (rng, lingua) {
+      var n = 5, d = randDist(rng, n, 2, 15), s = twoEdgeSum(d, n), lb = Math.ceil(s / 2), mn = 0;
+      for (var i = 1; i <= n; i++) { var r = Infinity; for (var j = 1; j <= n; j++) if (j !== i) r = Math.min(r, d[i][j]); mn += r; }
+      var bb = build(rng, num(lb), [num(s), num(mn), num(lb + 1), num(Math.floor(s / 2) - 1)]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "TSP simmetrico con $5$ città e distanze " + distTab(d, n) + ". Con $a_i$ e $b_i$ le due distanze più piccole dalla città $i$ alle altre, il lower bound è $\\left\\lceil\\frac12\\sum_i(a_i+b_i)\\right\\rceil$. Quanto vale?",
+          "Symmetric TSP with $5$ cities and distances " + distTab(d, n) + ". With $a_i$ and $b_i$ the two smallest distances from city $i$ to the others, the lower bound is $\\left\\lceil\\frac12\\sum_i(a_i+b_i)\\right\\rceil$. What is it?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$\\sum_i(a_i+b_i)=" + s + "$, e la metà arrotondata per eccesso è $" + lb + "$: ogni lato del giro è contato da entrambi gli estremi.",
+          "$\\sum_i(a_i+b_i)=" + s + "$, and half of it rounded up is $" + lb + "$: every tour edge is counted by both endpoints."),
+        _v: { dati: { d: d, n: n }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-tsp-opt", livello: "media", capitolo: "tsp",
+    link: L2("combinatorial-optimization-problems/tsp/the-travelling-salesman-problem", "problemi-di-ottimizzazione-combinatoria/tsp/il-problema-del-commesso-viaggiatore", "box-4-ex-tsp-enum"),
+    genera: function (rng, lingua) {
+      var n = 5, d = randDist(rng, n, 2, 15), O = tspOpt(d, n), N = nn(d, n, 1).len, lb = Math.ceil(twoEdgeSum(d, n) / 2);
+      var ls = O.lens.slice().sort(function (a, b) { return a - b; }), sec = ls.filter(function (x) { return x > O.z; })[0];
+      var bb = build(rng, num(O.z), [num(N), num(lb), num(sec), num(O.z + 1)]);
+      if (!bb || N === O.z) return null;
+      return {
+        testo: T(lingua, "TSP simmetrico con $5$ città e distanze " + distTab(d, n) + ". Quanto è lungo il giro più corto $z(I)$ (giro chiuso che visita ogni città una volta)?",
+          "Symmetric TSP with $5$ cities and distances " + distTab(d, n) + ". How long is the shortest tour $z(I)$ (closed route visiting every city once)?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Elencando i $12$ giri distinti, il più corto è lungo $" + O.z + "$. Il nearest neighbour dalla città $1$ dà $" + N + "$, e il bound delle due distanze minime $" + lb + "$.",
+          "Listing the $12$ distinct tours, the shortest has length $" + O.z + "$. Nearest neighbour from city $1$ gives $" + N + "$, and the two-smallest-distances bound $" + lb + "$."),
+        _v: { dati: { d: d, n: n }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.28 P||Cmax ottimo (cap. 7)
+  add({
+    id: "oc-g-pcmax-opt", livello: "media", capitolo: "pcmax",
+    link: L2("combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines", "problemi-di-ottimizzazione-combinatoria/pcmax/scheduling-su-macchine-parallele-identiche", "box-5-obs-pcmaxlb"),
+    genera: function (rng, lingua) {
+      var m = ri(rng, 2, 3), t = []; for (var j = 0; j < 6; j++) t.push(ri(rng, 1, 9));
+      var z = pcmaxOpt(t, m), lb = Math.max(Math.max.apply(null, t), Math.ceil(sum(t) / m)), lpt = listSched(t, m, decOrder(t)).cmax, lst = listSched(t, m, range1(6).map(function (i) { return i - 1; })).cmax;
+      var bb = build(rng, num(z), [num(lb), num(lpt), num(lst), num(z + 1)]);
+      if (!bb || (lb === z && lpt === z)) return null;
+      return {
+        testo: T(lingua, "Scheduling $P\\,||\\,C_{\\max}$: lavori di durata $t=" + vec(t) + "$ su $m=" + m + "$ macchine identiche; il makespan è il carico massimo di una macchina. Quanto vale il makespan ottimo $z(I)$?",
+          "Scheduling $P\\,||\\,C_{\\max}$: jobs of processing time $t=" + vec(t) + "$ on $m=" + m + "$ identical machines; the makespan is the largest load of a machine. What is the optimal makespan $z(I)$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$z(I)=" + z + "$. Il lower bound $\\max\\{\\max_jt_j,\\lceil\\sum_jt_j/m\\rceil\\}$ vale $" + lb + "$; $LPT$ dà $" + lpt + "$.",
+          "$z(I)=" + z + "$. The lower bound $\\max\\{\\max_jt_j,\\lceil\\sum_jt_j/m\\rceil\\}$ is $" + lb + "$; $LPT$ gives $" + lpt + "$."),
+        _v: { dati: { t: t, m: m }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.29-30 lot sizing (cap. 8)
+  add({
+    id: "oc-g-ls-cost", livello: "facile", capitolo: "lot-sizing",
+    link: L2("combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem", "problemi-di-ottimizzazione-combinatoria/lot-sizing/il-problema-del-lot-sizing-capacitato", "box-1-defCLS"),
+    genera: function (rng, lingua) {
+      var m = 4, d = [], sc = [], vc = [], hc = []; for (var t = 0; t < m; t++) { d.push(ri(rng, 1, 6)); sc.push(ri(rng, 5, 20)); vc.push(ri(rng, 0, 2)); hc.push(ri(rng, 1, 3)); }
+      var runs = [0]; for (t = 1; t < m; t++) if (rng() < 0.45) runs.push(t);
+      var x = [0, 0, 0, 0]; runs.forEach(function (r, i) { var e = i + 1 < runs.length ? runs[i + 1] : m; for (var u = r; u < e; u++) x[r] += d[u]; });
+      var cst = lsCost(d, x, sc, vc, hc), noh = lsCost(d, x, sc, vc, [0, 0, 0, 0]), allsc = cst + sum(sc) - runs.reduce(function (a, r) { return a + sc[r]; }, 0);
+      var bb = build(rng, num(cst), [num(noh), num(allsc), num(lsCost(d, x, sc, [0, 0, 0, 0], hc)), num(cst + hc[0])]);
+      if (!bb) return null;
+      var tb = tab(["t", "1", "2", "3", "4"], [["d_t"].concat(d), ["x_t"].concat(x), ["sc_t"].concat(sc), ["vc_t"].concat(vc), ["hc_t"].concat(hc)]);
+      return {
+        testo: T(lingua, "Lot sizing su $4$ periodi, scorta iniziale nulla: domanda $d_t$, produzione $x_t$ del piano, costo di setup $sc_t$ (pagato solo se $x_t>0$), costo variabile $vc_t$ per unità prodotta e costo $hc_t$ per unità di scorta a fine periodo: " + tb + ". Quanto costa il piano?",
+          "Lot sizing over $4$ periods, zero initial stock: demand $d_t$, production $x_t$ of the plan, setup cost $sc_t$ (paid only if $x_t>0$), variable cost $vc_t$ per unit produced and cost $hc_t$ per unit of stock at the end of a period: " + tb + ". What does the plan cost?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Setup, produzione e scorte sommano a $" + cst + "$. Senza i costi di scorta si avrebbe $" + noh + "$; pagare il setup in tutti i periodi dà $" + allsc + "$.",
+          "Setups, production and stocks add up to $" + cst + "$. Without holding costs one would get $" + noh + "$; paying the setup in every period gives $" + allsc + "$."),
+        _v: { dati: { d: d, x: x, sc: sc, vc: vc, hc: hc }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-ls-lb", livello: "facile", capitolo: "lot-sizing",
+    link: L2("combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem", "problemi-di-ottimizzazione-combinatoria/lot-sizing/il-problema-del-lot-sizing-capacitato", "box-5-obs-cls-lb"),
+    genera: function (rng, lingua) {
+      var m = 5, cap = [], sc = []; for (var t = 0; t < m; t++) { cap.push(ri(rng, 15, 40)); sc.push(ri(rng, 30, 80)); }
+      var D = ri(rng, Math.max.apply(null, cap) + 5, sum(cap) - 10);
+      var cs = cap.slice().sort(function (a, b) { return b - a; }), k = 0, s = 0; while (s < D) { s += cs[k]; k++; }
+      var ss = sc.slice().sort(function (a, b) { return a - b; }), lb = 0; for (t = 0; t < k; t++) lb += ss[t];
+      var ca = cap.slice().sort(function (a, b) { return a - b; }), k2 = 0; s = 0; while (s < D) { s += ca[k2]; k2++; }
+      var lb2 = 0; for (t = 0; t < k2; t++) lb2 += ss[t];
+      var hi = 0; for (t = 0; t < k; t++) hi += ss[m - 1 - t];
+      var bb = build(rng, num(lb), [num(lb2), num(hi), num(lb - ss[k - 1]), num(lb + ss[k])]);
+      if (!bb) return null;
+      var tb = tab(["t", "1", "2", "3", "4", "5"], [["cap_t"].concat(cap), ["sc_t"].concat(sc)]);
+      return {
+        testo: T(lingua, "Lot sizing con capacità (CLS) su $5$ periodi con domanda totale $D=" + D + "$, capacità produttive $cap_t$ e costi di setup $sc_t$ (pagati nei periodi in cui si produce), scorta iniziale nulla: " + tb + ". Il lower bound combinatorio somma i $k$ costi di setup più piccoli, con $k$ minimo numero di periodi le cui capacità coprono $D$. Quanto vale?",
+          "Capacitated lot sizing (CLS) over $5$ periods with total demand $D=" + D + "$, production capacities $cap_t$ and setup costs $sc_t$ (paid in the periods with production), zero initial stock: " + tb + ". The combinatorial lower bound adds the $k$ smallest setup costs, with $k$ the minimum number of periods whose capacities cover $D$. What is it?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Con le capacità più grandi servono $k=" + k + "$ periodi; i $" + k + "$ setup più economici sommano a $" + lb + "$. Usare le capacità più piccole sovrastima $k$.",
+          "With the largest capacities $k=" + k + "$ periods are needed; the $" + k + "$ cheapest setups add up to $" + lb + "$. Using the smallest capacities overestimates $k$."),
+        _v: { dati: { cap: cap, sc: sc, D: D }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.31 bin packing: rilassamento lineare (cap. 10)
+  add({
+    id: "oc-g-bpp-lp", livello: "facile", capitolo: "bin-packing-formulations",
+    link: L2("formulations/bin-packing-formulations/an-ilp-model-for-the-bin-packing-problem", "formulazioni/bin-packing-formulations/un-modello-pli-per-il-problema-del-bin-packing", "box-10-cor_lp_bpp_value"),
+    genera: function (rng, lingua) {
+      var n = 5, c = ri(rng, 8, 12), w = []; for (var j = 0; j < n; j++) w.push(ri(rng, 2, c - 1));
+      var f = fr(sum(w), c), z = binsOpt(w, c);
+      if (f.d === 1) return null;
+      var key = function (a, b) { return { k: frKey(a) + "|" + b, t: "$" + frTex(a) + "$ " + T(lingua, "e", "and") + " $" + b + "$" }; };
+      var bb = build(rng, key(f, z), [key(f, Math.ceil(sum(w) / c)), key(fr(n, 2), z), key(fr(sum(w), c * n), z), key(f, z + 1)]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Bin packing con capacità $c=" + c + "$ e oggetti di peso $w=" + vec(w) + "$. Il rilassamento lineare $\\mathrm{LP}_{\\mathrm{BPP}}$ del modello con variabili $y_b$ (contenitore usato) e $x_{jb}$ (oggetto $j$ nel contenitore $b$) vale $\\sum_j w_j/c$. Quanto valgono $z(\\mathrm{LP}_{\\mathrm{BPP}})$ e il valore ottimo intero, nell'ordine?",
+          "Bin packing with capacity $c=" + c + "$ and items of weight $w=" + vec(w) + "$. The LP relaxation $\\mathrm{LP}_{\\mathrm{BPP}}$ of the model with variables $y_b$ (bin used) and $x_{jb}$ (item $j$ in bin $b$) equals $\\sum_j w_j/c$. What are $z(\\mathrm{LP}_{\\mathrm{BPP}})$ and the optimal integer value, in this order?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$z(\\mathrm{LP}_{\\mathrm{BPP}})=" + sum(w) + "/" + c + "=" + frTex(f) + "$ e il valore ottimo è $" + z + "$; il rilassamento arrotondato, $" + Math.ceil(sum(w) / c) + "$, è solo un lower bound.",
+          "$z(\\mathrm{LP}_{\\mathrm{BPP}})=" + sum(w) + "/" + c + "=" + frTex(f) + "$ and the optimal value is $" + z + "$; the rounded relaxation, $" + Math.ceil(sum(w) / c) + "$, is only a lower bound."),
+        _v: { dati: { w: w, c: c }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.32 P||Cmax: rilassamento lineare (cap. 14)
+  add({
+    id: "oc-g-pcmax-lp", livello: "media", capitolo: "pcmax-formulations",
+    link: L2("formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin", "formulazioni/pcmax-formulations/un-modello-pli-per-il-problema-di-scheduling-su-macchine-par", "box-4-prop-LP0-PCMAX"),
+    genera: function (rng, lingua) {
+      var m = ri(rng, 2, 3), t = []; for (var j = 0; j < 5; j++) t.push(ri(rng, 1, 12));
+      var f = fr(sum(t), m), z = pcmaxOpt(t, m);
+      var key = function (a, b) { return { k: frKey(a) + "|" + b, t: "$" + frTex(a) + "$ " + T(lingua, "e", "and") + " $" + b + "$" }; };
+      var bb = build(rng, key(f, z), [key(fr(Math.max.apply(null, t), 1), z), key(f, Math.ceil(sum(t) / m)), key(fr(sum(t), 1), z), key(f, z + 1)]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Scheduling $P\\,||\\,C_{\\max}$ con $m=" + m + "$ macchine identiche e durate $t=" + vec(t) + "$. Il modello ha variabili binarie $x_{jh}$ (lavoro $j$ sulla macchina $h$) e la variabile $C_{\\max}\\ge\\sum_jt_jx_{jh}$. Quanto valgono il rilassamento lineare e il makespan ottimo, nell'ordine?",
+          "Scheduling $P\\,||\\,C_{\\max}$ with $m=" + m + "$ identical machines and times $t=" + vec(t) + "$. The model has binary variables $x_{jh}$ (job $j$ on machine $h$) and the variable $C_{\\max}\\ge\\sum_jt_jx_{jh}$. What are the LP relaxation and the optimal makespan, in this order?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Il rilassamento divide i lavori in parti uguali: $\\sum_jt_j/m=" + frTex(f) + "$. Il makespan ottimo, con lavori indivisibili, è $" + z + "$.",
+          "The relaxation splits the jobs equally: $\\sum_jt_j/m=" + frTex(f) + "$. The optimal makespan, with indivisible jobs, is $" + z + "$."),
+        _v: { dati: { t: t, m: m }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.33 lot sizing: big-M (cap. 15)
+  add({
+    id: "oc-g-ls-bigm", livello: "facile", capitolo: "lot-sizing-formulations",
+    link: L2("formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem", "formulazioni/lot-sizing-formulations/modelli-pli-per-il-problema-di-lot-sizing-capacitato", "sez-sec-lsf-bigM"),
+    genera: function (rng, lingua) {
+      var m = 5, d = [], cap = []; for (var t = 0; t < m; t++) { d.push(ri(rng, 5, 30)); cap.push(ri(rng, 20, 70)); }
+      var tt = ri(rng, 2, 4), D = 0; for (t = tt - 1; t < m; t++) D += d[t];
+      var M = Math.min(cap[tt - 1], D);
+      var bb = build(rng, num(M), [num(Math.max(cap[tt - 1], D)), num(Math.min(cap[tt - 1], sum(d))), num(Math.min(cap[tt - 1], d[tt - 1])), num(D)]);
+      if (!bb) return null;
+      var tb = tab(["t", "1", "2", "3", "4", "5"], [["d_t"].concat(d), ["cap_t"].concat(cap)]);
+      return {
+        testo: T(lingua, "Lot sizing con capacità (CLS) su $5$ periodi, scorta finale nulla: " + tb + ". Nella formulazione big-M la produzione e il setup sono legati da $x_t\\le M_t\\,y_t$, e il valore più forte valido è $M_t=\\min\\{cap_t,\\ D_{t,5}\\}$, con $D_{t,5}$ domanda dei periodi da $t$ a $5$. Quanto vale $M_" + tt + "$?",
+          "Capacitated lot sizing (CLS) over $5$ periods, zero final stock: " + tb + ". In the big-M formulation production and setup are linked by $x_t\\le M_t\\,y_t$, and the strongest valid value is $M_t=\\min\\{cap_t,\\ D_{t,5}\\}$, with $D_{t,5}$ the demand of periods $t$ to $5$. What is $M_" + tt + "$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$D_{" + tt + ",5}=" + D + "$ e $cap_" + tt + "=" + cap[tt - 1] + "$, quindi $M_" + tt + "=" + M + "$. Un valore più grande è valido ma indebolisce il rilassamento lineare.",
+          "$D_{" + tt + ",5}=" + D + "$ and $cap_" + tt + "=" + cap[tt - 1] + "$, hence $M_" + tt + "=" + M + "$. A larger value is valid but weakens the LP relaxation."),
+        _v: { dati: { d: d, cap: cap, t: tt }, valori: bb.valori }
+      };
+    }
+  });
+  // ---- B4.34 lot sizing: setup pagato dal rilassamento (cap. 15)
+  add({
+    id: "oc-g-ls-lpsetup", livello: "facile", capitolo: "lot-sizing-formulations",
+    link: L2("formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem", "formulazioni/lot-sizing-formulations/modelli-pli-per-il-problema-di-lot-sizing-capacitato", "box-2-ex-CLS-ILP"),
+    genera: function (rng, lingua) {
+      var M1 = ri(rng, 20, 60), M2 = M1 + ri(rng, 10, 60), x = ri(rng, 3, M1 - 1), sc = ri(rng, 20, 100);
+      var f1 = fr(sc * x, M1), f2 = fr(sc * x, M2);
+      var key = function (a, b) { return { k: frKey(a) + "|" + frKey(b), t: "$" + frTex(a) + "$ " + T(lingua, "e", "and") + " $" + frTex(b) + "$" }; };
+      var bb = build(rng, key(f1, f2), [key(f2, f1), key(fr(sc, 1), fr(sc, 1)), key(fr(x * M1, sc), fr(x * M2, sc)), key(f1, f1)]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Nel rilassamento lineare della formulazione big-M del lot sizing ($x_t\\le M_t\\,y_t$, $0\\le y_t\\le 1$, costo di setup $sc_t\\,y_t$) si produce $x_t=" + x + "$ con $sc_t=" + sc + "$. Quanto paga di setup, al minimo, con $M_t=" + M1 + "$ e con $M_t=" + M2 + "$?",
+          "In the LP relaxation of the big-M lot sizing formulation ($x_t\\le M_t\\,y_t$, $0\\le y_t\\le 1$, setup cost $sc_t\\,y_t$) the production is $x_t=" + x + "$ with $sc_t=" + sc + "$. How much setup does it pay at least, with $M_t=" + M1 + "$ and with $M_t=" + M2 + "$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Il vincolo dà $y_t\\ge x_t/M_t$, e il rilassamento paga $sc_t\\,x_t/M_t$: $" + frTex(f1) + "$ e $" + frTex(f2) + "$. Un big-M più grande fa pagare meno setup al rilassamento, cioè lo indebolisce.",
+          "The constraint gives $y_t\\ge x_t/M_t$, and the relaxation pays $sc_t\\,x_t/M_t$: $" + frTex(f1) + "$ and $" + frTex(f2) + "$. A larger big-M makes the relaxation pay less setup, i.e., weakens it."),
+        _v: { dati: { M1: M1, M2: M2, x: x, sc: sc }, valori: bb.valori }
+      };
+    }
+  });
+  // ---- B4.35 bin packing: rilassamento arrotondato e rapporto (cap. 10)
+  add({
+    id: "oc-g-bpp-lpgap", livello: "media", capitolo: "bin-packing-formulations",
+    link: L2("formulations/bin-packing-formulations/an-ilp-model-for-the-bin-packing-problem", "formulazioni/bin-packing-formulations/un-modello-pli-per-il-problema-del-bin-packing", "box-11-prop_lp_bpp_ratio_half"),
+    genera: function (rng, lingua) {
+      var c = ri(rng, 10, 20), n = ri(rng, 3, 6), w = []; for (var j = 0; j < n; j++) w.push(Math.floor(c / 2) + ri(rng, 1, Math.max(1, Math.floor(c / 4))));
+      var z = n, lpc = Math.ceil(sum(w) / c), r = fr(lpc, z);
+      var bb = build(rng, numF(r), [numF(fr(sum(w), c * z)), numF(fr(1, 2)), numF(fr(z, lpc)), numF(fr(lpc + 1, z))]);
+      if (!bb || lpc === z) return null;
+      return {
+        testo: T(lingua, "Bin packing con capacità $c=" + c + "$ e $" + n + "$ oggetti di peso $w=" + vec(w) + "$, tutti maggiori di $c/2$. Il rilassamento lineare del modello vale $\\sum_j w_j/c$. Quanto vale il rapporto $\\lceil z(\\mathrm{LP}_{\\mathrm{BPP}})\\rceil/z(\\mathrm{ILP}_{\\mathrm{BPP}})$?",
+          "Bin packing with capacity $c=" + c + "$ and $" + n + "$ items of weight $w=" + vec(w) + "$, all larger than $c/2$. The LP relaxation of the model equals $\\sum_j w_j/c$. What is the ratio $\\lceil z(\\mathrm{LP}_{\\mathrm{BPP}})\\rceil/z(\\mathrm{ILP}_{\\mathrm{BPP}})$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Due oggetti più pesanti di $c/2$ non stanno insieme, quindi l'ottimo è $" + z + "$; $\\lceil " + sum(w) + "/" + c + "\\rceil=" + lpc + "$. Il rapporto $" + frTex(r) + "$ è almeno $\\frac12$, come garantito.",
+          "Two items heavier than $c/2$ do not fit together, so the optimum is $" + z + "$; $\\lceil " + sum(w) + "/" + c + "\\rceil=" + lpc + "$. The ratio $" + frTex(r) + "$ is at least $\\frac12$, as guaranteed."),
+        _v: { dati: { w: w, c: c }, valori: bb.valori }
+      };
+    }
+  });
+  // ---- B4.36 P||Cmax: rapporto rilassamento/ottimo (cap. 14)
+  add({
+    id: "oc-g-pcmax-lpratio", livello: "facile", capitolo: "pcmax-formulations",
+    link: L2("formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin", "formulazioni/pcmax-formulations/un-modello-pli-per-il-problema-di-scheduling-su-macchine-par", "box-7-prop-PCMAX-ratio"),
+    genera: function (rng, lingua) {
+      var m = ri(rng, 2, 4), T0 = ri(rng, 10, 30), t = [T0]; for (var j = 0; j < 3; j++) t.push(ri(rng, 1, 3));
+      var z = pcmaxOpt(t, m), r = fr(sum(t), m * z);
+      var bb = build(rng, numF(r), [numF(fr(1, m)), numF(fr(m * z, sum(t))), numF(fr(sum(t), z)), numF(fr(T0, sum(t)))]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Scheduling $P\\,||\\,C_{\\max}$ con $m=" + m + "$ macchine identiche e durate $t=" + vec(t) + "$. Il rilassamento lineare del modello con variabili di assegnamento vale $\\frac1m\\sum_jt_j$. Quanto vale il rapporto fra il rilassamento e il makespan ottimo?",
+          "Scheduling $P\\,||\\,C_{\\max}$ with $m=" + m + "$ identical machines and times $t=" + vec(t) + "$. The LP relaxation of the model with assignment variables equals $\\frac1m\\sum_jt_j$. What is the ratio between the relaxation and the optimal makespan?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Il lavoro di durata $" + T0 + "$ domina: il makespan ottimo è $" + z + "$, il rilassamento $\\frac{" + sum(t) + "}{" + m + "}$. Il rapporto $" + frTex(r) + "$ è almeno $\\frac1m=" + frTex(fr(1, m)) + "$, e vi si avvicina con un lavoro lungo e lavori brevi.",
+          "The job of length $" + T0 + "$ dominates: the optimal makespan is $" + z + "$, the relaxation $\\frac{" + sum(t) + "}{" + m + "}$. The ratio $" + frTex(r) + "$ is at least $\\frac1m=" + frTex(fr(1, m)) + "$, and gets close to it with one long job and short ones."),
+        _v: { dati: { t: t, m: m }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.37 gap del nearest neighbour (cap. 29)
+  add({
+    id: "oc-g-heur-gap", livello: "media", capitolo: "heuristics",
+    link: L2("heuristic-algorithms/heuristics", "algoritmi-euristici/heuristics", "box-6-prop-gap"),
+    genera: function (rng, lingua) {
+      var n = 5, d = randDist(rng, n, 2, 15), N = nn(d, n, 1).len, lb = Math.ceil(twoEdgeSum(d, n) / 2);
+      if (N === lb) return null;
+      var g = fr(N - lb, lb);
+      var bb = build(rng, numF(g), [numF(fr(N - lb, N)), num(N - lb), numF(fr(N, lb)), numF(fr(lb, N))]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "TSP simmetrico con $5$ città e distanze " + distTab(d, n) + ". Il nearest neighbour dalla città $1$ (ogni volta la città non visitata più vicina, a parità l'indice minore, poi ritorno in $1$) dà il giro $\\mathscr{A}(I)$; il bound $\\mathrm{LB}=\\left\\lceil\\frac12\\sum_i(a_i+b_i)\\right\\rceil$ usa le due distanze minime $a_i,b_i$ di ogni città. Quanto vale il gap $\\frac{\\mathscr{A}(I)-\\mathrm{LB}}{\\mathrm{LB}}$?",
+          "Symmetric TSP with $5$ cities and distances " + distTab(d, n) + ". Nearest neighbour from city $1$ (each time the nearest unvisited city, ties smallest index, then back to $1$) gives the tour $\\mathscr{A}(I)$; the bound $\\mathrm{LB}=\\left\\lceil\\frac12\\sum_i(a_i+b_i)\\right\\rceil$ uses the two smallest distances $a_i,b_i$ of every city. What is the gap $\\frac{\\mathscr{A}(I)-\\mathrm{LB}}{\\mathrm{LB}}$?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$\\mathscr{A}(I)=" + N + "$ e $\\mathrm{LB}=" + lb + "$: gap $" + frTex(g) + "$. L'errore relativo del giro rispetto all'ottimo non supera questo valore.",
+          "$\\mathscr{A}(I)=" + N + "$ and $\\mathrm{LB}=" + lb + "$: gap $" + frTex(g) + "$. The relative error of the tour with respect to the optimum does not exceed this value."),
+        _v: { dati: { d: d, n: n }, valori: bb.valori }
+      };
+    }
+  });
+  // ---- B4.38 intorno flip per il KP (cap. 29)
+  add({
+    id: "oc-g-heur-flip", livello: "facile", capitolo: "heuristics",
+    link: L2("heuristic-algorithms/heuristics", "algoritmi-euristici/heuristics", "box-9-def-neigh"),
+    genera: function (rng, lingua) {
+      var n = 5, p = [], w = []; for (var j = 0; j < n; j++) { p.push(ri(rng, 3, 12)); w.push(ri(rng, 2, 7)); }
+      var c = ri(rng, 10, 16), x = [], ww = 0, pp = 0;
+      for (j = 0; j < n; j++) { var b = rng() < 0.4 && ww + w[j] <= c ? 1 : 0; x.push(b); if (b) { ww += w[j]; pp += p[j]; } }
+      var bestF = -1, bestAny = -1;
+      for (j = 0; j < n; j++) { var nw = ww + (x[j] ? -w[j] : w[j]), np = pp + (x[j] ? -p[j] : p[j]); if (np > bestAny) bestAny = np; if (nw <= c && np > bestF) bestF = np; }
+      if (bestF <= pp || bestAny === bestF) return null;
+      var bb = build(rng, num(bestF), [num(bestAny), num(pp), num(bestF + 1), num(pp + Math.max.apply(null, p))]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Zaino 0-1 con capacità $c=" + c + "$ e oggetti " + itemTab(lingua, p, w) + ". La soluzione corrente è $x=" + vec(x) + "$; l'intorno flip contiene le soluzioni ammissibili ottenute cambiando una sola componente di $x$ (aggiungere o togliere un oggetto). Quanto vale il miglior vicino?",
+          "0-1 knapsack with capacity $c=" + c + "$ and items " + itemTab(lingua, p, w) + ". The current solution is $x=" + vec(x) + "$; the flip neighbourhood contains the feasible solutions obtained by changing a single component of $x$ (adding or removing one item). What is the value of the best neighbour?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "La soluzione corrente vale $" + pp + "$ e pesa $" + ww + "$; fra i vicini ammissibili il migliore vale $" + bestF + "$. Ignorando la capacità si arriverebbe a $" + bestAny + "$, ma quel vicino non è ammissibile.",
+          "The current solution is worth $" + pp + "$ and weighs $" + ww + "$; among the feasible neighbours the best is worth $" + bestF + "$. Ignoring the capacity one would reach $" + bestAny + "$, but that neighbour is infeasible."),
+        _v: { dati: { p: p, w: w, c: c, x: x }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.39 simulated annealing (cap. 32)
+  add({
+    id: "oc-g-sa-prob", livello: "facile", capitolo: "metaheuristics",
+    link: L2("heuristic-algorithms/metaheuristics/how-to-escape-from-a-local-optimum", "algoritmi-euristici/metaheuristics/come-uscire-da-un-ottimo-locale", "sez-sec-sa"),
+    genera: function (rng, lingua) {
+      var dl = ri(rng, 1, 12), Tt = ri(rng, 2, 10), f = fr(dl, Tt);
+      var ek = function (q, neg) { return { k: (neg ? "-" : "+") + frKey(q), t: "$e^{" + (neg ? "-" : "") + frTex(q) + "}$" }; };
+      var bb = build(rng, ek(f, true), [ek(fr(Tt, dl), true), { k: "1", t: "$1$" }, ek(fr(dl * Tt, 1), true), ek(f, false)]);
+      if (!bb || f.n === f.d) return null;
+      return {
+        testo: T(lingua, "Nel simulated annealing per un problema di minimo, alla temperatura $T=" + Tt + "$ si propone un vicino che peggiora l'obiettivo di $\\delta=" + dl + "$. Con la regola di Metropolis, con quale probabilità è accettato?",
+          "In simulated annealing for a minimization problem, at temperature $T=" + Tt + "$ a neighbour worsening the objective by $\\delta=" + dl + "$ is proposed. With the Metropolis rule, with which probability is it accepted?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Un peggioramento $\\delta>0$ è accettato con probabilità $e^{-\\delta/T}=e^{-" + frTex(f) + "}$; un miglioramento sarebbe accettato con probabilità $1$.",
+          "A worsening $\\delta>0$ is accepted with probability $e^{-\\delta/T}=e^{-" + frTex(f) + "}$; an improvement would be accepted with probability $1$."),
+        _v: { dati: { delta: dl, T: Tt }, valori: bb.valori }
+      };
+    }
+  });
+  // ---- B4.40 crossover a un punto (cap. 32)
+  add({
+    id: "oc-g-ga-cross", livello: "facile", capitolo: "metaheuristics",
+    link: L2("heuristic-algorithms/metaheuristics/population-based-methods-genetic-and-memetic-algorithms", "algoritmi-euristici/metaheuristics/metodi-basati-su-popolazioni-algoritmi-genetici-e-memetici", "sez-sec-ga"),
+    genera: function (rng, lingua) {
+      var n = 7, a = [], b = []; for (var j = 0; j < n; j++) { a.push(ri(rng, 0, 1)); b.push(ri(rng, 0, 1)); }
+      var cut = ri(rng, 2, n - 2), ch = function (x, y, k) { return x.slice(0, k).concat(y.slice(k)); };
+      var key = function (v) { return { k: v.join(""), t: "$" + vec(v) + "$" }; };
+      var bb = build(rng, key(ch(a, b, cut)), [key(ch(b, a, cut)), key(ch(a, b, cut + 1)), key(ch(a, b, cut - 1)), key(ch(b, a, cut + 1))]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Algoritmo genetico per lo zaino 0-1 con codifica binaria ($x_j=1$ se l'oggetto $j$ è scelto). Il crossover a un punto con taglio $cut=" + cut + "$ prende i geni $1,\\dots,cut$ dal primo genitore e i geni $cut+1,\\dots,n$ dal secondo. Genitori $" + vec(a) + "$ e $" + vec(b) + "$: quale figlio si ottiene?",
+          "Genetic algorithm for the 0-1 knapsack with binary encoding ($x_j=1$ if item $j$ is chosen). One-point crossover with cut $cut=" + cut + "$ takes genes $1,\\dots,cut$ from the first parent and genes $cut+1,\\dots,n$ from the second. Parents $" + vec(a) + "$ and $" + vec(b) + "$: which child is obtained?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "I primi $" + cut + "$ geni vengono da $" + vec(a) + "$ e gli altri da $" + vec(b) + "$: $" + vec(ch(a, b, cut)) + "$. Il figlio può superare la capacità e allora va riparato.",
+          "The first $" + cut + "$ genes come from $" + vec(a) + "$ and the others from $" + vec(b) + "$: $" + vec(ch(a, b, cut)) + "$. The child may exceed the capacity and then must be repaired."),
+        _v: { dati: { a: a, b: b, cut: cut }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.41-42 LIST e LPT (cap. 40)
+  add({
+    id: "oc-g-pcmax-list", livello: "facile", capitolo: "pcmax-approximation",
+    link: L2("approximation-algorithms/pcmax-approximation", "algoritmi-di-approssimazione/pcmax-approximation", "sez-sec-LIST"),
+    genera: function (rng, lingua) {
+      var m = 3, t = []; for (var j = 0; j < 7; j++) t.push(ri(rng, 1, 9));
+      var idx = range1(7).map(function (i) { return i - 1; }), a = listSched(t, m, idx).cmax, b = listSched(t, m, decOrder(t)).cmax;
+      if (a === b) return null;
+      var bb = build(rng, pairKey(a, b), [pairKey(b, a), pairKey(a, a), pairKey(Math.ceil(sum(t) / m), b), pairKey(a + 1, b)]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Scheduling $P\\,||\\,C_{\\max}$ con $m=3$ macchine identiche e durate, nell'ordine della lista, $t=" + vec(t) + "$. $LIST$ assegna ogni lavoro alla macchina meno carica (a parità quella di indice minore) nell'ordine della lista; $LPT$ fa lo stesso dopo aver ordinato i lavori per durata non crescente. Quanto valgono i makespan di $LIST$ e di $LPT$, nell'ordine?",
+          "Scheduling $P\\,||\\,C_{\\max}$ with $m=3$ identical machines and times, in list order, $t=" + vec(t) + "$. $LIST$ assigns every job to the least loaded machine (ties: smallest index) in list order; $LPT$ does the same after sorting the jobs by non-increasing time. What are the makespans of $LIST$ and $LPT$, in this order?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$LIST$ dà $" + a + "$ e $LPT$ dà $" + b + "$; il lower bound $\\lceil\\sum_jt_j/m\\rceil$ vale $" + Math.ceil(sum(t) / m) + "$.",
+          "$LIST$ gives $" + a + "$ and $LPT$ gives $" + b + "$; the lower bound $\\lceil\\sum_jt_j/m\\rceil$ is $" + Math.ceil(sum(t) / m) + "$."),
+        _v: { dati: { t: t, m: m }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-pcmax-ratio", livello: "media", capitolo: "pcmax-approximation",
+    link: L2("approximation-algorithms/pcmax-approximation", "algoritmi-di-approssimazione/pcmax-approximation", "box-6-prop-LPT"),
+    genera: function (rng, lingua) {
+      var m = ri(rng, 2, 3), t = []; for (var j = 0; j < 6; j++) t.push(ri(rng, 2, 9));
+      var z = pcmaxOpt(t, m), b = listSched(t, m, decOrder(t)).cmax;
+      if (b === z) return null;
+      var a = listSched(t, m, range1(6).map(function (i) { return i - 1; })).cmax;
+      var r = fr(b, z), g = fr(4 * m - 1, 3 * m);
+      var bb = build(rng, numF(r), [numF(g), numF(fr(a, z)), numF(fr(z, b)), numF(fr(b, Math.max(Math.max.apply(null, t), Math.ceil(sum(t) / m)) + 1))]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Scheduling $P\\,||\\,C_{\\max}$ con $m=" + m + "$ macchine identiche e durate $t=" + vec(t) + "$. $LPT$ ordina i lavori per durata non crescente e assegna ciascuno alla macchina meno carica (a parità, indice minore). Quanto vale il rapporto $LPT(I)/z(I)$, con $z(I)$ makespan ottimo?",
+          "Scheduling $P\\,||\\,C_{\\max}$ with $m=" + m + "$ identical machines and times $t=" + vec(t) + "$. $LPT$ sorts the jobs by non-increasing time and assigns each to the least loaded machine (ties: smallest index). What is the ratio $LPT(I)/z(I)$, with $z(I)$ the optimal makespan?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "$LPT(I)=" + b + "$ e $z(I)=" + z + "$: rapporto $" + frTex(r) + "$, al più la garanzia $\\frac43-\\frac1{3m}=" + frTex(g) + "$.",
+          "$LPT(I)=" + b + "$ and $z(I)=" + z + "$: ratio $" + frTex(r) + "$, at most the guarantee $\\frac43-\\frac1{3m}=" + frTex(g) + "$."),
+        _v: { dati: { t: t, m: m }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.43-44 TSP metrico: albero ricoprente e albero doppio (cap. 39)
+  function metricTxt(lingua, d, n) { return T(lingua, "TSP metrico con $" + n + "$ città e distanze (di Manhattan fra punti del piano, tutte diverse) " + distTab(d, n) + ".", "Metric TSP with $" + n + "$ cities and distances (Manhattan distances between points of the plane, all different) " + distTab(d, n) + "."); }
+  add({
+    id: "oc-g-tsp-mst", livello: "facile", capitolo: "tsp-approximation",
+    link: L2("approximation-algorithms/tsp-approximation", "algoritmi-di-approssimazione/tsp-approximation", "box-6-obs-mst"),
+    genera: function (rng, lingua) {
+      var n = 5, d = metricDist(rng, n); if (!d) return null;
+      var T0 = primMST(d, n), N = nn(d, n, 1).len, mn = 0;
+      for (var i = 1; i <= n; i++) { var r = Infinity; for (var j = 1; j <= n; j++) if (j !== i) r = Math.min(r, d[i][j]); mn += r; }
+      var bb = build(rng, num(T0.w), [num(2 * T0.w), num(N), num(mn), num(T0.w + 1)]);
+      if (!bb) return null;
+      return {
+        testo: metricTxt(lingua, d, n) + T(lingua, " Quanto è lungo un albero ricoprente minimo $T$, il cui valore $d(T)$ è un lower bound sul giro ottimo?", " How long is a minimum spanning tree $T$, whose length $d(T)$ is a lower bound on the optimal tour?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "L'algoritmo di Prim (o di Kruskal) dà $d(T)=" + T0.w + "$. Togliendo un lato dal giro ottimo si ottiene un albero ricoprente, quindi $d(T)\\le z(I)$; l'albero doppio dà un giro lungo al più $2d(T)=" + (2 * T0.w) + "$.",
+          "Prim's (or Kruskal's) algorithm gives $d(T)=" + T0.w + "$. Removing an edge from the optimal tour gives a spanning tree, so $d(T)\\le z(I)$; the double tree gives a tour of length at most $2d(T)=" + (2 * T0.w) + "$."),
+        _v: { dati: { d: d, n: n }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-tsp-dt", livello: "media", capitolo: "tsp-approximation",
+    link: L2("approximation-algorithms/tsp-approximation", "algoritmi-di-approssimazione/tsp-approximation", "sez-sec-DT"),
+    genera: function (rng, lingua) {
+      var n = 5, d = metricDist(rng, n); if (!d) return null;
+      var T0 = primMST(d, n), pre = preorder(n, T0.edges), L0 = tourLen(d, pre), N = nn(d, n, 1).len;
+      var bb = build(rng, num(L0), [num(2 * T0.w), num(T0.w), num(N), num(L0 + 1)]);
+      if (!bb) return null;
+      return {
+        testo: metricTxt(lingua, d, n) + T(lingua, " L'algoritmo dell'albero doppio prende l'albero ricoprente minimo (unico), ne raddoppia i lati, lo percorre in profondità dalla città $1$ visitando i figli per indice crescente e salta le città già visitate: il giro è l'ordine di prima visita. Quanto è lungo?",
+          " The double tree algorithm takes the (unique) minimum spanning tree, doubles its edges, walks it depth first from city $1$ visiting children by increasing index and skips the cities already visited: the tour is the order of first visit. How long is it?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "L'albero ha $d(T)=" + T0.w + "$; l'ordine di prima visita è $" + vec(pre) + "$, lungo $" + L0 + "\\le 2d(T)=" + (2 * T0.w) + "$: le scorciatoie non allungano il cammino perché le distanze sono metriche.",
+          "The tree has $d(T)=" + T0.w + "$; the order of first visit is $" + vec(pre) + "$, of length $" + L0 + "\\le 2d(T)=" + (2 * T0.w) + "$: shortcuts do not lengthen the walk because the distances are metric."),
+        _v: { dati: { d: d, n: n }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.45 Next Fit e bound sul peso (cap. 36)
+  add({
+    id: "oc-g-bpp-nf", livello: "facile", capitolo: "bin-packing-approximation",
+    link: L2("approximation-algorithms/bin-packing-approximation", "algoritmi-di-approssimazione/bin-packing-approximation", "sez-sec-NF"),
+    genera: function (rng, lingua) {
+      var n = 8, c = 10, w = []; for (var j = 0; j < n; j++) w.push(ri(rng, 1, 8));
+      var nf = binsOf(packing(w, c, "NF")), ff = binsOf(packing(w, c, "FF")), lb = Math.ceil(sum(w) / c);
+      if (nf === ff) return null;
+      var bb = build(rng, pairKey(nf, lb), [pairKey(ff, lb), pairKey(nf, lb + 1), pairKey(lb, nf), pairKey(nf + 1, lb)]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Bin packing con capacità $c=" + c + "$ e oggetti di peso $" + vec(w) + "$ in quest'ordine. Next Fit (NF) tiene aperto un solo contenitore e ne apre uno nuovo quando l'oggetto non entra. Quanti contenitori usa NF, e quanto vale il bound sul peso $\\lceil\\sum_jw_j/c\\rceil$, nell'ordine?",
+          "Bin packing with capacity $c=" + c + "$ and items of weight $" + vec(w) + "$ in this order. Next Fit (NF) keeps a single bin open and opens a new one when the item does not fit. How many bins does NF use, and what is the weight bound $\\lceil\\sum_jw_j/c\\rceil$, in this order?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "NF usa $" + nf + "$ contenitori e il bound vale $\\lceil " + sum(w) + "/" + c + "\\rceil=" + lb + "$; First Fit, che riprende i contenitori già aperti, ne usa $" + ff + "$. Vale sempre $NF(I)\\le 2z(I)$.",
+          "NF uses $" + nf + "$ bins and the bound is $\\lceil " + sum(w) + "/" + c + "\\rceil=" + lb + "$; First Fit, which reuses the open bins, uses $" + ff + "$. Always $NF(I)\\le 2z(I)$."),
+        _v: { dati: { w: w, c: c }, valori: bb.valori }
+      };
+    }
+  });
+  // ---- B4.46 errore relativo (cap. 34)
+  add({
+    id: "oc-g-approx-error", livello: "facile", capitolo: "approximation",
+    link: L2("approximation-algorithms/approximation", "algoritmi-di-approssimazione/approximation", "box-2-def-pratio"),
+    genera: function (rng, lingua) {
+      var mn = rng() < 0.5, z = ri(rng, 10, 40), A = mn ? z + ri(rng, 1, 15) : z - ri(rng, 1, Math.min(15, z - 1));
+      var e = fr(Math.abs(A - z), z), r = mn ? fr(A, z) : fr(z, A);
+      var key = function (a, b) { return { k: frKey(a) + "|" + frKey(b), t: "$" + frTex(a) + "$ " + T(lingua, "e", "and") + " $" + frTex(b) + "$" }; };
+      var bb = build(rng, key(r, e), [key(fr(r.d, r.n), e), key(r, fr(Math.abs(A - z), A)), key(e, r), key(r, fr(Math.abs(A - z), 1))]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Per un problema di " + (mn ? "minimo" : "massimo") + " un algoritmo trova una soluzione di valore $\\mathscr{A}(I)=" + A + "$ e il valore ottimo è $z(I)=" + z + "$. Il rapporto di prestazione è $" + (mn ? "\\mathscr{A}(I)/z(I)" : "z(I)/\\mathscr{A}(I)") + "$ e l'errore relativo $|\\mathscr{A}(I)-z(I)|/z(I)$. Quanto valgono, nell'ordine?",
+          "For a " + (mn ? "minimization" : "maximization") + " problem an algorithm finds a solution of value $\\mathscr{A}(I)=" + A + "$ and the optimal value is $z(I)=" + z + "$. The performance ratio is $" + (mn ? "\\mathscr{A}(I)/z(I)" : "z(I)/\\mathscr{A}(I)") + "$ and the relative error $|\\mathscr{A}(I)-z(I)|/z(I)$. What are they, in this order?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Rapporto $" + frTex(r) + "\\ge 1$ ed errore $" + frTex(e) + "$; l'errore si divide per il valore ottimo, non per quello trovato.",
+          "Ratio $" + frTex(r) + "\\ge 1$ and error $" + frTex(e) + "$; the error is divided by the optimal value, not by the value found."),
+        _v: { dati: { A: A, z: z, min: mn }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.47 branch-and-bound KP: figlio «down» (cap. 41)
+  add({
+    id: "oc-g-kp-bbdown", livello: "facile", capitolo: "knapsack-branch-and-bound",
+    link: L2("specialized-algorithms/knapsack-branch-and-bound", "algoritmi-specializzati/knapsack-branch-and-bound", "box-1-def-LPKPk"),
+    genera: function (rng, lingua) {
+      var n = 5, p = [], w = [];
+      for (var j = 0; j < n; j++) { w.push(ri(rng, 2, 8)); p.push(ri(rng, 4, 20)); }
+      var o = effOrder(p, w); p = o.map(function (i) { return p[i]; }); w = o.map(function (i) { return w[i]; });
+      for (j = 1; j < n; j++) if (p[j] * w[j - 1] === p[j - 1] * w[j]) return null;
+      var c = ri(rng, 10, 18), sp = split(range1(n).map(function (i) { return i - 1; }), w, c);
+      if (sp.s <= 0 || sp.s >= n - 1 || sp.rc === 0) return null;
+      var s = sp.s, rest = range1(n).map(function (i) { return i - 1; }).filter(function (i) { return i !== s; });
+      var lpv = function (cap, items, pk) { var tot = 0, val = fr(pk, 1); for (var q = 0; q < items.length; q++) { var i = items[q]; if (tot + w[i] > cap) return frAdd(val, fr(p[i] * (cap - tot), w[i])); tot += w[i]; val = frAdd(val, fr(p[i], 1)); } return val; };
+      var dn = lpv(c, rest, 0), up = lpv(c - w[s], rest, p[s]), root = lpv(c, range1(n).map(function (i) { return i - 1; }), 0);
+      var bb = build(rng, numF(dn), [numF(up), numF(root), num(Math.floor(dn.n / dn.d)), numF(lpv(c, rest.slice(0, rest.length - 1), 0))]);
+      if (!bb) return null;
+      return {
+        testo: T(lingua, "Branch-and-bound per lo zaino 0-1 con capacità $c=" + c + "$ e oggetti ordinati per efficienza non crescente: " + itemTab(lingua, p, w) + ". Alla radice l'oggetto critico è $s=" + (s + 1) + "$ (il primo che non entra per intero). Quanto vale il rilassamento lineare del figlio con $x_{" + (s + 1) + "}=0$, risolto con le formule di Dantzig sugli altri oggetti?",
+          "Branch-and-bound for the 0-1 knapsack with capacity $c=" + c + "$ and items sorted by non-increasing efficiency: " + itemTab(lingua, p, w) + ". At the root the split item is $s=" + (s + 1) + "$ (the first not fitting entirely). What is the LP relaxation of the child with $x_{" + (s + 1) + "}=0$, solved by Dantzig's formulas on the other items?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Senza l'oggetto $" + (s + 1) + "$ si riempie lo zaino con gli altri in ordine di efficienza: $" + frTex(dn) + "$. Il figlio con $x_{" + (s + 1) + "}=1$ vale $" + frTex(up) + "$ e la radice $" + frTex(root) + "$.",
+          "Without item $" + (s + 1) + "$ the knapsack is filled with the others by efficiency: $" + frTex(dn) + "$. The child with $x_{" + (s + 1) + "}=1$ is worth $" + frTex(up) + "$ and the root $" + frTex(root) + "$."),
+        _v: { dati: { p: p, w: w, c: c }, valori: bb.valori }
+      };
+    }
+  });
+
+  // ---- B4.48-49 branch-and-bound DSATUR (cap. 42)
+  add({
+    id: "oc-g-dsbb-bounds", livello: "facile", capitolo: "dsatur-branch-and-bound",
+    link: L2("specialized-algorithms/dsatur-branch-and-bound", "algoritmi-specializzati/dsatur-branch-and-bound", "sez-sec-DSATURBBbounds"),
+    genera: function (rng, lingua) {
+      var G = graphQ(rng, 7, 0.45); if (!G) return null;
+      var dg = degs(7, G.E), K = greedyClique(7, G.A, dg), U = dsatur(G.adj, 7).nc, om = cliqueNum(7, G.A, false);
+      var bb = build(rng, pairKey(K.length, U), [pairKey(om === K.length ? K.length + 1 : om, U), pairKey(U, K.length), pairKey(K.length, U + 1), pairKey(K.length - 1, U)]);
+      if (!bb) return null;
+      return {
+        testo: gTxt(lingua, G) + T(lingua, " Nel branch-and-bound DSATUR, il lower bound è la cardinalità di una clique greedy (vertici per grado non crescente, a parità indice minore; un vertice entra se è adiacente a tutti quelli già scelti) e l'upper bound è il numero di colori di $DSATUR$ (vertice di saturazione massima, pari merito: più vicini non colorati, poi indice minore; colore più piccolo libero). Quanto valgono, nell'ordine?",
+          " In the DSATUR branch-and-bound, the lower bound is the size of a greedy clique (vertices by non-increasing degree, ties smallest index; a vertex enters if adjacent to all those already chosen) and the upper bound is the number of colors of $DSATUR$ (vertex of maximum saturation, ties: more uncolored neighbours, then smallest index; smallest free color). What are they, in this order?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "La clique greedy è $" + set(K) + "$, quindi $\\mathrm{LB}=" + K.length + "$; $DSATUR$ usa $" + U + "$ colori, quindi $\\mathrm{UB}=" + U + "$. Se i due valori coincidono, l'algoritmo si ferma subito.",
+          "The greedy clique is $" + set(K) + "$, hence $\\mathrm{LB}=" + K.length + "$; $DSATUR$ uses $" + U + "$ colors, hence $\\mathrm{UB}=" + U + "$. If the two values coincide, the algorithm stops at once."),
+        _v: { dati: { n: 7, E: G.E }, valori: bb.valori }
+      };
+    }
+  });
+  add({
+    id: "oc-g-dsbb-branch", livello: "media", capitolo: "dsatur-branch-and-bound",
+    link: L2("specialized-algorithms/dsatur-branch-and-bound", "algoritmi-specializzati/dsatur-branch-and-bound", "sez-sec-DSATURBBbranch"),
+    genera: function (rng, lingua) {
+      var G = graphQ(rng, 7, 0.45); if (!G) return null;
+      var col = new Array(8).fill(0), ord = shuffle(rng, range1(7)).slice(0, 3);
+      ord.forEach(function (v) { var U = {}; G.adj[v].forEach(function (u) { if (col[u]) U[col[u]] = 1; }); var c = 1; while (U[c]) c++; col[v] = c; });
+      var q = Math.max.apply(null, col), best = -1, bs = -1, bd = -1, info = {};
+      for (var v = 1; v <= 7; v++) {
+        if (col[v]) continue;
+        var S = {}, ns = 0, du = 0; G.adj[v].forEach(function (u) { if (col[u]) { if (!S[col[u]]) { S[col[u]] = 1; ns++; } } else du++; });
+        info[v] = { s: ns, du: du };
+        if (ns > bs || (ns === bs && du > bd)) { best = v; bs = ns; bd = du; }
+      }
+      var ch = q - bs + 1;
+      var other = -1; for (v = 1; v <= 7; v++) if (!col[v] && v !== best && (other < 0 || G.adj[v].length > G.adj[other].length)) other = v;
+      var bb = build(rng, pairKey(best, ch, "v=" + best, ch), [pairKey(best, ch - 1, "v=" + best, ch - 1), pairKey(other, other > 0 ? q - info[other].s + 1 : 0, "v=" + other, other > 0 ? q - info[other].s + 1 : 0), pairKey(best, q, "v=" + best, q), pairKey(best, ch + 1, "v=" + best, ch + 1)]);
+      if (!bb) return null;
+      var pc = ord.map(function (u) { return "col(" + u + ")=" + col[u]; }).join(",\\ ");
+      return {
+        testo: gTxt(lingua, G) + T(lingua, " Nel branch-and-bound DSATUR, il nodo corrente è la colorazione parziale $" + pc + "$ (gli altri vertici non sono colorati), con $q=" + q + "$ colori. Si ramifica sul vertice non colorato di grado di saturazione massimo (colori diversi fra i vicini colorati; pari merito: più vicini non colorati, poi indice minore), con un figlio per ogni colore usato ammesso più uno con il nuovo colore $q+1$. Su quale vertice si ramifica e quanti figli ha il nodo?",
+          " In the DSATUR branch-and-bound, the current node is the partial coloring $" + pc + "$ (the other vertices are uncolored), with $q=" + q + "$ colors. It branches on the uncolored vertex of maximum saturation degree (distinct colors among colored neighbours; ties: more uncolored neighbours, then smallest index), with one child per allowed used color plus one with the new color $q+1$. On which vertex does it branch and how many children does the node have?"),
+        opzioni: bb.opzioni, corretta: bb.corretta,
+        spiegazione: T(lingua, "Il vertice $" + best + "$ ha saturazione $" + bs + "$, la massima; i colori usati ammessi sono $q-" + bs + "=" + (q - bs) + "$, più il nuovo colore: $" + ch + "$ figli.",
+          "Vertex $" + best + "$ has saturation $" + bs + "$, the largest; the allowed used colors are $q-" + bs + "=" + (q - bs) + "$, plus the new color: $" + ch + "$ children."),
+        _v: { dati: { n: 7, E: G.E, col: col }, valori: bb.valori }
+      };
+    }
+  });
 //@@BATCH3@@
 })();
