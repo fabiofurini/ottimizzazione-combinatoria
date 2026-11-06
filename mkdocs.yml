@@ -136,7 +136,7 @@ extra_javascript:
   - javascripts/gi-oc-d.js?v=c702b61e84
   - javascripts/gi-oc-e.js?v=81b96a11df
   - javascripts/gi-oc-f.js?v=16cc0cf8e9
-  - javascripts/quiz.js?v=3990768383
+  - javascripts/quiz.js?v=be7fae2b85
 
 nav:
   - Home: index.md

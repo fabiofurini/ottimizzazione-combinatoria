@@ -221,10 +221,10 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       cand.push(sp.s >= 1 ? key(o[sp.s - 1] + 1, rc + w[o[sp.s - 1]]) : null);
       var b = build(rng, key(s, rc), cand); if (!b) return null;
       return {
-        testo: T(lingua, "Si consideri l'istanza del KP con capacità $c=" + c + "$ e i seguenti oggetti: " + itemTab(lingua, p, w) +
-          ". Ordinando gli oggetti per efficienza non crescente, quali sono l'oggetto critico $s$ e la capacità residua $\\mathit{rc}$?",
-          "Consider the KP instance with capacity $c=" + c + "$ and the following items: " + itemTab(lingua, p, w) +
-          ". Sorting the items by non-increasing efficiency, what are the split item $s$ and the residual capacity $\\mathit{rc}$?"),
+        testo: T(lingua, "Problema dello zaino 0-1 (KP: si sceglie un sottoinsieme di oggetti di profitto massimo con peso totale al più $c$) con capacità $c=" + c + "$ e i seguenti oggetti: " + itemTab(lingua, p, w) +
+          ". Ordinati gli oggetti per efficienza $p_j/w_j$ non crescente (pari merito: indice minore) e inseriti in quest'ordine, l'oggetto critico $s$ è il primo che non entra per intero e $\\mathit{rc}$ è la capacità lasciata libera dagli oggetti precedenti. Quanto valgono $s$ e $\\mathit{rc}$?",
+          "0-1 knapsack problem (KP: choose a subset of items of maximum profit with total weight at most $c$) with capacity $c=" + c + "$ and the following items: " + itemTab(lingua, p, w) +
+          ". With the items sorted by non-increasing efficiency $p_j/w_j$ (ties: smaller index) and inserted in this order, the split item $s$ is the first one that does not fit entirely and $\\mathit{rc}$ is the capacity left free by the previous items. What are $s$ and $\\mathit{rc}$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "Ordine per efficienza $p_j/w_j$: $" + o.map(function (x) { return x + 1; }).join(",") + "$. Il primo oggetto che non entra interamente è $s=" + s + "$ e $\\mathit{rc}=c-\\sum_{j<s} w_j=" + rc + "$. Errori tipici: usare l'ordine degli indici, dei profitti o dei pesi.",
           "Order by efficiency $p_j/w_j$: $" + o.map(function (x) { return x + 1; }).join(",") + "$. The first item that does not fit entirely is $s=" + s + "$ and $\\mathit{rc}=c-\\sum_{j<s} w_j=" + rc + "$. Typical mistakes: using the order of the indices, of the profits or of the weights."),
@@ -254,8 +254,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, numF(z), [numF(lp0), numF(fr(base + p[s], 1)), numF(wrong2), numF(wrong1), numF(fr(base, 1))]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Si consideri l'istanza del KP con capacità $c=" + c + "$ e oggetti già ordinati per efficienza non crescente: " + itemTab(lingua, p, w) + ". Quanto vale $z(\\mathrm{LP}_{\\mathrm{KP}})$, il valore ottimo del rilassamento lineare con $0\\le x_j\\le 1$?",
-          "Consider the KP instance with capacity $c=" + c + "$ and items already sorted by non-increasing efficiency: " + itemTab(lingua, p, w) + ". What is $z(\\mathrm{LP}_{\\mathrm{KP}})$, the optimal value of the LP relaxation with $0\\le x_j\\le 1$?"),
+        testo: T(lingua, "Problema dello zaino 0-1 (KP: si sceglie un sottoinsieme di oggetti di profitto massimo con peso totale al più $c$) con capacità $c=" + c + "$ e oggetti già ordinati per efficienza non crescente: " + itemTab(lingua, p, w) + ". Quanto vale $z(\\mathrm{LP}_{\\mathrm{KP}})$, il valore ottimo del rilassamento lineare con $0\\le x_j\\le 1$?",
+          "0-1 knapsack problem (KP: choose a subset of items of maximum profit with total weight at most $c$) with capacity $c=" + c + "$ and items already sorted by non-increasing efficiency: " + itemTab(lingua, p, w) + ". What is $z(\\mathrm{LP}_{\\mathrm{KP}})$, the optimal value of the LP relaxation with $0\\le x_j\\le 1$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "$s=" + (s + 1) + "$, $\\mathit{rc}=" + sp.rc + "$, quindi $z(\\mathrm{LP}_{\\mathrm{KP}})=\\sum_{j<s}p_j+p_s\\,\\mathit{rc}/w_s=" + base + "+" + p[s] + "\\cdot\\frac{" + sp.rc + "}{" + w[s] + "}=" + frTex(z) + "$. Il valore $p_1 c/w_1$ è quello di $\\mathrm{LP}\\text{-}0_{\\mathrm{KP}}$, senza i vincoli $x_j\\le 1$.",
           "$s=" + (s + 1) + "$, $\\mathit{rc}=" + sp.rc + "$, hence $z(\\mathrm{LP}_{\\mathrm{KP}})=\\sum_{j<s}p_j+p_s\\,\\mathit{rc}/w_s=" + base + "+" + p[s] + "\\cdot\\frac{" + sp.rc + "}{" + w[s] + "}=" + frTex(z) + "$. The value $p_1 c/w_1$ is that of $\\mathrm{LP}\\text{-}0_{\\mathrm{KP}}$, without the constraints $x_j\\le 1$."),
@@ -286,8 +286,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, num(ud), [u2 !== null ? num(u2) : null, num(ud + 1), num(base + ps), u3 !== null ? num(u3) : null, num(base)]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Si consideri l'istanza del KP con capacità $c=" + c + "$ e i seguenti oggetti: " + itemTab(lingua, p, w) + ". Quanto vale l'upper bound di Dantzig $\\mathrm{UB}_{\\mathrm{D}}$?",
-          "Consider the KP instance with capacity $c=" + c + "$ and the following items: " + itemTab(lingua, p, w) + ". What is the Dantzig upper bound $\\mathrm{UB}_{\\mathrm{D}}$?"),
+        testo: T(lingua, "Problema dello zaino 0-1 (KP: si sceglie un sottoinsieme di oggetti di profitto massimo con peso totale al più $c$) con capacità $c=" + c + "$ e i seguenti oggetti: " + itemTab(lingua, p, w) + ". Quanto vale l'upper bound di Dantzig $\\mathrm{UB}_{\\mathrm{D}}$, la parte intera del valore del rilassamento lineare (con $0\\le x_j\\le 1$)?",
+          "0-1 knapsack problem (KP: choose a subset of items of maximum profit with total weight at most $c$) with capacity $c=" + c + "$ and the following items: " + itemTab(lingua, p, w) + ". What is the Dantzig upper bound $\\mathrm{UB}_{\\mathrm{D}}$, the integer part of the LP relaxation value (with $0\\le x_j\\le 1$)?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "Ordine per efficienza: $" + o.map(function (x) { return x + 1; }).join(",") + "$; oggetto critico $s=" + (o[sp.s] + 1) + "$, $\\mathit{rc}=" + sp.rc + "$. $\\mathrm{UB}_{\\mathrm{D}}=" + base + "+\\lfloor " + ps + "\\cdot " + sp.rc + "/" + ws + "\\rfloor=" + ud + "$. Gli oggetti vanno ordinati per efficienza, e si arrotonda per difetto.",
           "Order by efficiency: $" + o.map(function (x) { return x + 1; }).join(",") + "$; split item $s=" + (o[sp.s] + 1) + "$, $\\mathit{rc}=" + sp.rc + "$. $\\mathrm{UB}_{\\mathrm{D}}=" + base + "+\\lfloor " + ps + "\\cdot " + sp.rc + "/" + ws + "\\rfloor=" + ud + "$. The items must be sorted by efficiency, and the value is rounded down."),
@@ -320,8 +320,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, num(mt), [num(Math.min(ub0, ub1)), num(ud), num(Math.max(x0, x1)), num(mt + 1)]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Si consideri l'istanza del KP con capacità $c=" + c + "$ e oggetti già ordinati per efficienza non crescente: " + itemTab(lingua, p, w) + ". Quanto vale l'upper bound di Martello-Toth $\\mathrm{UB}_{\\mathrm{MT}}$?",
-          "Consider the KP instance with capacity $c=" + c + "$ and items already sorted by non-increasing efficiency: " + itemTab(lingua, p, w) + ". What is the Martello-Toth upper bound $\\mathrm{UB}_{\\mathrm{MT}}$?"),
+        testo: T(lingua, "Problema dello zaino 0-1 (KP: si sceglie un sottoinsieme di oggetti di profitto massimo con peso totale al più $c$) con capacità $c=" + c + "$ e oggetti già ordinati per efficienza non crescente: " + itemTab(lingua, p, w) + ". Sia $s$ l'oggetto critico (il primo che non entra per intero). Quanto vale l'upper bound di Martello-Toth $\\mathrm{UB}_{\\mathrm{MT}}=\\max\\{\\mathrm{UB}_0,\\mathrm{UB}_1\\}$, dove $\\mathrm{UB}_0$ impone $x_s=0$ e $\\mathrm{UB}_1$ impone $x_s=1$?",
+          "0-1 knapsack problem (KP: choose a subset of items of maximum profit with total weight at most $c$) with capacity $c=" + c + "$ and items already sorted by non-increasing efficiency: " + itemTab(lingua, p, w) + ". Let $s$ be the split item (the first one that does not fit entirely). What is the Martello-Toth upper bound $\\mathrm{UB}_{\\mathrm{MT}}=\\max\\{\\mathrm{UB}_0,\\mathrm{UB}_1\\}$, where $\\mathrm{UB}_0$ imposes $x_s=0$ and $\\mathrm{UB}_1$ imposes $x_s=1$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "$s=" + (s + 1) + "$, $\\mathit{rc}=" + rc + "$; $\\mathrm{UB}_0=" + base + "+\\lfloor " + rc + "\\cdot " + p[s + 1] + "/" + w[s + 1] + "\\rfloor=" + ub0 + "$, $\\mathrm{UB}_1=" + base + "+\\lfloor " + p[s] + "-(" + w[s] + "-" + rc + ")\\cdot " + p[s - 1] + "/" + w[s - 1] + "\\rfloor=" + ub1 + "$, $\\mathrm{UB}_{\\mathrm{MT}}=\\max\\{\\mathrm{UB}_0,\\mathrm{UB}_1\\}=" + mt + "$ (Dantzig: $" + ud + "$). Si prende il massimo, non il minimo.",
           "$s=" + (s + 1) + "$, $\\mathit{rc}=" + rc + "$; $\\mathrm{UB}_0=" + base + "+\\lfloor " + rc + "\\cdot " + p[s + 1] + "/" + w[s + 1] + "\\rfloor=" + ub0 + "$, $\\mathrm{UB}_1=" + base + "+\\lfloor " + p[s] + "-(" + w[s] + "-" + rc + ")\\cdot " + p[s - 1] + "/" + w[s - 1] + "\\rfloor=" + ub1 + "$, $\\mathrm{UB}_{\\mathrm{MT}}=\\max\\{\\mathrm{UB}_0,\\mathrm{UB}_1\\}=" + mt + "$ (Dantzig: $" + ud + "$). The maximum is taken, not the minimum."),
@@ -343,8 +343,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, num(x), [num(v[jj - 1][k]), num(v[jj][k - 1]), num(rep), num(v[jj][k] + p[jj])]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Istanza del KP: " + itemTab(lingua, p, w) + ", capacità $c=" + c + "$. Con la ricorsione $v(j,k)=\\max\\{v(j-1,k),\\,p_j+v(j-1,k-w_j)\\}$ (se $w_j\\le k$), quanto vale $v(" + jj + "," + k + ")$?",
-          "KP instance: " + itemTab(lingua, p, w) + ", capacity $c=" + c + "$. With the recursion $v(j,k)=\\max\\{v(j-1,k),\\,p_j+v(j-1,k-w_j)\\}$ (if $w_j\\le k$), what is $v(" + jj + "," + k + ")$?"),
+        testo: T(lingua, "Problema dello zaino 0-1 (KP) con oggetti " + itemTab(lingua, p, w) + " e capacità $c=" + c + "$; $v(j,k)$ è il massimo profitto con gli oggetti $1,\\dots,j$ e capacità $k$, con $v(0,k)=0$. Con la ricorsione $v(j,k)=\\max\\{v(j-1,k),\\,p_j+v(j-1,k-w_j)\\}$ (il secondo termine solo se $w_j\\le k$), quanto vale $v(" + jj + "," + k + ")$?",
+          "0-1 knapsack problem (KP) with items " + itemTab(lingua, p, w) + " and capacity $c=" + c + "$; $v(j,k)$ is the largest profit with items $1,\\dots,j$ and capacity $k$, with $v(0,k)=0$. With the recursion $v(j,k)=\\max\\{v(j-1,k),\\,p_j+v(j-1,k-w_j)\\}$ (the second term only if $w_j\\le k$), what is $v(" + jj + "," + k + ")$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "$v(" + jj + "," + k + ")$ è il profitto massimo con gli oggetti $\\{1,2,3\\}$ e capacità $" + k + "$: vale $" + x + "$. Ogni oggetto si usa al più una volta (con ripetizioni si otterrebbe $" + rep + "$, il valore dello zaino illimitato).",
           "$v(" + jj + "," + k + ")$ is the largest profit with the items $\\{1,2,3\\}$ and capacity $" + k + "$: it is $" + x + "$. Each item is used at most once (with repetitions one would get $" + rep + "$, the value of the unbounded knapsack)."),
@@ -369,8 +369,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, num(x), [num(kp), num(g), num(single), num(v[c - 1])]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Istanza dello zaino illimitato (UKP) con $n=3$ tipi di oggetto: " + itemTab(lingua, p, w) + ", capacità $c=" + c + "$. Con la ricorsione $v(k)=\\max_{j:\\,w_j\\le k}\\{p_j+v(k-w_j)\\}$, quanto vale $v(" + c + ")$?",
-          "Unbounded knapsack (UKP) instance with $n=3$ item types: " + itemTab(lingua, p, w) + ", capacity $c=" + c + "$. With the recursion $v(k)=\\max_{j:\\,w_j\\le k}\\{p_j+v(k-w_j)\\}$, what is $v(" + c + ")$?"),
+        testo: T(lingua, "Zaino illimitato (UKP): $n=3$ tipi di oggetto, ciascuno disponibile in copie illimitate, " + itemTab(lingua, p, w) + ", capacità $c=" + c + "$. $v(k)$ è il massimo profitto con capacità $k$: $v(0)=0$ e $v(k)=\\max_{j:\\,w_j\\le k}\\{p_j+v(k-w_j)\\}$ (uguale a $0$ se nessun tipo entra). Quanto vale $v(" + c + ")$?",
+          "Unbounded knapsack (UKP): $n=3$ item types, each available in unlimited copies, " + itemTab(lingua, p, w) + ", capacity $c=" + c + "$. $v(k)$ is the largest profit with capacity $k$: $v(0)=0$ and $v(k)=\\max_{j:\\,w_j\\le k}\\{p_j+v(k-w_j)\\}$ (equal to $0$ if no type fits). What is $v(" + c + ")$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "La tabella dà $v(" + c + ")=" + x + "$. Ogni tipo può essere usato più volte: il valore $" + kp + "$ è quello del KP 0/1, e il greedy per efficienza con ripetizioni ($" + g + "$) non è in generale ottimo.",
           "The table gives $v(" + c + ")=" + x + "$. Each type can be used several times: the value $" + kp + "$ is that of the 0/1 KP, and the greedy by efficiency with repetitions ($" + g + "$) is not optimal in general."),
@@ -399,8 +399,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, num(best), [num(gd), num(g1), num(gi), num(c), num(second)]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Istanza del subset sum con pesi $w=" + vec(w) + "$ e valore obiettivo $c=" + c + "$. Con la ricorsione $r(j,k)=r(j-1,k)\\lor r(j-1,k-w_j)$, qual è il più grande $k\\le c$ con $r(5,k)=\\textit{true}$?",
-          "Subset sum instance with weights $w=" + vec(w) + "$ and target $c=" + c + "$. With the recursion $r(j,k)=r(j-1,k)\\lor r(j-1,k-w_j)$, what is the largest $k\\le c$ with $r(5,k)=\\textit{true}$?"),
+        testo: T(lingua, "Subset sum: pesi $w=" + vec(w) + "$ e valore obiettivo $c=" + c + "$. $r(j,k)$ è vero se un sottoinsieme dei primi $j$ pesi ha somma esattamente $k$: $r(0,0)$ vero, $r(0,k)$ falso per $k\\ge 1$, e $r(j,k)=r(j-1,k)\\lor r(j-1,k-w_j)$ (il secondo termine solo se $w_j\\le k$). Qual è il più grande $k\\le c$ con $r(5,k)=\\textit{true}$?",
+          "Subset sum: weights $w=" + vec(w) + "$ and target $c=" + c + "$. $r(j,k)$ is true if some subset of the first $j$ weights sums to exactly $k$: $r(0,0)$ true, $r(0,k)$ false for $k\\ge 1$, and $r(j,k)=r(j-1,k)\\lor r(j-1,k-w_j)$ (the second term only if $w_j\\le k$). What is the largest $k\\le c$ with $r(5,k)=\\textit{true}$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "Le somme raggiungibili non superiori a $" + c + "$ hanno massimo $" + best + "$; $c=" + c + "$ non è raggiungibile. Le scelte greedy (per peso decrescente: $" + gd + "$) non garantiscono il massimo.",
           "The reachable sums not larger than $" + c + "$ have maximum $" + best + "$; $c=" + c + "$ is not reachable. The greedy choices (by non-increasing weight: $" + gd + "$) do not guarantee the maximum."),
@@ -422,8 +422,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var bb = build(rng, num(v[c]), [num(g), num(v[c] + 1), num(onlyBig), num(v[c - 1])]);
       if (!bb) return null;
       return {
-        testo: T(lingua, "Cambio monete: tagli $w=" + vec(w) + "$, disponibili in quantità illimitata, resto $c=" + c + "$. Con la ricorsione $v(k)=\\min_{j:\\,w_j\\le k}\\{1+v(k-w_j)\\}$, quanto vale $v(" + c + ")$?",
-          "Coin change: denominations $w=" + vec(w) + "$, in unlimited supply, amount $c=" + c + "$. With the recursion $v(k)=\\min_{j:\\,w_j\\le k}\\{1+v(k-w_j)\\}$, what is $v(" + c + ")$?"),
+        testo: T(lingua, "Cambio monete (CCP): tagli $w=" + vec(w) + "$, disponibili in quantità illimitata; si vuole dare un resto di esattamente $c=" + c + "$ con il minimo numero di monete. $v(k)$ è il minimo numero di monete per il resto $k$: $v(0)=0$ e $v(k)=\\min_{j:\\,w_j\\le k}\\{1+v(k-w_j)\\}$. Quanto vale $v(" + c + ")$?",
+          "Coin change (CCP): denominations $w=" + vec(w) + "$, in unlimited supply; an amount of exactly $c=" + c + "$ must be paid with the minimum number of coins. $v(k)$ is the minimum number of coins for amount $k$: $v(0)=0$ and $v(k)=\\min_{j:\\,w_j\\le k}\\{1+v(k-w_j)\\}$. What is $v(" + c + ")$?"),
         opzioni: bb.opzioni, corretta: bb.corretta,
         spiegazione: T(lingua, "La PD dà $v(" + c + ")=" + v[c] + "$ monete. Il greedy che usa sempre il taglio più grande ne usa $" + g + "$: con questi tagli non è ottimo.",
           "The DP gives $v(" + c + ")=" + v[c] + "$ coins. The greedy that always uses the largest denomination uses $" + g + "$: with these denominations it is not optimal."),
@@ -447,8 +447,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       if (!bb) return null;
       var head = ["j"].concat(range1(n).map(String));
       return {
-        testo: T(lingua, "Taglio delle aste: un'asta di lunghezza $n=" + n + "$ e i profitti dei pezzi " + tab(head, [["p_j"].concat(p)]) + ". Con la ricorsione $v(\\ell)=\\max_{1\\le j\\le \\ell}\\{p_j+v(\\ell-j)\\}$, quanto vale $v(" + n + ")$?",
-          "Rod cutting: a rod of length $n=" + n + "$ and the profits of the pieces " + tab(head, [["p_j"].concat(p)]) + ". With the recursion $v(\\ell)=\\max_{1\\le j\\le \\ell}\\{p_j+v(\\ell-j)\\}$, what is $v(" + n + ")$?"),
+        testo: T(lingua, "Taglio delle aste (RCP): un'asta di lunghezza $n=" + n + "$ si taglia in pezzi di lunghezza intera, e il pezzo di lunghezza $j$ si vende a $p_j$: " + tab(head, [["p_j"].concat(p)]) + ". $v(\\ell)$ è il massimo ricavo da un'asta di lunghezza $\\ell$: $v(0)=0$ e $v(\\ell)=\\max_{1\\le j\\le \\ell}\\{p_j+v(\\ell-j)\\}$. Quanto vale $v(" + n + ")$?",
+          "Rod cutting (RCP): a rod of length $n=" + n + "$ is cut into pieces of integer length, and the piece of length $j$ is sold at $p_j$: " + tab(head, [["p_j"].concat(p)]) + ". $v(\\ell)$ is the largest revenue from a rod of length $\\ell$: $v(0)=0$ and $v(\\ell)=\\max_{1\\le j\\le \\ell}\\{p_j+v(\\ell-j)\\}$. What is $v(" + n + ")$?"),
         opzioni: bb.opzioni, corretta: bb.corretta,
         spiegazione: T(lingua, "$v=" + vec(v) + "$ per $\\ell=0,\\dots," + n + "$, quindi $v(" + n + ")=" + v[n] + "$. Un solo taglio ($" + one + "$) o il pezzo di miglior rapporto $p_j/j$ ($" + g + "$) non bastano in generale.",
           "$v=" + vec(v) + "$ for $\\ell=0,\\dots," + n + "$, hence $v(" + n + ")=" + v[n] + "$. A single cut ($" + one + "$) or the piece with the best ratio $p_j/j$ ($" + g + "$) are not enough in general."),
@@ -473,8 +473,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var nome = { NF: "Next Fit", FF: "First Fit", BF: "Best Fit", WF: "Worst Fit" };
       b.valori = b.valori.map(function (x) { return x + ":" + R[x].bin.join(","); });
       return {
-        testo: T(lingua, "Bin packing con capacità $c=" + c + "$ e pesi, nell'ordine dato, $w=" + vec(w) + "$. Quale vettore $bin$ (contenitore assegnato a ogni oggetto) produce l'algoritmo " + nome[a] + " (" + a + ")?",
-          "Bin packing with capacity $c=" + c + "$ and weights, in the given order, $w=" + vec(w) + "$. Which vector $bin$ (bin assigned to each item) does the " + nome[a] + " algorithm (" + a + ") produce?"),
+        testo: T(lingua, "Bin packing (BPP: oggetti in contenitori di capacità $c$, minimizzando i contenitori) con $c=" + c + "$ e pesi, nell'ordine di esame, $w=" + vec(w) + "$. I contenitori sono numerati nell'ordine di apertura; a parità di capacità residua si sceglie quello di indice minore. Quale vettore $bin$ (contenitore di ogni oggetto) produce " + nome[a] + " (" + a + ")?",
+          "Bin packing (BPP: items into bins of capacity $c$, minimizing the bins) with $c=" + c + "$ and weights, in the order of examination, $w=" + vec(w) + "$. Bins are numbered in order of opening; ties on the residual capacity go to the smaller index. Which vector $bin$ (bin of each item) does " + nome[a] + " (" + a + ") produce?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, a + " dà $bin=" + vec(R[a].bin) + "$ con $" + R[a].nb + "$ contenitori. NF tiene aperto un solo contenitore; FF sceglie il primo in cui l'oggetto entra, BF quello con capacità residua minima, WF quello con capacità residua massima.",
           a + " gives $bin=" + vec(R[a].bin) + "$ with $" + R[a].nb + "$ bins. NF keeps a single open bin; FF chooses the first bin where the item fits, BF the one with the smallest residual capacity, WF the one with the largest residual capacity."),
@@ -500,8 +500,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       b.valori = b.valori.map(function (x) { return x + ":" + R[x].bin.join(","); });
       var nome = a === "FFD" ? "First Fit Decreasing (FFD)" : "Best Fit Decreasing (BFD)";
       return {
-        testo: T(lingua, "Bin packing con capacità $c=" + c + "$ e pesi $w=" + vec(w) + "$ (oggetti $1,\\dots," + n + "$). Quale vettore $bin$ produce " + nome + "? Il vettore è indicizzato dagli oggetti nella numerazione originale.",
-          "Bin packing with capacity $c=" + c + "$ and weights $w=" + vec(w) + "$ (items $1,\\dots," + n + "$). Which vector $bin$ does " + nome + " produce? The vector is indexed by the items in the original numbering."),
+        testo: T(lingua, "Bin packing (BPP: oggetti in contenitori di capacità $c$, minimizzando i contenitori) con $c=" + c + "$ e pesi $w=" + vec(w) + "$ (oggetti $1,\\dots," + n + "$). L'ordinamento per peso non crescente rompe i pari merito con l'indice minore; i contenitori sono numerati nell'ordine di apertura. Quale vettore $bin$ (contenitore di ogni oggetto, nella numerazione originale) produce " + nome + "?",
+          "Bin packing (BPP: items into bins of capacity $c$, minimizing the bins) with $c=" + c + "$ and weights $w=" + vec(w) + "$ (items $1,\\dots," + n + "$). The sorting by non-increasing weight breaks ties by smaller index; bins are numbered in order of opening. Which vector $bin$ (bin of each item, in the original numbering) does " + nome + " produce?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "Prima si ordinano gli oggetti per peso non crescente ($" + o.map(function (x) { return x + 1; }).join(",") + "$), poi si applica " + (a === "FFD" ? "First Fit" : "Best Fit") + ": $bin=" + vec(R[a].bin) + "$, $" + R[a].nb + "$ contenitori. Errori tipici: dimenticare l'ordinamento o usare l'altra regola di scelta.",
           "First the items are sorted by non-increasing weight ($" + o.map(function (x) { return x + 1; }).join(",") + "$), then " + (a === "FFD" ? "First Fit" : "Best Fit") + " is applied: $bin=" + vec(R[a].bin) + "$, $" + R[a].nb + "$ bins. Typical mistakes: forgetting the sorting or using the other selection rule."),
@@ -523,8 +523,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, num(lb), [num(Math.floor(W / c)), num(big), num(nf), num(lb + 1)]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Istanza del BPP con capacità $c=" + c + "$ e pesi $w=" + vec(w) + "$. Quanto vale il lower bound sul peso $\\left\\lceil \\sum_j w_j / c \\right\\rceil$?",
-          "BPP instance with capacity $c=" + c + "$ and weights $w=" + vec(w) + "$. What is the weight bound $\\left\\lceil \\sum_j w_j / c \\right\\rceil$?"),
+        testo: T(lingua, "Bin packing (BPP): gli oggetti di pesi $w=" + vec(w) + "$ vanno sistemati nel minimo numero di contenitori di capacità $c=" + c + "$. Quanto vale il lower bound sul peso $\\left\\lceil \\sum_j w_j / c \\right\\rceil$?",
+          "Bin packing (BPP): the items of weights $w=" + vec(w) + "$ must be packed into the minimum number of bins of capacity $c=" + c + "$. What is the weight bound $\\left\\lceil \\sum_j w_j / c \\right\\rceil$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "$\\sum_j w_j=" + W + "$, quindi $\\lceil " + W + "/" + c + "\\rceil=" + lb + "$. Si arrotonda per eccesso perché il numero di contenitori è intero.",
           "$\\sum_j w_j=" + W + "$, hence $\\lceil " + W + "/" + c + "\\rceil=" + lb + "$. The value is rounded up because the number of bins is an integer."),
@@ -547,8 +547,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, key(c0), [key(c1), key(c2), key(c3)]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Grafo $G=(V,E)$ con $V=\\{1,\\dots," + n + "\\}$ e " + edgeTex(G.E) + ". Quale colorazione $col=(col[1],\\dots,col[" + n + "])$ restituisce la colorazione greedy $GC$ con la lista $\\lambda=" + vec(lam) + "$?",
-          "Graph $G=(V,E)$ with $V=\\{1,\\dots," + n + "\\}$ and " + edgeTex(G.E) + ". Which coloring $col=(col[1],\\dots,col[" + n + "])$ does the greedy coloring $GC$ return with the list $\\lambda=" + vec(lam) + "$?"),
+        testo: T(lingua, "Grafo $G=(V,E)$ con $V=\\{1,\\dots," + n + "\\}$ e " + edgeTex(G.E) + ". La colorazione greedy $GC$ esamina i vertici nell'ordine della lista $\\lambda=" + vec(lam) + "$ e dà a ciascuno il colore (intero $\\ge 1$) più piccolo non usato dai vicini già colorati. Quale colorazione $col=(col[1],\\dots,col[" + n + "])$ restituisce?",
+          "Graph $G=(V,E)$ with $V=\\{1,\\dots," + n + "\\}$ and " + edgeTex(G.E) + ". The greedy coloring $GC$ examines the vertices in the order of the list $\\lambda=" + vec(lam) + "$ and gives each the smallest color (integer $\\ge 1$) not used by its already colored neighbors. Which coloring $col=(col[1],\\dots,col[" + n + "])$ does it return?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "Si esaminano i vertici nell'ordine di $\\lambda$ e si dà a ognuno il colore più piccolo non usato dai vicini già colorati: $col=" + vec(c0) + "$. L'ordine conta: con la lista $(1,\\dots," + n + ")$ si ottiene $" + vec(c1) + "$.",
           "The vertices are examined in the order of $\\lambda$ and each one gets the smallest color not used by its colored neighbours: $col=" + vec(c0) + "$. The order matters: with the list $(1,\\dots," + n + ")$ one gets $" + vec(c1) + "$."),
@@ -591,8 +591,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, key(D.seq), [key(variant("index")), key(variant("static")), key(variant("total"))]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Grafo $G=(V,E)$ con $V=\\{1,\\dots," + n + "\\}$ e " + edgeTex(G.E) + ". In quale ordine $DSATUR$ colora i vertici? (Pari merito sul grado di saturazione: grado massimo nel sottografo dei vertici non colorati, poi indice minimo.)",
-          "Graph $G=(V,E)$ with $V=\\{1,\\dots," + n + "\\}$ and " + edgeTex(G.E) + ". In which order does $DSATUR$ color the vertices? (Ties on the saturation degree: largest degree in the subgraph of the uncolored vertices, then smallest index.)"),
+        testo: T(lingua, "Grafo $G=(V,E)$ con $V=\\{1,\\dots," + n + "\\}$ e " + edgeTex(G.E) + ". $DSATUR$ colora a ogni passo il vertice non colorato di grado di saturazione massimo (numero di colori diversi fra i vicini già colorati), con il colore più piccolo libero; pari merito: più vicini non colorati, poi indice minimo. In quale ordine colora i vertici?",
+          "Graph $G=(V,E)$ with $V=\\{1,\\dots," + n + "\\}$ and " + edgeTex(G.E) + ". At every step $DSATUR$ colors the uncolored vertex of maximum saturation degree (number of distinct colors among its colored neighbors), with the smallest free color; ties: more uncolored neighbors, then smallest index. In which order does it color the vertices?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "A ogni passo si sceglie il vertice non colorato con più colori diversi fra i vicini: ordine $" + vec(D.seq) + "$, con $" + D.nc + "$ colori. Il grado di spareggio è quello verso i vertici non ancora colorati, aggiornato a ogni passo.",
           "At each step the uncolored vertex with the most different colors among its neighbours is chosen: order $" + vec(D.seq) + "$, with $" + D.nc + "$ colors. The tie-breaking degree counts the vertices not yet colored, and it is updated at each step."),
@@ -613,8 +613,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, num(r.len), [num(r.open), num(other.len), num(lid), num(r.len + 1)]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Istanza del TSP simmetrico con le distanze " + distTab(d, n) + ". Qual è la lunghezza del giro costruito da $NN$ (nearest neighbour) a partire dalla città $" + s + "$?",
-          "Symmetric TSP instance with distances " + distTab(d, n) + ". What is the length of the tour built by $NN$ (nearest neighbour) starting from city $" + s + "$?"),
+        testo: T(lingua, "TSP simmetrico (giro più corto che visita tutte le città) con le distanze " + distTab(d, n) + ". L'euristica $NN$ (nearest neighbour) parte dalla città $" + s + "$, va ogni volta alla città non visitata più vicina (pari merito: indice minore) e alla fine torna alla partenza. Qual è la lunghezza del giro?",
+          "Symmetric TSP (shortest tour visiting all cities) with distances " + distTab(d, n) + ". The $NN$ (nearest neighbour) heuristic starts from city $" + s + "$, always moves to the closest unvisited city (ties: smaller index) and finally returns to the start. What is the length of the tour?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "$NN$ visita $" + vec(r.tour) + "$ e torna in $" + s + "$: lunghezza $" + r.len + "$. Errore tipico: dimenticare l'arco di ritorno (si otterrebbe $" + r.open + "$).",
           "$NN$ visits $" + vec(r.tour) + "$ and goes back to $" + s + "$: length $" + r.len + "$. Typical mistake: forgetting the closing edge (one would get $" + r.open + "$)."),
@@ -645,8 +645,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var bb = build(rng, num(L0 + best.D), [num(L0 + first.D), num(L0 - best.D), num(L0 + wrongBest.D), num(L0)]);
       if (!bb) return null;
       return {
-        testo: T(lingua, "TSP simmetrico con le distanze " + distTab(d, n) + ". Il giro corrente è $\\sigma=" + vec(sig) + "$, di lunghezza $" + L0 + "$. Si applica un'iterazione di 2-opt con la regola best improvement: qual è la lunghezza del nuovo giro?",
-          "Symmetric TSP with distances " + distTab(d, n) + ". The current tour is $\\sigma=" + vec(sig) + "$, of length $" + L0 + "$. One iteration of 2-opt with the best-improvement rule is applied: what is the length of the new tour?"),
+        testo: T(lingua, "TSP simmetrico con le distanze " + distTab(d, n) + ". Il giro corrente è $\\sigma=" + vec(sig) + "$, di lunghezza $" + L0 + "$. Una mossa 2-opt toglie due lati non adiacenti del giro e ricollega i due cammini nell'altro modo possibile; con la regola best improvement si applica la mossa che riduce di più la lunghezza. Qual è la lunghezza del giro dopo un'iterazione?",
+          "Symmetric TSP with distances " + distTab(d, n) + ". The current tour is $\\sigma=" + vec(sig) + "$, of length $" + L0 + "$. A 2-opt move removes two non-adjacent edges of the tour and reconnects the two paths in the other possible way; with the best-improvement rule the move that reduces the length the most is applied. What is the tour length after one iteration?"),
         opzioni: bb.opzioni, corretta: bb.corretta,
         spiegazione: T(lingua, "Per ogni mossa $\\Delta=d_{u_1u_2}+d_{v_1v_2}-d_{u_1v_1}-d_{u_2v_2}$; la migliore ha $\\Delta=" + best.D + "$ (posizioni $i=" + best.i + "$, $j=" + best.j + "$), quindi $" + L0 + best.D + "=" + (L0 + best.D) + "$. La prima mossa migliorante ($\\Delta=" + first.D + "$) è quella del first improvement.",
           "For every move $\\Delta=d_{u_1u_2}+d_{v_1v_2}-d_{u_1v_1}-d_{u_2v_2}$; the best one has $\\Delta=" + best.D + "$ (positions $i=" + best.i + "$, $j=" + best.j + "$), hence $" + L0 + best.D + "=" + (L0 + best.D) + "$. The first improving move ($\\Delta=" + first.D + "$) is the one of first improvement."),
@@ -669,8 +669,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, num(lpt), [num(lst), num(spt), num(lb), num(lpt + 1)]);
       if (!b) return null;
       return {
-        testo: T(lingua, "$P\\,||\\,C_{\\max}$ con $m=" + m + "$ macchine e tempi di lavorazione $t=" + vec(t) + "$. Qual è il makespan della soluzione di $LPT$?",
-          "$P\\,||\\,C_{\\max}$ with $m=" + m + "$ machines and processing times $t=" + vec(t) + "$. What is the makespan of the $LPT$ solution?"),
+        testo: T(lingua, "Scheduling $P\\,||\\,C_{\\max}$: $m=" + m + "$ macchine identiche, tempi di lavorazione $t=" + vec(t) + "$, si minimizza il makespan (carico massimo). $LPT$ ordina i lavori per tempo non crescente e assegna ciascuno alla macchina di carico minimo (pari merito: indice minore). Qual è il makespan della soluzione di $LPT$?",
+          "Scheduling $P\\,||\\,C_{\\max}$: $m=" + m + "$ identical machines, processing times $t=" + vec(t) + "$, the makespan (maximum load) is minimized. $LPT$ sorts the jobs by non-increasing time and assigns each to the least loaded machine (ties: smaller index). What is the makespan of the $LPT$ solution?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "$LPT$ ordina i lavori per tempo non crescente e assegna ciascuno a una macchina di carico minimo: makespan $" + lpt + "$. $LIST$ nell'ordine dato dà $" + lst + "$; il lower bound $\\max\\{\\max_j t_j,\\lceil\\sum_j t_j/m\\rceil\\}$ vale $" + lb + "$.",
           "$LPT$ sorts the jobs by non-increasing time and assigns each one to a least loaded machine: makespan $" + lpt + "$. $LIST$ in the given order gives $" + lst + "$; the lower bound $\\max\\{\\max_j t_j,\\lceil\\sum_j t_j/m\\rceil\\}$ is $" + lb + "$."),
@@ -695,8 +695,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, key(lb, ub), [key(Math.floor(W / m), ub), key(mx, ub), key(lb, W), key(Math.ceil(W / m) + mx, ub)]);
       if (!b || lb >= ub) return null;
       return {
-        testo: T(lingua, "$P\\,||\\,C_{\\max}$ con $m=" + m + "$ macchine e tempi $t=" + vec(t) + "$. Si assegnano i lavori nell'ordine $1,\\dots," + n + "$, ciascuno alla macchina di carico minimo (pari merito: indice minimo), e si usa il lower bound combinatorio. Quale intervallo si ottiene per il makespan ottimo $z(I)$?",
-          "$P\\,||\\,C_{\\max}$ with $m=" + m + "$ machines and times $t=" + vec(t) + "$. The jobs are assigned in the order $1,\\dots," + n + "$, each to the machine with the smallest load (ties: smallest index), and the combinatorial lower bound is used. Which interval is obtained for the optimal makespan $z(I)$?"),
+        testo: T(lingua, "Scheduling $P\\,||\\,C_{\\max}$: $m=" + m + "$ macchine identiche, tempi $t=" + vec(t) + "$, si minimizza il makespan (carico massimo). Si assegnano i lavori nell'ordine $1,\\dots," + n + "$, ciascuno alla macchina di carico minimo (pari merito: indice minimo), e si usa il lower bound combinatorio $\\max\\{\\max_j t_j,\\lceil\\sum_j t_j/m\\rceil\\}$. Quale intervallo si ottiene per il makespan ottimo $z(I)$?",
+          "Scheduling $P\\,||\\,C_{\\max}$: $m=" + m + "$ identical machines, times $t=" + vec(t) + "$, the makespan (maximum load) is minimized. The jobs are assigned in the order $1,\\dots," + n + "$, each to the machine with the smallest load (ties: smallest index), and the combinatorial lower bound $\\max\\{\\max_j t_j,\\lceil\\sum_j t_j/m\\rceil\\}$ is used. Which interval is obtained for the optimal makespan $z(I)$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "Lower bound: $\\max\\{" + mx + ",\\lceil " + W + "/" + m + "\\rceil\\}=" + lb + "$; la soluzione costruita ha makespan $" + ub + "$, un upper bound. Quindi $" + lb + "\\le z(I)\\le " + ub + "$.",
           "Lower bound: $\\max\\{" + mx + ",\\lceil " + W + "/" + m + "\\rceil\\}=" + lb + "$; the schedule built has makespan $" + ub + "$, an upper bound. Hence $" + lb + "\\le z(I)\\le " + ub + "$."),
@@ -735,8 +735,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, key(best), cands.map(key));
       if (!b) return null;
       return {
-        testo: T(lingua, "$P\\,||\\,C_{\\max}$ con $m=3$ macchine, tempi $t=" + vec(t) + "$ e assegnamento corrente $\\mathrm{mach}=" + vec(mach) + "$ (carichi $" + vec(Lm) + "$). Quale mossa sceglie un'iterazione della ricerca locale move con la regola best improvement? (Mosse esaminate per $j=1,\\dots,n$ e $h=1,\\dots,m$; a parità si tiene la prima.)",
-          "$P\\,||\\,C_{\\max}$ with $m=3$ machines, times $t=" + vec(t) + "$ and current assignment $\\mathrm{mach}=" + vec(mach) + "$ (loads $" + vec(Lm) + "$). Which move does one iteration of the move local search with the best-improvement rule choose? (Moves examined for $j=1,\\dots,n$ and $h=1,\\dots,m$; ties: the first one is kept.)"),
+        testo: T(lingua, "Scheduling $P\\,||\\,C_{\\max}$ (minimizzare il makespan, il carico massimo) con $m=3$ macchine, tempi $t=" + vec(t) + "$ e assegnamento corrente $\\mathrm{mach}=" + vec(mach) + "$ ($\\mathrm{mach}_j$ è la macchina del lavoro $j$; carichi $" + vec(Lm) + "$). L'intorno move sposta un lavoro $j$ su un'altra macchina $h$; best improvement sceglie la mossa che riduce di più il makespan (mosse esaminate per $j=1,\\dots,n$ e $h=1,\\dots,m$; a parità si tiene la prima). Quale mossa sceglie?",
+          "Scheduling $P\\,||\\,C_{\\max}$ (minimize the makespan, the maximum load) with $m=3$ machines, times $t=" + vec(t) + "$ and current assignment $\\mathrm{mach}=" + vec(mach) + "$ ($\\mathrm{mach}_j$ is the machine of job $j$; loads $" + vec(Lm) + "$). The move neighborhood moves a job $j$ to another machine $h$; best improvement chooses the move that decreases the makespan the most (moves examined for $j=1,\\dots,n$ and $h=1,\\dots,m$; ties: the first one is kept). Which move does it choose?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "La variazione del makespan della mossa scelta è $" + best.F + "$, la più negativa (makespan da $" + cmax + "$ a $" + (cmax + best.F) + "$). La prima mossa migliorante (first improvement) ha variazione $" + first.F + "$; spostare un lavoro da una macchina non critica non riduce il makespan.",
           "The makespan change of the chosen move is $" + best.F + "$, the most negative (makespan from $" + cmax + "$ to $" + (cmax + best.F) + "$). The first improving move (first improvement) has change $" + first.F + "$; moving a job from a non-critical machine does not decrease the makespan."),
@@ -762,8 +762,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, num(cjt), [num(w1), num(w3), num(w4), num(cjt + sc[j - 1])]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Lot sizing senza capacità con i dati " + tab(head, [["d_t"].concat(d), ["sc_t"].concat(sc), ["vc_t"].concat(vc), ["hc_t"].concat(hc)]) + ". Quanto vale il costo $c_{" + j + "," + tt + "}$ del lotto prodotto nel periodo $" + j + "$ per le domande dei periodi $" + j + ",\\dots," + tt + "$?",
-          "Uncapacitated lot sizing with the data " + tab(head, [["d_t"].concat(d), ["sc_t"].concat(sc), ["vc_t"].concat(vc), ["hc_t"].concat(hc)]) + ". What is the cost $c_{" + j + "," + tt + "}$ of the production run in period $" + j + "$ for the demands of periods $" + j + ",\\dots," + tt + "$?"),
+        testo: T(lingua, "Lot sizing senza capacità (ULS): domanda $d_t$, costo di setup $sc_t$, costo variabile unitario $vc_t$ e costo unitario $hc_t$ della scorta a fine periodo " + tab(head, [["d_t"].concat(d), ["sc_t"].concat(sc), ["vc_t"].concat(vc), ["hc_t"].concat(hc)]) + ". Quanto vale il costo $c_{" + j + "," + tt + "}$ del lotto prodotto nel periodo $" + j + "$ per coprire le domande dei periodi $" + j + ",\\dots," + tt + "$ (setup, produzione e scorte)?",
+          "Uncapacitated lot sizing (ULS): demand $d_t$, setup cost $sc_t$, unit variable cost $vc_t$ and unit cost $hc_t$ of the stock at the end of the period " + tab(head, [["d_t"].concat(d), ["sc_t"].concat(sc), ["vc_t"].concat(vc), ["hc_t"].concat(hc)]) + ". What is the cost $c_{" + j + "," + tt + "}$ of the production run in period $" + j + "$ covering the demands of periods $" + j + ",\\dots," + tt + "$ (setup, production and stock)?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "$c_{j,t}=sc_j+vc_j\\,D_{j,t}+\\sum_{k=j}^{t-1}hc_k\\,D_{k+1,t}=" + cjt + "$: alla fine di ogni periodo $k$ la scorta contiene le domande dei periodi successivi del lotto, non solo quella del periodo seguente.",
           "$c_{j,t}=sc_j+vc_j\\,D_{j,t}+\\sum_{k=j}^{t-1}hc_k\\,D_{k+1,t}=" + cjt + "$: at the end of each period $k$ the stock contains the demands of all the following periods of the run, not only that of the next period."),
@@ -787,8 +787,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       if (!b) return null;
       var head = ["t"].concat(range1(m).map(String));
       return {
-        testo: T(lingua, "Lot sizing senza capacità (ULS) con $m=4$ periodi, costo di setup $sc_t=" + s0 + "$, costo variabile nullo e costo di mantenimento $hc_t=1$ per ogni periodo, e domande " + tab(head, [["d_t"].concat(d)]) + ". Con la ricorsione $v(t)=\\min_{1\\le j\\le t}\\{v(j-1)+c_{j,t}\\}$, quanto vale il costo ottimo $v(4)$?",
-          "Uncapacitated lot sizing (ULS) with $m=4$ periods, setup cost $sc_t=" + s0 + "$, zero variable cost and holding cost $hc_t=1$ in every period, and demands " + tab(head, [["d_t"].concat(d)]) + ". With the recursion $v(t)=\\min_{1\\le j\\le t}\\{v(j-1)+c_{j,t}\\}$, what is the optimal cost $v(4)$?"),
+        testo: T(lingua, "Lot sizing senza capacità (ULS) con $m=4$ periodi, costo di setup $sc_t=" + s0 + "$, costo variabile nullo e costo di mantenimento $hc_t=1$ per ogni periodo, e domande " + tab(head, [["d_t"].concat(d)]) + ". Sia $c_{j,t}$ il costo del lotto prodotto in $j$ per i periodi $j,\\dots,t$ e $v(t)$ il costo minimo per coprire i periodi $1,\\dots,t$: $v(0)=0$ e $v(t)=\\min_{1\\le j\\le t}\\{v(j-1)+c_{j,t}\\}$. Quanto vale il costo ottimo $v(4)$?",
+          "Uncapacitated lot sizing (ULS) with $m=4$ periods, setup cost $sc_t=" + s0 + "$, zero variable cost and holding cost $hc_t=1$ in every period, and demands " + tab(head, [["d_t"].concat(d)]) + ". Let $c_{j,t}$ be the cost of the run produced in $j$ for periods $j,\\dots,t$ and $v(t)$ the minimum cost of covering periods $1,\\dots,t$: $v(0)=0$ and $v(t)=\\min_{1\\le j\\le t}\\{v(j-1)+c_{j,t}\\}$. What is the optimal cost $v(4)$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "$v=" + vec(R.v) + "$ per $t=0,\\dots,4$; lotti nei periodi $" + R.runs.join(",") + "$. Un setup in ogni periodo costa $" + l4l + "$, un solo lotto nel periodo 1 costa $" + one + "$.",
           "$v=" + vec(R.v) + "$ for $t=0,\\dots,4$; runs in periods $" + R.runs.join(",") + "$. A setup in every period costs $" + l4l + "$, a single run in period 1 costs $" + one + "$."),
@@ -812,8 +812,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, giusta, [mn ? I(Af, hi) : I(lo, Af), I(lo, hi), mn ? eq(lo) : eq(hi)]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Un algoritmo $\\mathscr{A}$ è una $" + alT + "$-approssimazione per un problema di " + (mn ? "minimo" : "massimo") + ". Su un'istanza $I$ restituisce $\\mathscr{A}(I)=" + A + "$. Che cosa si può concludere sul valore ottimo $z(I)$?",
-          "An algorithm $\\mathscr{A}$ is a $" + alT + "$-approximation algorithm for a " + (mn ? "minimization" : "maximization") + " problem. On an instance $I$ it returns $\\mathscr{A}(I)=" + A + "$. What can be concluded on the optimal value $z(I)$?"),
+        testo: T(lingua, "Un algoritmo $\\mathscr{A}$ è una $\\alpha$-approssimazione, con $\\alpha=" + alT + "$, per un problema di " + (mn ? "minimo: $\\mathscr{A}(I)\\le\\alpha\\,z(I)$" : "massimo: $z(I)\\le\\alpha\\,\\mathscr{A}(I)$") + " per ogni istanza $I$, dove $z(I)$ è il valore ottimo. Su un'istanza $I$ restituisce $\\mathscr{A}(I)=" + A + "$. Che cosa si può concludere sul valore ottimo $z(I)$?",
+          "An algorithm $\\mathscr{A}$ is an $\\alpha$-approximation, with $\\alpha=" + alT + "$, for a " + (mn ? "minimization problem: $\\mathscr{A}(I)\\le\\alpha\\,z(I)$" : "maximization problem: $z(I)\\le\\alpha\\,\\mathscr{A}(I)$") + " for every instance $I$, where $z(I)$ is the optimal value. On an instance $I$ it returns $\\mathscr{A}(I)=" + A + "$. What can be concluded on the optimal value $z(I)$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, mn ? "Per un problema di minimo $\\mathscr{A}(I)/z(I)\\le\\alpha$ e $z(I)\\le\\mathscr{A}(I)$, quindi $\\mathscr{A}(I)/\\alpha\\le z(I)\\le\\mathscr{A}(I)$." : "Per un problema di massimo $z(I)/\\mathscr{A}(I)\\le\\alpha$ e $\\mathscr{A}(I)\\le z(I)$, quindi $\\mathscr{A}(I)\\le z(I)\\le\\alpha\\,\\mathscr{A}(I)$.",
           mn ? "For a minimization problem $\\mathscr{A}(I)/z(I)\\le\\alpha$ and $z(I)\\le\\mathscr{A}(I)$, hence $\\mathscr{A}(I)/\\alpha\\le z(I)\\le\\mathscr{A}(I)$." : "For a maximization problem $z(I)/\\mathscr{A}(I)\\le\\alpha$ and $\\mathscr{A}(I)\\le z(I)$, hence $\\mathscr{A}(I)\\le z(I)\\le\\alpha\\,\\mathscr{A}(I)$."),
@@ -838,8 +838,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, num(gre), [num(gr), num(z), num(grp), num(g1), num(pmax)]);
       if (!b) return null;
       return {
-        testo: T(lingua, "Istanza del KP con capacità $c=" + c + "$: " + itemTab(lingua, p, w) + ". Quanto vale $GR^e(I)$, il valore della soluzione dell'algoritmo Ext-Greedy?",
-          "KP instance with capacity $c=" + c + "$: " + itemTab(lingua, p, w) + ". What is $GR^e(I)$, the value of the solution of the Ext-Greedy algorithm?"),
+        testo: T(lingua, "Problema dello zaino 0-1 (KP: si sceglie un sottoinsieme di oggetti di profitto massimo con peso totale al più $c$) con capacità $c=" + c + "$: " + itemTab(lingua, p, w) + ". L'algoritmo Ext-Greedy restituisce il migliore fra la soluzione del greedy per efficienza $p_j/w_j$ non crescente (pari merito: indice minore) e il miglior oggetto singolo. Quanto vale $GR^e(I)$?",
+          "0-1 knapsack problem (KP: choose a subset of items of maximum profit with total weight at most $c$) with capacity $c=" + c + "$: " + itemTab(lingua, p, w) + ". The Ext-Greedy algorithm returns the better of the greedy solution by non-increasing efficiency $p_j/w_j$ (ties: smaller index) and the best single item. What is $GR^e(I)$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "$GR$ (per efficienza non crescente) vale $" + gr + "$; il miglior oggetto singolo ha profitto $" + pmax + "$; $GR^e(I)=\\max\\{" + gr + "," + pmax + "\\}=" + gre + "$. Il valore ottimo è $z(I)=" + z + "$.",
           "$GR$ (by non-increasing efficiency) has value $" + gr + "$; the best single item has profit $" + pmax + "$; $GR^e(I)=\\max\\{" + gr + "," + pmax + "\\}=" + gre + "$. The optimal value is $z(I)=" + z + "$."),
@@ -874,8 +874,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, key(pk), [key(pc), key(pkp), key(pkg), key(pkn)]);
       if (!b || pk.join() === pc.join()) return null;
       return {
-        testo: T(lingua, "Istanza del KP con capacità $c=" + c + "$ e oggetti ordinati per efficienza non crescente: " + itemTab(lingua, p, w) + ". Si esegue $FP^{\\varepsilon}$ con $\\varepsilon=" + frTex(eps) + "$. Quali sono i profitti scalati $p'_j$?",
-          "KP instance with capacity $c=" + c + "$ and items sorted by non-increasing efficiency: " + itemTab(lingua, p, w) + ". $FP^{\\varepsilon}$ is run with $\\varepsilon=" + frTex(eps) + "$. What are the scaled profits $p'_j$?"),
+        testo: T(lingua, "Problema dello zaino 0-1 (KP: si sceglie un sottoinsieme di oggetti di profitto massimo con peso totale al più $c$) con capacità $c=" + c + "$ e $n=4$ oggetti ordinati per efficienza non crescente: " + itemTab(lingua, p, w) + ". Il Basic-FPTAS $FP^{\\varepsilon}$, con $\\varepsilon=" + frTex(eps) + "$, scala i profitti con il fattore $K=\\varepsilon\\,GR^e(I)/n$, dove $GR^e(I)$ è il valore di Ext-Greedy (migliore fra greedy per efficienza e miglior oggetto singolo). Quali sono i profitti scalati $p'_j=\\lfloor p_j/K\\rfloor$?",
+          "0-1 knapsack problem (KP: choose a subset of items of maximum profit with total weight at most $c$) with capacity $c=" + c + "$ and $n=4$ items sorted by non-increasing efficiency: " + itemTab(lingua, p, w) + ". The Basic-FPTAS $FP^{\\varepsilon}$, with $\\varepsilon=" + frTex(eps) + "$, scales the profits by the factor $K=\\varepsilon\\,GR^e(I)/n$, where $GR^e(I)$ is the Ext-Greedy value (better of the greedy by efficiency and the best single item). What are the scaled profits $p'_j=\\lfloor p_j/K\\rfloor$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "$GR^e(I)=" + gre + "$, $K=\\varepsilon\\,GR^e(I)/n=" + frTex(K) + "$ e $p'_j=\\lfloor p_j/K\\rfloor$: $p'=" + vec(pk) + "$. Si arrotonda per difetto e il fattore usa $GR^e(I)$ e $n$.",
           "$GR^e(I)=" + gre + "$, $K=\\varepsilon\\,GR^e(I)/n=" + frTex(K) + "$ and $p'_j=\\lfloor p_j/K\\rfloor$: $p'=" + vec(pk) + "$. The profits are rounded down and the factor uses $GR^e(I)$ and $n$."),
@@ -931,8 +931,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, key(n2.z, st2, n3.z, st3), cand);
       if (!b) return null;
       return {
-        testo: T(lingua, "Istanza del KP con capacità $c=" + c + "$ e oggetti ordinati per efficienza non crescente: " + itemTab(lingua, p, w) + ". Si applica il branch-and-bound con la strategia dell'oggetto critico, $\\mathrm{LB}=" + LB + "$ (valore della soluzione greedy), nodo 2 con $x_s\\le 0$ e nodo 3 con $x_s\\ge 1$. Dopo aver risolto il nodo radice, quali sono i valori $z(\\mathrm{LP}^k_{\\mathrm{KP}})$ dei nodi 2 e 3 e che cosa se ne fa?",
-          "KP instance with capacity $c=" + c + "$ and items sorted by non-increasing efficiency: " + itemTab(lingua, p, w) + ". Branch-and-bound is applied with the split-item strategy, $\\mathrm{LB}=" + LB + "$ (value of the greedy solution), node 2 with $x_s\\le 0$ and node 3 with $x_s\\ge 1$. After solving the root node, what are the values $z(\\mathrm{LP}^k_{\\mathrm{KP}})$ of nodes 2 and 3 and what happens to them?"),
+        testo: T(lingua, "Problema dello zaino 0-1 (KP: si sceglie un sottoinsieme di oggetti di profitto massimo con peso totale al più $c$) con capacità $c=" + c + "$ e oggetti ordinati per efficienza non crescente: " + itemTab(lingua, p, w) + ". Nel branch-and-bound ogni nodo $k$ si valuta con il rilassamento lineare $\\mathrm{LP}^k_{\\mathrm{KP}}$; si ramifica sull'oggetto critico $s$ della radice (nodo 2: $x_s\\le 0$, nodo 3: $x_s\\ge 1$), con $\\mathrm{LB}=" + LB + "$ (valore della soluzione greedy). Un nodo con soluzione frazionaria si pota se $\\lfloor z(\\mathrm{LP}^k_{\\mathrm{KP}})\\rfloor\\le\\mathrm{LB}$, altrimenti entra nella lista $L$. Dopo aver risolto il nodo radice, quali sono i valori $z(\\mathrm{LP}^k_{\\mathrm{KP}})$ dei nodi 2 e 3 e che cosa se ne fa?",
+          "0-1 knapsack problem (KP: choose a subset of items of maximum profit with total weight at most $c$) with capacity $c=" + c + "$ and items sorted by non-increasing efficiency: " + itemTab(lingua, p, w) + ". In branch-and-bound every node $k$ is evaluated with the LP relaxation $\\mathrm{LP}^k_{\\mathrm{KP}}$; branching is on the split item $s$ of the root (node 2: $x_s\\le 0$, node 3: $x_s\\ge 1$), with $\\mathrm{LB}=" + LB + "$ (value of the greedy solution). A node with a fractional solution is pruned if $\\lfloor z(\\mathrm{LP}^k_{\\mathrm{KP}})\\rfloor\\le\\mathrm{LB}$, otherwise it enters the list $L$. After solving the root node, what are the values $z(\\mathrm{LP}^k_{\\mathrm{KP}})$ of nodes 2 and 3 and what happens to them?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "Radice: $z=" + frTex(root.z) + "$, oggetto critico $s=" + (s + 1) + "$. Nodo 2 ($x_{" + (s + 1) + "}\\le 0$): $" + frTex(n2.z) + "$. Nodo 3 ($x_{" + (s + 1) + "}\\ge 1$): $c(3)=" + (c - w[s]) + "$, $p(3)=" + p[s] + "$, $z=" + frTex(n3.z) + "$. Un nodo è potato per bound se $\\lfloor z\\rfloor\\le\\mathrm{LB}$; nel nodo 3 vanno sommate la costante $p(3)$ e la capacità ridotta.",
           "Root: $z=" + frTex(root.z) + "$, split item $s=" + (s + 1) + "$. Node 2 ($x_{" + (s + 1) + "}\\le 0$): $" + frTex(n2.z) + "$. Node 3 ($x_{" + (s + 1) + "}\\ge 1$): $c(3)=" + (c - w[s]) + "$, $p(3)=" + p[s] + "$, $z=" + frTex(n3.z) + "$. A node is pruned by bound if $\\lfloor z\\rfloor\\le\\mathrm{LB}$; in node 3 the constant $p(3)$ and the reduced capacity must be used."),
@@ -967,8 +967,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       var b = build(rng, key(O.z, O.sets[0]), cand);
       if (!b) return null;
       return {
-        testo: T(lingua, "Istanza del KP con capacità $c=" + c + "$: " + itemTab(lingua, p, w) + ". Si calcola la tabella $v(j,k)$ della PD bottom-up e si ricostruisce una soluzione ottima. Quali sono il valore ottimo e l'insieme ottimo $\\tilde S$?",
-          "KP instance with capacity $c=" + c + "$: " + itemTab(lingua, p, w) + ". The table $v(j,k)$ of the bottom-up DP is computed and an optimal solution is reconstructed. What are the optimal value and the optimal set $\\tilde S$?"),
+        testo: T(lingua, "Problema dello zaino 0-1 (KP: si sceglie un sottoinsieme di oggetti di profitto massimo con peso totale al più $c$) con capacità $c=" + c + "$: " + itemTab(lingua, p, w) + ". Si calcola la tabella della PD, $v(j,k)$ = massimo profitto con gli oggetti $1,\\dots,j$ e capacità $k$, e si ricostruisce una soluzione ottima risalendo da $(4," + c + ")$. Quali sono il valore ottimo e l'insieme ottimo $\\tilde S$?",
+          "0-1 knapsack problem (KP: choose a subset of items of maximum profit with total weight at most $c$) with capacity $c=" + c + "$: " + itemTab(lingua, p, w) + ". The DP table, $v(j,k)$ = largest profit with items $1,\\dots,j$ and capacity $k$, is computed and an optimal solution is reconstructed going back from $(4," + c + ")$. What are the optimal value and the optimal set $\\tilde S$?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "La tabella dà $v(4," + c + ")=" + O.z + "$; risalendo da $(4," + c + ")$ (l'oggetto $j$ è scelto se $v(j,k)\\ne v(j-1,k)$) si ottiene $\\tilde S=" + set(O.sets[0]) + "$. Il greedy per efficienza dà solo $" + g.z + "$.",
           "The table gives $v(4," + c + ")=" + O.z + "$; going back from $(4," + c + ")$ (item $j$ is selected if $v(j,k)\\ne v(j-1,k)$) gives $\\tilde S=" + set(O.sets[0]) + "$. The greedy by efficiency only gives $" + g.z + "$."),
@@ -1001,8 +1001,8 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       if (!b || R.v[m] !== plans[0].cost) return null;
       var head = ["t"].concat(range1(m).map(String));
       return {
-        testo: T(lingua, "Lot sizing senza capacità (ULS) con costo variabile nullo e i dati " + tab(head, [["d_t"].concat(d), ["sc_t"].concat(sc), ["hc_t"].concat(hc)]) + ". Con la PD $v(t)=\\min_{1\\le j\\le t}\\{v(j-1)+c_{j,t}\\}$, quali sono il costo ottimo $v(5)$ e i periodi dei lotti di produzione?",
-          "Uncapacitated lot sizing (ULS) with zero variable cost and the data " + tab(head, [["d_t"].concat(d), ["sc_t"].concat(sc), ["hc_t"].concat(hc)]) + ". With the DP $v(t)=\\min_{1\\le j\\le t}\\{v(j-1)+c_{j,t}\\}$, what are the optimal cost $v(5)$ and the periods of the production runs?"),
+        testo: T(lingua, "Lot sizing senza capacità (ULS) con costo variabile nullo, domanda $d_t$, costo di setup $sc_t$ e costo unitario $hc_t$ della scorta a fine periodo " + tab(head, [["d_t"].concat(d), ["sc_t"].concat(sc), ["hc_t"].concat(hc)]) + ". Con $c_{j,t}$ costo del lotto prodotto in $j$ per i periodi $j,\\dots,t$, la PD è $v(0)=0$, $v(t)=\\min_{1\\le j\\le t}\\{v(j-1)+c_{j,t}\\}$. Quali sono il costo ottimo $v(5)$ e i periodi dei lotti di produzione?",
+          "Uncapacitated lot sizing (ULS) with zero variable cost, demand $d_t$, setup cost $sc_t$ and unit cost $hc_t$ of the stock at the end of the period " + tab(head, [["d_t"].concat(d), ["sc_t"].concat(sc), ["hc_t"].concat(hc)]) + ". With $c_{j,t}$ the cost of the run produced in $j$ for periods $j,\\dots,t$, the DP is $v(0)=0$, $v(t)=\\min_{1\\le j\\le t}\\{v(j-1)+c_{j,t}\\}$. What are the optimal cost $v(5)$ and the periods of the production runs?"),
         opzioni: b.opzioni, corretta: b.corretta,
         spiegazione: T(lingua, "$v=" + vec(R.v) + "$ per $t=0,\\dots,5$; risalendo dagli argmin si trovano i lotti nei periodi $" + R.runs.join(",") + "$. Per la proprietà di Wagner e Whitin basta confrontare i lotti $c_{j,t}$.",
           "$v=" + vec(R.v) + "$ for $t=0,\\dots,5$; going back through the argmins gives runs in periods $" + R.runs.join(",") + "$. By the Wagner–Whitin property it is enough to compare the runs $c_{j,t}$."),
