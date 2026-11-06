@@ -415,3 +415,4 @@ Tutte le pagine del sito, nell'ordine del menu: i capitoli con le loro sezioni, 
 - [Laboratorio](laboratorio/index.md)
 - [Materiale](materiale.md)
 - [Notebook Colab](notebook.md)
+- [Autovalutazione](autovalutazione.md)

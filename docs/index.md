@@ -109,6 +109,16 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
 
     [:octicons-arrow-right-24: Il catalogo](catalogo/index.md) · [:material-file-pdf-box: PDF](pdf/catalogo-problemi-combinatori.pdf)
 
+-   :material-clipboard-check-outline: **Autovalutazione**
+
+    ---
+
+    *Facsimile d'esame*
+
+    Un facsimile nuovo a ogni avvio: 13 domande, 33 punti, con la soluzione e il link alle dispense.
+
+    [:octicons-arrow-right-24: Mettiti alla prova](autovalutazione.md)
+
 -   :material-gesture-tap: **Laboratorio**
 
     ---
