@@ -120,3 +120,10 @@ Il codice dei capitoli sugli algoritmi, un notebook per capitolo e per linguaggi
 | [36. Algoritmi di approssimazione per il bin packing](algoritmi-di-approssimazione/bin-packing-approximation.md) | [![Apri in Colab (Python)](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/bin-packing-approximation_python.ipynb) [.ipynb](https://github.com/fabiofurini/combinatorial-optimization/blob/main/notebooks/bin-packing-approximation_python.ipynb) | [![Apri in Colab (C++)](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/bin-packing-approximation_cpp.ipynb) [.ipynb](https://github.com/fabiofurini/combinatorial-optimization/blob/main/notebooks/bin-packing-approximation_cpp.ipynb) |
 
 </div>
+
+<!-- banca-domande -->
+## Banca delle domande del quiz
+
+Tutte le domande dell'autovalutazione, divise per parte e capitolo, con la risposta corretta e la spiegazione; per le domande generate, che cambiano i numeri a ogni avvio, alcuni esempi.
+
+[:material-format-list-checks: Banca delle domande](quiz/elenco_domande.html){ .md-button }
