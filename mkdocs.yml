@@ -99,6 +99,7 @@ extra:
       lang: en
 
 extra_css:
+  - stylesheets/collana.css
   - stylesheets/extra.css?v=a25c6f8414
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css
   - stylesheets/interattivi.css?v=c51ac2286b
@@ -378,6 +379,7 @@ nav:
           - "Problemi di colorazione":
               - "42. Colorazione dei vertici (VCP)": esercizi/dsatur-branch-and-bound.md
   - Quiz: autovalutazione.md
+  - Laboratorio: laboratorio/index.md
   - Catalogo:
       - catalogo/index.md
       - "I problemi in sintesi": problemi-di-ottimizzazione-combinatoria/problems.md
@@ -429,7 +431,6 @@ nav:
           - catalogo/miscellaneous-problems.md
           - "Taglio delle aste (RCP)": catalogo/rod-cutting-problem.md
           - "Cambio monete (CCP)": catalogo/coin-change-problem.md
-  - Laboratorio: laboratorio/index.md
   - Materiale:
       - materiale.md
       - Notebook Colab: notebook.md
