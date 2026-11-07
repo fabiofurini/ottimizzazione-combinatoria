@@ -2216,5 +2216,207 @@ window.QUIZ_GEN = window.QUIZ_GEN || {};
       };
     }
   });
+  // ================================================================ COMPLESSA (7 novembre 2026): uno o due per parte
+  // ---- C1. colorazione: omega, bound degli stabili e numero cromatico (parte 1, cap. 4) — complessa
+  add({
+    id: "oc-g-vcp-full", livello: "complessa", capitolo: "coloring",
+    link: L2("combinatorial-optimization-problems/coloring/the-vertex-coloring-problem", "problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici", "box-6-obs-clique-bound"),
+    genera: function (rng, lingua) {
+      var n = 7, G = graphQ(rng, n, 0.45); if (!G) return null;
+      var om = cliqueNum(n, G.A, false), al = cliqueNum(n, G.A, true), sb = Math.ceil(n / al), ch = chromatic(n, G.A);
+      if (ch === om && ch === sb) { if (rng() < 0.6) return null; }
+      var ds = dsatur(G.adj, n).nc, D = Math.max.apply(null, degs(n, G.E));
+      var key = function (a, b, c2) { return { k: a + "|" + b + "|" + c2, t: "$\\omega(G)=" + a + "$, $\\lceil n/\\alpha(G)\\rceil=" + b + "$, $\\chi(G)=" + c2 + "$" }; };
+      var b = build(rng, key(om, sb, ch), [key(om, sb, ch + 1), key(al, Math.ceil(n / om), ch), key(om, Math.floor(n / al), ch),
+        key(om, sb, Math.max(ds, D + 1)), key(om + 1, sb, ch), key(om, sb, Math.max(om, sb))]);
+      if (!b) return null;
+      return {
+        testo: gTxt(lingua, G) + T(lingua, " Nella colorazione dei vertici (VCP), $\\omega(G)$ è il numero di clique, $\\alpha(G)$ il numero di stabilità e $\\chi(G)$ il numero cromatico; $\\omega(G)$ e $\\lceil n/\\alpha(G)\\rceil$ sono lower bound su $\\chi(G)$. Quanto valgono le tre grandezze?",
+          " In vertex coloring (VCP), $\\omega(G)$ is the clique number, $\\alpha(G)$ the stability number and $\\chi(G)$ the chromatic number; $\\omega(G)$ and $\\lceil n/\\alpha(G)\\rceil$ are lower bounds on $\\chi(G)$. What are the three quantities?"),
+        opzioni: b.opzioni, corretta: b.corretta,
+        spiegazione: T(lingua, "Una clique massima ha $" + om + "$ vertici e un insieme stabile massimo $" + al + "$, quindi $\\lceil 7/" + al + "\\rceil=" + sb + "$. Una colorazione con $" + ch + "$ colori esiste e nessuna con meno: $\\chi(G)=" + ch + "$." + (ch > Math.max(om, sb) ? " Qui entrambi i lower bound lasciano un gap." : ""),
+          "A maximum clique has $" + om + "$ vertices and a maximum stable set $" + al + "$, hence $\\lceil 7/" + al + "\\rceil=" + sb + "$. A coloring with $" + ch + "$ colors exists and none with fewer: $\\chi(G)=" + ch + "$." + (ch > Math.max(om, sb) ? " Here both lower bounds leave a gap." : "")),
+        _v: { dati: { n: n, E: G.E }, valori: b.valori }
+      };
+    }
+  });
+
+  // ---- C2. zaino: bound di Dantzig, bound di Martello-Toth e ottimo (parte 2, cap. 9) — complessa
+  add({
+    id: "oc-g-kp-bounds-full", livello: "complessa", capitolo: "knapsack-formulations",
+    link: L2("formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem", "formulazioni/knapsack-formulations/un-modello-pli-per-il-problema-dello-zaino-0-1", "box-18-propMT"),
+    genera: function (rng, lingua) {
+      var n = 6, p = [], w = [];
+      for (var j = 0; j < n; j++) { w.push(ri(rng, 2, 9)); p.push(ri(rng, 3, 20)); }
+      var o = effOrder(p, w); p = o.map(function (i) { return p[i]; }); w = o.map(function (i) { return w[i]; });
+      for (j = 1; j < n; j++) if (p[j] * w[j - 1] === p[j - 1] * w[j]) return null;
+      var c = ri(rng, 12, 24); if (Math.max.apply(null, w) > c) return null;
+      var sp = split(range1(n).map(function (i) { return i - 1; }), w, c);
+      var s = sp.s, rc = sp.rc; if (s < 1 || s > n - 2 || rc === 0) return null;
+      var P = 0; for (j = 0; j < s; j++) P += p[j];
+      var UBD = P + Math.floor(p[s] * rc / w[s]);
+      var UB0 = P + Math.floor(rc * p[s + 1] / w[s + 1]);
+      var UB1 = P + Math.floor((p[s] * w[s - 1] - (w[s] - rc) * p[s - 1]) / w[s - 1]);
+      var UBMT = Math.max(UB0, UB1), z = kpOptSets(p, w, c).z;
+      var g = greedyOrder(range1(n).map(function (i) { return i - 1; }), p, w, c).z;
+      var key = function (a, b2, c2) { return { k: a + "|" + b2 + "|" + c2, t: "$\\UB_{\\mathrm{D}}=" + a + "$, $\\UB_{\\mathrm{MT}}=" + b2 + "$, $z=" + c2 + "$" }; };
+      var b = build(rng, key(UBD, UBMT, z), [key(UBD, Math.min(UB0, UB1), z), key(UBD, UBMT, g), key(UBD + 1, UBMT, z), key(UBD, UB0 + UB1 - P, z), key(UBD, UBMT, z + 1), key(P + p[s], UBMT, z)]);
+      if (!b) return null;
+      return {
+        testo: T(lingua, "Zaino 0/1 con capacità $c=" + c + "$ e oggetti ordinati per efficienza $p_j/w_j$ non crescente: " + itemTab(lingua, p, w) + ". Sia $s$ l'oggetto critico (il primo che non entra aggiungendo gli oggetti in ordine) e $\\mathit{rc}$ la capacità residua. Il bound di Dantzig è $\\UB_{\\mathrm{D}}=\\sum_{j<s}p_j+\\lfloor p_s\\,\\mathit{rc}/w_s\\rfloor$; quello di Martello-Toth è $\\max\\{\\UB_0,\\UB_1\\}$ con $\\UB_0=\\sum_{j<s}p_j+\\lfloor\\mathit{rc}\\,p_{s+1}/w_{s+1}\\rfloor$ e $\\UB_1=\\sum_{j<s}p_j+\\lfloor p_s-(w_s-\\mathit{rc})\\,p_{s-1}/w_{s-1}\\rfloor$. Quanto valgono i due bound e il valore ottimo $z$?",
+          "0/1 knapsack with capacity $c=" + c + "$ and items sorted by non-increasing efficiency $p_j/w_j$: " + itemTab(lingua, p, w) + ". Let $s$ be the split item (the first one not fitting when adding the items in order) and $\\mathit{rc}$ the residual capacity. The Dantzig bound is $\\UB_{\\mathrm{D}}=\\sum_{j<s}p_j+\\lfloor p_s\\,\\mathit{rc}/w_s\\rfloor$; the Martello-Toth bound is $\\max\\{\\UB_0,\\UB_1\\}$ with $\\UB_0=\\sum_{j<s}p_j+\\lfloor\\mathit{rc}\\,p_{s+1}/w_{s+1}\\rfloor$ and $\\UB_1=\\sum_{j<s}p_j+\\lfloor p_s-(w_s-\\mathit{rc})\\,p_{s-1}/w_{s-1}\\rfloor$. What are the two bounds and the optimal value $z$?"),
+        opzioni: b.opzioni, corretta: b.corretta,
+        spiegazione: T(lingua, "$s=" + (s + 1) + "$, $\\mathit{rc}=" + rc + "$, $\\sum_{j<s}p_j=" + P + "$: $\\UB_{\\mathrm{D}}=" + UBD + "$, $\\UB_0=" + UB0 + "$, $\\UB_1=" + UB1 + "$, quindi $\\UB_{\\mathrm{MT}}=" + UBMT + "\\le\\UB_{\\mathrm{D}}$. L'enumerazione dà $z=" + z + "$ (il greedy dà $" + g + "$).",
+          "$s=" + (s + 1) + "$, $\\mathit{rc}=" + rc + "$, $\\sum_{j<s}p_j=" + P + "$: $\\UB_{\\mathrm{D}}=" + UBD + "$, $\\UB_0=" + UB0 + "$, $\\UB_1=" + UB1 + "$, hence $\\UB_{\\mathrm{MT}}=" + UBMT + "\\le\\UB_{\\mathrm{D}}$. Enumeration gives $z=" + z + "$ (the greedy gives $" + g + "$)."),
+        _v: { dati: { p: p, w: w, c: c }, valori: b.valori }
+      };
+    }
+  });
+
+  // ---- C3. P||Cmax: discesa best improvement con l'intorno move e l'obiettivo ausiliario (parte 4, cap. 31) — complessa
+  function moveDescent(t, m, mach0, best) { // minimizza sum L_h^2; restituisce {cmax, moves}
+    var mach = mach0.slice(), L = []; for (var h = 0; h < m; h++) L.push(0);
+    t.forEach(function (x, j) { L[mach[j] - 1] += x; });
+    var moves = 0;
+    for (var it = 0; it < 200; it++) {
+      var bj = -1, bh = -1, bd = 0;
+      for (var j = 0; j < t.length; j++) {
+        for (h = 1; h <= m; h++) {
+          if (h === mach[j]) continue;
+          var a = mach[j] - 1, b = h - 1, d = 2 * t[j] * (L[b] - L[a] + t[j]); // variazione di sum L^2
+          if (d < bd) { bd = d; bj = j; bh = h; if (!best) break; }
+        }
+        if (!best && bj >= 0) break;
+      }
+      if (bj < 0) break;
+      L[mach[bj] - 1] -= t[bj]; L[bh - 1] += t[bj]; mach[bj] = bh; moves++;
+    }
+    return { cmax: Math.max.apply(null, L), moves: moves };
+  }
+  add({
+    id: "oc-g-pcmax-descent", livello: "complessa", capitolo: "local-search",
+    link: L2("heuristic-algorithms/local-search/p-cmax-move-and-swap", "algoritmi-euristici/local-search/p-cmax-move-e-swap", "sez-sec-pcmax"),
+    genera: function (rng, lingua) {
+      var n = 7, m = 3, t = [], mach = [];
+      for (var j = 0; j < n; j++) { t.push(ri(rng, 2, 9)); mach.push(ri(rng, 1, 3)); }
+      var L0 = [0, 0, 0]; t.forEach(function (x, k) { L0[mach[k] - 1] += x; });
+      var R = moveDescent(t, m, mach, true), F1 = moveDescent(t, m, mach, false);
+      if (R.moves < 2) return null;
+      var c0 = Math.max.apply(null, L0);
+      var key = function (a, b2) { return { k: a + "|" + b2, t: T(lingua, "makespan finale $" + a + "$, dopo $" + b2 + "$ mosse", "final makespan $" + a + "$, after $" + b2 + "$ moves") }; };
+      var b = build(rng, key(R.cmax, R.moves), [key(F1.cmax, F1.moves), key(c0, 0), key(R.cmax + 1, R.moves), key(R.cmax, R.moves + 1), key(R.cmax, R.moves - 1)]);
+      if (!b) return null;
+      return {
+        testo: T(lingua, "$P\\,||\\,C_{\\max}$ con $m=3$ macchine e lavori di durata $t=" + vec(t) + "$; la soluzione di partenza assegna i lavori alle macchine $" + vec(mach) + "$. Si applica la ricerca locale con l'intorno move (un lavoro passa a un'altra macchina) e l'obiettivo ausiliario $\\sum_hL_h^2$ da minimizzare ($L_h$ = carico della macchina $h$), con la regola best improvement: a ogni iterazione si applica la mossa che diminuisce di più $\\sum_hL_h^2$ (pari merito: lavoro di indice minore, poi macchina di indice minore), finché nessuna mossa lo diminuisce. Qual è il makespan finale e quante mosse si applicano?",
+          "$P\\,||\\,C_{\\max}$ with $m=3$ machines and jobs of duration $t=" + vec(t) + "$; the starting solution assigns the jobs to the machines $" + vec(mach) + "$. Local search is applied with the move neighbourhood (one job goes to another machine) and the auxiliary objective $\\sum_hL_h^2$ to be minimized ($L_h$ = load of machine $h$), with the best improvement rule: at every iteration the move decreasing $\\sum_hL_h^2$ the most is applied (ties: smallest job index, then smallest machine index), until no move decreases it. What is the final makespan and how many moves are applied?"),
+        opzioni: b.opzioni, corretta: b.corretta,
+        spiegazione: T(lingua, "Carichi iniziali $" + vec(L0) + "$, makespan $" + c0 + "$. Spostare il lavoro $j$ dalla macchina $a$ alla $b$ cambia $\\sum_hL_h^2$ di $2t_j(L_b-L_a+t_j)$; la discesa applica $" + R.moves + "$ mosse e si ferma con makespan $" + R.cmax + "$. Con first improvement la discesa sarebbe diversa ($" + F1.moves + "$ mosse, makespan $" + F1.cmax + "$).",
+          "Initial loads $" + vec(L0) + "$, makespan $" + c0 + "$. Moving job $j$ from machine $a$ to $b$ changes $\\sum_hL_h^2$ by $2t_j(L_b-L_a+t_j)$; the descent applies $" + R.moves + "$ moves and stops with makespan $" + R.cmax + "$. With first improvement the descent would differ ($" + F1.moves + "$ moves, makespan $" + F1.cmax + "$)."),
+        _v: { dati: { t: t, mach: mach }, valori: b.valori }
+      };
+    }
+  });
+
+  // ---- C4. TSP: nearest neighbour e poi 2-opt first improvement (parte 4, cap. 31) — complessa
+  function twoOptFirst(d, tour) {
+    var t = tour.slice(), n = t.length, moves = 0, again = true;
+    while (again && moves < 100) {
+      again = false;
+      for (var i = 0; i < n - 1 && !again; i++) {
+        for (var j = i + 2; j < n && !again; j++) {
+          if (i === 0 && j === n - 1) continue;
+          var a = t[i], b = t[i + 1], c = t[j], e = t[(j + 1) % n];
+          if (d[a][c] + d[b][e] - d[a][b] - d[c][e] < 0) {
+            var seg = t.slice(i + 1, j + 1).reverse();
+            for (var k = 0; k < seg.length; k++) t[i + 1 + k] = seg[k];
+            moves++; again = true;
+          }
+        }
+      }
+    }
+    return { tour: t, len: tourLen(d, t), moves: moves };
+  }
+  add({
+    id: "oc-g-tsp-nn2opt", livello: "complessa", capitolo: "local-search",
+    link: L2("heuristic-algorithms/local-search/tsp-2-opt-and-or-opt", "algoritmi-euristici/local-search/tsp-2-opt-e-or-opt", "sez-sec-tsp"),
+    genera: function (rng, lingua) {
+      var n = 6, d = randDist(rng, n, 1, 9);
+      var N = nn(d, n, 1), R = twoOptFirst(d, N.tour);
+      if (R.moves < 1) return null;
+      var key = function (a, b2) { return { k: a + "|" + b2, t: T(lingua, "lunghezza finale $" + a + "$, dopo $" + b2 + "$ mosse", "final length $" + a + "$, after $" + b2 + "$ moves") }; };
+      var b = build(rng, key(R.len, R.moves), [key(N.len, 0), key(R.len, R.moves + 1), key(R.len + 1, R.moves), key(R.len - 1, R.moves), key(N.open, R.moves)]);
+      if (!b) return null;
+      return {
+        testo: T(lingua, "TSP con $6$ città e distanze simmetriche " + distTab(d, n) + ". Si costruisce il giro nearest neighbour dalla città $1$ (pareggi: città di indice minore), scritto come sequenza $(t_1,\\dots,t_6)$ con $t_1=1$. Poi si applica 2-opt con la regola first improvement: si esaminano le coppie di posizioni $(i,j)$ con $i=1,\\dots,5$ e $j=i+2,\\dots,6$ (esclusa $(1,6)$); la mossa toglie i lati $\\{t_i,t_{i+1}\\}$ e $\\{t_j,t_{j+1}\\}$ (con $t_7=t_1$), aggiunge $\\{t_i,t_j\\}$ e $\\{t_{i+1},t_{j+1}\\}$ invertendo il tratto $t_{i+1},\\dots,t_j$, e si applica appena accorcia il giro; dopo ogni mossa l'esame riparte da $(1,3)$. Qual è la lunghezza del giro finale e quante mosse si applicano?",
+          "TSP with $6$ cities and symmetric distances " + distTab(d, n) + ". The nearest neighbour tour from city $1$ is built (ties: smallest city index), written as a sequence $(t_1,\\dots,t_6)$ with $t_1=1$. Then 2-opt is applied with the first improvement rule: the pairs of positions $(i,j)$ with $i=1,\\dots,5$ and $j=i+2,\\dots,6$ (except $(1,6)$) are examined; the move removes the edges $\\{t_i,t_{i+1}\\}$ and $\\{t_j,t_{j+1}\\}$ (with $t_7=t_1$), adds $\\{t_i,t_j\\}$ and $\\{t_{i+1},t_{j+1}\\}$ reversing the stretch $t_{i+1},\\dots,t_j$, and is applied as soon as it shortens the tour; after every move the scan restarts from $(1,3)$. What is the length of the final tour and how many moves are applied?"),
+        opzioni: b.opzioni, corretta: b.corretta,
+        spiegazione: T(lingua, "Nearest neighbour dà $" + vec(N.tour) + "$, lunghezza $" + N.len + "$. 2-opt applica $" + R.moves + "$ mosse e si ferma nell'ottimo locale $" + vec(R.tour) + "$, lunghezza $" + R.len + "$.",
+          "Nearest neighbour gives $" + vec(N.tour) + "$, length $" + N.len + "$. 2-opt applies $" + R.moves + "$ moves and stops at the local optimum $" + vec(R.tour) + "$, length $" + R.len + "$."),
+        _v: { dati: { d: d }, valori: b.valori }
+      };
+    }
+  });
+
+  // ---- C5. bin packing: NF, FF, BF e WF sulla stessa istanza (parte 5, cap. 36) — complessa
+  add({
+    id: "oc-g-bpp-anyfit-full", livello: "complessa", capitolo: "bin-packing-approximation",
+    link: L2("approximation-algorithms/bin-packing-approximation", "algoritmi-di-approssimazione/bin-packing-approximation", "box-3-def-AF"),
+    genera: function (rng, lingua) {
+      var n = 8, c = 10, w = []; for (var j = 0; j < n; j++) w.push(ri(rng, 2, 8));
+      var R = ["NF", "FF", "BF", "WF"].map(function (r) { return packing(w, c, r).nb; });
+      var dist = {}; R.forEach(function (x) { dist[x] = 1; }); if (Object.keys(dist).length < 2) return null;
+      var key = function (v) { return { k: v.join("|"), t: "$NF=" + v[0] + "$, $FF=" + v[1] + "$, $BF=" + v[2] + "$, $WF=" + v[3] + "$" }; };
+      var ffd = packing(w, c, "FF", decOrder(w)).nb;
+      var cand = [key([R[1], R[0], R[2], R[3]]), key([R[0], R[1], R[3], R[2]]), key([R[0], ffd, ffd, R[3]]), key([R[0], R[1], R[2], R[3] + 1]),
+                  key([R[0] - 1, R[1], R[2], R[3]]), key([R[0], R[2], R[1], R[3]]), key([R[0], R[1] + 1, R[2], R[3]])];
+      var b = build(rng, key(R), cand);
+      if (!b) return null;
+      return {
+        testo: T(lingua, "Bin packing con contenitori di capacità $c=10$ e oggetti, nell'ordine di input, di peso $w=" + vec(w) + "$. Next Fit (NF) tiene aperto solo l'ultimo contenitore; First Fit (FF), Best Fit (BF) e Worst Fit (WF) mettono ogni oggetto, rispettivamente, nel primo contenitore in cui entra, in quello con capacità residua minima e in quello con capacità residua massima fra quelli in cui entra (pari merito: indice minore), e aprono un contenitore nuovo solo se non entra in nessuno. Quanti contenitori usa ciascun algoritmo?",
+          "Bin packing with bins of capacity $c=10$ and items, in input order, of weight $w=" + vec(w) + "$. Next Fit (NF) keeps only the last bin open; First Fit (FF), Best Fit (BF) and Worst Fit (WF) put every item, respectively, into the first bin where it fits, into the one with minimum residual capacity and into the one with maximum residual capacity among those where it fits (ties: smallest index), and open a new bin only if it fits in none. How many bins does each algorithm use?"),
+        opzioni: b.opzioni, corretta: b.corretta,
+        spiegazione: T(lingua, "Simulando le quattro regole: $NF=" + R[0] + "$, $FF=" + R[1] + "$, $BF=" + R[2] + "$, $WF=" + R[3] + "$; il bound sul peso è $\\lceil" + sum(w) + "/10\\rceil=" + Math.ceil(sum(w) / 10) + "$. NF non è Any Fit: chiude un contenitore anche se un oggetto successivo vi entrerebbe.",
+          "Simulating the four rules: $NF=" + R[0] + "$, $FF=" + R[1] + "$, $BF=" + R[2] + "$, $WF=" + R[3] + "$; the weight bound is $\\lceil" + sum(w) + "/10\\rceil=" + Math.ceil(sum(w) / 10) + "$. NF is not Any Fit: it closes a bin even if a later item would fit into it."),
+        _v: { dati: { w: w, c: c }, valori: b.valori }
+      };
+    }
+  });
+
+  // ---- C6. zaino: Basic-FPTAS completo (parte 5, cap. 35) — complessa
+  add({
+    id: "oc-g-kp-fptas-full", livello: "complessa", capitolo: "knapsack-approximation",
+    link: L2("approximation-algorithms/knapsack-approximation", "algoritmi-di-approssimazione/knapsack-approximation", "box-23-prop-fptas"),
+    genera: function (rng, lingua) {
+      var n = 5, p = [], w = [];
+      for (var j = 0; j < n; j++) { w.push(ri(rng, 2, 7)); p.push(ri(rng, 8, 40)); }
+      var o = effOrder(p, w); p = o.map(function (i) { return p[i]; }); w = o.map(function (i) { return w[i]; });
+      var c = ri(rng, 9, 15); if (sum(w) <= c || Math.max.apply(null, w) > c) return null;
+      var gr = greedyOrder([0, 1, 2, 3, 4], p, w, c).z, gre = Math.max(gr, Math.max.apply(null, p));
+      // eps = 1/2: K = gre/(2n), p' = floor(p/K) = floor(2 n p / gre)
+      var pk = p.map(function (x) { return Math.floor(2 * n * x / gre); });
+      var best = -1, sets = [];
+      for (var mk = 0; mk < (1 << n); mk++) {
+        var ww = 0, q = 0, S = [];
+        for (j = 0; j < n; j++) if (mk & (1 << j)) { ww += w[j]; q += pk[j]; S.push(j); }
+        if (ww > c) continue;
+        if (q > best) { best = q; sets = [S]; } else if (q === best) sets.push(S);
+      }
+      if (sets.length !== 1) return null;
+      var FP = 0; sets[0].forEach(function (k) { FP += p[k]; });
+      var z = kpOptSets(p, w, c).z;
+      if (FP === z && rng() < 0.5) return null;
+      var key = function (a, b2) { return { k: a + "|" + b2, t: "$FP^{\\varepsilon}(I)=" + a + "$, $z(I)=" + b2 + "$" }; };
+      var b = build(rng, key(FP, z), [key(best, z), key(gre, z), key(FP, Math.floor(FP / (1 - 0.5))), key(FP, z + 1), key(FP - 1, z), key(gr, z)]);
+      if (!b) return null;
+      return {
+        testo: T(lingua, "Zaino 0/1 con capacità $c=" + c + "$ e oggetti ordinati per efficienza non crescente: " + itemTab(lingua, p, w) + ". L'algoritmo Basic-FPTAS con $\\varepsilon=\\frac12$ calcola $GR^e(I)=\\max\\{GR(I),\\max_jp_j\\}$ ($GR$: greedy per efficienza, che salta gli oggetti che non entrano), pone $K=\\varepsilon\\,GR^e(I)/n$ e $p'_j=\\lfloor p_j/K\\rfloor$, risolve all'ottimo l'istanza con profitti $p'_j$ e restituisce il profitto originale $FP^{\\varepsilon}(I)$ della soluzione trovata. Quanto valgono $FP^{\\varepsilon}(I)$ e il valore ottimo $z(I)$?",
+          "0/1 knapsack with capacity $c=" + c + "$ and items sorted by non-increasing efficiency: " + itemTab(lingua, p, w) + ". The Basic-FPTAS algorithm with $\\varepsilon=\\frac12$ computes $GR^e(I)=\\max\\{GR(I),\\max_jp_j\\}$ ($GR$: greedy by efficiency, skipping the items that do not fit), sets $K=\\varepsilon\\,GR^e(I)/n$ and $p'_j=\\lfloor p_j/K\\rfloor$, solves the instance with profits $p'_j$ to optimality and returns the original profit $FP^{\\varepsilon}(I)$ of the solution found. What are $FP^{\\varepsilon}(I)$ and the optimal value $z(I)$?"),
+        opzioni: b.opzioni, corretta: b.corretta,
+        spiegazione: T(lingua, "$GR^e(I)=" + gre + "$, $K=" + frTex(fr(gre, 2 * n)) + "$, $p'=" + vec(pk) + "$. L'istanza scalata ha ottimo $" + best + "$ con gli oggetti $" + set(sets[0].map(function (k) { return k + 1; })) + "$, di profitto originale $" + FP + "$; l'ottimo vero è $" + z + "$, e infatti $" + FP + "\\ge\\frac12\\cdot" + z + "$.",
+          "$GR^e(I)=" + gre + "$, $K=" + frTex(fr(gre, 2 * n)) + "$, $p'=" + vec(pk) + "$. The scaled instance has optimum $" + best + "$ with items $" + set(sets[0].map(function (k) { return k + 1; })) + "$, of original profit $" + FP + "$; the true optimum is $" + z + "$, and indeed $" + FP + "\\ge\\frac12\\cdot" + z + "$."),
+        _v: { dati: { p: p, w: w, c: c }, valori: b.valori }
+      };
+    }
+  });
 //@@BATCH3@@
 })();
