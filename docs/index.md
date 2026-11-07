@@ -31,9 +31,9 @@ Per gli studenti della laurea magistrale in Ingegneria gestionale della Sapienza
 <!-- collana-app -->
 ## Provalo subito
 
-Il commesso viaggiatore: costruisci un giro con il vicino più vicino e miglioralo con le mosse 2-opt.
+Il branch-and-bound per lo zaino 0-1: l'albero cresce nodo per nodo, con i bound di Dantzig, le potature e la soluzione migliore trovata finora.
 
-<div class="gi" data-grafico="oc-tsp"></div>
+<div class="gi" data-grafico="oc-bb-knapsack"></div>
 
 [:material-gesture-tap: Altre app nel laboratorio](laboratorio/index.md){ .md-button }
 <!-- /collana-app -->
