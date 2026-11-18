@@ -18,7 +18,7 @@ associato al [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma
 
 **Le dispense del corso, online**: i problemi di zaino, di packing, di colorazione, di clique, di routing, di scheduling e di lot sizing, studiati attraverso formulazioni e loro proprietà, programmazione dinamica, algoritmi euristici, di approssimazione e ad hoc; con definizioni, risultati con dimostrazione, esempi svolti passo per passo, esercizi con le soluzioni, notebook Colab e app interattive.
 
-Prerequisiti: [Programmazione lineare intera](https://fabiofurini.github.io/programmazione-lineare-intera/) per le formulazioni e [Algoritmi](https://fabiofurini.github.io/algoritmi/) per gli algoritmi.
+Prerequisiti: [Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/) e [Programmazione lineare intera](https://fabiofurini.github.io/programmazione-lineare-intera/) per le formulazioni e [Algoritmi](https://fabiofurini.github.io/algoritmi/) per gli algoritmi.
 
 [Comincia :material-arrow-right:](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md){ .md-button .md-button--primary }
 [:material-pencil: Esercizi](esercizi/index.md){ .md-button }
