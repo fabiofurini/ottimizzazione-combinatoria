@@ -191,7 +191,7 @@ title: "Colorazione dei vertici"
 
 ## 4.2.3 Contare le soluzioni, una prima soluzione e i bound
 
-- <strong>Soluzioni candidate.</strong> Le soluzioni candidate sono le partizioni di $V$, contate dai numeri di Bell (Capitolo 1 [«Problemi di ottimizzazione combinatoria»](../combinatorial-optimization/index.md)). Per l'<span style="color:#1971c2">[Esempio 4.1](#box-4-ex-vcp1)</span> abbiamo $B(3) = 5$ partizioni e una sola è ammissibile: tre singoletti, poiché ogni coppia di vertici è adiacente. Quindi $\chi(G) = 3$.
+- <strong>Soluzioni candidate.</strong> Le soluzioni candidate sono le partizioni di $V$, contate dai numeri di Bell (Capitolo 1 [«Ottimizzazione combinatoria: definizioni»](../combinatorial-optimization/index.md)). Per l'<span style="color:#1971c2">[Esempio 4.1](#box-4-ex-vcp1)</span> abbiamo $B(3) = 5$ partizioni e una sola è ammissibile: tre singoletti, poiché ogni coppia di vertici è adiacente. Quindi $\chi(G) = 3$.
 
 - Per l'<span style="color:#1971c2">[Esempio 4.2](#box-5-ex-vcp2)</span> abbiamo $B(10) = 115\,975$ partizioni, e $7\,430$ di esse sono ammissibili, cioè hanno come classi solo insiemi stabili.
 

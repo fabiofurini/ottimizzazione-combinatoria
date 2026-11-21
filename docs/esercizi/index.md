@@ -2,9 +2,9 @@
 
 Esercizi con le **soluzioni svolte**, capitolo per capitolo, con le stesse parti e gli stessi gruppi del menu. Prova prima da solo: la soluzione si apre con un clic.
 
-## Ottimizzazione combinatoria
+## Definizioni
 
-- [1. Problemi di ottimizzazione combinatoria](combinatorial-optimization.md) · 8 esercizi
+- [1. Ottimizzazione combinatoria: definizioni](combinatorial-optimization.md) · 8 esercizi
 
 ## Problemi scelti
 

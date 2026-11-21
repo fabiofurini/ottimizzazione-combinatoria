@@ -12,7 +12,7 @@ title: "Problemi di routing"
 
 !!! nota "Prerequisiti"
 
-    - Da questo modulo, [Capitolo 1 «Problemi di ottimizzazione combinatoria»](../combinatorial-optimization/index.md): che cos'è un problema di ottimizzazione combinatoria, come esplode il numero delle soluzioni, e le nozioni di bound primale, bound duale e gap.
+    - Da questo modulo, [Capitolo 1 «Ottimizzazione combinatoria: definizioni»](../combinatorial-optimization/index.md): che cos'è un problema di ottimizzazione combinatoria, come esplode il numero delle soluzioni, e le nozioni di bound primale, bound duale e gap.
 
     - Dallo stesso capitolo, l'istanza di riferimento del TSP con $5$ città, che questo capitolo studia in dettaglio.
 

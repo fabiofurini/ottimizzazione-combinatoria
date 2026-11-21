@@ -44,7 +44,7 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
 
 <div class="grid cards" markdown>
 
--   :material-puzzle-outline: **Ottimizzazione combinatoria**
+-   :material-puzzle-outline: **Definizioni**
 
     ---
 

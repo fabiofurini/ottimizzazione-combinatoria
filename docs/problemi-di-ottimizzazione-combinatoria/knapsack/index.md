@@ -12,7 +12,7 @@ title: "Problemi di zaino"
 
 !!! nota "Prerequisiti"
 
-    - Da questo modulo, [Capitolo 1 «Problemi di ottimizzazione combinatoria»](../combinatorial-optimization/index.md): istanze, soluzioni ammissibili, bound primali e duali e gap.
+    - Da questo modulo, [Capitolo 1 «Ottimizzazione combinatoria: definizioni»](../combinatorial-optimization/index.md): istanze, soluzioni ammissibili, bound primali e duali e gap.
 
     - Dai <em>Preliminari</em>: sottoinsiemi di un insieme finito e il numero $2^n$ di sottoinsiemi.
 

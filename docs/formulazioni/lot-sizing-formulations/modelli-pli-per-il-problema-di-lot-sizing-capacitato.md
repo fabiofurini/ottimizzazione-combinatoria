@@ -501,7 +501,7 @@ Il problema di lot sizing capacitato e la sua istanza di riferimento (Esempio 8
 
 - Le formulazioni hanno lo stesso valore ottimo $z(\mathrm{ILP}_{\mathrm{CLSP}})=z(\mathrm{MIP}^{\mathrm{SP}}_{\mathrm{CLSP}})=180$, ma i loro rilassamenti lineari hanno valori ottimi diversi. Sull'istanza di riferimento i lower bound, calcolati con l'algoritmo del simplesso in aritmetica esatta e verificati con Gurobi, sono i seguenti.
 
-- L'ultima colonna è il gap del [Capitolo 1 «Problemi di ottimizzazione combinatoria»](../../problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md) fra il bound e il valore ottimo; non è definito per il bound $0$.
+- L'ultima colonna è il gap del [Capitolo 1 «Ottimizzazione combinatoria: definizioni»](../../problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md) fra il bound e il valore ottimo; non è definito per il bound $0$.
 
 <div class="tabella" markdown="0"><table>
 <tr>

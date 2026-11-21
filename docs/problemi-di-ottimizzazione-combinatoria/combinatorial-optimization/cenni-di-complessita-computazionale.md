@@ -6,7 +6,7 @@ title: "Cenni di complessità computazionale"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi · Capitolo 1** · [:material-book-open-variant: Capitolo 1: Ottimizzazione combinatoria](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-combinatorial-optimization.pdf) · [:material-pencil: Esercizi: Ottimizzazione combinatoria](../../esercizi/combinatorial-optimization.md) · [:material-gesture-tap: App: Forza bruta sul problema dello zaino 0/1](../../laboratorio/zaino-forza-bruta.md)
+**Parte 1 · Problemi · Capitolo 1** · [:material-book-open-variant: Capitolo 1: Definizioni](index.md) · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-combinatorial-optimization.pdf) · [:material-pencil: Esercizi: Definizioni](../../esercizi/combinatorial-optimization.md) · [:material-gesture-tap: App: Forza bruta sul problema dello zaino 0/1](../../laboratorio/zaino-forza-bruta.md)
 
 </div>
 
@@ -105,5 +105,5 @@ title: "Cenni di complessità computazionale"
 
 ---
 
-**Esercizi su questo capitolo:** [:material-pencil: Ottimizzazione combinatoria](../../esercizi/combinatorial-optimization.md)
+**Esercizi su questo capitolo:** [:material-pencil: Definizioni](../../esercizi/combinatorial-optimization.md)
 

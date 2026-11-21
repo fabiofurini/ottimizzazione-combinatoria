@@ -12,7 +12,7 @@ title: "Problemi di colorazione"
 
 !!! nota "Prerequisiti"
 
-    - Da questo modulo, [Capitolo 1 «Problemi di ottimizzazione combinatoria»](../combinatorial-optimization/index.md): istanze, soluzioni ammissibili, bound primali e duali, il gap e i numeri di Bell che contano le partizioni di un insieme.
+    - Da questo modulo, [Capitolo 1 «Ottimizzazione combinatoria: definizioni»](../combinatorial-optimization/index.md): istanze, soluzioni ammissibili, bound primali e duali, il gap e i numeri di Bell che contano le partizioni di un insieme.
 
     - Dal [Capitolo 3 «Problemi di packing»](../bin-packing/index.md): il bound sul peso come esempio di bound duale.
 

@@ -12,7 +12,7 @@ title: "Problemi di lot sizing"
 
 !!! nota "Prerequisiti"
 
-    - Da questo modulo, [Capitolo 1 «Problemi di ottimizzazione combinatoria»](../combinatorial-optimization/index.md): che cos'è un problema di ottimizzazione combinatoria, il numero di soluzioni candidate, e i bound primali e duali.
+    - Da questo modulo, [Capitolo 1 «Ottimizzazione combinatoria: definizioni»](../combinatorial-optimization/index.md): che cos'è un problema di ottimizzazione combinatoria, il numero di soluzioni candidate, e i bound primali e duali.
 
 !!! chiave "Obiettivi"
 

@@ -433,7 +433,7 @@ title: "Esercizi · Problemi di routing"
 
     **Domande**
 
-    1. Il [Capitolo 1 «Problemi di ottimizzazione combinatoria»](../problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md) dà la definizione di problema di ottimizzazione combinatoria. Scrivere l'istanza in questa forma: prendere come insieme base $\mathscr{U}$ l'insieme degli archi, e descrivere le soluzioni ammissibili $\mathcal{F}$ e la funzione obiettivo $f$. Contare i sottoinsiemi di $\mathscr{U}$.
+    1. Il [Capitolo 1 «Ottimizzazione combinatoria: definizioni»](../problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md) dà la definizione di problema di ottimizzazione combinatoria. Scrivere l'istanza in questa forma: prendere come insieme base $\mathscr{U}$ l'insieme degli archi, e descrivere le soluzioni ammissibili $\mathcal{F}$ e la funzione obiettivo $f$. Contare i sottoinsiemi di $\mathscr{U}$.
 
     2. Contare i sottoinsiemi di $\mathscr{U}$ con esattamente $4$ archi e quanti di essi sono giri. Spiegare perché gli altri non sono ammissibili.
 

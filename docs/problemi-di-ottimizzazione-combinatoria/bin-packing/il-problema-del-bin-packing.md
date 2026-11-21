@@ -134,7 +134,7 @@ title: "Bin packing"
 
 ## 3.2.2 Contare le soluzioni, una prima soluzione e un bound semplice
 
-- <strong>Soluzioni candidate.</strong> Le soluzioni candidate sono le partizioni di $\mathscr{I}$: sono contate dai numeri di Bell ([Capitolo 1 «Problemi di ottimizzazione combinatoria»](../combinatorial-optimization/contare-le-soluzioni.md)). Per l'<span style="color:#1971c2">[Esempio 3.1](#box-2-ex-bpp)</span> abbiamo $B(5) = 52$ partizioni.
+- <strong>Soluzioni candidate.</strong> Le soluzioni candidate sono le partizioni di $\mathscr{I}$: sono contate dai numeri di Bell ([Capitolo 1 «Ottimizzazione combinatoria: definizioni»](../combinatorial-optimization/contare-le-soluzioni.md)). Per l'<span style="color:#1971c2">[Esempio 3.1](#box-2-ex-bpp)</span> abbiamo $B(5) = 52$ partizioni.
 
 - <strong>Soluzioni ammissibili.</strong> Una partizione è ammissibile se ogni contenitore pesa al più $10$. L'enumerazione dà $11$ partizioni ammissibili: $1$ con $5$ contenitori (un oggetto per contenitore), $6$ con $4$ contenitori e $4$ con $3$ contenitori. Due contenitori non bastano, poiché il peso totale $25$ supera $2 \cdot 10$.
 

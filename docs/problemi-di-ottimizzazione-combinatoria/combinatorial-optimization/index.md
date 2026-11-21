@@ -1,12 +1,12 @@
 ---
-title: "Problemi di ottimizzazione combinatoria"
+title: "Ottimizzazione combinatoria: definizioni"
 ---
 
-# Problemi di ottimizzazione combinatoria
+# Ottimizzazione combinatoria: definizioni
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi · Capitolo 1** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-combinatorial-optimization.pdf) · [:material-pencil: Esercizi: Ottimizzazione combinatoria](../../esercizi/combinatorial-optimization.md) · [:material-gesture-tap: App: Forza bruta sul problema dello zaino 0/1](../../laboratorio/zaino-forza-bruta.md)
+**Parte 1 · Problemi · Capitolo 1** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-combinatorial-optimization.pdf) · [:material-pencil: Esercizi: Definizioni](../../esercizi/combinatorial-optimization.md) · [:material-gesture-tap: App: Forza bruta sul problema dello zaino 0/1](../../laboratorio/zaino-forza-bruta.md)
 
 </div>
 
@@ -70,7 +70,7 @@ title: "Problemi di ottimizzazione combinatoria"
 
 ---
 
-**Esercizi su questo capitolo:** [:material-pencil: Ottimizzazione combinatoria](../../esercizi/combinatorial-optimization.md)
+**Esercizi su questo capitolo:** [:material-pencil: Definizioni](../../esercizi/combinatorial-optimization.md)
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 

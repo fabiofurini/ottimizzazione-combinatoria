@@ -58,7 +58,7 @@ title: "Varianti"
 
 - Nel 1958 Wagner e Whitin proposero un algoritmo di programmazione dinamica per il caso senza capacità e con domanda variabile nel tempo. L'algoritmo si basa su una proprietà dei piani ottimi: si produce solo quando la scorta è vuota.
 
-- Con le capacità la proprietà non vale più, e il problema è NP-difficile ([Capitolo 1 «Problemi di ottimizzazione combinatoria»](../combinatorial-optimization/index.md)).
+- Con le capacità la proprietà non vale più, e il problema è NP-difficile ([Capitolo 1 «Ottimizzazione combinatoria: definizioni»](../combinatorial-optimization/index.md)).
 
 ## 8.8 Errori tipici
 

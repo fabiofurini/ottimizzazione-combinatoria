@@ -125,7 +125,7 @@ title: "Zaino 0/1"
 
 ## 2.2.2 Contare le soluzioni, una prima soluzione e un bound semplice
 
-- <strong>Soluzioni candidate.</strong> Ogni sottoinsieme di $\mathscr{I}$ è una soluzione candidata, quindi ce ne sono $2^n$ ([Capitolo 1 «Problemi di ottimizzazione combinatoria»](../combinatorial-optimization/contare-le-soluzioni.md)). Per l'<span style="color:#1971c2">[Esempio 2.1](#box-2-ex-kp)</span> abbiamo $2^6 = 64$.
+- <strong>Soluzioni candidate.</strong> Ogni sottoinsieme di $\mathscr{I}$ è una soluzione candidata, quindi ce ne sono $2^n$ ([Capitolo 1 «Ottimizzazione combinatoria: definizioni»](../combinatorial-optimization/contare-le-soluzioni.md)). Per l'<span style="color:#1971c2">[Esempio 2.1](#box-2-ex-kp)</span> abbiamo $2^6 = 64$.
 
 - <strong>Soluzioni ammissibili.</strong> I tre oggetti più leggeri pesano $2+3+5 = 10 > 9$, quindi nessun sottoinsieme con tre o più oggetti è ammissibile. Le soluzioni ammissibili sono l'insieme vuoto, i $6$ singoletti e le $6$ coppie della tabella seguente: $13$ soluzioni su $64$.
 

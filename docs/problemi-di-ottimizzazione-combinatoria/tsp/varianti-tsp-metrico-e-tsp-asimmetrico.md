@@ -65,7 +65,7 @@ title: "TSP metrico e TSP asimmetrico"
 
 - Sulle mappe stradali di paesi reali, il record del 2025 è l'istanza korea81998, con $81\,998$ bar della Corea del Sud.
 
-- Il TSP è fortemente NP-difficile ([Capitolo 1 «Problemi di ottimizzazione combinatoria»](../combinatorial-optimization/index.md)). Christofides (1976) ha dato un algoritmo di approssimazione con rapporto $\frac32$ per il TSP metrico.
+- Il TSP è fortemente NP-difficile ([Capitolo 1 «Ottimizzazione combinatoria: definizioni»](../combinatorial-optimization/index.md)). Christofides (1976) ha dato un algoritmo di approssimazione con rapporto $\frac32$ per il TSP metrico.
 
 ## 6.8 Errori tipici
 

@@ -12,7 +12,7 @@ title: "Problemi di clique"
 
 !!! nota "Prerequisiti"
 
-    - Da questo modulo, il capitolo [«Problemi di ottimizzazione combinatoria»](../combinatorial-optimization/index.md): istanze, soluzioni ammissibili, bound primali e duali, e il gap.
+    - Da questo modulo, il capitolo [«Ottimizzazione combinatoria: definizioni»](../combinatorial-optimization/index.md): istanze, soluzioni ammissibili, bound primali e duali, e il gap.
 
     - Da questo modulo, il capitolo [«Problemi di colorazione»](../coloring/index.md): grafi, intorni, gradi, il grafo complementare e il numero cromatico $\chi(G)$.
 

@@ -24,7 +24,7 @@ Le dispense, gli eserciziari, le slide e il catalogo dei problemi in PDF, con la
 
 | Volume | Contenuto | Capitoli | File |
 |---|---|:---:|---|
-| 1. Problemi | Ottimizzazione combinatoria · Problemi di zaino · Problemi di packing · Problemi di colorazione · Problemi di clique · Problemi di routing · Problemi di scheduling · Problemi di lot sizing | 1–8 | [:material-file-pdf-box: PDF](pdf/esercizi-1-problemi-di-ottimizzazione-combinatoria.pdf) (0.6 MB) |
+| 1. Problemi | Definizioni · Problemi di zaino · Problemi di packing · Problemi di colorazione · Problemi di clique · Problemi di routing · Problemi di scheduling · Problemi di lot sizing | 1–8 | [:material-file-pdf-box: PDF](pdf/esercizi-1-problemi-di-ottimizzazione-combinatoria.pdf) (0.6 MB) |
 | 2. Formulazioni dei problemi e loro proprietà | Problemi di zaino · Problemi di packing · Problemi di colorazione · Problemi di clique · Problemi di routing · Problemi di scheduling · Problemi di lot sizing | 9–15 | [:material-file-pdf-box: PDF](pdf/esercizi-2-formulazioni.pdf) (0.6 MB) |
 | 3. Algoritmi ad hoc | Problemi di zaino · Problemi di colorazione | 16–17 | [:material-file-pdf-box: PDF](pdf/esercizi-3-algoritmi-specializzati.pdf) (0.5 MB) |
 
@@ -38,7 +38,7 @@ Le slide delle lezioni, un PDF per capitolo, con le stesse definizioni ed esempi
 
 | Capitolo | Titolo | File |
 |:---:|---|---|
-| 1 | [Problemi di ottimizzazione combinatoria](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md) | [:material-file-pdf-box: PDF](pdf/slide-combinatorial-optimization.pdf) (0.5 MB) |
+| 1 | [Ottimizzazione combinatoria: definizioni](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md) | [:material-file-pdf-box: PDF](pdf/slide-combinatorial-optimization.pdf) (0.5 MB) |
 | 2 | [Problemi di zaino](problemi-di-ottimizzazione-combinatoria/knapsack/index.md) | [:material-file-pdf-box: PDF](pdf/slide-knapsack.pdf) (0.7 MB) |
 | 3 | [Problemi di packing](problemi-di-ottimizzazione-combinatoria/bin-packing/index.md) | [:material-file-pdf-box: PDF](pdf/slide-bin-packing.pdf) (0.6 MB) |
 | 4 | [Problemi di colorazione](problemi-di-ottimizzazione-combinatoria/coloring/index.md) | [:material-file-pdf-box: PDF](pdf/slide-coloring.pdf) (0.4 MB) |

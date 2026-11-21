@@ -12,7 +12,7 @@ title: "Problemi di scheduling"
 
 !!! nota "Prerequisiti"
 
-    - Da questo modulo, [Capitolo 1 «Problemi di ottimizzazione combinatoria»](../combinatorial-optimization/index.md): che cos'è un problema di ottimizzazione combinatoria, il numero di soluzioni candidate, i bound primali e duali e le partizioni di un insieme (numeri di Bell).
+    - Da questo modulo, [Capitolo 1 «Ottimizzazione combinatoria: definizioni»](../combinatorial-optimization/index.md): che cos'è un problema di ottimizzazione combinatoria, il numero di soluzioni candidate, i bound primali e duali e le partizioni di un insieme (numeri di Bell).
 
     - Da questo modulo, [Capitolo 3 «Problemi di packing»](../bin-packing/index.md): il problema del bin packing.
 

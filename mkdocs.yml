@@ -252,7 +252,7 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - Ottimizzazione combinatoria:
+  - Definizioni:
       - problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md
       - "Problemi di ottimizzazione combinatoria": problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/problemi-di-ottimizzazione-combinatoria.md
       - "Categorie di problemi di ottimizzazione combinatoria": problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/categorie-di-problemi-di-ottimizzazione-combinatoria.md
@@ -336,8 +336,8 @@ nav:
           - "17. Colorazione dei vertici (VCP)": algoritmi-specializzati/dsatur-branch-and-bound.md
   - Esercizi:
       - esercizi/index.md
-      - "Ottimizzazione combinatoria":
-          - "1. Ottimizzazione combinatoria": esercizi/combinatorial-optimization.md
+      - "Definizioni":
+          - "1. Definizioni": esercizi/combinatorial-optimization.md
       - "Problemi scelti":
           - "2. Problemi di zaino": esercizi/knapsack.md
           - "3. Problemi di packing": esercizi/bin-packing.md

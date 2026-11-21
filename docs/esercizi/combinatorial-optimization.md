@@ -1,12 +1,12 @@
 ---
-title: "Esercizi · Problemi di ottimizzazione combinatoria"
+title: "Esercizi · Ottimizzazione combinatoria: definizioni"
 ---
 
-# Esercizi · Problemi di ottimizzazione combinatoria
+# Esercizi · Ottimizzazione combinatoria: definizioni
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Capitolo 1** · ogni soluzione si apre con un clic · [:material-book-open-variant: Capitolo 1: Ottimizzazione combinatoria](../problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md) · [:material-file-pdf-box: Eserciziario, volume 1 (PDF)](../pdf/esercizi-1-problemi-di-ottimizzazione-combinatoria.pdf)
+**Esercizi · Capitolo 1** · ogni soluzione si apre con un clic · [:material-book-open-variant: Capitolo 1: Definizioni](../problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md) · [:material-file-pdf-box: Eserciziario, volume 1 (PDF)](../pdf/esercizi-1-problemi-di-ottimizzazione-combinatoria.pdf)
 
 </div>
 

@@ -37,9 +37,9 @@ I box hanno gli stessi colori della dispensa:
 
 Tutte le pagine del sito, nell'ordine del menu: i capitoli con le loro sezioni, il catalogo e le altre pagine.
 
-## [Ottimizzazione combinatoria](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md)
+## [Definizioni](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md)
 
-- **[1. Problemi di ottimizzazione combinatoria](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md)** · [Esercizi](esercizi/combinatorial-optimization.md)
+- **[1. Ottimizzazione combinatoria: definizioni](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md)** · [Esercizi](esercizi/combinatorial-optimization.md)
     - [1.1 Problemi di ottimizzazione combinatoria](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/problemi-di-ottimizzazione-combinatoria.md)
     - [1.2 Categorie di problemi di ottimizzazione combinatoria](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/categorie-di-problemi-di-ottimizzazione-combinatoria.md)
     - [1.3 Contare le soluzioni](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/contare-le-soluzioni.md)
