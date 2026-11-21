@@ -207,7 +207,7 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
 <!-- collana -->
 ## La collana
 
-Dieci corsi con la stessa impostazione: dispense online e in PDF, esercizi con le soluzioni, laboratorio interattivo e quiz di autovalutazione.
+Tutti i corsi della collana hanno la stessa impostazione: dispense online e in PDF, esercizi con le soluzioni, laboratorio interattivo e quiz di autovalutazione.
 
 <div class="grid cards" markdown>
 
@@ -265,6 +265,8 @@ Dieci corsi con la stessa impostazione: dispense online e in PDF, esercizi con l
 
 </div>
 <!-- /collana -->
+
+---
 
 Materiale didattico di **[Fabio Furini](https://fabiofurini.github.io/)** —
 [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.
