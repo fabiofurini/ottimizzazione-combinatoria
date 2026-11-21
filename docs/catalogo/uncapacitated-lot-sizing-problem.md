@@ -51,14 +51,14 @@ title: "Problema del lot sizing senza capacità (ULS)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-principles/#164-gli-algoritmi-di-pd-di-questo-modulo">Cap. 16 «Principi della programmazione dinamica»</a>; <a href="../../programmazione-dinamica/dp-lot-sizing/#box-3-thmZIO">Cap. 25 «PD per il problema del lot sizing senza capacità»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-principles/#14-gli-algoritmi-di-pd-di-questo-modulo"><em>Programmazione dinamica</em>: «Principi della programmazione dinamica»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-lot-sizing/#box-3-thmZIO"><em>Programmazione dinamica</em>: «PD per il problema del lot sizing senza capacità»</a></td>
 </tr>
 <tr>
 <td><strong>Euristiche MIP</strong></td>
-<td><a href="../../algoritmi-euristici/mip-heuristics-classical/#box-16-ex-rfcourse">Cap. 33 «Euristiche MIP per i problemi classici»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#box-16-ex-rfcourse"><em>Algoritmi euristici</em>: «Euristiche MIP per i problemi classici»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/lot-sizing/#esercizio-8-4">Esercizio 8.4</a>; <a href="../../esercizi/lot-sizing-formulations/#esercizio-15-6">Esercizio 15.6</a>; <a href="../../esercizi/dp-lot-sizing/">Cap. 25 (3 esercizi)</a></td>
+<td><a href="../../esercizi/lot-sizing/#esercizio-8-4">Esercizio 8.4</a>; <a href="../../esercizi/lot-sizing-formulations/#esercizio-15-6">Esercizio 15.6</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-lot-sizing/"><em>Programmazione dinamica</em>: «PD per il problema del lot sizing senza capacità» (3 esercizi)</a></td>
 </tr>
 </table></div>

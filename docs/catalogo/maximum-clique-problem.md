@@ -61,11 +61,11 @@ title: "Problema della cricca massima (MCP)"
 </tr>
 <tr>
 <td><strong>Limiti dell'approssimazione</strong></td>
-<td><a href="../../algoritmi-di-approssimazione/clique-inapproximability/">Cap. 38 «Clique massima: limiti dell'approssimazione»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/clique-inapproximability/"><em>Algoritmi di approssimazione</em>: «Clique massima: limiti dell'approssimazione»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/coloring/">Cap. 4 (2 esercizi)</a>; <a href="../../esercizi/clique/">Cap. 5 (5 esercizi)</a>; <a href="../../esercizi/clique-formulations/">Cap. 12 (5 esercizi)</a>; <a href="../../esercizi/clique-inapproximability/">Cap. 38 (4 esercizi)</a></td>
+<td><a href="../../esercizi/coloring/">Cap. 4 (2 esercizi)</a>; <a href="../../esercizi/clique/">Cap. 5 (5 esercizi)</a>; <a href="../../esercizi/clique-formulations/">Cap. 12 (5 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/clique-inapproximability/"><em>Algoritmi di approssimazione</em>: «Clique massima: limiti dell'approssimazione» (4 esercizi)</a></td>
 </tr>
 </table></div>
 
@@ -87,6 +87,6 @@ title: "Problema della cricca massima (MCP)"
 
 ### Approssimazione { #sez-sec-cat-mcp-approximation }
 
-- Non approssimabile: per ogni $\varepsilon>0$ nessun algoritmo polinomiale garantisce un rapporto entro $n^{1-\varepsilon}$, a meno che $P=NP$ (Zuckerman) ([Cap. 38](../algoritmi-di-approssimazione/clique-inapproximability.md#box-4-cli-thmHZ)).
+- Non approssimabile: per ogni $\varepsilon>0$ nessun algoritmo polinomiale garantisce un rapporto entro $n^{1-\varepsilon}$, a meno che $P=NP$ (Zuckerman) ([<em>Algoritmi di approssimazione</em>](https://fabiofurini.github.io/algoritmi-di-approssimazione/clique-inapproximability/#box-4-cli-thmHZ)).
 
-- Casi particolari: grafi planari e grafi di grado limitato, risolti in modo esatto per enumerazione ([Cap. 38](../algoritmi-di-approssimazione/clique-inapproximability.md#box-6-cli-propdeg)).
+- Casi particolari: grafi planari e grafi di grado limitato, risolti in modo esatto per enumerazione ([<em>Algoritmi di approssimazione</em>](https://fabiofurini.github.io/algoritmi-di-approssimazione/clique-inapproximability/#box-6-cli-propdeg)).

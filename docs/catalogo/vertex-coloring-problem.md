@@ -73,19 +73,19 @@ title: "Problema della colorazione dei vertici (VCP)"
 </tr>
 <tr>
 <td><strong>Euristiche</strong></td>
-<td><a href="../../algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur/#sez-sec-VCPgreedy">Cap. 30 «Euristiche costruttive»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur/#sez-sec-VCPgreedy"><em>Algoritmi euristici</em>: «Euristiche costruttive»</a></td>
 </tr>
 <tr>
 <td><strong>Limiti dell'approssimazione</strong></td>
-<td><a href="../../algoritmi-di-approssimazione/coloring-inapproximability/">Cap. 37 «Colorazione dei vertici: limiti dell'approssimazione»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/coloring-inapproximability/"><em>Algoritmi di approssimazione</em>: «Colorazione dei vertici: limiti dell'approssimazione»</a></td>
 </tr>
 <tr>
 <td><strong>Algoritmi ad hoc</strong></td>
-<td><a href="../../algoritmi-specializzati/dsatur-branch-and-bound/">Cap. 42 «Colorazione dei vertici: il branch-and-bound DSATUR»</a></td>
+<td><a href="../../algoritmi-specializzati/dsatur-branch-and-bound/">Cap. 17 «Colorazione dei vertici: il branch-and-bound DSATUR»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/coloring/">Cap. 4 (5 esercizi)</a>; <a href="../../esercizi/coloring-formulations/">Cap. 11 (5 esercizi)</a>; <a href="../../esercizi/constructive-heuristics/">Cap. 30 (3 esercizi)</a>; <a href="../../esercizi/coloring-inapproximability/">Cap. 37 (5 esercizi)</a>; <a href="../../esercizi/dsatur-branch-and-bound/">Cap. 42 (5 esercizi)</a></td>
+<td><a href="../../esercizi/coloring/">Cap. 4 (5 esercizi)</a>; <a href="../../esercizi/coloring-formulations/">Cap. 11 (5 esercizi)</a>; <a href="../../esercizi/dsatur-branch-and-bound/">Cap. 17 (5 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/constructive-heuristics/"><em>Algoritmi euristici</em>: «Euristiche costruttive» (3 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/coloring-inapproximability/"><em>Algoritmi di approssimazione</em>: «Colorazione dei vertici: limiti dell'approssimazione» (5 esercizi)</a></td>
 </tr>
 </table></div>
 
@@ -109,18 +109,18 @@ title: "Problema della colorazione dei vertici (VCP)"
 
 ### Euristiche { #sez-sec-cat-vcp-heuristics }
 
-- La colorazione greedy usa al più $\Delta(G)+1$ colori, e l'ordine dei vertici conta ([Cap. 30](../algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur.md#sez-sec-VCPgreedy)).
+- La colorazione greedy usa al più $\Delta(G)+1$ colori, e l'ordine dei vertici conta ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur/#sez-sec-VCPgreedy)).
 
-- $DSATUR$ colora per primo il vertice che vede più colori; è esatto sui grafi bipartiti ([Cap. 30](../algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur.md#sez-sec-VCPgreedy)).
+- $DSATUR$ colora per primo il vertice che vede più colori; è esatto sui grafi bipartiti ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur/#sez-sec-VCPgreedy)).
 
 ### Approssimazione { #sez-sec-cat-vcp-approximation }
 
-- Non approssimabile: nessun algoritmo polinomiale garantisce un rapporto inferiore a $\frac43$, a meno che $P=NP$, e nemmeno $n^{1-\varepsilon}$ (Zuckerman) ([Cap. 37](../algoritmi-di-approssimazione/coloring-inapproximability.md#box-1-vci-thm43)).
+- Non approssimabile: nessun algoritmo polinomiale garantisce un rapporto inferiore a $\frac43$, a meno che $P=NP$, e nemmeno $n^{1-\varepsilon}$ (Zuckerman) ([<em>Algoritmi di approssimazione</em>](https://fabiofurini.github.io/algoritmi-di-approssimazione/coloring-inapproximability/#box-1-vci-thm43)).
 
-- Casi particolari: grafi bipartiti e grafi di intervalli in modo esatto, grafi planari entro $2$ colori dall'ottimo ([Cap. 37](../algoritmi-di-approssimazione/coloring-inapproximability.md#box-9-vci-corPL)).
+- Casi particolari: grafi bipartiti e grafi di intervalli in modo esatto, grafi planari entro $2$ colori dall'ottimo ([<em>Algoritmi di approssimazione</em>](https://fabiofurini.github.io/algoritmi-di-approssimazione/coloring-inapproximability/#box-9-vci-corPL)).
 
 ### Algoritmi ad hoc { #sez-sec-cat-vcp-adhocalgorithms }
 
-- Il branch-and-bound DSATUR fa branching sul vertice più saturo, con un figlio per ogni colore ammissibile e uno per un colore nuovo, e pota un nodo quando $q(k)\ge\UB$ ([Cap. 42](../algoritmi-specializzati/dsatur-branch-and-bound.md#box-1-def-VCPnode)).
+- Il branch-and-bound DSATUR fa branching sul vertice più saturo, con un figlio per ogni colore ammissibile e uno per un colore nuovo, e pota un nodo quando $q(k)\ge\UB$ ([Cap. 17](../algoritmi-specializzati/dsatur-branch-and-bound.md#box-1-def-VCPnode)).
 
-- Sul grafo di Petersen dimostra $\chi(G)=3$ con $6$ nodi ([Cap. 42](../algoritmi-specializzati/dsatur-branch-and-bound.md#box-3-ex-petersenBB)).
+- Sul grafo di Petersen dimostra $\chi(G)=3$ con $6$ nodi ([Cap. 17](../algoritmi-specializzati/dsatur-branch-and-bound.md#box-3-ex-petersenBB)).

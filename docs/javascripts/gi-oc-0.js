@@ -14,12 +14,10 @@
 
   const PASSO = T("text{passo}", "text{step}");
   const parPasso = (descr, val = 1) => ({ k: PASSO, nome: "\\" + PASSO, min: 0, max: 20, step: 1, val, colore: "a", cifre: 0, descr });
-  const DESCR_PASSO = T("◀ ▶ un passo alla volta, «Esegui» per vederli tutti", "◀ ▶ one step at a time, «Run» to watch all of them");
   const vaiA = (st, v) => { const i = M.inputDi(st, PASSO); if (i) i.value = v; };
   const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
   const somma = (v) => v.reduce((a, b) => a + b, 0);
   const lista = (A) => A.join(", ");
-  const pct = (x) => GI.num(100 * x, 1) + "\\,\\%";
   const decrescente = (v) => v.map((_, j) => j).sort((i, j) => (v[j] - v[i]) || (i - j));
   let contatore = 0;
   const nuovoId = () => "i" + (++contatore);
@@ -34,13 +32,6 @@
       if (w > 0 && h > 0 && st.dati.roDim !== w + "x" + h) { st.dati.roDim = w + "x" + h; st.aggiorna(); }
     });
     st.dati.ro.observe(board.containerObj);
-  }
-  /** al cambio di voce (algoritmo) il passo torna a 1 e «Esegui» si ferma */
-  function nuovaVoce(st, primo = 1) {
-    if (st.dati.voce !== st.chiave()) {
-      if (st.dati.voce !== undefined) { vaiA(st, primo); M.ferma(st); }
-      st.dati.voce = st.chiave();
-    }
   }
   /** dimensioni del disegno in pixel; se il contenitore è cambiato la board si adegua prima di disegnare */
   const dim = (board) => {
@@ -86,8 +77,8 @@
     const v = String(s).split(/[\s,;]+/).filter(Boolean).map(Number);
     return v.length && v.every((x) => Number.isInteger(x) && x >= 1) ? v : null;
   };
-  /** colori per i colori del grafo (6) */
-  const PALETTE = (C) => [C.a, C.b, C.c, C.d, C.e, C.viola, C.verde];
+  /** frazione {n, d} in testo semplice (per le etichette del disegno): 7/3 */
+  const frTxt = (q) => (q.d === 1 ? String(q.n) : `${q.n}/${q.d}`);
 
   /** Menu a tendina delle istanze, sopra i pulsanti dei comandi (va chiamato dopo M.comandi, in monta):
    *  voci = [[nome, titolo], …] (le istanze dei capitoli, con il nome che hanno nelle dispense);
@@ -111,14 +102,6 @@
     sel.value = String(scelta());
     return sel;
   }
-  /** mostra o nasconde il cursore `nome` (i cursori che servono solo a una voce di «funzioni») */
-  const mostraCursore = (st, nome, si) => { const c = M.ctrlDi(st, nome); if (c) c.style.display = si ? "" : "none"; };
-  /** generatore di Park e Miller (1988), quello delle note sulle metaeuristiche:
-   *  seed ← 16807·seed mod (2^31 − 1), u = seed / (2^31 − 1). r = parkMiller(1); r() → u */
-  const parkMiller = (seed) => { let s = seed; const r = () => { s = (16807 * s) % 2147483647; return s / 2147483647; }; r.seme = () => s; return r; };
-  /** frazione {n, d} in testo semplice (per le etichette del disegno): 7/3 */
-  const frTxt = (q) => (q.d === 1 ? String(q.n) : `${q.n}/${q.d}`);
 
-  window.GI_OC = { PASSO, parPasso, DESCR_PASSO, vaiA, clamp, somma, lista, pct, decrescente, nuovoId, osservaDimensioni, nuovaVoce, dim, pix, disegno, daIndirizzo, chiedi, interi, PALETTE,
-    menuIstanze, mostraCursore, parkMiller, frTxt };
+  window.GI_OC = { PASSO, parPasso, vaiA, clamp, somma, lista, decrescente, nuovoId, osservaDimensioni, dim, pix, disegno, daIndirizzo, chiedi, interi, frTxt, menuIstanze };
 })();

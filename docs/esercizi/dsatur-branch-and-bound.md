@@ -6,7 +6,7 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Capitolo 42** · ogni soluzione si apre con un clic · [:material-book-open-variant: Capitolo 42: Colorazione dei vertici (VCP)](../algoritmi-specializzati/dsatur-branch-and-bound.md) · [:material-file-pdf-box: Eserciziario, volume 6 (PDF)](../pdf/esercizi-6-algoritmi-specializzati.pdf)
+**Esercizi · Capitolo 17** · ogni soluzione si apre con un clic · [:material-book-open-variant: Capitolo 17: Colorazione dei vertici (VCP)](../algoritmi-specializzati/dsatur-branch-and-bound.md) · [:material-file-pdf-box: Eserciziario, volume 3 (PDF)](../pdf/esercizi-3-algoritmi-specializzati.pdf)
 
 </div>
 
@@ -29,9 +29,9 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
     - **(D5)** <strong>Visita.</strong> In profondità: la lista è una pila e il figlio con il colore minimo si estrae per primo; i nodi sono numerati nell'ordine di valutazione.
 
-<a id="esercizio-42-1"></a>
+<a id="esercizio-17-1"></a>
 
-!!! esercizio "Esercizio 42.1: Il nodo radice del branch-and-bound DSATUR (P1)"
+!!! esercizio "Esercizio 17.1: Il nodo radice del branch-and-bound DSATUR (P1)"
 
     Consideriamo due grafi. Il grafo $G_a$ di un calendario d'esami, con $V=\{1,\dots,6\}$ e gli spigoli
 
@@ -174,9 +174,9 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
         Su $G_a$ la clique $\{2,3,1\}$ raggiunge il bound di $DSATUR$: niente branching. Su $G_b$ il bound della clique è $2$ e l'albero serve per dimostrare $\chi(C_5)=3$.
 
-<a id="esercizio-42-2"></a>
+<a id="esercizio-17-2"></a>
 
-!!! esercizio "Esercizio 42.2: Dimostrare un lower bound: la ruota $W_5$ (P2)"
+!!! esercizio "Esercizio 17.2: Dimostrare un lower bound: la ruota $W_5$ (P2)"
 
     Consideriamo la ruota $W_5$ (un ciclo su $1,\dots,5$ e il mozzo $6$), il grafo $G=(V,E)$ con $V=\{1,\dots,6\}$ e gli spigoli
 
@@ -352,9 +352,9 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
         Il bound della clique dà solo $3$: l'albero dimostra che il ciclo dispari e il mozzo richiedono un quarto colore.
 
-<a id="esercizio-42-3"></a>
+<a id="esercizio-17-3"></a>
 
-!!! esercizio "Esercizio 42.3: Il complemento del ciclo $C_7$ (P3)"
+!!! esercizio "Esercizio 17.3: Il complemento del ciclo $C_7$ (P3)"
 
     Consideriamo il complemento del ciclo $C_7$ (due vertici sono adiacenti se non sono consecutivi sul ciclo $1,2,\dots,7$), il grafo $G=(V,E)$ con $V=\{1,\dots,7\}$ e gli spigoli
 
@@ -562,9 +562,9 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
         Ogni insieme stabile di $G$ ha al più $2$ vertici, quindi il bound degli insiemi stabili $\lceil 7/2\rceil=4$ del [Capitolo 4](../problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici.md) conferma il risultato.
 
-<a id="esercizio-42-4"></a>
+<a id="esercizio-17-4"></a>
 
-!!! esercizio "Esercizio 42.4: Migliorare la soluzione incumbent (P4)"
+!!! esercizio "Esercizio 17.4: Migliorare la soluzione incumbent (P4)"
 
     Consideriamo un grafo con $7$ vertici e $11$ spigoli, il grafo $G=(V,E)$ con $V=\{1,\dots,7\}$ e gli spigoli
 
@@ -831,9 +831,9 @@ title: "Esercizi · Colorazione dei vertici: il branch-and-bound DSATUR"
 
         Qui $DSATUR$ non è ottima: l'algoritmo di branch-and-bound migliora la soluzione incumbent da $4$ a $3$ colori e si ferma appena $\UB$ raggiunge il bound della clique.
 
-<a id="esercizio-42-5"></a>
+<a id="esercizio-17-5"></a>
 
-!!! esercizio "Esercizio 42.5: Il branching senza simmetrie (P5)"
+!!! esercizio "Esercizio 17.5: Il branching senza simmetrie (P5)"
 
     Consideriamo il ciclo $C_5$, con $V=\{1,\dots,5\}$ e gli spigoli
 

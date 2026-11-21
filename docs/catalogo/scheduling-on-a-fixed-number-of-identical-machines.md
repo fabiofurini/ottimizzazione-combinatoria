@@ -31,10 +31,10 @@ title: "Scheduling su un numero fissato di macchine identiche (Pm||Cmax)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-principles/">Cap. 16 «Principi della programmazione dinamica»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-principles/"><em>Programmazione dinamica</em>: «Principi della programmazione dinamica»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/dp-principles/#esercizio-16-3">Esercizio 16.3</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-principles/#esercizio-1-3"><em>Programmazione dinamica</em>, Esercizio 1.3</a></td>
 </tr>
 </table></div>

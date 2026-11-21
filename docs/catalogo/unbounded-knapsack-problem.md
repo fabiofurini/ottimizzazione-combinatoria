@@ -59,10 +59,10 @@ title: "Problema dello zaino illimitato (UKP)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-principles/#164-gli-algoritmi-di-pd-di-questo-modulo">Cap. 16 «Principi della programmazione dinamica»</a>; <a href="../../programmazione-dinamica/dp-unbounded-knapsack/">Cap. 18 «PD per il problema dello zaino illimitato»</a>; <a href="../../programmazione-dinamica/dp-coin-change/">Cap. 27 «PD per il problema del cambio monete»</a>; <a href="../../programmazione-dinamica/dp-rod-cutting/">Cap. 28 «PD per il problema del taglio delle aste»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-principles/#14-gli-algoritmi-di-pd-di-questo-modulo"><em>Programmazione dinamica</em>: «Principi della programmazione dinamica»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-unbounded-knapsack/"><em>Programmazione dinamica</em>: «PD per il problema dello zaino illimitato»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-coin-change/"><em>Programmazione dinamica</em>: «PD per il problema del cambio monete»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-rod-cutting/"><em>Programmazione dinamica</em>: «PD per il problema del taglio delle aste»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/knapsack/#esercizio-2-3">Esercizio 2.3</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-8">Esercizio 9.8</a>; <a href="../../esercizi/dp-unbounded-knapsack/">Cap. 18 (5 esercizi)</a></td>
+<td><a href="../../esercizi/knapsack/#esercizio-2-3">Esercizio 2.3</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-8">Esercizio 9.8</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-unbounded-knapsack/"><em>Programmazione dinamica</em>: «PD per il problema dello zaino illimitato» (5 esercizi)</a></td>
 </tr>
 </table></div>

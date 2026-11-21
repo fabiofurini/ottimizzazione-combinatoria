@@ -59,19 +59,19 @@ title: "Problema del bin packing (BPP)"
 </tr>
 <tr>
 <td><strong>Euristiche</strong></td>
-<td><a href="../../algoritmi-euristici/heuristics/#box-3-ex-refBPP">Cap. 29 «Algoritmi euristici: definizioni»</a>; <a href="../../algoritmi-euristici/constructive-heuristics/il-problema-del-bin-packing-prima-ordinare-poi-riempire/#sez-sec-BPP">Cap. 30 «Euristiche costruttive»</a>; <a href="../../algoritmi-euristici/local-search/ricerca-locale-lo-schema/#3142-bpp-move-e-swap">Cap. 31 «Ricerca locale»</a>; <a href="../../algoritmi-euristici/metaheuristics/large-neighbourhood-search/#sez-sec-lns-bpp">Cap. 32 «Metaeuristiche»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-euristici/heuristics/#box-3-ex-refBPP"><em>Algoritmi euristici</em>: «Algoritmi euristici: definizioni»</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/il-problema-del-bin-packing-prima-ordinare-poi-riempire/#sez-sec-BPP"><em>Algoritmi euristici</em>: «Euristiche costruttive»</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/local-search/ricerca-locale-lo-schema/#342-bpp-move-e-swap"><em>Algoritmi euristici</em>: «Ricerca locale»</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/large-neighbourhood-search/#sez-sec-lns-bpp"><em>Algoritmi euristici</em>: «Metaeuristiche»</a></td>
 </tr>
 <tr>
 <td><strong>Euristiche MIP</strong></td>
-<td><a href="../../algoritmi-euristici/mip-heuristics-classical/#eq-eq-bpp">Cap. 33 «Euristiche MIP per i problemi classici»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#eq-eq-bpp"><em>Algoritmi euristici</em>: «Euristiche MIP per i problemi classici»</a></td>
 </tr>
 <tr>
 <td><strong>Approssimazione</strong></td>
-<td><a href="../../algoritmi-di-approssimazione/bin-packing-approximation/">Cap. 36 «Algoritmi di approssimazione per il bin packing»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/bin-packing-approximation/"><em>Algoritmi di approssimazione</em>: «Algoritmi di approssimazione per il bin packing»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/bin-packing/">Cap. 3 (6 esercizi)</a>; <a href="../../esercizi/pcmax/#esercizio-7-5">Esercizio 7.5</a>; <a href="../../esercizi/bin-packing-formulations/">Cap. 10 (5 esercizi)</a>; <a href="../../esercizi/heuristics/#esercizio-29-2">Esercizio 29.2</a>; <a href="../../esercizi/constructive-heuristics/">Cap. 30 (3 esercizi)</a>; <a href="../../esercizi/local-search/">Cap. 31 (3 esercizi)</a>; <a href="../../esercizi/metaheuristics/">Cap. 32 (2 esercizi)</a>; <a href="../../esercizi/approximation/#esercizio-34-3">Esercizio 34.3</a>; <a href="../../esercizi/bin-packing-approximation/">Cap. 36 (12 esercizi)</a></td>
+<td><a href="../../esercizi/bin-packing/">Cap. 3 (6 esercizi)</a>; <a href="../../esercizi/pcmax/#esercizio-7-5">Esercizio 7.5</a>; <a href="../../esercizi/bin-packing-formulations/">Cap. 10 (5 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/heuristics/#esercizio-1-2"><em>Algoritmi euristici</em>, Esercizio 1.2</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/constructive-heuristics/"><em>Algoritmi euristici</em>: «Euristiche costruttive» (3 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/local-search/"><em>Algoritmi euristici</em>: «Ricerca locale» (3 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/metaheuristics/"><em>Algoritmi euristici</em>: «Metaeuristiche» (2 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/approximation/#esercizio-1-3"><em>Algoritmi di approssimazione</em>, Esercizio 1.3</a>; <a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/bin-packing-approximation/"><em>Algoritmi di approssimazione</em>: «Algoritmi di approssimazione per il bin packing» (12 esercizi)</a></td>
 </tr>
 </table></div>
 
@@ -91,24 +91,24 @@ title: "Problema del bin packing (BPP)"
 
 ### Euristiche { #sez-sec-cat-bpp-heuristics }
 
-- First Fit Decreasing e Best Fit Decreasing trovano l'ottimo $3$ sull'istanza del [Cap. 29](../algoritmi-euristici/heuristics.md); $FFD(I) \le \frac{11}{9}\, z(I) + \frac{6}{9}$, tight ([Cap. 30](../algoritmi-euristici/constructive-heuristics/il-problema-del-bin-packing-prima-ordinare-poi-riempire.md#sez-sec-FFD)).
+- First Fit Decreasing e Best Fit Decreasing trovano l'ottimo $3$ sull'istanza del [<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/heuristics/); $FFD(I) \le \frac{11}{9}\, z(I) + \frac{6}{9}$, tight ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/il-problema-del-bin-packing-prima-ordinare-poi-riempire/#sez-sec-FFD)).
 
-- Il numero di contenitori è piatto, quindi la ricerca locale con move e swap usa l'obiettivo ausiliario $\max \sum_b L_b^2$ ([Cap. 31](../algoritmi-euristici/local-search/paesaggi-piatti-e-obiettivi-ausiliari.md#sez-sec-flat)).
+- Il numero di contenitori è piatto, quindi la ricerca locale con move e swap usa l'obiettivo ausiliario $\max \sum_b L_b^2$ ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/local-search/paesaggi-piatti-e-obiettivi-ausiliari/#sez-sec-flat)).
 
-- La VND con move e swap raggiunge l'ottimo in $89$ esecuzioni su $100$ su un'istanza con $n=12$ ([Cap. 31](../algoritmi-euristici/local-search/variable-neighbourhood-descent.md#sez-sec-vnd)).
+- La VND con move e swap raggiunge l'ottimo in $89$ esecuzioni su $100$ su un'istanza con $n=12$ ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/local-search/variable-neighbourhood-descent/#sez-sec-vnd)).
 
-- Large neighbourhood search: su BPP24 la riparazione esatta con $q\ge 3$ raggiunge l'ottimo $9$ in ogni esecuzione ([Cap. 32](../algoritmi-euristici/metaheuristics/large-neighbourhood-search.md#box-11-ex-lnsBPP)).
+- Large neighbourhood search: su BPP24 la riparazione esatta con $q\ge 3$ raggiunge l'ottimo $9$ in ogni esecuzione ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/large-neighbourhood-search/#box-11-ex-lnsBPP)).
 
 ### Euristiche MIP { #sez-sec-cat-bpp-mipheuristics }
 
-- L'arrotondamento e il diving frazionario falliscono sull'istanza del [Cap. 29](../algoritmi-euristici/heuristics.md): il rilassamento lineare distribuisce un oggetto su più contenitori ([Cap. 33](../algoritmi-euristici/mip-heuristics-classical.md#box-3-ex-rounding)).
+- L'arrotondamento e il diving frazionario falliscono sull'istanza del [<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/heuristics/): il rilassamento lineare distribuisce un oggetto su più contenitori ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#box-3-ex-rounding)).
 
-- La feasibility pump trova sempre una soluzione ammissibile, ma può lasciare aperti contenitori vuoti ([Cap. 33](../algoritmi-euristici/mip-heuristics-classical.md#box-8-ex-fpbpp)).
+- La feasibility pump trova sempre una soluzione ammissibile, ma può lasciare aperti contenitori vuoti ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#box-8-ex-fpbpp)).
 
-- Su un'istanza con $n=60$ tutta la difficoltà è primale: le euristiche di Gurobi decidono il tempo di soluzione ([Cap. 33](../algoritmi-euristici/mip-heuristics-classical.md#box-19-ex-gurobi)).
+- Su un'istanza con $n=60$ tutta la difficoltà è primale: le euristiche di Gurobi decidono il tempo di soluzione ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#box-19-ex-gurobi)).
 
 ### Approssimazione { #sez-sec-cat-bpp-approximation }
 
-- Ogni algoritmo Any Fit è half-full, quindi è un algoritmo $2$-approssimato ([Cap. 36](../algoritmi-di-approssimazione/bin-packing-approximation.md#364-proprieta-di-riempimento-a-meta)).
+- Ogni algoritmo Any Fit è half-full, quindi è un algoritmo $2$-approssimato ([<em>Algoritmi di approssimazione</em>](https://fabiofurini.github.io/algoritmi-di-approssimazione/bin-packing-approximation/#34-proprieta-di-riempimento-a-meta)).
 
-- $r(NF) = r(WF) = 2$ e $r(FF) = r(BF) = \frac{17}{10}$ ([Cap. 36](../algoritmi-di-approssimazione/bin-packing-approximation.md#box-20-propFF)).
+- $r(NF) = r(WF) = 2$ e $r(FF) = r(BF) = \frac{17}{10}$ ([<em>Algoritmi di approssimazione</em>](https://fabiofurini.github.io/algoritmi-di-approssimazione/bin-packing-approximation/#box-20-propFF)).

@@ -37,10 +37,10 @@ title: "Problema del cambio monete (CCP)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-principles/#164-gli-algoritmi-di-pd-di-questo-modulo">Cap. 16 «Principi della programmazione dinamica»</a>; <a href="../../programmazione-dinamica/dp-coin-change/">Cap. 27 «PD per il problema del cambio monete»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-principles/#14-gli-algoritmi-di-pd-di-questo-modulo"><em>Programmazione dinamica</em>: «Principi della programmazione dinamica»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-coin-change/"><em>Programmazione dinamica</em>: «PD per il problema del cambio monete»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/dp-coin-change/">Cap. 27 (5 esercizi)</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-coin-change/"><em>Programmazione dinamica</em>: «PD per il problema del cambio monete» (5 esercizi)</a></td>
 </tr>
 </table></div>

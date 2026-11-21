@@ -6,7 +6,7 @@ title: "Zaino: branch-and-bound sull'elemento critico"
 
 <div class="info-capitolo" markdown>
 
-**Parte 6 · Algoritmi ad hoc · Capitolo 41** · [:material-file-pdf-box: Dispensa, volume 6 (PDF)](../pdf/dispensa-6-algoritmi-specializzati.pdf) · [:material-presentation: Slide](../pdf/slide-knapsack-branch-and-bound.pdf) · [:material-pencil: Esercizi: Zaino 0/1 (KP)](../esercizi/knapsack-branch-and-bound.md) · [:material-gesture-tap: App: Branch-and-bound per lo zaino](../laboratorio/branch-and-bound-zaino.md)
+**Parte 3 · Algoritmi ad hoc · Capitolo 16** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-algoritmi-specializzati.pdf) · [:material-presentation: Slide](../pdf/slide-knapsack-branch-and-bound.pdf) · [:material-pencil: Esercizi: Zaino 0/1 (KP)](../esercizi/knapsack-branch-and-bound.md) · [:material-gesture-tap: App: Branch-and-bound per lo zaino](../laboratorio/branch-and-bound-zaino.md)
 
 </div>
 
@@ -30,11 +30,11 @@ title: "Zaino: branch-and-bound sull'elemento critico"
 
 Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-0-1.md): la sua definizione e le sue ipotesi sono nella sua pagina.
 
-## 41.1 L'algoritmo per il KP
+## 16.1 L'algoritmo per il KP
 
 <a id="box-1-def-LPKPk"></a>
 
-!!! definizione "Definizione 41.1: Nodo di branching e problema $\mathrm{LP}_{\mathrm{KP}}^k$"
+!!! definizione "Definizione 16.1: Nodo di branching e problema $\mathrm{LP}_{\mathrm{KP}}^k$"
 
     Nell'algoritmo di branch-and-bound per il modello $\mathrm{ILP}_{\mathrm{KP}}$, i vincoli di branching su una variabile $x_j$, $j \in \mathscr{I}$, sono $x_j \le 0$ e $x_j \ge 1$. In un nodo di branching $k$ dell'albero di branch-and-bound abbiamo:
 
@@ -62,10 +62,10 @@ Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi
     Il problema $\mathrm{LP}_{\mathrm{KP}}^k$ di un nodo di branching $k$ si può riscrivere in modo equivalente come:
 
     \begin{align*}
-    &&   \underbrace{ \sum_{j \in \mathscr{I}^k_\text{in} } p_j}_{=p(k)}  +  \max \;\;{\sum_{j \in  \mathscr{I}^k } p_j \, x_j}                              \label{eq:KP-obj_LP}  \tag{41.1a}\\[2ex]
-    && \text{soggetto a} \quad  {\sum_{j \in  \mathscr{I}^k} w_j \, x_j}  &\leq \underbrace{c - \sum_{j \in \mathscr{I}^k_\text{in} } w_j}_{=c(k)},                       \label{eq:KP-cap_LP}  \tag{41.1b}\\[2ex]
-    &&  x_j                        &\le  1, & \forall j \in  \mathscr{I}^k, \tag{41.1c}\\[2ex]
-    && x_j                        &\ge  0, & \forall j \in  \mathscr{I}^k. \label{eq:KP-bin_LP} \tag{41.1d}
+    &&   \underbrace{ \sum_{j \in \mathscr{I}^k_\text{in} } p_j}_{=p(k)}  +  \max \;\;{\sum_{j \in  \mathscr{I}^k } p_j \, x_j}                              \label{eq:KP-obj_LP}  \tag{16.1a}\\[2ex]
+    && \text{soggetto a} \quad  {\sum_{j \in  \mathscr{I}^k} w_j \, x_j}  &\leq \underbrace{c - \sum_{j \in \mathscr{I}^k_\text{in} } w_j}_{=c(k)},                       \label{eq:KP-cap_LP}  \tag{16.1b}\\[2ex]
+    &&  x_j                        &\le  1, & \forall j \in  \mathscr{I}^k, \tag{16.1c}\\[2ex]
+    && x_j                        &\ge  0, & \forall j \in  \mathscr{I}^k. \label{eq:KP-bin_LP} \tag{16.1d}
     \end{align*}
 
 - Il problema $\mathrm{LP}^k_{\mathrm{KP}}$ di un nodo di branching $k$ è <strong>strutturalmente equivalente</strong> al problema $\mathrm{LP}_{\mathrm{KP}}$, ma:
@@ -76,7 +76,7 @@ Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi
 
     3. c'è una costante nella funzione obiettivo  $p(k):=\sum_{j \in \mathscr{I}^k_\text{in} } p_j$
 
-### 41.1.1 Risoluzione del problema $\mathrm{LP}_{\mathrm{KP}}^k$ di un nodo
+### 16.1.1 Risoluzione del problema $\mathrm{LP}_{\mathrm{KP}}^k$ di un nodo
 
 - Il problema $\mathrm{LP}_{\mathrm{KP}}^k$ è un problema LP di zaino sugli oggetti di $\mathscr{I}^k$, con capacità $c(k)$: si risolve con le formule di Dantzig, senza alcuna iterazione del simplesso. Gli oggetti di $\mathscr{I}^k$ restano ordinati per efficienza non crescente.
 
@@ -100,13 +100,13 @@ Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi
 
     In ogni nodo al più una variabile è frazionaria, quella dell'oggetto critico, e il valore del nodo è il bound di Dantzig di uno zaino più piccolo: il nodo si risolve con una scansione degli oggetti.
 
-### 41.1.2 Strategia di scelta della variabile di branching
+### 16.1.2 Strategia di scelta della variabile di branching
 
 - La soluzione ottima di un problema $\mathrm{LP}_{\mathrm{KP}}^k$ data dalle formule della sottosezione precedente ha al più una variabile frazionaria, quella associata all'oggetto critico. <strong>Il branching si può fare sulla variabile associata all'oggetto critico</strong>: questa strategia di scelta della variabile di branching si chiama strategia dell'oggetto critico.
 
 - La soluzione ottima di un problema $\mathrm{LP}_{\mathrm{KP}}$ non è unica quando alcuni oggetti hanno la stessa efficienza: le altre soluzioni ottime possono avere più variabili frazionarie, per esempio $x=(\frac12,\frac12)$ per $p=(2,2)$, $w=(2,2)$, $c=2$. Qui, come nell'algoritmo generale, usiamo sempre la soluzione data dalle formule.
 
-### 41.1.3 Che cosa cambia rispetto all'algoritmo generale
+### 16.1.3 Che cosa cambia rispetto all'algoritmo generale
 
 - L'algoritmo è il branch-and-bound basato sulla PL del modulo <em>Programmazione lineare intera</em> ([Capitolo 7 «Branch-and-bound»](https://fabiofurini.github.io/programmazione-lineare-intera/metodi-esatti/bb/)), con la sua lista dei problemi, i suoi criteri di potatura e il suo gap di ottimalità.
 
@@ -116,11 +116,11 @@ Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi
 
 - <strong>Scelta del nodo.</strong> Il nodo della lista dei problemi si estrae con la regola FIFO o LIFO, e il nodo di down-branching si risolve prima del nodo di up-branching; i nodi sono numerati nell'ordine di risoluzione. Il lower bound scritto in un nodo è il valore al momento della sua risoluzione.
 
-## 41.2 Un esempio svolto
+## 16.2 Un esempio svolto
 
 <a id="box-2-texexpbox1"></a>
 
-!!! esempio "Esempio 41.1: Il modello $\mathrm{ILP}_{\mathrm{KP}}$"
+!!! esempio "Esempio 16.1: Il modello $\mathrm{ILP}_{\mathrm{KP}}$"
 
     Consideriamo uno zaino di capacità $c = 9$ e un insieme $\mathscr{I} = \{1,2,3,4,5,6\}$ di $6$ oggetti ($n = 6$), con i seguenti profitti e pesi:
 
@@ -133,7 +133,7 @@ Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi
     \end{array}
     $$
 
-    Chiamiamo questa istanza del KP <span style="color:#1971c2">[Esempio 41.1](#box-2-texexpbox1)</span>. Il modello $\mathrm{ILP}_{\mathrm{KP}}$ per questa istanza del KP è:
+    Chiamiamo questa istanza del KP <span style="color:#1971c2">[Esempio 16.1](#box-2-texexpbox1)</span>. Il modello $\mathrm{ILP}_{\mathrm{KP}}$ per questa istanza del KP è:
 
     $$
     \begin{array}{rrrrrrrrrrrrr}
@@ -159,9 +159,9 @@ Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi
 
 <a id="box-3-texexpbox2"></a>
 
-!!! esempio "Esempio 41.2: Algoritmo di branch-and-bound per il modello $\mathrm{ILP}_{\mathrm{KP}}$"
+!!! esempio "Esempio 16.2: Algoritmo di branch-and-bound per il modello $\mathrm{ILP}_{\mathrm{KP}}$"
 
-    Un algoritmo di branch-and-bound per il modello $\mathrm{ILP}_{\mathrm{KP}}$ e l'istanza del KP dell'<span style="color:#1971c2">[Esempio 41.1](#box-2-texexpbox1)</span> che usa:
+    Un algoritmo di branch-and-bound per il modello $\mathrm{ILP}_{\mathrm{KP}}$ e l'istanza del KP dell'<span style="color:#1971c2">[Esempio 16.1](#box-2-texexpbox1)</span> che usa:
 
     1. la strategia dell'oggetto critico come strategia di scelta della variabile di branching;
 
@@ -329,7 +329,7 @@ Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi
 
     ![Figura 3](../img/knapsack-branch-and-bound/fig03.svg){ .fig loading=lazy  }
 
-## 41.3 Errori tipici
+## 16.3 Errori tipici
 
 !!! attenzione "Attenzione"
 
@@ -343,7 +343,7 @@ Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi
 
     - <strong>Numerare i figli saltati.</strong> Un figlio che non viene risolto non riceve un indice di nodo, esattamente come nell'algoritmo generale.
 
-## 41.4 In sintesi
+## 16.4 In sintesi
 
 !!! chiave "In sintesi"
 
@@ -353,7 +353,7 @@ Il problema di questo capitolo è il [problema dello zaino 0/1 (KP)](../problemi
 
     - Il bound di un nodo è $\lfloor z(\mathrm{LP}_{\mathrm{KP}}^k)\rfloor$; quando la lista dei problemi è vuota il lower bound e l'upper bound coincidono e la soluzione incumbent è ottima.
 
-    <strong>Quadro riassuntivo dell'istanza del KP dell'[Esempio 41.1](#box-2-texexpbox1)</strong> ($c=9$, $p=(6,5,8,9,6,7)$, $w=(2,3,6,7,5,9)$). I bound su $z(\mathrm{ILP}_{\mathrm{KP}})$ trovati finora:
+    <strong>Quadro riassuntivo dell'istanza del KP dell'[Esempio 16.1](#box-2-texexpbox1)</strong> ($c=9$, $p=(6,5,8,9,6,7)$, $w=(2,3,6,7,5,9)$). I bound su $z(\mathrm{ILP}_{\mathrm{KP}})$ trovati finora:
 
     <div class="tabella" markdown="0"><table>
     <tr>

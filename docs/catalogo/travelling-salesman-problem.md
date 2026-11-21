@@ -57,19 +57,19 @@ title: "Problema del commesso viaggiatore (TSP)"
 </tr>
 <tr>
 <td><strong>Euristiche</strong></td>
-<td><a href="../../algoritmi-euristici/heuristics/#sez-sec-problems">Cap. 29 «Algoritmi euristici: definizioni»</a>; <a href="../../algoritmi-euristici/constructive-heuristics/il-problema-del-commesso-viaggiatore-accodare-o-inserire/#sez-sec-TSP">Cap. 30 «Euristiche costruttive»</a>; <a href="../../algoritmi-euristici/local-search/tsp-2-opt-e-or-opt/#sez-sec-tsp">Cap. 31 «Ricerca locale»</a>; <a href="../../algoritmi-euristici/metaheuristics/i-problemi-e-le-ipotesi/#sez-sec-instances">Cap. 32 «Metaeuristiche»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-euristici/heuristics/#sez-sec-problems"><em>Algoritmi euristici</em>: «Algoritmi euristici: definizioni»</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/il-problema-del-commesso-viaggiatore-accodare-o-inserire/#sez-sec-TSP"><em>Algoritmi euristici</em>: «Euristiche costruttive»</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/local-search/tsp-2-opt-e-or-opt/#sez-sec-tsp"><em>Algoritmi euristici</em>: «Ricerca locale»</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/i-problemi-e-le-ipotesi/#sez-sec-instances"><em>Algoritmi euristici</em>: «Metaeuristiche»</a></td>
 </tr>
 <tr>
 <td><strong>Euristiche MIP</strong></td>
-<td><a href="../../algoritmi-euristici/mip-heuristics-classical/#3323-il-problema-del-commesso-viaggiatore">Cap. 33 «Euristiche MIP per i problemi classici»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#523-il-problema-del-commesso-viaggiatore"><em>Algoritmi euristici</em>: «Euristiche MIP per i problemi classici»</a></td>
 </tr>
 <tr>
 <td><strong>Approssimazione</strong></td>
-<td><a href="../../algoritmi-di-approssimazione/tsp-approximation/#sez-sec-DT">Cap. 39 «TSP: il caso generale e il caso metrico»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/tsp-approximation/#sez-sec-DT"><em>Algoritmi di approssimazione</em>: «TSP: il caso generale e il caso metrico»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/tsp/">Cap. 6 (7 esercizi)</a>; <a href="../../esercizi/tsp-formulations/">Cap. 13 (5 esercizi)</a>; <a href="../../esercizi/heuristics/#esercizio-29-3">Esercizio 29.3</a>; <a href="../../esercizi/constructive-heuristics/">Cap. 30 (3 esercizi)</a>; <a href="../../esercizi/local-search/">Cap. 31 (3 esercizi)</a>; <a href="../../esercizi/metaheuristics/">Cap. 32 (7 esercizi)</a>; <a href="../../esercizi/tsp-approximation/">Cap. 39 (3 esercizi)</a></td>
+<td><a href="../../esercizi/tsp/">Cap. 6 (7 esercizi)</a>; <a href="../../esercizi/tsp-formulations/">Cap. 13 (5 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/heuristics/#esercizio-1-3"><em>Algoritmi euristici</em>, Esercizio 1.3</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/constructive-heuristics/"><em>Algoritmi euristici</em>: «Euristiche costruttive» (3 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/local-search/"><em>Algoritmi euristici</em>: «Ricerca locale» (3 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/metaheuristics/"><em>Algoritmi euristici</em>: «Metaeuristiche» (7 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/tsp-approximation/"><em>Algoritmi di approssimazione</em>: «TSP: il caso generale e il caso metrico» (3 esercizi)</a></td>
 </tr>
 </table></div>
 
@@ -89,22 +89,22 @@ title: "Problema del commesso viaggiatore (TSP)"
 
 ### Euristiche { #sez-sec-cat-tsp-heuristics }
 
-- Il nearest neighbour multi-start e le euristiche di inserimento NI, FI e CI raggiungono tutti $18$ sull'istanza del [Cap. 6](../problemi-di-ottimizzazione-combinatoria/tsp/index.md) ([Cap. 30](../algoritmi-euristici/constructive-heuristics/il-problema-del-commesso-viaggiatore-accodare-o-inserire.md#sez-sec-INS)).
+- Il nearest neighbour multi-start e le euristiche di inserimento NI, FI e CI raggiungono tutti $18$ sull'istanza del [Cap. 6](../problemi-di-ottimizzazione-combinatoria/tsp/index.md) ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/il-problema-del-commesso-viaggiatore-accodare-o-inserire/#sez-sec-INS)).
 
-- 2-opt valuta ciascuna delle sue $\frac{n(n-3)}{2}$ mosse in $O(1)$ e trasforma il giro di lunghezza $25$ in un giro ottimo in due mosse ([Cap. 31](../algoritmi-euristici/local-search/tsp-2-opt-e-or-opt.md#box-5-ex-twooptref)).
+- 2-opt valuta ciascuna delle sue $\frac{n(n-3)}{2}$ mosse in $O(1)$ e trasforma il giro di lunghezza $25$ in un giro ottimo in due mosse ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/local-search/tsp-2-opt-e-or-opt/#box-5-ex-twooptref)).
 
-- Or-opt e la VND sfuggono agli ottimi locali di 2-opt ([Cap. 31](../algoritmi-euristici/local-search/tsp-2-opt-e-or-opt.md#box-7-ex-oropt)).
+- Or-opt e la VND sfuggono agli ottimi locali di 2-opt ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/local-search/tsp-2-opt-e-or-opt/#box-7-ex-oropt)).
 
-- Simulated annealing, tabu search, iterated local search, GRASP e LNS sono confrontati su TSP20 (ottimo $291$) ([Cap. 32](../algoritmi-euristici/metaheuristics/confronto-e-conclusioni.md#32111-i-metodi-sulle-istanze-medie)).
+- Simulated annealing, tabu search, iterated local search, GRASP e LNS sono confrontati su TSP20 (ottimo $291$) ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/confronto-e-conclusioni/#4111-i-metodi-sulle-istanze-medie)).
 
 ### Euristiche MIP { #sez-sec-cat-tsp-mipheuristics }
 
-- Con i vincoli di eliminazione dei sottogiri l'ottimo del rilassamento lineare dell'istanza del [Cap. 6](../problemi-di-ottimizzazione-combinatoria/tsp/index.md) è intero: l'arrotondamento dà $18$, gap $0\%$ ([Cap. 33](../algoritmi-euristici/mip-heuristics-classical.md#3325-i-rilassamenti-lineari-sulle-istanze-di-riferimento)).
+- Con i vincoli di eliminazione dei sottogiri l'ottimo del rilassamento lineare dell'istanza del [Cap. 6](../problemi-di-ottimizzazione-combinatoria/tsp/index.md) è intero: l'arrotondamento dà $18$, gap $0\%$ ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#525-i-rilassamenti-lineari-sulle-istanze-di-riferimento)).
 
 ### Approssimazione { #sez-sec-cat-tsp-approximation }
 
-- TSP metrico: l'algoritmo del doppio albero è un algoritmo $2$-approssimato, tight ([Cap. 39](../algoritmi-di-approssimazione/tsp-approximation.md#box-8-prop-DT)).
+- TSP metrico: l'algoritmo del doppio albero è un algoritmo $2$-approssimato, tight ([<em>Algoritmi di approssimazione</em>](https://fabiofurini.github.io/algoritmi-di-approssimazione/tsp-approximation/#box-8-prop-DT)).
 
-- Christofides è un algoritmo $\frac32$-approssimato, tight ([Cap. 39](../algoritmi-di-approssimazione/tsp-approximation.md#box-10-prop-CH)).
+- Christofides è un algoritmo $\frac32$-approssimato, tight ([<em>Algoritmi di approssimazione</em>](https://fabiofurini.github.io/algoritmi-di-approssimazione/tsp-approximation/#box-10-prop-CH)).
 
-- TSP generale: nessun rapporto costante, a meno che $P=NP$ ([Cap. 39](../algoritmi-di-approssimazione/tsp-approximation.md#box-1-prop-TSPinapx)).
+- TSP generale: nessun rapporto costante, a meno che $P=NP$ ([<em>Algoritmi di approssimazione</em>](https://fabiofurini.github.io/algoritmi-di-approssimazione/tsp-approximation/#box-1-prop-TSPinapx)).

@@ -59,10 +59,10 @@ title: "Problema del subset sum (SSP)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-principles/#164-gli-algoritmi-di-pd-di-questo-modulo">Cap. 16 «Principi della programmazione dinamica»</a>; <a href="../../programmazione-dinamica/dp-subset-sum/">Cap. 20 «PD per il problema del subset sum»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-principles/#14-gli-algoritmi-di-pd-di-questo-modulo"><em>Programmazione dinamica</em>: «Principi della programmazione dinamica»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-subset-sum/"><em>Programmazione dinamica</em>: «PD per il problema del subset sum»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/knapsack/#esercizio-2-2">Esercizio 2.2</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-6">Esercizio 9.6</a>; <a href="../../esercizi/dp-principles/#esercizio-16-2">Esercizio 16.2</a>; <a href="../../esercizi/dp-subset-sum/">Cap. 20 (5 esercizi)</a></td>
+<td><a href="../../esercizi/knapsack/#esercizio-2-2">Esercizio 2.2</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-6">Esercizio 9.6</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-principles/#esercizio-1-2"><em>Programmazione dinamica</em>, Esercizio 1.2</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-subset-sum/"><em>Programmazione dinamica</em>: «PD per il problema del subset sum» (5 esercizi)</a></td>
 </tr>
 </table></div>

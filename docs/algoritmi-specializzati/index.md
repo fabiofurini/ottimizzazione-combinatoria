@@ -1,16 +1,16 @@
 # Algoritmi ad hoc
 
-*Parte 6 del corso, volume 6 delle dispense: capitoli 41–42.*
+*Parte 3 del corso, volume 3 delle dispense: capitoli 16–17.*
 
 Algoritmi ad hoc: il branch-and-bound sull'elemento critico per il problema dello zaino 0/1 e il branch-and-bound DSATUR per la colorazione dei vertici.
 
-[:material-file-pdf-box: Dispensa (PDF)](../pdf/dispensa-6-algoritmi-specializzati.pdf){ .md-button } [:material-file-pdf-box: Esercizi (PDF)](../pdf/esercizi-6-algoritmi-specializzati.pdf){ .md-button }
+[:material-file-pdf-box: Dispensa (PDF)](../pdf/dispensa-3-algoritmi-specializzati.pdf){ .md-button } [:material-file-pdf-box: Esercizi (PDF)](../pdf/esercizi-3-algoritmi-specializzati.pdf){ .md-button }
 
 ## Problemi di zaino
 
 <div class="grid cards" markdown>
 
--   **41. Zaino: branch-and-bound sull'elemento critico**
+-   **16. Zaino: branch-and-bound sull'elemento critico**
 
     ---
 
@@ -24,7 +24,7 @@ Algoritmi ad hoc: il branch-and-bound sull'elemento critico per il problema dell
 
 <div class="grid cards" markdown>
 
--   **42. Colorazione dei vertici: il branch-and-bound DSATUR**
+-   **17. Colorazione dei vertici: il branch-and-bound DSATUR**
 
     ---
 

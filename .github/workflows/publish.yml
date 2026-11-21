@@ -20,7 +20,7 @@ jobs:
           python-version: "3.12"
       # pages and SVG figures are generated locally from the LaTeX sources:
       # here we only check that the site builds without errors
-      - run: pip install mkdocs-material
+      - run: pip install mkdocs-material mkdocs-redirects
       - run: mkdocs build --strict
       - uses: actions/upload-pages-artifact@v3
         with:

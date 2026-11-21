@@ -63,10 +63,10 @@ title: "Problema dello zaino a scelta multipla (MCKP)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-principles/#164-gli-algoritmi-di-pd-di-questo-modulo">Cap. 16 «Principi della programmazione dinamica»</a>; <a href="../../programmazione-dinamica/dp-multiple-choice-knapsack/">Cap. 21 «PD per il problema dello zaino a scelta multipla»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-principles/#14-gli-algoritmi-di-pd-di-questo-modulo"><em>Programmazione dinamica</em>: «Principi della programmazione dinamica»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-multiple-choice-knapsack/"><em>Programmazione dinamica</em>: «PD per il problema dello zaino a scelta multipla»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/knapsack/#esercizio-2-5">Esercizio 2.5</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-11">Esercizio 9.11</a>; <a href="../../esercizi/dp-principles/#esercizio-16-5">Esercizio 16.5</a>; <a href="../../esercizi/dp-multiple-choice-knapsack/">Cap. 21 (5 esercizi)</a></td>
+<td><a href="../../esercizi/knapsack/#esercizio-2-5">Esercizio 2.5</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-11">Esercizio 9.11</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-principles/#esercizio-1-5"><em>Programmazione dinamica</em>, Esercizio 1.5</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-multiple-choice-knapsack/"><em>Programmazione dinamica</em>: «PD per il problema dello zaino a scelta multipla» (5 esercizi)</a></td>
 </tr>
 </table></div>

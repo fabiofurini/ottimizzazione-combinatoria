@@ -6,7 +6,7 @@ title: "Problemi di colorazione"
 
 <div class="info-capitolo" markdown>
 
-**Parte 1 · Problemi di ottimizzazione combinatoria · Capitolo 4** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-coloring.pdf) · [:material-pencil: Esercizi: Problemi di colorazione](../../esercizi/coloring.md) · [:material-gesture-tap: App: Colorazione: greedy e DSATUR](../../laboratorio/colorazione-greedy-dsatur.md)
+**Parte 1 · Problemi · Capitolo 4** · [:material-file-pdf-box: Dispensa, volume 1 (PDF)](../../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-presentation: Slide](../../pdf/slide-coloring.pdf) · [:material-pencil: Esercizi: Problemi di colorazione](../../esercizi/coloring.md)
 
 </div>
 
@@ -123,4 +123,4 @@ title: "Problemi di colorazione"
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 
-:material-flask-outline: **Nel laboratorio interattivo:** [Colorazione: greedy e DSATUR](../../laboratorio/colorazione-greedy-dsatur.md).
+:material-flask-outline: **Nel laboratorio interattivo:** [Colorazione: greedy e DSATUR](https://fabiofurini.github.io/algoritmi-euristici/laboratorio/colorazione-greedy-dsatur/) (modulo *Algoritmi euristici*).

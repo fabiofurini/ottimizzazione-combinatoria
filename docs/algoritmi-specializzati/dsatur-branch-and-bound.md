@@ -6,7 +6,7 @@ title: "Colorazione dei vertici: il branch-and-bound DSATUR"
 
 <div class="info-capitolo" markdown>
 
-**Parte 6 · Algoritmi ad hoc · Capitolo 42** · [:material-file-pdf-box: Dispensa, volume 6 (PDF)](../pdf/dispensa-6-algoritmi-specializzati.pdf) · [:material-presentation: Slide](../pdf/slide-dsatur-branch-and-bound.pdf) · [:material-pencil: Esercizi: Colorazione dei vertici (VCP)](../esercizi/dsatur-branch-and-bound.md) · [:material-gesture-tap: App: Colorazione: il branch-and-bound DSATUR](../laboratorio/branch-and-bound-dsatur.md)
+**Parte 3 · Algoritmi ad hoc · Capitolo 17** · [:material-file-pdf-box: Dispensa, volume 3 (PDF)](../pdf/dispensa-3-algoritmi-specializzati.pdf) · [:material-presentation: Slide](../pdf/slide-dsatur-branch-and-bound.pdf) · [:material-pencil: Esercizi: Colorazione dei vertici (VCP)](../esercizi/dsatur-branch-and-bound.md) · [:material-gesture-tap: App: Colorazione: il branch-and-bound DSATUR](../laboratorio/branch-and-bound-dsatur.md)
 
 </div>
 
@@ -16,7 +16,7 @@ title: "Colorazione dei vertici: il branch-and-bound DSATUR"
 
     - Da questo modulo, [Capitolo 4 «Problemi di colorazione»](../problemi-di-ottimizzazione-combinatoria/coloring/index.md): il problema della colorazione dei vertici, clique, insiemi stabili e il bound della clique $\omega(G)\le\chi(G)$.
 
-    - Da questo modulo, [Capitolo 30 «Euristiche costruttive»](../algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur.md): il grado di saturazione e l'euristica $DSATUR$.
+    - Dal modulo <em>Algoritmi euristici</em>, [il capitolo «Euristiche costruttive»](https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur/): il grado di saturazione e l'euristica $DSATUR$.
 
 !!! chiave "Obiettivi"
 
@@ -32,11 +32,11 @@ title: "Colorazione dei vertici: il branch-and-bound DSATUR"
 
 Il problema di questo capitolo è il [problema della colorazione dei vertici (VCP)](../problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici.md): la sua definizione e le sue ipotesi sono nella sua pagina. Su un grafo $G=(V,E)$, il suo valore ottimo è il numero cromatico $\chi(G)$.
 
-## 42.1 L'algoritmo per il VCP { #sez-sec-DSATURBB }
+## 17.1 L'algoritmo per il VCP { #sez-sec-DSATURBB }
 
 <a id="box-1-def-VCPnode"></a>
 
-!!! definizione "Definizione 42.1: Nodo di branching e colorazione parziale"
+!!! definizione "Definizione 17.1: Nodo di branching e colorazione parziale"
 
     Nell'algoritmo di branch-and-bound DSATUR i colori sono gli interi $1,2,3,\dots$, e un nodo di branching $k$ dell'albero è una <strong>colorazione parziale</strong>:
 
@@ -62,7 +62,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
     Un nodo dell'albero è una colorazione parziale; ogni figlio colora un vertice in più. Non si risolve alcun problema LP: i bound di un nodo vengono dal conteggio dei colori.
 
-### 42.1.1 Branching { #sez-sec-DSATURBBbranch }
+### 17.1.1 Branching { #sez-sec-DSATURBBbranch }
 
 - <strong>Vertice di branching.</strong> Nel nodo $k$ facciamo branching sul vertice non colorato $v$ di <strong>grado di saturazione massimo</strong> $\mathit{sat}_k(v)$; i pareggi si risolvono con il $\mathit{du}_k(v)$ massimo, e poi con l'indice minimo. È la regola dell'euristica $DSATUR$ (Brélaz, 1979).
 
@@ -80,11 +80,11 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
     Il vertice di branching è il più vincolato; i suoi figli sono i suoi colori ammissibili più un colore nuovo, quindi due figli non descrivono mai la stessa colorazione con i colori rinominati.
 
-### 42.1.2 Bound e potatura { #sez-sec-DSATURBBbounds }
+### 17.1.2 Bound e potatura { #sez-sec-DSATURBBbounds }
 
 - Il VCP è un problema di minimo: la soluzione incumbent dà l'<strong>upper bound</strong> $\UB$, e un lower bound viene da una clique.
 
-- <strong>Upper bound.</strong> Prima del branching, l'euristica $DSATUR$ del [Capitolo 30 «Euristiche costruttive»](../algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur.md) dà la prima soluzione incumbent, e $\UB$ è il suo numero di colori.
+- <strong>Upper bound.</strong> Prima del branching, l'euristica $DSATUR$ (modulo <em>Algoritmi euristici</em>, [capitolo «Euristiche costruttive»](https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur/)) dà la prima soluzione incumbent, e $\UB$ è il suo numero di colori.
 
 - <strong>Clique greedy.</strong> I vertici si scorrono per grado non crescente (pareggi: indice minimo), e un vertice entra in $K$ se è adiacente a tutti i vertici già in $K$. L'insieme $K=\{k_1,\dots,k_r\}$ è una clique massimale, e $\LB := r \le \omega(G)\le\chi(G)$.
 
@@ -110,7 +110,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
     $DSATUR$ dà $\UB$, una clique greedy dà $\LB$; un nodo è potato appena usa $\UB$ colori, perché il suo sottoalbero non può contenere una colorazione con meno colori.
 
-### 42.1.3 Scelta del nodo e pseudocodice { #sez-sec-DSATURBBalg }
+### 17.1.3 Scelta del nodo e pseudocodice { #sez-sec-DSATURBBalg }
 
 - L'albero si esplora <strong>in profondità</strong>: la lista $L$ è una pila, i figli di un nodo si valutano in ordine crescente di colore, e il figlio con il colore minimo si estrae per primo.
 
@@ -160,11 +160,11 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
         Il nodo sopravvive: viene inserito in $L$ nel Passo 3. <code>STOP</code>.
 
-### 42.1.4 Correttezza { #sez-sec-DSATURBBcorr }
+### 17.1.4 Correttezza { #sez-sec-DSATURBBcorr }
 
 <a id="box-2-prop-nosym"></a>
 
-!!! teorema "Proposizione 42.2: Branching senza simmetrie"
+!!! teorema "Proposizione 17.2: Branching senza simmetrie"
 
     Consideriamo l'albero dell'algoritmo di branch-and-bound DSATUR senza potatura. Le sue foglie sono colorazioni complete, e ogni partizione di $V$ in insiemi stabili, cioè ogni soluzione ammissibile del VCP, è l'insieme delle classi di colore di <strong>esattamente una</strong> foglia.
 
@@ -190,11 +190,11 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
     Senza potatura, l'albero enumera ogni soluzione ammissibile del VCP esattamente una volta, a meno di una ridenominazione dei colori. La potatura per bound elimina solo sottoalberi con almeno $\UB$ colori: l'algoritmo è esatto.
 
-## 42.2 Un esempio svolto { #sez-sec-DSATURBBex }
+## 17.2 Un esempio svolto { #sez-sec-DSATURBBex }
 
 <a id="box-3-ex-petersenBB"></a>
 
-!!! esempio "Esempio 42.1: Branch-and-bound DSATUR sul grafo di Petersen"
+!!! esempio "Esempio 17.1: Branch-and-bound DSATUR sul grafo di Petersen"
 
     Consideriamo il grafo di Petersen, l'istanza di riferimento del [Capitolo 4 «Problemi di colorazione»](../problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici.md#box-5-ex-vcp2), con $n=10$ vertici, $m=15$ spigoli e tutti i gradi uguali a $3$:
 
@@ -205,11 +205,11 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
     \end{aligned}
     $$
 
-    L'algoritmo di branch-and-bound DSATUR usa le regole della Sezione [42.1](#sez-sec-DSATURBB): branching sul vertice più saturo, visita in profondità, figli in ordine crescente di colore.
+    L'algoritmo di branch-and-bound DSATUR usa le regole della Sezione [17.1](#sez-sec-DSATURBB): branching sul vertice più saturo, visita in profondità, figli in ordine crescente di colore.
 
     - <span style="color:#e03131"><strong>Inizializzazione</strong></span>
 
-        1. L'euristica $DSATUR$ (Esempio «$DSATUR$ sul grafo di Petersen» del [Capitolo 30](../algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur.md#box-17-ex-dsatur)) colora i vertici nell'ordine $1,2,3,4,5,6,8,7,9,10$ e dà la soluzione incumbent
+        1. L'euristica $DSATUR$ ([Esempio «$DSATUR$ sul grafo di Petersen»](https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur/#box-17-ex-dsatur) del modulo <em>Algoritmi euristici</em>) colora i vertici nell'ordine $1,2,3,4,5,6,8,7,9,10$ e dà la soluzione incumbent
 
             $$
             \bar{\mathcal{Q}} = \big\{\, \{1,3,7\},~ \{2,4,6,10\},~ \{5,8,9\} \,\big\}, \qquad \UB = 3 .
@@ -327,19 +327,19 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
 - L'algoritmo non migliora la soluzione incumbent: dimostra che $\UB=3$ è ottimo. La dimostrazione è il ciclo dispari $1,2,3,4,5$, trovato dalla ricerca in tre livelli.
 
-- Senza la potatura, l'albero del grafo di Petersen ha $9\,776$ nodi e $7\,430$ foglie, una per ogni partizione ammissibile contata nel [Capitolo 4](../problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici.md), come prevede la [Proposizione 42.2](#box-2-prop-nosym).
+- Senza la potatura, l'albero del grafo di Petersen ha $9\,776$ nodi e $7\,430$ foglie, una per ogni partizione ammissibile contata nel [Capitolo 4](../problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici.md), come prevede la [Proposizione 17.2](#box-2-prop-nosym).
 
-## 42.3 Osservazioni { #sez-sec-DSATURBBrem }
+## 17.3 Osservazioni { #sez-sec-DSATURBBrem }
 
 - <strong>Origine.</strong> Il grado di saturazione e l'algoritmo esatto che fa branching su di esso sono dovuti a Brélaz (1979). Pre-colorare una clique è il modo usuale di eliminare la simmetria dei primi colori.
 
 - <strong>Regola di pareggio di Sewell (1996).</strong> Fra i vertici di grado di saturazione massimo, Sewell sceglie il vertice $v$ che massimizza il numero di colori ammissibili in comune con i suoi vicini non colorati, $\sum_{u\in N(v)\cap U^k} |F_k(v)\cap F_k(u)|$. Colorare quel vertice toglie più opzioni al resto del grafo.
 
-- <strong>PASS (San Segundo, 2012).</strong> PASS applica la regola di Sewell solo a vertici selezionati, calcolando il conteggio sui vertici in pareggio per il grado di saturazione massimo, che costa meno. Entrambe le regole cambiano solo la gestione dei pareggi: i figli, i bound e la [Proposizione 42.2](#box-2-prop-nosym) restano gli stessi.
+- <strong>PASS (San Segundo, 2012).</strong> PASS applica la regola di Sewell solo a vertici selezionati, calcolando il conteggio sui vertici in pareggio per il grado di saturazione massimo, che costa meno. Entrambe le regole cambiano solo la gestione dei pareggi: i figli, i bound e la [Proposizione 17.2](#box-2-prop-nosym) restano gli stessi.
 
 - Riferimenti: D. Brélaz, «New methods to color the vertices of a graph», <em>Communications of the ACM</em> 22(4), 251–256, 1979; E. C. Sewell, «An improved algorithm for exact graph coloring», in D. S. Johnson, M. A. Trick (a cura di), <em>Cliques, Coloring, and Satisfiability</em>, DIMACS Series in Discrete Mathematics and Theoretical Computer Science 26, 1996; P. San Segundo, «A new DSATUR-based algorithm for exact vertex coloring», <em>Computers &amp; Operations Research</em> 39(7), 1724–1733, 2012.
 
-## 42.4 Errori tipici
+## 17.4 Errori tipici
 
 !!! attenzione "Attenzione"
 
@@ -355,7 +355,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
 
     - <strong>Continuare dopo $\UB=|K|$.</strong> Quando una colorazione completa raggiunge il bound della clique, è ottima: i nodi ancora nella lista non si esplorano.
 
-## 42.5 In sintesi
+## 17.5 In sintesi
 
 !!! chiave "In sintesi"
 
@@ -381,7 +381,7 @@ Il problema di questo capitolo è il [problema della colorazione dei vertici (VC
     <td><span class="arithmatex">\(\omega(G)=2\)</span></td>
     </tr>
     <tr>
-    <td><span class="arithmatex">\(DSATUR\)</span> (Capitolo 30)</td>
+    <td><span class="arithmatex">\(DSATUR\)</span> (<em>Algoritmi euristici</em>)</td>
     <td>–</td>
     <td><span class="arithmatex">\(3\)</span></td>
     <td><span class="arithmatex">\(\{1,3,7\}\)</span>, <span class="arithmatex">\(\{2,4,6,10\}\)</span>, <span class="arithmatex">\(\{5,8,9\}\)</span></td>

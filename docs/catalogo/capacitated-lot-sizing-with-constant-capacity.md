@@ -31,6 +31,6 @@ title: "Lot sizing capacitato con capacità costante (CLS-C)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-capacitated-lot-sizing/#2623-il-caso-a-capacita-costante">Cap. 26 «PD per il problema del lot sizing capacitato»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-capacitated-lot-sizing/#1123-il-caso-a-capacita-costante"><em>Programmazione dinamica</em>: «PD per il problema del lot sizing capacitato»</a></td>
 </tr>
 </table></div>

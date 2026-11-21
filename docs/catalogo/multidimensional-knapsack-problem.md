@@ -63,10 +63,10 @@ title: "Problema dello zaino multidimensionale (MDKP)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-principles/#164-gli-algoritmi-di-pd-di-questo-modulo">Cap. 16 «Principi della programmazione dinamica»</a>; <a href="../../programmazione-dinamica/dp-multidimensional-knapsack/">Cap. 22 «PD per il problema dello zaino multidimensionale»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-principles/#14-gli-algoritmi-di-pd-di-questo-modulo"><em>Programmazione dinamica</em>: «Principi della programmazione dinamica»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-multidimensional-knapsack/"><em>Programmazione dinamica</em>: «PD per il problema dello zaino multidimensionale»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/knapsack-formulations/#esercizio-9-9">Esercizio 9.9</a>; <a href="../../esercizi/dp-multidimensional-knapsack/">Cap. 22 (5 esercizi)</a></td>
+<td><a href="../../esercizi/knapsack-formulations/#esercizio-9-9">Esercizio 9.9</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-multidimensional-knapsack/"><em>Programmazione dinamica</em>: «PD per il problema dello zaino multidimensionale» (5 esercizi)</a></td>
 </tr>
 </table></div>

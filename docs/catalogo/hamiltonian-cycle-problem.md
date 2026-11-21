@@ -31,10 +31,10 @@ title: "Problema del ciclo hamiltoniano (HCP)"
 </tr>
 <tr>
 <td><strong>Approssimazione</strong></td>
-<td><a href="../../algoritmi-di-approssimazione/tsp-approximation/#box-1-prop-TSPinapx">Cap. 39 «TSP: il caso generale e il caso metrico»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/tsp-approximation/#box-1-prop-TSPinapx"><em>Algoritmi di approssimazione</em>: «TSP: il caso generale e il caso metrico»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/tsp-approximation/#esercizio-39-3">Esercizio 39.3</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/tsp-approximation/#esercizio-6-3"><em>Algoritmi di approssimazione</em>, Esercizio 6.3</a></td>
 </tr>
 </table></div>

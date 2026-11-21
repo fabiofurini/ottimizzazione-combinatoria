@@ -53,19 +53,19 @@ title: "Scheduling su macchine parallele identiche (P||Cmax)"
 </tr>
 <tr>
 <td><strong>Euristiche</strong></td>
-<td><a href="../../algoritmi-euristici/heuristics/#box-5-ex-refPCM">Cap. 29 «Algoritmi euristici: definizioni»</a>; <a href="../../algoritmi-euristici/constructive-heuristics/scheduling-su-macchine-parallele-prima-i-lavori-piu-lunghi/#sez-sec-PCM">Cap. 30 «Euristiche costruttive»</a>; <a href="../../algoritmi-euristici/local-search/p-cmax-move-e-swap/#sez-sec-pcmax">Cap. 31 «Ricerca locale»</a>; <a href="../../algoritmi-euristici/metaheuristics/tabu-search/#sez-sec-ts">Cap. 32 «Metaeuristiche»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-euristici/heuristics/#box-5-ex-refPCM"><em>Algoritmi euristici</em>: «Algoritmi euristici: definizioni»</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/scheduling-su-macchine-parallele-prima-i-lavori-piu-lunghi/#sez-sec-PCM"><em>Algoritmi euristici</em>: «Euristiche costruttive»</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/local-search/p-cmax-move-e-swap/#sez-sec-pcmax"><em>Algoritmi euristici</em>: «Ricerca locale»</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/tabu-search/#sez-sec-ts"><em>Algoritmi euristici</em>: «Metaeuristiche»</a></td>
 </tr>
 <tr>
 <td><strong>Euristiche MIP</strong></td>
-<td><a href="../../algoritmi-euristici/mip-heuristics-classical/#eq-eq-pcm">Cap. 33 «Euristiche MIP per i problemi classici»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#eq-eq-pcm"><em>Algoritmi euristici</em>: «Euristiche MIP per i problemi classici»</a></td>
 </tr>
 <tr>
 <td><strong>Approssimazione</strong></td>
-<td><a href="../../algoritmi-di-approssimazione/approximation/">Cap. 34 «Principi degli algoritmi di approssimazione»</a>; <a href="../../algoritmi-di-approssimazione/pcmax-approximation/#sez-sec-LIST">Cap. 40 «Approssimazione per <span class="arithmatex">\(P\|C_{\max}\)</span>»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/approximation/"><em>Algoritmi di approssimazione</em>: «Principi degli algoritmi di approssimazione»</a>; <a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/pcmax-approximation/#sez-sec-LIST"><em>Algoritmi di approssimazione</em>: «Approssimazione per <span class="arithmatex">\(P\|C_{\max}\)</span>»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/pcmax/">Cap. 7 (5 esercizi)</a>; <a href="../../esercizi/pcmax-formulations/">Cap. 14 (5 esercizi)</a>; <a href="../../esercizi/heuristics/">Cap. 29 (2 esercizi)</a>; <a href="../../esercizi/constructive-heuristics/">Cap. 30 (3 esercizi)</a>; <a href="../../esercizi/local-search/">Cap. 31 (3 esercizi)</a>; <a href="../../esercizi/metaheuristics/">Cap. 32 (3 esercizi)</a>; <a href="../../esercizi/mip-heuristics-classical/#esercizio-33-5">Esercizio 33.5</a>; <a href="../../esercizi/approximation/#esercizio-34-2">Esercizio 34.2</a>; <a href="../../esercizi/pcmax-approximation/">Cap. 40 (3 esercizi)</a></td>
+<td><a href="../../esercizi/pcmax/">Cap. 7 (5 esercizi)</a>; <a href="../../esercizi/pcmax-formulations/">Cap. 14 (5 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/heuristics/"><em>Algoritmi euristici</em>: «Algoritmi euristici: definizioni» (2 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/constructive-heuristics/"><em>Algoritmi euristici</em>: «Euristiche costruttive» (3 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/local-search/"><em>Algoritmi euristici</em>: «Ricerca locale» (3 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/metaheuristics/"><em>Algoritmi euristici</em>: «Metaeuristiche» (3 esercizi)</a>; <a href="https://fabiofurini.github.io/algoritmi-euristici/esercizi/mip-heuristics-classical/#esercizio-5-5"><em>Algoritmi euristici</em>, Esercizio 5.5</a>; <a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/approximation/#esercizio-1-2"><em>Algoritmi di approssimazione</em>, Esercizio 1.2</a>; <a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/pcmax-approximation/"><em>Algoritmi di approssimazione</em>: «Approssimazione per <span class="arithmatex">\(P\|C_{\max}\)</span>» (3 esercizi)</a></td>
 </tr>
 </table></div>
 
@@ -87,20 +87,20 @@ title: "Scheduling su macchine parallele identiche (P||Cmax)"
 
 ### Euristiche { #sez-sec-cat-pcmax-heuristics }
 
-- Sull'istanza del [Cap. 7](../problemi-di-ottimizzazione-combinatoria/pcmax/index.md) (tre macchine, ottimo $9$) LIST con i lavori più brevi per primi dà $12$ e LPT dà $11$ ([Cap. 30](../algoritmi-euristici/constructive-heuristics/scheduling-su-macchine-parallele-prima-i-lavori-piu-lunghi.md#sez-sec-LPT)).
+- Sull'istanza del [Cap. 7](../problemi-di-ottimizzazione-combinatoria/pcmax/index.md) (tre macchine, ottimo $9$) LIST con i lavori più brevi per primi dà $12$ e LPT dà $11$ ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/scheduling-su-macchine-parallele-prima-i-lavori-piu-lunghi/#sez-sec-LPT)).
 
-- La soluzione di LPT è un ottimo locale per la mossa move, mentre due swap raggiungono $9$; l'obiettivo ausiliario $\sum_h L_h^2$ dà una pendenza ai plateau ([Cap. 31](../algoritmi-euristici/local-search/p-cmax-move-e-swap.md#box-8-ex-lpt)).
+- La soluzione di LPT è un ottimo locale per la mossa move, mentre due swap raggiungono $9$; l'obiettivo ausiliario $\sum_h L_h^2$ dà una pendenza ai plateau ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/local-search/p-cmax-move-e-swap/#box-8-ex-lpt)).
 
-- Tabu search e VNS raggiungono $9$ sulla stessa istanza ([Cap. 32](../algoritmi-euristici/metaheuristics/variable-neighbourhood-search.md#box-8-ex-vnsPCM)).
+- Tabu search e VNS raggiungono $9$ sulla stessa istanza ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/variable-neighbourhood-search/#box-8-ex-vnsPCM)).
 
 ### Euristiche MIP { #sez-sec-cat-pcmax-mipheuristics }
 
-- Sull'istanza del [Cap. 7](../problemi-di-ottimizzazione-combinatoria/pcmax/index.md) il diving frazionario si ferma a $10$, il diving guidato da LPT trova $9$, la feasibility pump restituisce $11$ ([Cap. 33](../algoritmi-euristici/mip-heuristics-classical.md#box-5-ex-divepcm)).
+- Sull'istanza del [Cap. 7](../problemi-di-ottimizzazione-combinatoria/pcmax/index.md) il diving frazionario si ferma a $10$, il diving guidato da LPT trova $9$, la feasibility pump restituisce $11$ ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#box-5-ex-divepcm)).
 
-- RINS, local branching e proximity search, partendo da LPT, raggiungono $9$; proximity search ne dimostra anche l'ottimalità ([Cap. 33](../algoritmi-euristici/mip-heuristics-classical.md#box-10-ex-rinspcm)).
+- RINS, local branching e proximity search, partendo da LPT, raggiungono $9$; proximity search ne dimostra anche l'ottimalità ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#box-10-ex-rinspcm)).
 
 ### Approssimazione { #sez-sec-cat-pcmax-approximation }
 
-- LIST è un algoritmo $\left(2-\frac1m\right)$-approssimato per ogni lista, tight ([Cap. 40](../algoritmi-di-approssimazione/pcmax-approximation.md#box-4-prop-LIST)).
+- LIST è un algoritmo $\left(2-\frac1m\right)$-approssimato per ogni lista, tight ([<em>Algoritmi di approssimazione</em>](https://fabiofurini.github.io/algoritmi-di-approssimazione/pcmax-approximation/#box-4-prop-LIST)).
 
-- LPT è un algoritmo $\left(\frac43-\frac1{3m}\right)$-approssimato, tight sulla famiglia di Graham; per $m=3$ è l'istanza del [Cap. 7](../problemi-di-ottimizzazione-combinatoria/pcmax/index.md) ([Cap. 40](../algoritmi-di-approssimazione/pcmax-approximation.md#box-6-prop-LPT)).
+- LPT è un algoritmo $\left(\frac43-\frac1{3m}\right)$-approssimato, tight sulla famiglia di Graham; per $m=3$ è l'istanza del [Cap. 7](../problemi-di-ottimizzazione-combinatoria/pcmax/index.md) ([<em>Algoritmi di approssimazione</em>](https://fabiofurini.github.io/algoritmi-di-approssimazione/pcmax-approximation/#box-6-prop-LPT)).

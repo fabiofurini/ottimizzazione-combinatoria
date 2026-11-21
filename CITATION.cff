@@ -1,12 +1,14 @@
 cff-version: 1.2.0
 message: "If you use this material, please cite it as below."
-title: "Ottimizzazione combinatoria: online lecture notes with worked exercises"
+title: "Problemi di ottimizzazione combinatoria: online lecture notes with worked exercises"
 abstract: >-
-  The lecture notes of the Ottimizzazione combinatoria course — linear functions,
-  polyhedra, LP problems, the simplex algorithm, duality, revised and dual
-  methods, sensitivity analysis, modelling techniques — with definitions,
-  theorems and proofs, worked examples, a catalogue of LP problems and
-  exercises with solutions.
+  The lecture notes (in Italian) of the course Problemi di ottimizzazione combinatoria
+  (Combinatorial Optimization Problems): knapsack, packing, vertex coloring, maximum
+  clique, routing, parallel machine scheduling and lot sizing problems, their integer
+  linear programming formulations with their properties and bounds, and ad hoc
+  branch-and-bound algorithms, with definitions, propositions and proofs, worked
+  examples, a catalogue of the problems, exercises with solutions, slides and
+  interactive apps.
 authors:
   - family-names: Furini
     given-names: Fabio
@@ -19,9 +21,10 @@ license:
   - MIT
 date-released: 2026-10-10
 keywords:
-  - linear programming
-  - simplex algorithm
-  - duality
-  - sensitivity analysis
+  - combinatorial optimization
+  - integer linear programming
+  - formulations
+  - branch-and-bound
+  - knapsack problem
   - operations research
   - teaching material

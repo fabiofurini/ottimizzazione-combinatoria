@@ -49,10 +49,10 @@ title: "Problema dell'insieme stabile massimo (MSSP)"
 </tr>
 <tr>
 <td><strong>Limiti dell'approssimazione</strong></td>
-<td><a href="../../algoritmi-di-approssimazione/clique-inapproximability/#box-7-cli-cormssp">Cap. 38 «Clique massima: limiti dell'approssimazione»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/clique-inapproximability/#box-7-cli-cormssp"><em>Algoritmi di approssimazione</em>: «Clique massima: limiti dell'approssimazione»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/coloring/#esercizio-4-3">Esercizio 4.3</a>; <a href="../../esercizi/clique/">Cap. 5 (2 esercizi)</a>; <a href="../../esercizi/clique-formulations/#esercizio-12-6">Esercizio 12.6</a>; <a href="../../esercizi/clique-inapproximability/">Cap. 38 (2 esercizi)</a></td>
+<td><a href="../../esercizi/coloring/#esercizio-4-3">Esercizio 4.3</a>; <a href="../../esercizi/clique/">Cap. 5 (2 esercizi)</a>; <a href="../../esercizi/clique-formulations/#esercizio-12-6">Esercizio 12.6</a>; <a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/clique-inapproximability/"><em>Algoritmi di approssimazione</em>: «Clique massima: limiti dell'approssimazione» (2 esercizi)</a></td>
 </tr>
 </table></div>

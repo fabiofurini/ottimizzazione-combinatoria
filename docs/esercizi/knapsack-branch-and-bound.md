@@ -6,13 +6,13 @@ title: "Esercizi · Zaino: branch-and-bound sull'elemento critico"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Capitolo 41** · ogni soluzione si apre con un clic · [:material-book-open-variant: Capitolo 41: Zaino 0/1 (KP)](../algoritmi-specializzati/knapsack-branch-and-bound.md) · [:material-file-pdf-box: Eserciziario, volume 6 (PDF)](../pdf/esercizi-6-algoritmi-specializzati.pdf)
+**Esercizi · Capitolo 16** · ogni soluzione si apre con un clic · [:material-book-open-variant: Capitolo 16: Zaino 0/1 (KP)](../algoritmi-specializzati/knapsack-branch-and-bound.md) · [:material-file-pdf-box: Eserciziario, volume 3 (PDF)](../pdf/esercizi-3-algoritmi-specializzati.pdf)
 
 </div>
 
-<a id="esercizio-41-1"></a>
+<a id="esercizio-16-1"></a>
 
-!!! esercizio "Esercizio 41.1: Algoritmo di branch-and-bound per il problema dello zaino 0/1 (P1)"
+!!! esercizio "Esercizio 16.1: Algoritmo di branch-and-bound per il problema dello zaino 0/1 (P1)"
 
     Consideriamo uno zaino di capacità $c=11$ e un insieme $\mathscr{I}=\{1,2,3,4,5\}$ di $5$ oggetti ($n=5$) con i seguenti profitti e pesi:
 
@@ -164,9 +164,9 @@ title: "Esercizi · Zaino: branch-and-bound sull'elemento critico"
 
         ![Figura 2](../img/es-knapsack-branch-and-bound/fig02.svg){ .fig loading=lazy  }
 
-<a id="esercizio-41-2"></a>
+<a id="esercizio-16-2"></a>
 
-!!! esercizio "Esercizio 41.2: Algoritmo di branch-and-bound per il problema dello zaino 0/1 (P2)"
+!!! esercizio "Esercizio 16.2: Algoritmo di branch-and-bound per il problema dello zaino 0/1 (P2)"
 
     Consideriamo uno zaino di capacità $c=8$ e un insieme $\mathscr{I}=\{1,2,3,4\}$ di $4$ oggetti ($n=4$) con i seguenti profitti e pesi:
 
@@ -417,9 +417,9 @@ title: "Esercizi · Zaino: branch-and-bound sull'elemento critico"
 
         ![Figura 6](../img/es-knapsack-branch-and-bound/fig06.svg){ .fig loading=lazy  }
 
-<a id="esercizio-41-3"></a>
+<a id="esercizio-16-3"></a>
 
-!!! esercizio "Esercizio 41.3: Algoritmo di branch-and-bound per il problema dello zaino 0/1 (P3)"
+!!! esercizio "Esercizio 16.3: Algoritmo di branch-and-bound per il problema dello zaino 0/1 (P3)"
 
     Consideriamo uno zaino di capacità $c=15$ e un insieme $\mathscr{I}=\{1,2,3,4\}$ di $4$ oggetti ($n=4$) con i seguenti profitti e pesi:
 
@@ -708,9 +708,9 @@ title: "Esercizi · Zaino: branch-and-bound sull'elemento critico"
 
         ![Figura 11](../img/es-knapsack-branch-and-bound/fig11.svg){ .fig loading=lazy  }
 
-<a id="esercizio-41-4"></a>
+<a id="esercizio-16-4"></a>
 
-!!! esercizio "Esercizio 41.4: Algoritmo di branch-and-bound per il problema dello zaino 0/1 (P4)"
+!!! esercizio "Esercizio 16.4: Algoritmo di branch-and-bound per il problema dello zaino 0/1 (P4)"
 
     Consideriamo uno zaino di capacità $c=9$ e un insieme $\mathscr{I}=\{1,2,3,4,5,6\}$ di $6$ oggetti ($n=6$) con i seguenti profitti e pesi:
 

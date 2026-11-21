@@ -1,8 +1,8 @@
 # Modello di mkdocs.yml (italiano): lo usa genera_sito.py, che scrive mkdocs.yml.
 # Non modificare mkdocs.yml a mano.
-site_name: Ottimizzazione combinatoria · Fabio Furini
+site_name: Problemi di ottimizzazione combinatoria · Fabio Furini
 site_description: >-
-  Dispense di ottimizzazione combinatoria: problemi di zaino, di packing, di colorazione, di cricca, di routing, di scheduling e di lot sizing, risolti in tutti i modi: formulazioni e loro proprietà, programmazione dinamica, algoritmi euristici, di approssimazione e ad hoc, con esercizi e notebook Colab.
+  Dispense sui problemi di ottimizzazione combinatoria: problemi di zaino, di packing, di colorazione, di clique, di routing, di scheduling e di lot sizing, le loro formulazioni di programmazione lineare intera con le proprietà e i bound, e gli algoritmi ad hoc, con esercizi, catalogo dei problemi, slide e app interattive.
 site_author: Fabio Furini
 site_url: https://fabiofurini.github.io/ottimizzazione-combinatoria/
 repo_url: https://github.com/fabiofurini/ottimizzazione-combinatoria
@@ -54,6 +54,120 @@ not_in_nav: |
 plugins:
   - search:
       lang: it
+  # 2026-11-21: programmazione dinamica, algoritmi euristici e algoritmi di approssimazione sono moduli a sé:
+  # i vecchi indirizzi delle loro pagine portano ai siti nuovi (python/reindirizzamenti.tsv)
+  - redirects:
+      redirect_maps:
+        programmazione-dinamica/dp-bounded-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/dp-bounded-knapsack/
+        programmazione-dinamica/dp-capacitated-lot-sizing.md: https://fabiofurini.github.io/programmazione-dinamica/dp-capacitated-lot-sizing/
+        programmazione-dinamica/dp-coin-change.md: https://fabiofurini.github.io/programmazione-dinamica/dp-coin-change/
+        programmazione-dinamica/dp-knapsack/errori-tipici.md: https://fabiofurini.github.io/programmazione-dinamica/dp-knapsack/errori-tipici/
+        programmazione-dinamica/dp-knapsack/index.md: https://fabiofurini.github.io/programmazione-dinamica/dp-knapsack/
+        programmazione-dinamica/dp-knapsack/un-primo-algoritmo-di-pd-un-implementazione-con-liste.md: https://fabiofurini.github.io/programmazione-dinamica/dp-knapsack/un-primo-algoritmo-di-pd-un-implementazione-con-liste/
+        programmazione-dinamica/dp-knapsack/un-primo-algoritmo-di-pd.md: https://fabiofurini.github.io/programmazione-dinamica/dp-knapsack/un-primo-algoritmo-di-pd/
+        programmazione-dinamica/dp-knapsack/un-secondo-algoritmo-di-pd-un-implementazione-con-liste.md: https://fabiofurini.github.io/programmazione-dinamica/dp-knapsack/un-secondo-algoritmo-di-pd-un-implementazione-con-liste/
+        programmazione-dinamica/dp-knapsack/un-secondo-algoritmo-di-pd.md: https://fabiofurini.github.io/programmazione-dinamica/dp-knapsack/un-secondo-algoritmo-di-pd/
+        programmazione-dinamica/dp-knapsack-setups.md: https://fabiofurini.github.io/programmazione-dinamica/dp-knapsack-setups/
+        programmazione-dinamica/dp-lot-sizing/errori-tipici.md: https://fabiofurini.github.io/programmazione-dinamica/dp-lot-sizing/errori-tipici/
+        programmazione-dinamica/dp-lot-sizing/index.md: https://fabiofurini.github.io/programmazione-dinamica/dp-lot-sizing/
+        programmazione-dinamica/dp-lot-sizing/un-algoritmo-di-pd-per-l-uls-passo-1-e-passo-2.md: https://fabiofurini.github.io/programmazione-dinamica/dp-lot-sizing/un-algoritmo-di-pd-per-l-uls-passo-1-e-passo-2/
+        programmazione-dinamica/dp-lot-sizing/un-algoritmo-di-pd-per-l-uls.md: https://fabiofurini.github.io/programmazione-dinamica/dp-lot-sizing/un-algoritmo-di-pd-per-l-uls/
+        programmazione-dinamica/dp-multidimensional-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/dp-multidimensional-knapsack/
+        programmazione-dinamica/dp-multiple-choice-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/dp-multiple-choice-knapsack/
+        programmazione-dinamica/dp-multiple-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/dp-multiple-knapsack/
+        programmazione-dinamica/dp-principles.md: https://fabiofurini.github.io/programmazione-dinamica/dp-principles/
+        programmazione-dinamica/dp-rod-cutting/errori-tipici.md: https://fabiofurini.github.io/programmazione-dinamica/dp-rod-cutting/errori-tipici/
+        programmazione-dinamica/dp-rod-cutting/index.md: https://fabiofurini.github.io/programmazione-dinamica/dp-rod-cutting/
+        programmazione-dinamica/dp-rod-cutting/un-primo-algoritmo-di-pd.md: https://fabiofurini.github.io/programmazione-dinamica/dp-rod-cutting/un-primo-algoritmo-di-pd/
+        programmazione-dinamica/dp-rod-cutting/un-secondo-algoritmo-di-pd.md: https://fabiofurini.github.io/programmazione-dinamica/dp-rod-cutting/un-secondo-algoritmo-di-pd/
+        programmazione-dinamica/dp-subset-sum.md: https://fabiofurini.github.io/programmazione-dinamica/dp-subset-sum/
+        programmazione-dinamica/dp-unbounded-knapsack/errori-tipici.md: https://fabiofurini.github.io/programmazione-dinamica/dp-unbounded-knapsack/errori-tipici/
+        programmazione-dinamica/dp-unbounded-knapsack/index.md: https://fabiofurini.github.io/programmazione-dinamica/dp-unbounded-knapsack/
+        programmazione-dinamica/dp-unbounded-knapsack/un-primo-algoritmo-di-pd.md: https://fabiofurini.github.io/programmazione-dinamica/dp-unbounded-knapsack/un-primo-algoritmo-di-pd/
+        programmazione-dinamica/dp-unbounded-knapsack/un-secondo-algoritmo-di-pd.md: https://fabiofurini.github.io/programmazione-dinamica/dp-unbounded-knapsack/un-secondo-algoritmo-di-pd/
+        programmazione-dinamica/index.md: https://fabiofurini.github.io/programmazione-dinamica/
+        esercizi/dp-principles.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-principles/
+        esercizi/dp-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-knapsack/
+        esercizi/dp-unbounded-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-unbounded-knapsack/
+        esercizi/dp-bounded-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-bounded-knapsack/
+        esercizi/dp-subset-sum.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-subset-sum/
+        esercizi/dp-multiple-choice-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-multiple-choice-knapsack/
+        esercizi/dp-multidimensional-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-multidimensional-knapsack/
+        esercizi/dp-knapsack-setups.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-knapsack-setups/
+        esercizi/dp-multiple-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-multiple-knapsack/
+        esercizi/dp-lot-sizing.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-lot-sizing/
+        esercizi/dp-capacitated-lot-sizing.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-capacitated-lot-sizing/
+        esercizi/dp-coin-change.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-coin-change/
+        esercizi/dp-rod-cutting.md: https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-rod-cutting/
+        laboratorio/tabella-pd-zaino.md: https://fabiofurini.github.io/programmazione-dinamica/laboratorio/tabella-pd-zaino/
+        laboratorio/wagner-whitin-lot-sizing.md: https://fabiofurini.github.io/programmazione-dinamica/laboratorio/wagner-whitin-lot-sizing/
+        algoritmi-euristici/constructive-heuristics/che-cosa-danno-le-euristiche-costruttive-e-che-cosa-non-dann.md: https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/che-cosa-danno-le-euristiche-costruttive-e-che-cosa-non-dann/
+        algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur.md: https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur/
+        algoritmi-euristici/constructive-heuristics/costruzione-randomizzata.md: https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/costruzione-randomizzata/
+        algoritmi-euristici/constructive-heuristics/errori-tipici.md: https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/errori-tipici/
+        algoritmi-euristici/constructive-heuristics/i-problemi-e-le-ipotesi.md: https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/i-problemi-e-le-ipotesi/
+        algoritmi-euristici/constructive-heuristics/il-problema-del-bin-packing-prima-ordinare-poi-riempire.md: https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/il-problema-del-bin-packing-prima-ordinare-poi-riempire/
+        algoritmi-euristici/constructive-heuristics/il-problema-del-commesso-viaggiatore-accodare-o-inserire.md: https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/il-problema-del-commesso-viaggiatore-accodare-o-inserire/
+        algoritmi-euristici/constructive-heuristics/il-problema-dello-zaino-0-1-quale-ordinamento.md: https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/il-problema-dello-zaino-0-1-quale-ordinamento/
+        algoritmi-euristici/constructive-heuristics/index.md: https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/
+        algoritmi-euristici/constructive-heuristics/look-ahead-e-regret.md: https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/look-ahead-e-regret/
+        algoritmi-euristici/constructive-heuristics/scheduling-su-macchine-parallele-prima-i-lavori-piu-lunghi.md: https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/scheduling-su-macchine-parallele-prima-i-lavori-piu-lunghi/
+        algoritmi-euristici/heuristics.md: https://fabiofurini.github.io/algoritmi-euristici/heuristics/
+        algoritmi-euristici/index.md: https://fabiofurini.github.io/algoritmi-euristici/
+        algoritmi-euristici/local-search/errori-tipici.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/errori-tipici/
+        algoritmi-euristici/local-search/first-improvement-e-best-improvement.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/first-improvement-e-best-improvement/
+        algoritmi-euristici/local-search/i-problemi-le-ipotesi-e-le-soluzioni-di-partenza.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/i-problemi-le-ipotesi-e-le-soluzioni-di-partenza/
+        algoritmi-euristici/local-search/index.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/
+        algoritmi-euristici/local-search/kp-ammissibilita-e-penalita.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/kp-ammissibilita-e-penalita/
+        algoritmi-euristici/local-search/p-cmax-move-e-swap.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/p-cmax-move-e-swap/
+        algoritmi-euristici/local-search/paesaggi-piatti-e-obiettivi-ausiliari.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/paesaggi-piatti-e-obiettivi-ausiliari/
+        algoritmi-euristici/local-search/ricerca-locale-lo-schema.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/ricerca-locale-lo-schema/
+        algoritmi-euristici/local-search/ricerca-locale-multi-start.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/ricerca-locale-multi-start/
+        algoritmi-euristici/local-search/tsp-2-opt-e-or-opt.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/tsp-2-opt-e-or-opt/
+        algoritmi-euristici/local-search/valutare-una-mossa-in-modo-incrementale.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/valutare-una-mossa-in-modo-incrementale/
+        algoritmi-euristici/local-search/variable-neighbourhood-descent.md: https://fabiofurini.github.io/algoritmi-euristici/local-search/variable-neighbourhood-descent/
+        algoritmi-euristici/metaheuristics/bibliografia.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/bibliografia/
+        algoritmi-euristici/metaheuristics/come-uscire-da-un-ottimo-locale.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/come-uscire-da-un-ottimo-locale/
+        algoritmi-euristici/metaheuristics/confronto-e-conclusioni.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/confronto-e-conclusioni/
+        algoritmi-euristici/metaheuristics/errori-tipici.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/errori-tipici/
+        algoritmi-euristici/metaheuristics/grasp.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/grasp/
+        algoritmi-euristici/metaheuristics/i-problemi-e-le-ipotesi.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/i-problemi-e-le-ipotesi/
+        algoritmi-euristici/metaheuristics/index.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/
+        algoritmi-euristici/metaheuristics/iterated-local-search.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/iterated-local-search/
+        algoritmi-euristici/metaheuristics/large-neighbourhood-search.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/large-neighbourhood-search/
+        algoritmi-euristici/metaheuristics/metodi-basati-su-popolazioni-algoritmi-genetici-e-memetici.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/metodi-basati-su-popolazioni-algoritmi-genetici-e-memetici/
+        algoritmi-euristici/metaheuristics/tabu-search.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/tabu-search/
+        algoritmi-euristici/metaheuristics/variable-neighbourhood-search.md: https://fabiofurini.github.io/algoritmi-euristici/metaheuristics/variable-neighbourhood-search/
+        algoritmi-euristici/mip-heuristics-classical.md: https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/
+        esercizi/heuristics.md: https://fabiofurini.github.io/algoritmi-euristici/esercizi/heuristics/
+        esercizi/constructive-heuristics.md: https://fabiofurini.github.io/algoritmi-euristici/esercizi/constructive-heuristics/
+        esercizi/local-search.md: https://fabiofurini.github.io/algoritmi-euristici/esercizi/local-search/
+        esercizi/metaheuristics.md: https://fabiofurini.github.io/algoritmi-euristici/esercizi/metaheuristics/
+        esercizi/mip-heuristics-classical.md: https://fabiofurini.github.io/algoritmi-euristici/esercizi/mip-heuristics-classical/
+        laboratorio/colorazione-greedy-dsatur.md: https://fabiofurini.github.io/algoritmi-euristici/laboratorio/colorazione-greedy-dsatur/
+        laboratorio/euristiche-bin-packing.md: https://fabiofurini.github.io/algoritmi-euristici/laboratorio/euristiche-bin-packing/
+        laboratorio/list-scheduling-lpt.md: https://fabiofurini.github.io/algoritmi-euristici/laboratorio/list-scheduling-lpt/
+        laboratorio/simulated-annealing-tabu-search.md: https://fabiofurini.github.io/algoritmi-euristici/laboratorio/simulated-annealing-tabu-search/
+        laboratorio/tsp-nn-2opt.md: https://fabiofurini.github.io/algoritmi-euristici/laboratorio/tsp-nn-2opt/
+        algoritmi-di-approssimazione/approximation.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/approximation/
+        algoritmi-di-approssimazione/bin-packing-approximation.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/bin-packing-approximation/
+        algoritmi-di-approssimazione/clique-inapproximability.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/clique-inapproximability/
+        algoritmi-di-approssimazione/coloring-inapproximability.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/coloring-inapproximability/
+        algoritmi-di-approssimazione/index.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/
+        algoritmi-di-approssimazione/knapsack-approximation.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/knapsack-approximation/
+        algoritmi-di-approssimazione/pcmax-approximation.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/pcmax-approximation/
+        algoritmi-di-approssimazione/tsp-approximation.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/tsp-approximation/
+        esercizi/approximation.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/approximation/
+        esercizi/knapsack-approximation.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/knapsack-approximation/
+        esercizi/bin-packing-approximation.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/bin-packing-approximation/
+        esercizi/coloring-inapproximability.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/coloring-inapproximability/
+        esercizi/clique-inapproximability.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/clique-inapproximability/
+        esercizi/tsp-approximation.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/tsp-approximation/
+        esercizi/pcmax-approximation.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/pcmax-approximation/
+        laboratorio/istanze-tight.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/laboratorio/istanze-tight/
+        laboratorio/tsp-metrico-double-tree-christofides.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/laboratorio/tsp-metrico-double-tree-christofides/
+        laboratorio/zaino-approssimazione.md: https://fabiofurini.github.io/algoritmi-di-approssimazione/laboratorio/zaino-approssimazione/
+        notebook.md: https://fabiofurini.github.io/algoritmi-euristici/notebook/
 
 extra:
   social:
@@ -130,13 +244,10 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraphcore.js
   - javascripts/interattivi.js?v=2687ca69e3
   - javascripts/gi-comune.js?v=40df75e3e5
-  - javascripts/gi-oc-0.js?v=47de6aec23
-  - javascripts/gi-oc-a.js?v=845e684939
-  - javascripts/gi-oc-b.js?v=445a1b1c3f
-  - javascripts/gi-oc-c.js?v=7be68e397e
-  - javascripts/gi-oc-d.js?v=c702b61e84
-  - javascripts/gi-oc-e.js?v=81b96a11df
-  - javascripts/gi-oc-f.js?v=16cc0cf8e9
+  - javascripts/gi-oc-0.js?v=796131d7cc
+  - javascripts/gi-oc-a.js?v=90e8914be1
+  - javascripts/gi-oc-d.js?v=bf33f599aa
+  - javascripts/gi-oc-e.js?v=7384eb3754
   - javascripts/quiz.js?v=be7fae2b85
 
 nav:
@@ -217,105 +328,12 @@ nav:
           - formulazioni/lot-sizing-formulations/index.md
           - "Lot sizing capacitato (CLS)": formulazioni/lot-sizing-formulations/modelli-pli-per-il-problema-di-lot-sizing-capacitato.md
           - "Varianti del lot sizing": formulazioni/lot-sizing-formulations/modelli-pli-per-le-varianti.md
-  - Programmazione dinamica:
-      - programmazione-dinamica/index.md
-      - "16. Principi": programmazione-dinamica/dp-principles.md
-      - "Problemi di zaino":
-          - "17. Zaino 0/1 (KP)":
-              - programmazione-dinamica/dp-knapsack/index.md
-              - "Un primo algoritmo di PD": programmazione-dinamica/dp-knapsack/un-primo-algoritmo-di-pd.md
-              - "Un primo algoritmo di PD: Un'implementazione con liste": programmazione-dinamica/dp-knapsack/un-primo-algoritmo-di-pd-un-implementazione-con-liste.md
-              - "Un secondo algoritmo di PD": programmazione-dinamica/dp-knapsack/un-secondo-algoritmo-di-pd.md
-              - "Un secondo algoritmo di PD: Un'implementazione con liste": programmazione-dinamica/dp-knapsack/un-secondo-algoritmo-di-pd-un-implementazione-con-liste.md
-              - "Errori tipici · In sintesi": programmazione-dinamica/dp-knapsack/errori-tipici.md
-          - "18. Zaino illimitato (UKP)":
-              - programmazione-dinamica/dp-unbounded-knapsack/index.md
-              - "Un primo algoritmo di PD": programmazione-dinamica/dp-unbounded-knapsack/un-primo-algoritmo-di-pd.md
-              - "Un secondo algoritmo di PD": programmazione-dinamica/dp-unbounded-knapsack/un-secondo-algoritmo-di-pd.md
-              - "Errori tipici · In sintesi": programmazione-dinamica/dp-unbounded-knapsack/errori-tipici.md
-          - "19. Zaino limitato (BKP)": programmazione-dinamica/dp-bounded-knapsack.md
-          - "20. Subset sum (SSP)": programmazione-dinamica/dp-subset-sum.md
-          - "21. Zaino a scelta multipla (MCKP)": programmazione-dinamica/dp-multiple-choice-knapsack.md
-          - "22. Zaino multidimensionale (MDKP)": programmazione-dinamica/dp-multidimensional-knapsack.md
-          - "23. Zaino con setup (KPS)": programmazione-dinamica/dp-knapsack-setups.md
-          - "24. Zaini multipli (MKP)": programmazione-dinamica/dp-multiple-knapsack.md
-      - "Problemi di lot sizing":
-          - "25. Lot sizing senza capacità (ULS)":
-              - programmazione-dinamica/dp-lot-sizing/index.md
-              - "Un algoritmo di PD per l'ULS": programmazione-dinamica/dp-lot-sizing/un-algoritmo-di-pd-per-l-uls.md
-              - "Un algoritmo di PD per l'ULS: Passo 1 e Passo 2": programmazione-dinamica/dp-lot-sizing/un-algoritmo-di-pd-per-l-uls-passo-1-e-passo-2.md
-              - "Errori tipici · In sintesi": programmazione-dinamica/dp-lot-sizing/errori-tipici.md
-          - "26. Lot sizing capacitato (CLS)": programmazione-dinamica/dp-capacitated-lot-sizing.md
-      - "Problemi misti":
-          - "27. Cambio monete (CCP)": programmazione-dinamica/dp-coin-change.md
-          - "28. Taglio delle aste (RCP)":
-              - programmazione-dinamica/dp-rod-cutting/index.md
-              - "Un primo algoritmo di PD": programmazione-dinamica/dp-rod-cutting/un-primo-algoritmo-di-pd.md
-              - "Un secondo algoritmo di PD": programmazione-dinamica/dp-rod-cutting/un-secondo-algoritmo-di-pd.md
-              - "Errori tipici · In sintesi": programmazione-dinamica/dp-rod-cutting/errori-tipici.md
-  - Euristiche:
-      - algoritmi-euristici/index.md
-      - "29. Definizioni": algoritmi-euristici/heuristics.md
-      - "30. Euristiche costruttive":
-          - algoritmi-euristici/constructive-heuristics/index.md
-          - "I problemi e le ipotesi · Il paradigma greedy": algoritmi-euristici/constructive-heuristics/i-problemi-e-le-ipotesi.md
-          - "Il problema dello zaino 0/1: quale ordinamento?": algoritmi-euristici/constructive-heuristics/il-problema-dello-zaino-0-1-quale-ordinamento.md
-          - "Il problema del bin packing: prima ordinare, poi riempire": algoritmi-euristici/constructive-heuristics/il-problema-del-bin-packing-prima-ordinare-poi-riempire.md
-          - "Scheduling su macchine parallele: prima i lavori più lunghi": algoritmi-euristici/constructive-heuristics/scheduling-su-macchine-parallele-prima-i-lavori-piu-lunghi.md
-          - "Il problema del commesso viaggiatore: accodare o inserire?": algoritmi-euristici/constructive-heuristics/il-problema-del-commesso-viaggiatore-accodare-o-inserire.md
-          - "Colorazione dei vertici: greedy e DSATUR": algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur.md
-          - "Costruzione randomizzata": algoritmi-euristici/constructive-heuristics/costruzione-randomizzata.md
-          - "Look-ahead e regret": algoritmi-euristici/constructive-heuristics/look-ahead-e-regret.md
-          - "Che cosa danno le euristiche costruttive, e che cosa non danno": algoritmi-euristici/constructive-heuristics/che-cosa-danno-le-euristiche-costruttive-e-che-cosa-non-dann.md
-          - "Errori tipici · In sintesi": algoritmi-euristici/constructive-heuristics/errori-tipici.md
-      - "31. Ricerca locale":
-          - algoritmi-euristici/local-search/index.md
-          - "I problemi, le ipotesi e le soluzioni di partenza": algoritmi-euristici/local-search/i-problemi-le-ipotesi-e-le-soluzioni-di-partenza.md
-          - "Ricerca locale: lo schema · Intorni per i quattro problemi": algoritmi-euristici/local-search/ricerca-locale-lo-schema.md
-          - "First improvement e best improvement": algoritmi-euristici/local-search/first-improvement-e-best-improvement.md
-          - "Valutare una mossa in modo incrementale": algoritmi-euristici/local-search/valutare-una-mossa-in-modo-incrementale.md
-          - "TSP: 2-opt e Or-opt": algoritmi-euristici/local-search/tsp-2-opt-e-or-opt.md
-          - "P||Cmax: move e swap": algoritmi-euristici/local-search/p-cmax-move-e-swap.md
-          - "Paesaggi piatti e obiettivi ausiliari": algoritmi-euristici/local-search/paesaggi-piatti-e-obiettivi-ausiliari.md
-          - "KP: ammissibilità e penalità": algoritmi-euristici/local-search/kp-ammissibilita-e-penalita.md
-          - "Variable neighbourhood descent": algoritmi-euristici/local-search/variable-neighbourhood-descent.md
-          - "Ricerca locale multi-start": algoritmi-euristici/local-search/ricerca-locale-multi-start.md
-          - "Errori tipici · In sintesi": algoritmi-euristici/local-search/errori-tipici.md
-      - "32. Metaeuristiche":
-          - algoritmi-euristici/metaheuristics/index.md
-          - "I problemi e le ipotesi": algoritmi-euristici/metaheuristics/i-problemi-e-le-ipotesi.md
-          - "Come uscire da un ottimo locale · Simulated annealing": algoritmi-euristici/metaheuristics/come-uscire-da-un-ottimo-locale.md
-          - "Tabu search": algoritmi-euristici/metaheuristics/tabu-search.md
-          - "Iterated local search": algoritmi-euristici/metaheuristics/iterated-local-search.md
-          - "Variable neighbourhood search": algoritmi-euristici/metaheuristics/variable-neighbourhood-search.md
-          - "GRASP": algoritmi-euristici/metaheuristics/grasp.md
-          - "Large neighbourhood search": algoritmi-euristici/metaheuristics/large-neighbourhood-search.md
-          - "Metodi basati su popolazioni: algoritmi genetici e memetici": algoritmi-euristici/metaheuristics/metodi-basati-su-popolazioni-algoritmi-genetici-e-memetici.md
-          - "Confronto e conclusioni": algoritmi-euristici/metaheuristics/confronto-e-conclusioni.md
-          - "Errori tipici · In sintesi": algoritmi-euristici/metaheuristics/errori-tipici.md
-          - "Bibliografia": algoritmi-euristici/metaheuristics/bibliografia.md
-      - "33. Euristiche MIP": algoritmi-euristici/mip-heuristics-classical.md
-  - Approssimazione:
-      - algoritmi-di-approssimazione/index.md
-      - "34. Principi": algoritmi-di-approssimazione/approximation.md
-      - "Problemi di zaino":
-          - "35. Zaino 0/1 (KP)": algoritmi-di-approssimazione/knapsack-approximation.md
-      - "Problemi di packing":
-          - "36. Bin packing (BPP)": algoritmi-di-approssimazione/bin-packing-approximation.md
-      - "Problemi di colorazione":
-          - "37. Colorazione dei vertici (VCP)": algoritmi-di-approssimazione/coloring-inapproximability.md
-      - "Problemi di clique":
-          - "38. Clique massima (MCP)": algoritmi-di-approssimazione/clique-inapproximability.md
-      - "Problemi di routing":
-          - "39. Commesso viaggiatore (TSP)": algoritmi-di-approssimazione/tsp-approximation.md
-      - "Problemi di scheduling":
-          - "40. Macchine parallele identiche (P||Cmax)": algoritmi-di-approssimazione/pcmax-approximation.md
-  - Ad hoc:
+  - Algoritmi ad hoc:
       - algoritmi-specializzati/index.md
       - "Problemi di zaino":
-          - "41. Zaino 0/1 (KP)": algoritmi-specializzati/knapsack-branch-and-bound.md
+          - "16. Zaino 0/1 (KP)": algoritmi-specializzati/knapsack-branch-and-bound.md
       - "Problemi di colorazione":
-          - "42. Colorazione dei vertici (VCP)": algoritmi-specializzati/dsatur-branch-and-bound.md
+          - "17. Colorazione dei vertici (VCP)": algoritmi-specializzati/dsatur-branch-and-bound.md
   - Esercizi:
       - esercizi/index.md
       - "Ottimizzazione combinatoria":
@@ -336,48 +354,11 @@ nav:
           - "13. Problemi di routing": esercizi/tsp-formulations.md
           - "14. Problemi di scheduling": esercizi/pcmax-formulations.md
           - "15. Problemi di lot sizing": esercizi/lot-sizing-formulations.md
-      - "Programmazione dinamica":
-          - "16. Principi": esercizi/dp-principles.md
+      - "Algoritmi ad hoc":
           - "Problemi di zaino":
-              - "17. Zaino 0/1 (KP)": esercizi/dp-knapsack.md
-              - "18. Zaino illimitato (UKP)": esercizi/dp-unbounded-knapsack.md
-              - "19. Zaino limitato (BKP)": esercizi/dp-bounded-knapsack.md
-              - "20. Subset sum (SSP)": esercizi/dp-subset-sum.md
-              - "21. Zaino a scelta multipla (MCKP)": esercizi/dp-multiple-choice-knapsack.md
-              - "22. Zaino multidimensionale (MDKP)": esercizi/dp-multidimensional-knapsack.md
-              - "23. Zaino con setup (KPS)": esercizi/dp-knapsack-setups.md
-              - "24. Zaini multipli (MKP)": esercizi/dp-multiple-knapsack.md
-          - "Problemi di lot sizing":
-              - "25. Lot sizing senza capacità (ULS)": esercizi/dp-lot-sizing.md
-              - "26. Lot sizing capacitato (CLS)": esercizi/dp-capacitated-lot-sizing.md
-          - "Problemi misti":
-              - "27. Cambio monete (CCP)": esercizi/dp-coin-change.md
-              - "28. Taglio delle aste (RCP)": esercizi/dp-rod-cutting.md
-      - "Euristiche":
-          - "29. Definizioni": esercizi/heuristics.md
-          - "30. Euristiche costruttive": esercizi/constructive-heuristics.md
-          - "31. Ricerca locale": esercizi/local-search.md
-          - "32. Metaeuristiche": esercizi/metaheuristics.md
-          - "33. Euristiche MIP": esercizi/mip-heuristics-classical.md
-      - "Approssimazione":
-          - "34. Principi": esercizi/approximation.md
-          - "Problemi di zaino":
-              - "35. Zaino 0/1 (KP)": esercizi/knapsack-approximation.md
-          - "Problemi di packing":
-              - "36. Bin packing (BPP)": esercizi/bin-packing-approximation.md
+              - "16. Zaino 0/1 (KP)": esercizi/knapsack-branch-and-bound.md
           - "Problemi di colorazione":
-              - "37. Colorazione dei vertici (VCP)": esercizi/coloring-inapproximability.md
-          - "Problemi di clique":
-              - "38. Clique massima (MCP)": esercizi/clique-inapproximability.md
-          - "Problemi di routing":
-              - "39. Commesso viaggiatore (TSP)": esercizi/tsp-approximation.md
-          - "Problemi di scheduling":
-              - "40. Macchine parallele identiche (P||Cmax)": esercizi/pcmax-approximation.md
-      - "Ad hoc":
-          - "Problemi di zaino":
-              - "41. Zaino 0/1 (KP)": esercizi/knapsack-branch-and-bound.md
-          - "Problemi di colorazione":
-              - "42. Colorazione dei vertici (VCP)": esercizi/dsatur-branch-and-bound.md
+              - "17. Colorazione dei vertici (VCP)": esercizi/dsatur-branch-and-bound.md
   - Quiz: autovalutazione.md
   - Laboratorio: laboratorio/index.md
   - Catalogo:
@@ -431,7 +412,5 @@ nav:
           - catalogo/miscellaneous-problems.md
           - "Taglio delle aste (RCP)": catalogo/rod-cutting-problem.md
           - "Cambio monete (CCP)": catalogo/coin-change-problem.md
-  - Materiale:
-      - materiale.md
-      - Notebook Colab: notebook.md
+  - Materiale: materiale.md
   - Indice: indice.md

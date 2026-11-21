@@ -6,7 +6,6 @@
 - **Sito e PDF.** Ogni capitolo del sito è un capitolo della dispensa, con gli stessi numeri e gli stessi colori; i capitoli lunghi sono divisi in una pagina per sezione o per problema.
 - **In testa a ogni capitolo** la barra con la parte, il PDF del volume, gli esercizi e le app del capitolo; in fondo, il link agli esercizi.
 - **Per problema.** Il catalogo ha una pagina per ogni problema: la definizione e i capitoli che lo trattano, tecnica per tecnica.
-- **Il codice.** Nelle pagine gli algoritmi sono in pseudocodice; i pulsanti «Esegui in Colab» aprono il notebook con il codice in Python e C++.
 
 I box hanno gli stessi colori della dispensa:
 
@@ -22,7 +21,7 @@ I box hanno gli stessi colori della dispensa:
     Un calcolo svolto per intero, un passo alla volta.
 
 !!! formula "Formula"
-    In rosa le formule da avere sempre sotto mano (per esempio le ricorrenze della programmazione dinamica).
+    In rosa le formule da avere sempre sotto mano (per esempio gli upper bound dello zaino negli esercizi).
 
 !!! algoritmo "Algoritmo"
     Lo pseudocodice, passo per passo come nella dispensa.
@@ -189,249 +188,24 @@ Tutte le pagine del sito, nell'ordine del menu: i capitoli con le loro sezioni, 
     - [15.8 Errori tipici](formulazioni/lot-sizing-formulations/modelli-pli-per-le-varianti.md#158-errori-tipici)
     - [15.9 In sintesi](formulazioni/lot-sizing-formulations/modelli-pli-per-le-varianti.md#159-in-sintesi)
 
-## [Programmazione dinamica](programmazione-dinamica/index.md)
-
-- **[16. Principi della programmazione dinamica](programmazione-dinamica/dp-principles.md)** · [Esercizi](esercizi/dp-principles.md)
-    - [16.1 Dividere, conquistare, combinare](programmazione-dinamica/dp-principles.md#161-dividere-conquistare-combinare)
-    - [16.2 Proprietà del problema richieste dagli algoritmi di PD](programmazione-dinamica/dp-principles.md#sez-sec-dp-properties)
-    - [16.3 Passi per progettare un algoritmo di PD](programmazione-dinamica/dp-principles.md#163-passi-per-progettare-un-algoritmo-di-pd)
-    - [16.4 Gli algoritmi di PD di questo modulo](programmazione-dinamica/dp-principles.md#164-gli-algoritmi-di-pd-di-questo-modulo)
-    - [16.5 Errori tipici](programmazione-dinamica/dp-principles.md#165-errori-tipici)
-    - [16.6 In sintesi](programmazione-dinamica/dp-principles.md#166-in-sintesi)
+## [Algoritmi ad hoc](algoritmi-specializzati/index.md)
 
 ### Problemi di zaino
 
-- **[17. PD per il problema dello zaino 0/1](programmazione-dinamica/dp-knapsack/index.md)** · [Esercizi](esercizi/dp-knapsack.md)
-    - [17.1 Istanze e soluzioni ammissibili](programmazione-dinamica/dp-knapsack/index.md#171-istanze-e-soluzioni-ammissibili)
-    - [17.2 Un primo algoritmo di PD](programmazione-dinamica/dp-knapsack/un-primo-algoritmo-di-pd.md)
-    - [17.3 Un secondo algoritmo di PD](programmazione-dinamica/dp-knapsack/un-secondo-algoritmo-di-pd.md)
-    - [17.4 Errori tipici](programmazione-dinamica/dp-knapsack/errori-tipici.md#174-errori-tipici)
-    - [17.5 In sintesi](programmazione-dinamica/dp-knapsack/errori-tipici.md#175-in-sintesi)
-- **[18. PD per il problema dello zaino illimitato](programmazione-dinamica/dp-unbounded-knapsack/index.md)** · [Esercizi](esercizi/dp-unbounded-knapsack.md)
-    - [18.1 Istanze e soluzioni ammissibili](programmazione-dinamica/dp-unbounded-knapsack/index.md#181-istanze-e-soluzioni-ammissibili)
-    - [18.2 Un primo algoritmo di PD](programmazione-dinamica/dp-unbounded-knapsack/un-primo-algoritmo-di-pd.md)
-    - [18.3 Un secondo algoritmo di PD](programmazione-dinamica/dp-unbounded-knapsack/un-secondo-algoritmo-di-pd.md)
-    - [18.4 Errori tipici](programmazione-dinamica/dp-unbounded-knapsack/errori-tipici.md#184-errori-tipici)
-    - [18.5 In sintesi](programmazione-dinamica/dp-unbounded-knapsack/errori-tipici.md#185-in-sintesi)
-- **[19. PD per il problema dello zaino limitato](programmazione-dinamica/dp-bounded-knapsack.md)** · [Esercizi](esercizi/dp-bounded-knapsack.md)
-    - [19.1 Istanze e soluzioni ammissibili](programmazione-dinamica/dp-bounded-knapsack.md#191-istanze-e-soluzioni-ammissibili)
-    - [19.2 Un algoritmo di PD](programmazione-dinamica/dp-bounded-knapsack.md#192-un-algoritmo-di-pd)
-    - [19.3 Errori tipici](programmazione-dinamica/dp-bounded-knapsack.md#193-errori-tipici)
-    - [19.4 In sintesi](programmazione-dinamica/dp-bounded-knapsack.md#194-in-sintesi)
-- **[20. PD per il problema del subset sum](programmazione-dinamica/dp-subset-sum.md)** · [Esercizi](esercizi/dp-subset-sum.md)
-    - [20.1 Un algoritmo di PD](programmazione-dinamica/dp-subset-sum.md#201-un-algoritmo-di-pd)
-    - [20.2 Errori tipici](programmazione-dinamica/dp-subset-sum.md#202-errori-tipici)
-    - [20.3 In sintesi](programmazione-dinamica/dp-subset-sum.md#203-in-sintesi)
-- **[21. PD per il problema dello zaino a scelta multipla](programmazione-dinamica/dp-multiple-choice-knapsack.md)** · [Esercizi](esercizi/dp-multiple-choice-knapsack.md)
-    - [21.1 Un algoritmo di PD](programmazione-dinamica/dp-multiple-choice-knapsack.md#211-un-algoritmo-di-pd)
-    - [21.2 Errori tipici](programmazione-dinamica/dp-multiple-choice-knapsack.md#212-errori-tipici)
-    - [21.3 In sintesi](programmazione-dinamica/dp-multiple-choice-knapsack.md#213-in-sintesi)
-- **[22. PD per il problema dello zaino multidimensionale](programmazione-dinamica/dp-multidimensional-knapsack.md)** · [Esercizi](esercizi/dp-multidimensional-knapsack.md)
-    - [22.1 Un algoritmo di PD](programmazione-dinamica/dp-multidimensional-knapsack.md#221-un-algoritmo-di-pd)
-    - [22.2 Errori tipici](programmazione-dinamica/dp-multidimensional-knapsack.md#222-errori-tipici)
-    - [22.3 In sintesi](programmazione-dinamica/dp-multidimensional-knapsack.md#223-in-sintesi)
-- **[23. PD per il problema dello zaino con setup](programmazione-dinamica/dp-knapsack-setups.md)** · [Esercizi](esercizi/dp-knapsack-setups.md)
-    - [23.1 Un algoritmo di PD](programmazione-dinamica/dp-knapsack-setups.md#231-un-algoritmo-di-pd)
-    - [23.2 Errori tipici](programmazione-dinamica/dp-knapsack-setups.md#232-errori-tipici)
-    - [23.3 In sintesi](programmazione-dinamica/dp-knapsack-setups.md#233-in-sintesi)
-- **[24. PD per il problema degli zaini multipli](programmazione-dinamica/dp-multiple-knapsack.md)** · [Esercizi](esercizi/dp-multiple-knapsack.md)
-    - [24.1 Un algoritmo di PD](programmazione-dinamica/dp-multiple-knapsack.md#241-un-algoritmo-di-pd)
-    - [24.2 Errori tipici](programmazione-dinamica/dp-multiple-knapsack.md#242-errori-tipici)
-    - [24.3 In sintesi](programmazione-dinamica/dp-multiple-knapsack.md#243-in-sintesi)
-
-### Problemi di lot sizing
-
-- **[25. PD per il problema del lot sizing senza capacità](programmazione-dinamica/dp-lot-sizing/index.md)** · [Esercizi](esercizi/dp-lot-sizing.md)
-    - [25.1 Notazione, modello e soluzioni ammissibili](programmazione-dinamica/dp-lot-sizing/index.md#251-notazione-modello-e-soluzioni-ammissibili)
-    - [25.2 Un algoritmo di PD per l'ULS](programmazione-dinamica/dp-lot-sizing/un-algoritmo-di-pd-per-l-uls.md)
-    - [25.3 Errori tipici](programmazione-dinamica/dp-lot-sizing/errori-tipici.md#253-errori-tipici)
-    - [25.4 In sintesi](programmazione-dinamica/dp-lot-sizing/errori-tipici.md#254-in-sintesi)
-- **[26. PD per il problema del lot sizing capacitato](programmazione-dinamica/dp-capacitated-lot-sizing.md)** · [Esercizi](esercizi/dp-capacitated-lot-sizing.md)
-    - [26.1 Notazione, modello e soluzioni ammissibili](programmazione-dinamica/dp-capacitated-lot-sizing.md#261-notazione-modello-e-soluzioni-ammissibili)
-    - [26.2 Un algoritmo di PD per il CLS](programmazione-dinamica/dp-capacitated-lot-sizing.md#262-un-algoritmo-di-pd-per-il-cls)
-    - [26.3 Errori tipici](programmazione-dinamica/dp-capacitated-lot-sizing.md#263-errori-tipici)
-    - [26.4 In sintesi](programmazione-dinamica/dp-capacitated-lot-sizing.md#264-in-sintesi)
-
-### Problemi misti
-
-- **[27. PD per il problema del cambio monete](programmazione-dinamica/dp-coin-change.md)** · [Esercizi](esercizi/dp-coin-change.md)
-    - [27.1 Istanze e soluzioni ammissibili](programmazione-dinamica/dp-coin-change.md#271-istanze-e-soluzioni-ammissibili)
-    - [27.2 Un algoritmo di PD](programmazione-dinamica/dp-coin-change.md#272-un-algoritmo-di-pd)
-    - [27.3 Errori tipici](programmazione-dinamica/dp-coin-change.md#273-errori-tipici)
-    - [27.4 In sintesi](programmazione-dinamica/dp-coin-change.md#274-in-sintesi)
-- **[28. PD per il problema del taglio delle aste](programmazione-dinamica/dp-rod-cutting/index.md)** · [Esercizi](esercizi/dp-rod-cutting.md)
-    - [28.1 Istanze e soluzioni ammissibili](programmazione-dinamica/dp-rod-cutting/index.md#281-istanze-e-soluzioni-ammissibili)
-    - [28.2 Un primo algoritmo di PD](programmazione-dinamica/dp-rod-cutting/un-primo-algoritmo-di-pd.md)
-    - [28.3 Un secondo algoritmo di PD](programmazione-dinamica/dp-rod-cutting/un-secondo-algoritmo-di-pd.md)
-    - [28.4 Errori tipici](programmazione-dinamica/dp-rod-cutting/errori-tipici.md#284-errori-tipici)
-    - [28.5 In sintesi](programmazione-dinamica/dp-rod-cutting/errori-tipici.md#285-in-sintesi)
-
-## [Euristiche](algoritmi-euristici/index.md)
-
-- **[29. Algoritmi euristici: definizioni](algoritmi-euristici/heuristics.md)** · [Esercizi](esercizi/heuristics.md)
-    - [29.1 Algoritmi euristici](algoritmi-euristici/heuristics.md#291-algoritmi-euristici)
-    - [29.2 I problemi e le ipotesi](algoritmi-euristici/heuristics.md#sez-sec-problems)
-    - [29.3 Bound primali e duali](algoritmi-euristici/heuristics.md#293-bound-primali-e-duali)
-    - [29.4 Classificazione degli algoritmi euristici](algoritmi-euristici/heuristics.md#294-classificazione-degli-algoritmi-euristici)
-    - [29.5 Rappresentazione delle soluzioni e spazio di ricerca](algoritmi-euristici/heuristics.md#295-rappresentazione-delle-soluzioni-e-spazio-di-ricerca)
-    - [29.6 Intorni e ottimi locali](algoritmi-euristici/heuristics.md#296-intorni-e-ottimi-locali)
-    - [29.7 Intensificazione e diversificazione](algoritmi-euristici/heuristics.md#297-intensificazione-e-diversificazione)
-    - [29.8 Come valutare un algoritmo euristico](algoritmi-euristici/heuristics.md#sez-sec-evaluation)
-    - [29.9 Errori tipici](algoritmi-euristici/heuristics.md#299-errori-tipici)
-    - [29.10 In sintesi](algoritmi-euristici/heuristics.md#2910-in-sintesi)
-- **[30. Euristiche costruttive](algoritmi-euristici/constructive-heuristics/index.md)** · [Esercizi](esercizi/constructive-heuristics.md)
-    - [30.1 Euristiche costruttive](algoritmi-euristici/constructive-heuristics/index.md#sez-sec-constructive)
-    - [30.2 I problemi e le ipotesi](algoritmi-euristici/constructive-heuristics/i-problemi-e-le-ipotesi.md#sez-sec-problems)
-    - [30.3 Il paradigma greedy](algoritmi-euristici/constructive-heuristics/i-problemi-e-le-ipotesi.md#sez-sec-greedy)
-    - [30.4 Il problema dello zaino 0/1: quale ordinamento?](algoritmi-euristici/constructive-heuristics/il-problema-dello-zaino-0-1-quale-ordinamento.md)
-    - [30.5 Il problema del bin packing: prima ordinare, poi riempire](algoritmi-euristici/constructive-heuristics/il-problema-del-bin-packing-prima-ordinare-poi-riempire.md)
-    - [30.6 Scheduling su macchine parallele: prima i lavori più lunghi](algoritmi-euristici/constructive-heuristics/scheduling-su-macchine-parallele-prima-i-lavori-piu-lunghi.md)
-    - [30.7 Il problema del commesso viaggiatore: accodare o inserire?](algoritmi-euristici/constructive-heuristics/il-problema-del-commesso-viaggiatore-accodare-o-inserire.md)
-    - [30.8 Colorazione dei vertici: greedy e DSATUR](algoritmi-euristici/constructive-heuristics/colorazione-dei-vertici-greedy-e-dsatur.md)
-    - [30.9 Costruzione randomizzata](algoritmi-euristici/constructive-heuristics/costruzione-randomizzata.md)
-    - [30.10 Look-ahead e regret](algoritmi-euristici/constructive-heuristics/look-ahead-e-regret.md)
-    - [30.11 Che cosa danno le euristiche costruttive, e che cosa non danno](algoritmi-euristici/constructive-heuristics/che-cosa-danno-le-euristiche-costruttive-e-che-cosa-non-dann.md)
-    - [30.12 Errori tipici](algoritmi-euristici/constructive-heuristics/errori-tipici.md#3012-errori-tipici)
-    - [30.13 In sintesi](algoritmi-euristici/constructive-heuristics/errori-tipici.md#3013-in-sintesi)
-- **[31. Ricerca locale](algoritmi-euristici/local-search/index.md)** · [Esercizi](esercizi/local-search.md)
-    - [31.1 Ricerca locale](algoritmi-euristici/local-search/index.md#sez-sec-ls)
-    - [31.2 I problemi, le ipotesi e le soluzioni di partenza](algoritmi-euristici/local-search/i-problemi-le-ipotesi-e-le-soluzioni-di-partenza.md)
-    - [31.3 Ricerca locale: lo schema](algoritmi-euristici/local-search/ricerca-locale-lo-schema.md#sez-sec-scheme)
-    - [31.4 Intorni per i quattro problemi](algoritmi-euristici/local-search/ricerca-locale-lo-schema.md#sez-sec-neigh)
-    - [31.5 First improvement e best improvement](algoritmi-euristici/local-search/first-improvement-e-best-improvement.md)
-    - [31.6 Valutare una mossa in modo incrementale](algoritmi-euristici/local-search/valutare-una-mossa-in-modo-incrementale.md)
-    - [31.7 TSP: 2-opt e Or-opt](algoritmi-euristici/local-search/tsp-2-opt-e-or-opt.md)
-    - [31.8 $P\,||\,C_{\max}$: move e swap](algoritmi-euristici/local-search/p-cmax-move-e-swap.md)
-    - [31.9 Paesaggi piatti e obiettivi ausiliari](algoritmi-euristici/local-search/paesaggi-piatti-e-obiettivi-ausiliari.md)
-    - [31.10 KP: ammissibilità e penalità](algoritmi-euristici/local-search/kp-ammissibilita-e-penalita.md)
-    - [31.11 Variable neighbourhood descent](algoritmi-euristici/local-search/variable-neighbourhood-descent.md)
-    - [31.12 Ricerca locale multi-start](algoritmi-euristici/local-search/ricerca-locale-multi-start.md)
-    - [31.13 Errori tipici](algoritmi-euristici/local-search/errori-tipici.md#3113-errori-tipici)
-    - [31.14 In sintesi](algoritmi-euristici/local-search/errori-tipici.md#3114-in-sintesi)
-- **[32. Metaeuristiche](algoritmi-euristici/metaheuristics/index.md)** · [Esercizi](esercizi/metaheuristics.md)
-    - [32.1 Metaeuristiche](algoritmi-euristici/metaheuristics/index.md#sez-sec-metaheuristic)
-    - [32.2 I problemi e le ipotesi](algoritmi-euristici/metaheuristics/i-problemi-e-le-ipotesi.md)
-    - [32.3 Come uscire da un ottimo locale](algoritmi-euristici/metaheuristics/come-uscire-da-un-ottimo-locale.md#sez-sec-escape)
-    - [32.4 Simulated annealing](algoritmi-euristici/metaheuristics/come-uscire-da-un-ottimo-locale.md#sez-sec-sa)
-    - [32.5 Tabu search](algoritmi-euristici/metaheuristics/tabu-search.md)
-    - [32.6 Iterated local search](algoritmi-euristici/metaheuristics/iterated-local-search.md)
-    - [32.7 Variable neighbourhood search](algoritmi-euristici/metaheuristics/variable-neighbourhood-search.md)
-    - [32.8 GRASP](algoritmi-euristici/metaheuristics/grasp.md)
-    - [32.9 Large neighbourhood search](algoritmi-euristici/metaheuristics/large-neighbourhood-search.md)
-    - [32.10 Metodi basati su popolazioni: algoritmi genetici e memetici](algoritmi-euristici/metaheuristics/metodi-basati-su-popolazioni-algoritmi-genetici-e-memetici.md)
-    - [32.11 Confronto e conclusioni](algoritmi-euristici/metaheuristics/confronto-e-conclusioni.md)
-    - [32.12 Errori tipici](algoritmi-euristici/metaheuristics/errori-tipici.md#3212-errori-tipici)
-    - [32.13 In sintesi](algoritmi-euristici/metaheuristics/errori-tipici.md#3213-in-sintesi)
-- **[33. Euristiche MIP per i problemi classici](algoritmi-euristici/mip-heuristics-classical.md)** · [Esercizi](esercizi/mip-heuristics-classical.md)
-    - [33.1 Euristiche basate sulla PLI](algoritmi-euristici/mip-heuristics-classical.md#sez-sec-intro)
-    - [33.2 I problemi e i loro modelli MIP](algoritmi-euristici/mip-heuristics-classical.md#sez-sec-models)
-    - [33.3 Arrotondamento](algoritmi-euristici/mip-heuristics-classical.md#sez-sec-rounding)
-    - [33.4 Diving](algoritmi-euristici/mip-heuristics-classical.md#sez-sec-diving)
-    - [33.5 La feasibility pump](algoritmi-euristici/mip-heuristics-classical.md#sez-sec-fp)
-    - [33.6 RINS, local branching e proximity search](algoritmi-euristici/mip-heuristics-classical.md#sez-sec-submip)
-    - [33.7 Relax-and-fix e fix-and-optimize sul lot sizing](algoritmi-euristici/mip-heuristics-classical.md#sez-sec-rf)
-    - [33.8 Le euristiche dentro il solver](algoritmi-euristici/mip-heuristics-classical.md#sez-sec-gurobi)
-    - [33.9 Che cosa danno le euristiche basate sulla PLI](algoritmi-euristici/mip-heuristics-classical.md#sez-sec-give)
-    - [33.10 Errori tipici](algoritmi-euristici/mip-heuristics-classical.md#sez-sec-mistakes)
-    - [33.11 In sintesi](algoritmi-euristici/mip-heuristics-classical.md#sez-sec-summary)
-
-## [Approssimazione](algoritmi-di-approssimazione/index.md)
-
-- **[34. Principi degli algoritmi di approssimazione](algoritmi-di-approssimazione/approximation.md)** · [Esercizi](esercizi/approximation.md)
-    - [34.1 Algoritmi di approssimazione](algoritmi-di-approssimazione/approximation.md#341-algoritmi-di-approssimazione)
-    - [34.2 Schemi di approssimazione](algoritmi-di-approssimazione/approximation.md#342-schemi-di-approssimazione)
-    - [34.3 Errori tipici](algoritmi-di-approssimazione/approximation.md#343-errori-tipici)
-    - [34.4 In sintesi](algoritmi-di-approssimazione/approximation.md#344-in-sintesi)
-
-### Problemi di zaino
-
-- **[35. Algoritmi di approssimazione per lo zaino](algoritmi-di-approssimazione/knapsack-approximation.md)** · [Esercizi](esercizi/knapsack-approximation.md)
-    - [35.1 Notazione](algoritmi-di-approssimazione/knapsack-approximation.md#351-notazione)
-    - [35.2 Oggetto critico e capacità residua](algoritmi-di-approssimazione/knapsack-approximation.md#352-oggetto-critico-e-capacita-residua)
-    - [35.3 L'algoritmo greedy](algoritmi-di-approssimazione/knapsack-approximation.md#353-lalgoritmo-greedy)
-    - [35.4 L'algoritmo Ext-Greedy](algoritmi-di-approssimazione/knapsack-approximation.md#354-lalgoritmo-ext-greedy)
-    - [35.5 L'algoritmo $H^2$](algoritmi-di-approssimazione/knapsack-approximation.md#sez-sec-H2)
-    - [35.6 L'algoritmo $H^{\ell}$](algoritmi-di-approssimazione/knapsack-approximation.md#356-lalgoritmo-hell)
-    - [35.7 L'algoritmo Basic-FPTAS](algoritmi-di-approssimazione/knapsack-approximation.md#357-lalgoritmo-basic-fptas)
-    - [35.8 Garanzie di prestazione](algoritmi-di-approssimazione/knapsack-approximation.md#358-garanzie-di-prestazione)
-    - [35.9 Garanzia di prestazione assoluta](algoritmi-di-approssimazione/knapsack-approximation.md#359-garanzia-di-prestazione-assoluta)
-    - [35.10 Errori tipici](algoritmi-di-approssimazione/knapsack-approximation.md#3510-errori-tipici)
-    - [35.11 In sintesi](algoritmi-di-approssimazione/knapsack-approximation.md#3511-in-sintesi)
-
-### Problemi di packing
-
-- **[36. Algoritmi di approssimazione per il bin packing](algoritmi-di-approssimazione/bin-packing-approximation.md)** · [Esercizi](esercizi/bin-packing-approximation.md)
-    - [36.1 Notazione](algoritmi-di-approssimazione/bin-packing-approximation.md#361-notazione)
-    - [36.2 Next Fit](algoritmi-di-approssimazione/bin-packing-approximation.md#sez-sec-NF)
-    - [36.3 La classe Any Fit](algoritmi-di-approssimazione/bin-packing-approximation.md#sez-sec-AF)
-    - [36.4 Proprietà di riempimento a metà](algoritmi-di-approssimazione/bin-packing-approximation.md#364-proprieta-di-riempimento-a-meta)
-    - [36.5 Garanzie di prestazione](algoritmi-di-approssimazione/bin-packing-approximation.md#365-garanzie-di-prestazione)
-    - [36.6 Errori tipici](algoritmi-di-approssimazione/bin-packing-approximation.md#366-errori-tipici)
-    - [36.7 In sintesi](algoritmi-di-approssimazione/bin-packing-approximation.md#367-in-sintesi)
+- **[16. Zaino: branch-and-bound sull'elemento critico](algoritmi-specializzati/knapsack-branch-and-bound.md)** · [Esercizi](esercizi/knapsack-branch-and-bound.md)
+    - [16.1 L'algoritmo per il KP](algoritmi-specializzati/knapsack-branch-and-bound.md#161-lalgoritmo-per-il-kp)
+    - [16.2 Un esempio svolto](algoritmi-specializzati/knapsack-branch-and-bound.md#162-un-esempio-svolto)
+    - [16.3 Errori tipici](algoritmi-specializzati/knapsack-branch-and-bound.md#163-errori-tipici)
+    - [16.4 In sintesi](algoritmi-specializzati/knapsack-branch-and-bound.md#164-in-sintesi)
 
 ### Problemi di colorazione
 
-- **[37. Colorazione dei vertici: limiti dell'approssimazione](algoritmi-di-approssimazione/coloring-inapproximability.md)** · [Esercizi](esercizi/coloring-inapproximability.md)
-    - [37.1 Notazione](algoritmi-di-approssimazione/coloring-inapproximability.md#371-notazione)
-    - [37.2 Il VCP non è approssimabile](algoritmi-di-approssimazione/coloring-inapproximability.md#372-il-vcp-non-e-approssimabile)
-    - [37.3 Casi particolari](algoritmi-di-approssimazione/coloring-inapproximability.md#373-casi-particolari)
-    - [37.4 Esempi](algoritmi-di-approssimazione/coloring-inapproximability.md#374-esempi)
-    - [37.5 Fonti](algoritmi-di-approssimazione/coloring-inapproximability.md#375-fonti)
-    - [37.6 Errori tipici](algoritmi-di-approssimazione/coloring-inapproximability.md#376-errori-tipici)
-    - [37.7 In sintesi](algoritmi-di-approssimazione/coloring-inapproximability.md#377-in-sintesi)
-
-### Problemi di clique
-
-- **[38. Clique massima: limiti dell'approssimazione](algoritmi-di-approssimazione/clique-inapproximability.md)** · [Esercizi](esercizi/clique-inapproximability.md)
-    - [38.1 Notazione](algoritmi-di-approssimazione/clique-inapproximability.md#381-notazione)
-    - [38.2 Il MCP non è approssimabile](algoritmi-di-approssimazione/clique-inapproximability.md#382-il-mcp-non-e-approssimabile)
-    - [38.3 Casi particolari](algoritmi-di-approssimazione/clique-inapproximability.md#383-casi-particolari)
-    - [38.4 Esempio](algoritmi-di-approssimazione/clique-inapproximability.md#384-esempio)
-    - [38.5 Fonti](algoritmi-di-approssimazione/clique-inapproximability.md#385-fonti)
-    - [38.6 Errori tipici](algoritmi-di-approssimazione/clique-inapproximability.md#386-errori-tipici)
-    - [38.7 In sintesi](algoritmi-di-approssimazione/clique-inapproximability.md#387-in-sintesi)
-
-### Problemi di routing
-
-- **[39. TSP: il caso generale e il caso metrico](algoritmi-di-approssimazione/tsp-approximation.md)** · [Esercizi](esercizi/tsp-approximation.md)
-    - [39.1 Il TSP generale non è approssimabile](algoritmi-di-approssimazione/tsp-approximation.md#391-il-tsp-generale-non-e-approssimabile)
-    - [39.2 Un caso particolare: il TSP metrico](algoritmi-di-approssimazione/tsp-approximation.md#392-un-caso-particolare-il-tsp-metrico)
-    - [39.3 L'algoritmo del doppio albero e l'algoritmo di Christofides](algoritmi-di-approssimazione/tsp-approximation.md#393-lalgoritmo-del-doppio-albero-e-lalgoritmo-di-christofides)
-    - [39.4 Proprietà strutturali](algoritmi-di-approssimazione/tsp-approximation.md#394-proprieta-strutturali)
-    - [39.5 Garanzie di prestazione](algoritmi-di-approssimazione/tsp-approximation.md#395-garanzie-di-prestazione)
-    - [39.6 Fonti](algoritmi-di-approssimazione/tsp-approximation.md#396-fonti)
-    - [39.7 Errori tipici](algoritmi-di-approssimazione/tsp-approximation.md#397-errori-tipici)
-    - [39.8 In sintesi](algoritmi-di-approssimazione/tsp-approximation.md#398-in-sintesi)
-
-### Problemi di scheduling
-
-- **[40. Approssimazione per P||Cmax](algoritmi-di-approssimazione/pcmax-approximation.md)** · [Esercizi](esercizi/pcmax-approximation.md)
-    - [40.1 Notazione](algoritmi-di-approssimazione/pcmax-approximation.md#401-notazione)
-    - [40.2 Gli algoritmi $LIST$ e $LPT$](algoritmi-di-approssimazione/pcmax-approximation.md#402-gli-algoritmi-list-e-lpt)
-    - [40.3 Una proprietà del list scheduling](algoritmi-di-approssimazione/pcmax-approximation.md#403-una-proprieta-del-list-scheduling)
-    - [40.4 Garanzie di prestazione](algoritmi-di-approssimazione/pcmax-approximation.md#404-garanzie-di-prestazione)
-    - [40.5 Fonti](algoritmi-di-approssimazione/pcmax-approximation.md#405-fonti)
-    - [40.6 Errori tipici](algoritmi-di-approssimazione/pcmax-approximation.md#406-errori-tipici)
-    - [40.7 In sintesi](algoritmi-di-approssimazione/pcmax-approximation.md#407-in-sintesi)
-
-## [Ad hoc](algoritmi-specializzati/index.md)
-
-### Problemi di zaino
-
-- **[41. Zaino: branch-and-bound sull'elemento critico](algoritmi-specializzati/knapsack-branch-and-bound.md)** · [Esercizi](esercizi/knapsack-branch-and-bound.md)
-    - [41.1 L'algoritmo per il KP](algoritmi-specializzati/knapsack-branch-and-bound.md#411-lalgoritmo-per-il-kp)
-    - [41.2 Un esempio svolto](algoritmi-specializzati/knapsack-branch-and-bound.md#412-un-esempio-svolto)
-    - [41.3 Errori tipici](algoritmi-specializzati/knapsack-branch-and-bound.md#413-errori-tipici)
-    - [41.4 In sintesi](algoritmi-specializzati/knapsack-branch-and-bound.md#414-in-sintesi)
-
-### Problemi di colorazione
-
-- **[42. Colorazione dei vertici: il branch-and-bound DSATUR](algoritmi-specializzati/dsatur-branch-and-bound.md)** · [Esercizi](esercizi/dsatur-branch-and-bound.md)
-    - [42.1 L'algoritmo per il VCP](algoritmi-specializzati/dsatur-branch-and-bound.md#sez-sec-DSATURBB)
-    - [42.2 Un esempio svolto](algoritmi-specializzati/dsatur-branch-and-bound.md#sez-sec-DSATURBBex)
-    - [42.3 Osservazioni](algoritmi-specializzati/dsatur-branch-and-bound.md#sez-sec-DSATURBBrem)
-    - [42.4 Errori tipici](algoritmi-specializzati/dsatur-branch-and-bound.md#424-errori-tipici)
-    - [42.5 In sintesi](algoritmi-specializzati/dsatur-branch-and-bound.md#425-in-sintesi)
+- **[17. Colorazione dei vertici: il branch-and-bound DSATUR](algoritmi-specializzati/dsatur-branch-and-bound.md)** · [Esercizi](esercizi/dsatur-branch-and-bound.md)
+    - [17.1 L'algoritmo per il VCP](algoritmi-specializzati/dsatur-branch-and-bound.md#sez-sec-DSATURBB)
+    - [17.2 Un esempio svolto](algoritmi-specializzati/dsatur-branch-and-bound.md#sez-sec-DSATURBBex)
+    - [17.3 Osservazioni](algoritmi-specializzati/dsatur-branch-and-bound.md#sez-sec-DSATURBBrem)
+    - [17.4 Errori tipici](algoritmi-specializzati/dsatur-branch-and-bound.md#174-errori-tipici)
+    - [17.5 In sintesi](algoritmi-specializzati/dsatur-branch-and-bound.md#175-in-sintesi)
 
 ## [Catalogo](catalogo/index.md)
 
@@ -450,5 +224,10 @@ Tutte le pagine del sito, nell'ordine del menu: i capitoli con le loro sezioni, 
 - [Esercizi](esercizi/index.md)
 - [Laboratorio](laboratorio/index.md)
 - [Materiale](materiale.md)
-- [Notebook Colab](notebook.md)
 - [Autovalutazione](autovalutazione.md)
+
+## Gli algoritmi negli altri moduli della collana
+
+- **[Programmazione dinamica](https://fabiofurini.github.io/programmazione-dinamica/)** — principi e algoritmi di PD per zaino, lot sizing, cambio monete e taglio delle aste.
+- **[Algoritmi euristici](https://fabiofurini.github.io/algoritmi-euristici/)** — euristiche costruttive, ricerca locale, metaeuristiche ed euristiche MIP per i problemi di ottimizzazione combinatoria.
+- **[Algoritmi di approssimazione](https://fabiofurini.github.io/algoritmi-di-approssimazione/)** — garanzie di prestazione, schemi di approssimazione e limiti dell'approssimazione per i problemi combinatori.

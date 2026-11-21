@@ -61,10 +61,10 @@ title: "Problema degli zaini multipli (MKP)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-principles/#164-gli-algoritmi-di-pd-di-questo-modulo">Cap. 16 «Principi della programmazione dinamica»</a>; <a href="../../programmazione-dinamica/dp-multiple-knapsack/">Cap. 24 «PD per il problema degli zaini multipli»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-principles/#14-gli-algoritmi-di-pd-di-questo-modulo"><em>Programmazione dinamica</em>: «Principi della programmazione dinamica»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-multiple-knapsack/"><em>Programmazione dinamica</em>: «PD per il problema degli zaini multipli»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/knapsack/#esercizio-2-4">Esercizio 2.4</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-10">Esercizio 9.10</a>; <a href="../../esercizi/dp-multiple-knapsack/">Cap. 24 (5 esercizi)</a></td>
+<td><a href="../../esercizi/knapsack/#esercizio-2-4">Esercizio 2.4</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-10">Esercizio 9.10</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-multiple-knapsack/"><em>Programmazione dinamica</em>: «PD per il problema degli zaini multipli» (5 esercizi)</a></td>
 </tr>
 </table></div>

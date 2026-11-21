@@ -59,7 +59,7 @@ I problemi di questa sezione sono le varianti del problema di lot sizing capacit
 
     - infine, i vincoli $\eqref{ULS:domx}$–$\eqref{ULS:domy}$ definiscono le variabili del modello PLI.
 
-- Il modello $\mathrm{ILP}_{\mathrm{ULS}}$ è il modello $\mathrm{ILP}_{\mathrm{CLSP}}$ senza i vincoli di capacità [(15.1d)](modelli-pli-per-il-problema-di-lot-sizing-capacitato.md#mjx-eqn:CL1:cap) e con i valori di big-M $M_t=D_{t,m}$. L'algoritmo di PD di Wagner e Whitin del [Capitolo 25 «PD per il problema di lot sizing senza capacità»](../../programmazione-dinamica/dp-lot-sizing/index.md) risolve l'ULS in tempo polinomiale.
+- Il modello $\mathrm{ILP}_{\mathrm{ULS}}$ è il modello $\mathrm{ILP}_{\mathrm{CLSP}}$ senza i vincoli di capacità [(15.1d)](modelli-pli-per-il-problema-di-lot-sizing-capacitato.md#mjx-eqn:CL1:cap) e con i valori di big-M $M_t=D_{t,m}$. L'algoritmo di PD di Wagner e Whitin (modulo <em>Programmazione dinamica</em>, [capitolo «PD per il problema del lot sizing senza capacità»](https://fabiofurini.github.io/programmazione-dinamica/dp-lot-sizing/)) risolve l'ULS in tempo polinomiale.
 
 <a id="box-6-ex-ULS-ILP"></a>
 

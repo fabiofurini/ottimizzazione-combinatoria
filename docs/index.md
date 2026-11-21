@@ -1,5 +1,5 @@
 ---
-title: Ottimizzazione combinatoria
+title: Problemi di ottimizzazione combinatoria
 hide:
   - navigation
   - toc
@@ -7,7 +7,7 @@ hide:
 
 <div class="hero" markdown>
 
-# Ottimizzazione combinatoria
+# Problemi di ottimizzazione combinatoria
 
 <!-- collana-riga -->
 <p class="collana-riga" markdown>Un corso della collana <b>Ricerca Operativa e Matematica</b> · [tutti i corsi](#la-collana)</p>
@@ -16,7 +16,7 @@ hide:
 Materiale didattico ideato e sviluppato da **[Fabio Furini](https://fabiofurini.github.io/)**, professore
 associato al [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.
 
-**Le dispense del corso, online**: i problemi di zaino, di packing, di colorazione, di clique, di routing, di scheduling e di lot sizing, studiati attraverso formulazioni e loro proprietà, programmazione dinamica, algoritmi euristici, di approssimazione e ad hoc; con definizioni, risultati con dimostrazione, esempi svolti passo per passo, esercizi con le soluzioni, notebook Colab e app interattive.
+**Le dispense del corso, online**: i problemi di zaino, di packing, di colorazione, di clique, di routing, di scheduling e di lot sizing, le loro formulazioni con le proprietà e i bound, e gli algoritmi ad hoc; con definizioni, risultati con dimostrazione, esempi svolti passo per passo, esercizi con le soluzioni e app interattive.
 
 Prerequisiti: [Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/) e [Programmazione lineare intera](https://fabiofurini.github.io/programmazione-lineare-intera/) per le formulazioni e [Algoritmi](https://fabiofurini.github.io/algoritmi/) per gli algoritmi.
 
@@ -74,45 +74,45 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
 
     [:octicons-arrow-right-24: I capitoli](formulazioni/index.md)
 
--   :material-table-arrow-right: **Programmazione dinamica**
+-   :material-tools: **Algoritmi ad hoc**
 
     ---
 
-    *Parte 3 · Capitoli 16–28*
-
-    Principi · Problemi di zaino · Problemi di lot sizing · Problemi misti
-
-    [:octicons-arrow-right-24: I capitoli](programmazione-dinamica/index.md)
-
--   :material-map-marker-path: **Euristiche**
-
-    ---
-
-    *Parte 4 · Capitoli 29–33*
-
-    Definizioni · Euristiche costruttive · Ricerca locale · Metaeuristiche · Euristiche MIP
-
-    [:octicons-arrow-right-24: I capitoli](algoritmi-euristici/index.md)
-
--   :material-approximately-equal: **Approssimazione**
-
-    ---
-
-    *Parte 5 · Capitoli 34–40*
-
-    Principi · Problemi di zaino · Problemi di packing · Problemi di colorazione · Problemi di clique · Problemi di routing · Problemi di scheduling
-
-    [:octicons-arrow-right-24: I capitoli](algoritmi-di-approssimazione/index.md)
-
--   :material-tools: **Ad hoc**
-
-    ---
-
-    *Parte 6 · Capitoli 41–42*
+    *Parte 3 · Capitoli 16–17*
 
     Problemi di zaino · Problemi di colorazione
 
     [:octicons-arrow-right-24: I capitoli](algoritmi-specializzati/index.md)
+
+-   :material-table-large: **Programmazione dinamica**
+
+    ---
+
+    *Modulo della collana*
+
+    Principi e algoritmi di PD per zaino, lot sizing, cambio monete e taglio delle aste.
+
+    [:octicons-arrow-right-24: Il modulo](https://fabiofurini.github.io/programmazione-dinamica/)
+
+-   :material-map-marker-path: **Algoritmi euristici**
+
+    ---
+
+    *Modulo della collana*
+
+    Euristiche costruttive, ricerca locale, metaeuristiche ed euristiche MIP per i problemi di ottimizzazione combinatoria.
+
+    [:octicons-arrow-right-24: Il modulo](https://fabiofurini.github.io/algoritmi-euristici/)
+
+-   :material-approximately-equal: **Algoritmi di approssimazione**
+
+    ---
+
+    *Modulo della collana*
+
+    Garanzie di prestazione, schemi di approssimazione e limiti dell'approssimazione per i problemi combinatori.
+
+    [:octicons-arrow-right-24: Il modulo](https://fabiofurini.github.io/algoritmi-di-approssimazione/)
 
 -   :material-view-list: **Catalogo**
 
@@ -143,16 +143,6 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
     Gli algoritmi del corso passo per passo, sulle istanze di riferimento o su istanze tue.
 
     [:octicons-arrow-right-24: Le app](laboratorio/index.md)
-
--   :simple-googlecolab: **Notebook Colab**
-
-    ---
-
-    *Python · C++*
-
-    Il codice degli algoritmi dei capitoli, da eseguire in Google Colab sugli esempi e sugli esercizi.
-
-    [:octicons-arrow-right-24: I notebook](notebook.md)
 
 </div>
 
@@ -200,14 +190,6 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
     I problemi usati negli esempi e negli esercizi, ciascuno con la sua figura.
 
     [:octicons-arrow-right-24: Il catalogo](catalogo/index.md)
-
--   :material-language-python: **Notebook in Colab**
-
-    ---
-
-    Il codice del corso che gira nel browser, senza installare niente.
-
-    [:octicons-arrow-right-24: I notebook](notebook.md)
 
 -   :material-format-list-numbered: **Indice completo**
 
@@ -257,9 +239,21 @@ Dieci corsi con la stessa impostazione: dispense online e in PDF, esercizi con l
 
     grafi, alberi ricoprenti, cammini minimi, flussi su reti, simplesso su reti e gestione dei progetti
 
--   :material-hexagon-multiple-outline: **Ottimizzazione combinatoria** · *questo corso*
+-   :material-hexagon-multiple-outline: **Problemi di ottimizzazione combinatoria** · *questo corso*
 
-    zaino, bin packing, colorazione, TSP, scheduling e lot sizing, risolti in tutti i modi
+    zaino, bin packing, colorazione, TSP, scheduling e lot sizing: i problemi, le formulazioni e gli algoritmi ad hoc
+
+-   :material-table-large: **[Programmazione dinamica](https://fabiofurini.github.io/programmazione-dinamica/)**
+
+    principi e algoritmi di PD per zaino, lot sizing, cambio monete e taglio delle aste
+
+-   :material-map-marker-path: **[Algoritmi euristici](https://fabiofurini.github.io/algoritmi-euristici/)**
+
+    euristiche costruttive, ricerca locale, metaeuristiche ed euristiche MIP per i problemi di ottimizzazione combinatoria
+
+-   :material-approximately-equal: **[Algoritmi di approssimazione](https://fabiofurini.github.io/algoritmi-di-approssimazione/)**
+
+    garanzie di prestazione, schemi di approssimazione e limiti dell'approssimazione per i problemi combinatori
 
 -   :material-vector-polygon: **[Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/)**
 
@@ -271,8 +265,6 @@ Dieci corsi con la stessa impostazione: dispense online e in PDF, esercizi con l
 
 </div>
 <!-- /collana -->
-
----
 
 Materiale didattico di **[Fabio Furini](https://fabiofurini.github.io/)** —
 [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.

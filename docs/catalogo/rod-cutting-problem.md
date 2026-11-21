@@ -39,10 +39,10 @@ title: "Problema del taglio delle aste (RCP)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-principles/#164-gli-algoritmi-di-pd-di-questo-modulo">Cap. 16 «Principi della programmazione dinamica»</a>; <a href="../../programmazione-dinamica/dp-rod-cutting/">Cap. 28 «PD per il problema del taglio delle aste»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-principles/#14-gli-algoritmi-di-pd-di-questo-modulo"><em>Programmazione dinamica</em>: «Principi della programmazione dinamica»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-rod-cutting/"><em>Programmazione dinamica</em>: «PD per il problema del taglio delle aste»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/dp-rod-cutting/">Cap. 28 (5 esercizi)</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-rod-cutting/"><em>Programmazione dinamica</em>: «PD per il problema del taglio delle aste» (5 esercizi)</a></td>
 </tr>
 </table></div>

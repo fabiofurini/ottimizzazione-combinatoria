@@ -65,10 +65,10 @@ title: "Problema dello zaino limitato (BKP)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-principles/#164-gli-algoritmi-di-pd-di-questo-modulo">Cap. 16 «Principi della programmazione dinamica»</a>; <a href="../../programmazione-dinamica/dp-bounded-knapsack/">Cap. 19 «PD per il problema dello zaino limitato»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-principles/#14-gli-algoritmi-di-pd-di-questo-modulo"><em>Programmazione dinamica</em>: «Principi della programmazione dinamica»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-bounded-knapsack/"><em>Programmazione dinamica</em>: «PD per il problema dello zaino limitato»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/knapsack/#esercizio-2-3">Esercizio 2.3</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-7">Esercizio 9.7</a>; <a href="../../esercizi/dp-bounded-knapsack/">Cap. 19 (5 esercizi)</a></td>
+<td><a href="../../esercizi/knapsack/#esercizio-2-3">Esercizio 2.3</a>; <a href="../../esercizi/knapsack-formulations/#esercizio-9-7">Esercizio 9.7</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-bounded-knapsack/"><em>Programmazione dinamica</em>: «PD per il problema dello zaino limitato» (5 esercizi)</a></td>
 </tr>
 </table></div>

@@ -57,15 +57,15 @@ title: "Lot sizing capacitato (CLS)"
 </tr>
 <tr>
 <td><strong>Programmazione dinamica</strong></td>
-<td><a href="../../programmazione-dinamica/dp-principles/#164-gli-algoritmi-di-pd-di-questo-modulo">Cap. 16 «Principi della programmazione dinamica»</a>; <a href="../../programmazione-dinamica/dp-capacitated-lot-sizing/">Cap. 26 «PD per il problema del lot sizing capacitato»</a></td>
+<td><a href="https://fabiofurini.github.io/programmazione-dinamica/dp-principles/#14-gli-algoritmi-di-pd-di-questo-modulo"><em>Programmazione dinamica</em>: «Principi della programmazione dinamica»</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/dp-capacitated-lot-sizing/"><em>Programmazione dinamica</em>: «PD per il problema del lot sizing capacitato»</a></td>
 </tr>
 <tr>
 <td><strong>Euristiche MIP</strong></td>
-<td><a href="../../algoritmi-euristici/mip-heuristics-classical/#sez-sec-rf">Cap. 33 «Euristiche MIP per i problemi classici»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#sez-sec-rf"><em>Algoritmi euristici</em>: «Euristiche MIP per i problemi classici»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/lot-sizing/">Cap. 8 (5 esercizi)</a>; <a href="../../esercizi/lot-sizing-formulations/">Cap. 15 (5 esercizi)</a>; <a href="../../esercizi/dp-capacitated-lot-sizing/">Cap. 26 (2 esercizi)</a></td>
+<td><a href="../../esercizi/lot-sizing/">Cap. 8 (5 esercizi)</a>; <a href="../../esercizi/lot-sizing-formulations/">Cap. 15 (5 esercizi)</a>; <a href="https://fabiofurini.github.io/programmazione-dinamica/esercizi/dp-capacitated-lot-sizing/"><em>Programmazione dinamica</em>: «PD per il problema del lot sizing capacitato» (2 esercizi)</a></td>
 </tr>
 </table></div>
 
@@ -85,12 +85,12 @@ title: "Lot sizing capacitato (CLS)"
 
 ### Programmazione dinamica { #sez-sec-cat-cls-dynamicprogramming }
 
-- Senza capacità un piano ottimo produce solo con scorta vuota (Wagner e Whitin): una PD sull'ultimo lotto di produzione risolve l'ULS in $\Theta(m^2)$ passi ([Cap. 25](../programmazione-dinamica/dp-lot-sizing/un-algoritmo-di-pd-per-l-uls.md#252-un-algoritmo-di-pd-per-luls)).
+- Senza capacità un piano ottimo produce solo con scorta vuota (Wagner e Whitin): una PD sull'ultimo lotto di produzione risolve l'ULS in $\Theta(m^2)$ passi ([<em>Programmazione dinamica</em>](https://fabiofurini.github.io/programmazione-dinamica/dp-lot-sizing/un-algoritmo-di-pd-per-l-uls/#102-un-algoritmo-di-pd-per-luls)).
 
-- Con capacità lo stato è (periodo, scorta): $O(m\,D\,C)$ passi, un tempo pseudo-polinomiale ([Cap. 26](../programmazione-dinamica/dp-capacitated-lot-sizing.md#2622-numero-di-passi)).
+- Con capacità lo stato è (periodo, scorta): $O(m\,D\,C)$ passi, un tempo pseudo-polinomiale ([<em>Programmazione dinamica</em>](https://fabiofurini.github.io/programmazione-dinamica/dp-capacitated-lot-sizing/#1122-numero-di-passi)).
 
 ### Euristiche MIP { #sez-sec-cat-cls-mipheuristics }
 
-- Sull'istanza senza capacità del corso di modellazione MIP relax-and-fix trova l'ottimo $170$, mentre l'euristica del minimo costo unitario dà $200$ ([Cap. 33](../algoritmi-euristici/mip-heuristics-classical.md#box-16-ex-rfcourse)).
+- Sull'istanza senza capacità del corso di modellazione MIP relax-and-fix trova l'ottimo $170$, mentre l'euristica del minimo costo unitario dà $200$ ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#box-16-ex-rfcourse)).
 
-- Su un'istanza capacitata relax-and-fix si ferma a $170$, e fix-and-optimize raggiunge l'ottimo $160$ ([Cap. 33](../algoritmi-euristici/mip-heuristics-classical.md#box-18-ex-fo)).
+- Su un'istanza capacitata relax-and-fix si ferma a $170$, e fix-and-optimize raggiunge l'ottimo $160$ ([<em>Algoritmi euristici</em>](https://fabiofurini.github.io/algoritmi-euristici/mip-heuristics-classical/#box-18-ex-fo)).

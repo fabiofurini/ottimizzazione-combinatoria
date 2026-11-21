@@ -42,14 +42,14 @@ title: "Problema del commesso viaggiatore metrico (TSP metrico)"
 </tr>
 <tr>
 <td><strong>Euristiche</strong></td>
-<td><a href="../../algoritmi-euristici/constructive-heuristics/il-problema-del-commesso-viaggiatore-accodare-o-inserire/#sez-sec-INS">Cap. 30 «Euristiche costruttive»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-euristici/constructive-heuristics/il-problema-del-commesso-viaggiatore-accodare-o-inserire/#sez-sec-INS"><em>Algoritmi euristici</em>: «Euristiche costruttive»</a></td>
 </tr>
 <tr>
 <td><strong>Approssimazione</strong></td>
-<td><a href="../../algoritmi-di-approssimazione/tsp-approximation/#box-2-def-metricTSP">Cap. 39 «TSP: il caso generale e il caso metrico»</a></td>
+<td><a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/tsp-approximation/#box-2-def-metricTSP"><em>Algoritmi di approssimazione</em>: «TSP: il caso generale e il caso metrico»</a></td>
 </tr>
 <tr>
 <td><strong>Esercizi</strong></td>
-<td><a href="../../esercizi/tsp/#esercizio-6-4">Esercizio 6.4</a>; <a href="../../esercizi/tsp-approximation/">Cap. 39 (2 esercizi)</a></td>
+<td><a href="../../esercizi/tsp/#esercizio-6-4">Esercizio 6.4</a>; <a href="https://fabiofurini.github.io/algoritmi-di-approssimazione/esercizi/tsp-approximation/"><em>Algoritmi di approssimazione</em>: «TSP: il caso generale e il caso metrico» (2 esercizi)</a></td>
 </tr>
 </table></div>
