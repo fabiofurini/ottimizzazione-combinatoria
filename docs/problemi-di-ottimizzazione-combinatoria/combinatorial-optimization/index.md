@@ -48,7 +48,9 @@ title: "Ottimizzazione combinatoria: definizioni"
 
 !!! nota "Prerequisiti"
 
-    - Dai <em>Preliminari</em>: problemi di ottimizzazione (regione ammissibile, funzione obiettivo, soluzione ottima e valore ottimo), coefficienti binomiali e partizioni di un insieme finito.
+    - Dal modulo <em>Ottimizzazione convessa</em>, [Capitolo 5 «Problemi di ottimizzazione»](https://fabiofurini.github.io/ottimizzazione-convessa/problemi/05-problemi-ottimizzazione/): regione ammissibile, funzione obiettivo, soluzione ottima e valore ottimo.
+
+    - Dal modulo <em>Analisi matematica 1</em>, [il capitolo «Fattoriali, coefficienti binomiali e disuguaglianza triangolare»](https://fabiofurini.github.io/analisi-matematica-1/numeri/06-fattoriali-binomiali/): fattoriali e coefficienti binomiali.
 
     - Non serve alcuna conoscenza di programmazione intera: i bound di questo capitolo vengono da argomenti combinatori.
 
