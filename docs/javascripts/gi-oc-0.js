@@ -1,9 +1,9 @@
-/* Laboratorio di «Ottimizzazione combinatoria / Combinatorial Optimization»: strumenti comuni delle ricette.
+/* Laboratorio di «Problemi di ottimizzazione combinatoria / Combinatorial Optimization Problems»: strumenti comuni delle ricette.
  *
  * Si carica dopo interattivi.js (window.GI) e gi-comune.js (window.GI_MIP) e prima delle ricette
- * gi-oc-a.js, gi-oc-b.js, che li trovano in window.GI_OC. Vengono dal laboratorio di Modellazione MIP
+ * gi-oc-a.js, gi-oc-d.js, gi-oc-e.js, che li trovano in window.GI_OC. Vengono dal laboratorio di Modellazione MIP
  * (passo per passo con ◀ ▶ «Esegui», disegno che si rifà solo quando cambia lo stato) e dalle istanze di
- * riferimento del corso (zaino, bin packing, P||Cmax, TSP).
+ * riferimento del corso (zaino, colorazione).
  *
  * Il cursore del passo si chiama «passo» / «step»: la sua chiave è "text{passo}" / "text{step}",
  * cioè il nome TeX senza «\», come vuole GI_MIP.inputDi.
