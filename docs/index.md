@@ -31,9 +31,9 @@ Prerequisiti: [Programmazione lineare](https://fabiofurini.github.io/programmazi
 <!-- collana-app -->
 ## Provalo subito
 
-Il branch-and-bound per lo zaino 0-1: l'albero cresce nodo per nodo, con i bound di Dantzig, le potature e la soluzione migliore trovata finora.
+Il branch-and-bound per lo zaino 0-1 su cinque oggetti: l'albero completo, con i bound di Dantzig, i nodi potati, quelli inammissibili e le soluzioni che migliorano l'incumbent. Premi «Esegui» per vederlo crescere nodo per nodo.
 
-<div class="gi" data-grafico="oc-bb-knapsack"></div>
+<div class="gi" data-grafico="oc-bb-knapsack" data-vetrina="18 6 8 10 11 ; 4 3 5 7 8 ; 16 | 9 11 5 11 8 ; 2 6 4 9 7 ; 15"></div>
 
 [:material-gesture-tap: Altre app nel laboratorio](laboratorio/index.md){ .md-button }
 <!-- /collana-app -->

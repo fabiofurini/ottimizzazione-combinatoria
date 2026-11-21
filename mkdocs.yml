@@ -244,8 +244,8 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraphcore.js
   - javascripts/interattivi.js?v=2687ca69e3
   - javascripts/gi-comune.js?v=40df75e3e5
-  - javascripts/gi-oc-0.js?v=f5b211cfc5
-  - javascripts/gi-oc-a.js?v=90e8914be1
+  - javascripts/gi-oc-0.js?v=ad0b1ad593
+  - javascripts/gi-oc-a.js?v=8d00f2d585
   - javascripts/gi-oc-d.js?v=bf33f599aa
   - javascripts/gi-oc-e.js?v=7384eb3754
   - javascripts/quiz.js?v=be7fae2b85

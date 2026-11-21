@@ -10,7 +10,7 @@
   "use strict";
   const GI = window.GI, M = window.GI_MIP, O = window.GI_OC;
   const T = GI.T;
-  const { PASSO, parPasso, vaiA, clamp, lista, nuovoId, osservaDimensioni, dim, pix, disegno, daIndirizzo, chiedi, interi } = O;
+  const { PASSO, parPasso, vaiA, clamp, lista, nuovoId, osservaDimensioni, dim, pix, disegno, daIndirizzo, chiedi, interi, vetrina } = O;
   window.GI_RICETTE = window.GI_RICETTE || {};
 
   // =================================================================
@@ -127,6 +127,13 @@
       ], { k: PASSO });
       osservaDimensioni(board, st);
       daIndirizzo(st);
+      // home della collana: data-vetrina="profitti ; pesi ; capacità" (come «Modifica…»), albero completo;
+      // dopo «|» un'istanza facoltativa con meno foglie per il telefono (app larga meno di 600 px)
+      vetrina(st, (v) => {
+        const due = v.split("|"), u = (st.el.clientWidth < 600 && due[1]) || due[0];
+        const [a, b, c] = u.split(";"), p = interi(a || ""), w = interi(b || ""), cc = interi(c || "");
+        if (p && w && cc && p.length === w.length) D.ist = { p, w, c: cc[0], id: nuovoId() };
+      });
     },
     aggiorna(board, st) {
       const S = bbStato(st), C = M.COL(st), [W, H] = dim(board), { I, R, k, cur } = S, n = I.p.length, stili = STILE_NODO(C);

@@ -70,6 +70,46 @@
       if (k) setTimeout(() => st.imposta(PASSO, +k[1]), 50);
     }, 30);
   }
+  /** sceglie la voce k di «funzioni» come un clic sul suo pulsante (la board si ricrea) */
+  function scegliVoce(st, k) {
+    if (!k || k === st.chiave()) return;
+    const R = window.GI_RICETTE[st.el.dataset.grafico], i = Object.keys((R && R.funzioni) || {}).indexOf(k);
+    const b = st.el.querySelectorAll(".gi-chip")[i];
+    if (b) b.click();
+  }
+  /** Vetrina: l'app nella home della collana, <div class="gi" data-grafico="…" data-vetrina="…"> (COLLANA/collana.py,
+   *  sesto campo di APP). Senza l'attributo non fa nulla: nel laboratorio l'app resta com'è.
+   *  Va chiamata in monta(board, st), dopo M.comandi e menuIstanze; agisce una volta sola per grafico:
+   *  prepara(valore) carica l'istanza della vetrina (il valore lo legge la ricetta) e può restituire { passo };
+   *  poi il passo va lì (default: l'ultimo, cioè il disegno completo) e il pannello si alleggerisce:
+   *  restano le voci, i cursori, ◀ ▶ «Esegui» e le letture; spariscono «Prova tu», il menu delle istanze,
+   *  i pulsanti delle istanze e «Azzera» (che sono nella pagina del laboratorio). */
+  function vetrina(st, prepara) {
+    const v = st.el.dataset.vetrina, D = st.dati;
+    if (!v || D.vetrina) return;
+    D.vetrina = true;
+    st.el.classList.add("gi-vetrina");
+    // nella home la colonna unica del telefono non deve allargarsi oltre lo schermo (formule e alberi larghi)
+    const corpo = st.el.querySelector(".gi-corpo");
+    if (corpo) for (const c of corpo.children) c.style.minWidth = "0";
+    setTimeout(() => {
+      let opz = {};
+      try { opz = prepara(v) || {}; } catch (e) { console.error("GI: vetrina «" + st.el.dataset.grafico + "»", e); }
+      st.aggiorna();
+      const i = M.inputDi(st, PASSO);
+      if (i) { i.value = opz.passo != null ? Math.min(+opz.passo, +i.max) : i.max; st.aggiorna(); }
+      const pan = M.pannello(st);
+      pan.querySelectorAll(".gi-domanda").forEach((e) => { e.hidden = true; });
+      if (D.menu) D.menu.style.display = "none";
+      if (D.comandi) {
+        let dopo = false;
+        for (const b of D.comandi.children) { if (dopo) b.style.display = "none"; if (b.tagName === "SELECT") dopo = true; }
+      }
+      for (const div of pan.children) {
+        if (div !== D.comandi && div.children.length === 1 && div.firstElementChild.matches("button.gi-btn")) div.style.display = "none";
+      }
+    }, 40);
+  }
   /** legge dati dall'utente: finestra di dialogo con un esempio; restituisce il testo o null */
   const chiedi = (msg, esempio) => { try { return window.prompt(msg, esempio); } catch (e) { return null; } };
   /** «4, 4, 5, 3» -> [4, 4, 5, 3]; null se non sono tutti interi positivi */
@@ -103,5 +143,5 @@
     return sel;
   }
 
-  window.GI_OC = { PASSO, parPasso, vaiA, clamp, somma, lista, decrescente, nuovoId, osservaDimensioni, dim, pix, disegno, daIndirizzo, chiedi, interi, frTxt, menuIstanze };
+  window.GI_OC = { PASSO, parPasso, vaiA, clamp, somma, lista, decrescente, nuovoId, osservaDimensioni, dim, pix, disegno, daIndirizzo, chiedi, interi, frTxt, menuIstanze, vetrina, scegliVoce };
 })();
