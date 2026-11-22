@@ -4,11 +4,13 @@ title: Problemi scelti
 
 # Problemi scelti
 
-*Parte 1 del corso, volume 1 delle dispense: capitoli 2–8.*
+<div class="info-capitolo" markdown>
+
+**Parte 1 · Problemi scelti** · 7 capitoli · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-pencil-box-multiple: Esercizi (PDF)](../pdf/esercizi-1-problemi-di-ottimizzazione-combinatoria.pdf) · [:material-table: I problemi in sintesi](../problemi-di-ottimizzazione-combinatoria/problems.md)
+
+</div>
 
 Le famiglie di problemi su cui si concentra tutto il corso: ogni famiglia si apre con una panoramica, poi una pagina per problema con la definizione, le ipotesi e un primo esempio.
-
-[:material-file-pdf-box: Dispensa (PDF)](../pdf/dispensa-1-problemi-di-ottimizzazione-combinatoria.pdf){ .md-button } [:material-file-pdf-box: Esercizi (PDF)](../pdf/esercizi-1-problemi-di-ottimizzazione-combinatoria.pdf){ .md-button } [:material-table: I problemi in sintesi](../problemi-di-ottimizzazione-combinatoria/problems.md){ .md-button }
 
 <div class="grid cards" markdown>
 

@@ -4,9 +4,13 @@ title: Catalogo
 
 # Catalogo dei problemi di ottimizzazione combinatoria
 
-Tutti i problemi del corso, per famiglia: il nome porta alla definizione, le etichette ai capitoli che lo trattano.
+<div class="info-capitolo" markdown>
 
-[:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf){ .md-button } [:material-table: I problemi in sintesi](../problemi-di-ottimizzazione-combinatoria/problems.md){ .md-button }
+**Catalogo** · 32 problemi · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf) · [:material-table: I problemi in sintesi](../problemi-di-ottimizzazione-combinatoria/problems.md)
+
+</div>
+
+Tutti i problemi del corso, per famiglia: il nome porta alla definizione, le etichette ai capitoli che lo trattano.
 
 <nav class="cat-famiglie" markdown>
 
