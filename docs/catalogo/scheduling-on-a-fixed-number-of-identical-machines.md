@@ -6,7 +6,7 @@ title: "Scheduling su un numero fissato di macchine identiche (Pm||Cmax)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogo dei problemi di ottimizzazione combinatoria**](index.md) · [:material-folder-outline: Problemi di scheduling](index.md#scheduling-problems) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
+[:material-view-list: **Problemi**](../problemi-scelti/index.md) · [:material-folder-outline: Problemi di scheduling](../problemi-scelti/index.md#scheduling-problems) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
 
 </div>
 

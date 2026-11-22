@@ -335,3 +335,12 @@
 .md-typeset .cat-tag .twemoji { color: #0E7490; }
 [data-md-color-scheme="slate"] .md-typeset .cat-tag .twemoji { color: #4dd0e1; }
 .md-typeset .cat-tag > a:only-child { display: inline-flex; align-items: center; gap: .25em; }
+/* pagina Problemi (2026-11-22): il link al capitolo della famiglia, sotto la riga della famiglia */
+.md-typeset .cat-capitolo { margin: -.2rem 0 .8rem; font-size: .78rem; font-weight: 600; }
+.md-typeset .cat-capitolo a { color: var(--md-typeset-a-color); }
+.md-typeset .cat-capitolo .twemoji { color: #0E7490; }
+[data-md-color-scheme="slate"] .md-typeset .cat-capitolo .twemoji { color: #4dd0e1; }
+/* in scuro i link della lista con l'accento chiaro (il blu petrolio dei link si legge poco sul fondo scuro) */
+[data-md-color-scheme="slate"] .md-typeset .cat-voce a,
+[data-md-color-scheme="slate"] .md-typeset .cat-capitolo a,
+[data-md-color-scheme="slate"] .md-typeset .cat-famiglie a:hover { color: #7fd4e4; }

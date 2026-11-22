@@ -58,43 +58,45 @@ plugins:
   # i vecchi indirizzi delle loro pagine portano ai siti nuovi (python/reindirizzamenti.tsv)
   - redirects:
       redirect_maps:
-        # 2026-11-22: the catalogue is one list page; the old pages of the problems and of the families → their entry in the list
-        catalogo/knapsack-problem.md: catalogo/index.md#knapsack-problem
-        catalogo/knapsack-problems.md: catalogo/index.md#knapsack-problems
-        catalogo/subset-sum-problem.md: catalogo/index.md#subset-sum-problem
-        catalogo/bounded-knapsack-problem.md: catalogo/index.md#bounded-knapsack-problem
-        catalogo/unbounded-knapsack-problem.md: catalogo/index.md#unbounded-knapsack-problem
-        catalogo/multidimensional-knapsack-problem.md: catalogo/index.md#multidimensional-knapsack-problem
-        catalogo/multiple-knapsack-problem.md: catalogo/index.md#multiple-knapsack-problem
-        catalogo/multiple-choice-knapsack-problem.md: catalogo/index.md#multiple-choice-knapsack-problem
-        catalogo/knapsack-problem-with-setups.md: catalogo/index.md#knapsack-problem-with-setups
-        catalogo/bin-packing-problem.md: catalogo/index.md#bin-packing-problem
-        catalogo/packing-problems.md: catalogo/index.md#packing-problems
-        catalogo/cutting-stock-problem.md: catalogo/index.md#cutting-stock-problem
-        catalogo/vertex-coloring-problem.md: catalogo/index.md#vertex-coloring-problem
-        catalogo/coloring-problems.md: catalogo/index.md#coloring-problems
-        catalogo/maximum-clique-problem.md: catalogo/index.md#maximum-clique-problem
-        catalogo/clique-problems.md: catalogo/index.md#clique-problems
-        catalogo/maximum-stable-set-problem.md: catalogo/index.md#maximum-stable-set-problem
-        catalogo/vertex-weighted-maximum-clique-problem.md: catalogo/index.md#vertex-weighted-maximum-clique-problem
-        catalogo/edge-weighted-maximum-clique-problem.md: catalogo/index.md#edge-weighted-maximum-clique-problem
-        catalogo/travelling-salesman-problem.md: catalogo/index.md#travelling-salesman-problem
-        catalogo/routing-problems.md: catalogo/index.md#routing-problems
-        catalogo/metric-travelling-salesman-problem.md: catalogo/index.md#metric-travelling-salesman-problem
-        catalogo/asymmetric-travelling-salesman-problem.md: catalogo/index.md#asymmetric-travelling-salesman-problem
-        catalogo/scheduling-on-identical-parallel-machines.md: catalogo/index.md#scheduling-on-identical-parallel-machines
-        catalogo/scheduling-problems.md: catalogo/index.md#scheduling-problems
-        catalogo/scheduling-on-parallel-machines-with-different-speeds.md: catalogo/index.md#scheduling-on-parallel-machines-with-different-speeds
-        catalogo/scheduling-on-unrelated-parallel-machines.md: catalogo/index.md#scheduling-on-unrelated-parallel-machines
-        catalogo/capacitated-lot-sizing.md: catalogo/index.md#capacitated-lot-sizing
-        catalogo/lot-sizing-problems.md: catalogo/index.md#lot-sizing-problems
-        catalogo/uncapacitated-lot-sizing-problem.md: catalogo/index.md#uncapacitated-lot-sizing-problem
-        catalogo/capacitated-lot-sizing-with-constant-capacity.md: catalogo/index.md#capacitated-lot-sizing-with-constant-capacity
-        catalogo/lot-sizing-with-several-products-and-setup-times.md: catalogo/index.md#lot-sizing-with-several-products-and-setup-times
-        catalogo/lot-sizing-with-initial-stock.md: catalogo/index.md#lot-sizing-with-initial-stock
-        catalogo/lot-sizing-with-overtime.md: catalogo/index.md#lot-sizing-with-overtime
-        catalogo/lot-sizing-with-unsatisfied-demand.md: catalogo/index.md#lot-sizing-with-unsatisfied-demand
-        catalogo/miscellaneous-problems.md: catalogo/index.md#miscellaneous-problems
+        # 2026-11-22: «Selected problems» and «Catalogue» are one page «Problems» (selected-problems/index.md): the old catalogue pages and «The problems at a glance» → their entry
+        catalogo/index.md: problemi-scelti/index.md
+        problemi-di-ottimizzazione-combinatoria/problems.md: problemi-scelti/index.md
+        catalogo/knapsack-problem.md: problemi-scelti/index.md#knapsack-problem
+        catalogo/knapsack-problems.md: problemi-scelti/index.md#knapsack-problems
+        catalogo/subset-sum-problem.md: problemi-scelti/index.md#subset-sum-problem
+        catalogo/bounded-knapsack-problem.md: problemi-scelti/index.md#bounded-knapsack-problem
+        catalogo/unbounded-knapsack-problem.md: problemi-scelti/index.md#unbounded-knapsack-problem
+        catalogo/multidimensional-knapsack-problem.md: problemi-scelti/index.md#multidimensional-knapsack-problem
+        catalogo/multiple-knapsack-problem.md: problemi-scelti/index.md#multiple-knapsack-problem
+        catalogo/multiple-choice-knapsack-problem.md: problemi-scelti/index.md#multiple-choice-knapsack-problem
+        catalogo/knapsack-problem-with-setups.md: problemi-scelti/index.md#knapsack-problem-with-setups
+        catalogo/bin-packing-problem.md: problemi-scelti/index.md#bin-packing-problem
+        catalogo/packing-problems.md: problemi-scelti/index.md#packing-problems
+        catalogo/cutting-stock-problem.md: problemi-scelti/index.md#cutting-stock-problem
+        catalogo/vertex-coloring-problem.md: problemi-scelti/index.md#vertex-coloring-problem
+        catalogo/coloring-problems.md: problemi-scelti/index.md#coloring-problems
+        catalogo/maximum-clique-problem.md: problemi-scelti/index.md#maximum-clique-problem
+        catalogo/clique-problems.md: problemi-scelti/index.md#clique-problems
+        catalogo/maximum-stable-set-problem.md: problemi-scelti/index.md#maximum-stable-set-problem
+        catalogo/vertex-weighted-maximum-clique-problem.md: problemi-scelti/index.md#vertex-weighted-maximum-clique-problem
+        catalogo/edge-weighted-maximum-clique-problem.md: problemi-scelti/index.md#edge-weighted-maximum-clique-problem
+        catalogo/travelling-salesman-problem.md: problemi-scelti/index.md#travelling-salesman-problem
+        catalogo/routing-problems.md: problemi-scelti/index.md#routing-problems
+        catalogo/metric-travelling-salesman-problem.md: problemi-scelti/index.md#metric-travelling-salesman-problem
+        catalogo/asymmetric-travelling-salesman-problem.md: problemi-scelti/index.md#asymmetric-travelling-salesman-problem
+        catalogo/scheduling-on-identical-parallel-machines.md: problemi-scelti/index.md#scheduling-on-identical-parallel-machines
+        catalogo/scheduling-problems.md: problemi-scelti/index.md#scheduling-problems
+        catalogo/scheduling-on-parallel-machines-with-different-speeds.md: problemi-scelti/index.md#scheduling-on-parallel-machines-with-different-speeds
+        catalogo/scheduling-on-unrelated-parallel-machines.md: problemi-scelti/index.md#scheduling-on-unrelated-parallel-machines
+        catalogo/capacitated-lot-sizing.md: problemi-scelti/index.md#capacitated-lot-sizing
+        catalogo/lot-sizing-problems.md: problemi-scelti/index.md#lot-sizing-problems
+        catalogo/uncapacitated-lot-sizing-problem.md: problemi-scelti/index.md#uncapacitated-lot-sizing-problem
+        catalogo/capacitated-lot-sizing-with-constant-capacity.md: problemi-scelti/index.md#capacitated-lot-sizing-with-constant-capacity
+        catalogo/lot-sizing-with-several-products-and-setup-times.md: problemi-scelti/index.md#lot-sizing-with-several-products-and-setup-times
+        catalogo/lot-sizing-with-initial-stock.md: problemi-scelti/index.md#lot-sizing-with-initial-stock
+        catalogo/lot-sizing-with-overtime.md: problemi-scelti/index.md#lot-sizing-with-overtime
+        catalogo/lot-sizing-with-unsatisfied-demand.md: problemi-scelti/index.md#lot-sizing-with-unsatisfied-demand
+        catalogo/miscellaneous-problems.md: problemi-scelti/index.md#miscellaneous-problems
         programmazione-dinamica/dp-bounded-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/dp-bounded-knapsack/
         programmazione-dinamica/dp-capacitated-lot-sizing.md: https://fabiofurini.github.io/programmazione-dinamica/dp-capacitated-lot-sizing/
         programmazione-dinamica/dp-coin-change.md: https://fabiofurini.github.io/programmazione-dinamica/dp-coin-change/
@@ -266,7 +268,7 @@ extra:
 
 extra_css:
   - stylesheets/collana.css
-  - stylesheets/extra.css?v=c09bb8c9c1
+  - stylesheets/extra.css?v=d1088ddb11
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css
   - stylesheets/interattivi.css?v=c51ac2286b
   - stylesheets/quiz.css?v=9e3792b41c
@@ -313,7 +315,7 @@ nav:
       - "Esplosione combinatoria e forza bruta": problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/esplosione-combinatoria-e-forza-bruta.md
       - "Bound primali, bound duali e gap": problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/bound-primali-bound-duali-e-gap.md
       - "Cenni di complessità computazionale": problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/cenni-di-complessita-computazionale.md
-  - Problemi scelti:
+  - Problemi:
       - problemi-scelti/index.md
       - "2. Problemi di zaino":
           - problemi-di-ottimizzazione-combinatoria/knapsack/index.md
@@ -391,7 +393,7 @@ nav:
       - esercizi/index.md
       - "Definizioni":
           - "1. Definizioni": esercizi/combinatorial-optimization.md
-      - "Problemi scelti":
+      - "Problemi":
           - "2. Problemi di zaino": esercizi/knapsack.md
           - "3. Problemi di packing": esercizi/bin-packing.md
           - "4. Problemi di colorazione": esercizi/coloring.md
@@ -414,6 +416,5 @@ nav:
               - "17. Colorazione dei vertici (VCP)": esercizi/dsatur-branch-and-bound.md
   - Quiz: autovalutazione.md
   - Laboratorio: laboratorio/index.md
-  - Catalogo: catalogo/index.md
   - Materiale: materiale.md
   - Indice: indice.md

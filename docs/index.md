@@ -54,7 +54,7 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
 
     [:octicons-arrow-right-24: Il capitolo](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md)
 
--   :material-star-outline: **Problemi scelti**
+-   :material-star-outline: **Problemi**
 
     ---
 
@@ -114,16 +114,6 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
 
     [:octicons-arrow-right-24: Il modulo](https://fabiofurini.github.io/algoritmi-di-approssimazione/)
 
--   :material-view-list: **Catalogo**
-
-    ---
-
-    *Tutti i problemi*
-
-    Tutti i problemi in una lista, per famiglia: la definizione e i capitoli che trattano ciascuno.
-
-    [:octicons-arrow-right-24: Il catalogo](catalogo/index.md) · [:material-file-pdf-box: PDF](pdf/catalogo-problemi-combinatori.pdf)
-
 -   :material-clipboard-check-outline: **Autovalutazione**
 
     ---
@@ -182,14 +172,6 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
     Dispense, eserciziari e slide in PDF, con la stessa numerazione del sito.
 
     [:octicons-arrow-right-24: Il materiale](materiale.md)
-
--   :material-view-list: **Catalogo dei problemi**
-
-    ---
-
-    I problemi usati negli esempi e negli esercizi, ciascuno con la sua figura.
-
-    [:octicons-arrow-right-24: Il catalogo](catalogo/index.md)
 
 -   :material-format-list-numbered: **Indice completo**
 

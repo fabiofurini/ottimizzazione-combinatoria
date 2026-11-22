@@ -117,4 +117,4 @@ title: "Problemi di clique"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#maximum-clique-problem)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../problemi-scelti/index.md#maximum-clique-problem)

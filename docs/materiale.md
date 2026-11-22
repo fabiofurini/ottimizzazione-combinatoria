@@ -64,7 +64,7 @@ Le slide delle lezioni, un PDF per capitolo, con le stesse definizioni ed esempi
 
 | | Contenuto | File |
 |---|---|---|
-| [Catalogo dei problemi di ottimizzazione combinatoria](catalogo/index.md) | Tutti i problemi definiti nel corso, raggruppati per famiglia: per ciascuno la definizione, le ipotesi e che cosa fa il corso sul problema, tecnica per tecnica. | [:material-file-pdf-box: PDF](pdf/catalogo-problemi-combinatori.pdf) (0.6 MB) |
+| [Catalogo dei problemi di ottimizzazione combinatoria](problemi-scelti/index.md) | Tutti i problemi definiti nel corso, raggruppati per famiglia: per ciascuno la definizione, le ipotesi e che cosa fa il corso sul problema, tecnica per tecnica. | [:material-file-pdf-box: PDF](pdf/catalogo-problemi-combinatori.pdf) (0.6 MB) |
 
 </div>
 

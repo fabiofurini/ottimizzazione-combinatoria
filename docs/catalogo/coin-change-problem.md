@@ -6,7 +6,7 @@ title: "Problema del cambio monete (CCP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogo dei problemi di ottimizzazione combinatoria**](index.md) · [:material-folder-outline: Problemi misti](index.md#miscellaneous-problems) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
+[:material-view-list: **Problemi**](../problemi-scelti/index.md) · [:material-folder-outline: Problemi misti](../problemi-scelti/index.md#miscellaneous-problems) · [:material-file-pdf-box: Catalogo (PDF)](../pdf/catalogo-problemi-combinatori.pdf)
 
 </div>
 

@@ -316,5 +316,5 @@ title: "Scheduling su macchine parallele identiche"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#scheduling-on-identical-parallel-machines)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../problemi-scelti/index.md#scheduling-on-identical-parallel-machines)
 

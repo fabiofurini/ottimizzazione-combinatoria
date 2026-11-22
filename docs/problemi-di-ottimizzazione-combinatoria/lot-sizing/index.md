@@ -119,4 +119,4 @@ title: "Problemi di lot sizing"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#capacitated-lot-sizing)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../problemi-scelti/index.md#capacitated-lot-sizing)

@@ -5,7 +5,7 @@
 
 - **Sito e PDF.** Ogni capitolo del sito è un capitolo della dispensa, con gli stessi numeri e gli stessi colori; i capitoli lunghi sono divisi in una pagina per sezione o per problema.
 - **In testa a ogni capitolo** la barra con la parte, il PDF del volume, gli esercizi e le app del capitolo; in fondo, il link agli esercizi.
-- **Per problema.** Il catalogo è la lista di tutti i problemi: per ciascuno la definizione e i capitoli che lo trattano, tecnica per tecnica.
+- **Per problema.** La pagina Problemi elenca tutti i problemi, per famiglia: per ciascuno la definizione e i capitoli che lo trattano, tecnica per tecnica.
 
 I box hanno gli stessi colori della dispensa:
 
@@ -35,7 +35,7 @@ I box hanno gli stessi colori della dispensa:
     Le dimostrazioni ci sono tutte, ma chiuse: prima leggi l'enunciato, poi apri la dimostrazione quando vuoi studiarla. Lo stesso vale per le soluzioni degli esercizi.
 <!-- /collana-organizzazione -->
 
-Tutte le pagine del sito, nell'ordine del menu: i capitoli con le loro sezioni, il catalogo e le altre pagine.
+Tutte le pagine del sito, nell'ordine del menu: i capitoli con le loro sezioni e le altre pagine.
 
 ## [Definizioni](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md)
 
@@ -49,7 +49,7 @@ Tutte le pagine del sito, nell'ordine del menu: i capitoli con le loro sezioni, 
     - [1.7 Errori tipici](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/cenni-di-complessita-computazionale.md#17-errori-tipici)
     - [1.8 In sintesi](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/cenni-di-complessita-computazionale.md#18-in-sintesi)
 
-## [Problemi scelti](problemi-scelti/index.md)
+## [Problemi](problemi-scelti/index.md)
 
 - **[2. Problemi di zaino](problemi-di-ottimizzazione-combinatoria/knapsack/index.md)** · [Esercizi](esercizi/knapsack.md)
     - [2.1 Panoramica della famiglia](problemi-di-ottimizzazione-combinatoria/knapsack/index.md#21-panoramica-della-famiglia)
@@ -207,17 +207,7 @@ Tutte le pagine del sito, nell'ordine del menu: i capitoli con le loro sezioni, 
     - [17.4 Errori tipici](algoritmi-specializzati/dsatur-branch-and-bound.md#174-errori-tipici)
     - [17.5 In sintesi](algoritmi-specializzati/dsatur-branch-and-bound.md#175-in-sintesi)
 
-## [Catalogo](catalogo/index.md)
-
-- [I problemi in sintesi](problemi-di-ottimizzazione-combinatoria/problems.md)
-- [Problemi di zaino](catalogo/index.md#knapsack-problems): [Zaino 0/1 (KP)](catalogo/index.md#knapsack-problem) · [Subset sum (SSP)](catalogo/index.md#subset-sum-problem) · [Zaino limitato (BKP)](catalogo/index.md#bounded-knapsack-problem) · [Zaino illimitato (UKP)](catalogo/index.md#unbounded-knapsack-problem) · [Zaino multidimensionale (MDKP)](catalogo/index.md#multidimensional-knapsack-problem) · [Zaini multipli (MKP)](catalogo/index.md#multiple-knapsack-problem) · [Zaino a scelta multipla (MCKP)](catalogo/index.md#multiple-choice-knapsack-problem) · [Zaino con setup (KPS)](catalogo/index.md#knapsack-problem-with-setups)
-- [Problemi di packing](catalogo/index.md#packing-problems): [Bin packing (BPP)](catalogo/index.md#bin-packing-problem) · [Cutting stock (CSP)](catalogo/index.md#cutting-stock-problem)
-- [Problemi di colorazione](catalogo/index.md#coloring-problems): [Colorazione dei vertici (VCP)](catalogo/index.md#vertex-coloring-problem)
-- [Problemi di cricca](catalogo/index.md#clique-problems): [Cricca massima (MCP)](catalogo/index.md#maximum-clique-problem) · [Insieme stabile massimo (MSSP)](catalogo/index.md#maximum-stable-set-problem) · [Cricca massima pesata sui vertici (VWMCP)](catalogo/index.md#vertex-weighted-maximum-clique-problem) · [Cricca massima pesata sui lati (EWMCP)](catalogo/index.md#edge-weighted-maximum-clique-problem)
-- [Problemi di routing](catalogo/index.md#routing-problems): [Commesso viaggiatore (TSP)](catalogo/index.md#travelling-salesman-problem) · [TSP metrico](catalogo/index.md#metric-travelling-salesman-problem) · [TSP asimmetrico (ATSP)](catalogo/index.md#asymmetric-travelling-salesman-problem) · [Ciclo hamiltoniano (HCP)](catalogo/index.md#hamiltonian-cycle-problem)
-- [Problemi di scheduling](catalogo/index.md#scheduling-problems): [Macchine parallele identiche (P||Cmax)](catalogo/index.md#scheduling-on-identical-parallel-machines) · [Numero fissato di macchine identiche (Pm||Cmax)](catalogo/index.md#scheduling-on-a-fixed-number-of-identical-machines) · [Macchine parallele con velocità diverse (Q||Cmax)](catalogo/index.md#scheduling-on-parallel-machines-with-different-speeds) · [Macchine parallele scorrelate (R||Cmax)](catalogo/index.md#scheduling-on-unrelated-parallel-machines)
-- [Problemi di lot sizing](catalogo/index.md#lot-sizing-problems): [Lot sizing capacitato (CLS)](catalogo/index.md#capacitated-lot-sizing) · [Lot sizing senza capacità (ULS)](catalogo/index.md#uncapacitated-lot-sizing-problem) · [Lot sizing capacitato con capacità costante (CLS-C)](catalogo/index.md#capacitated-lot-sizing-with-constant-capacity) · [Lot sizing con più prodotti e tempi di setup (MLS)](catalogo/index.md#lot-sizing-with-several-products-and-setup-times) · [Lot sizing con scorta iniziale (LS-SI)](catalogo/index.md#lot-sizing-with-initial-stock) · [Lot sizing con straordinario (LS-OT)](catalogo/index.md#lot-sizing-with-overtime) · [Lot sizing con domanda non soddisfatta (LS-UD)](catalogo/index.md#lot-sizing-with-unsatisfied-demand)
-- [Problemi misti](catalogo/index.md#miscellaneous-problems): [Taglio delle aste (RCP)](catalogo/index.md#rod-cutting-problem) · [Cambio monete (CCP)](catalogo/index.md#coin-change-problem)
+- Tutti i problemi, per famiglia: [Problemi di zaino](problemi-scelti/index.md#knapsack-problems) · [Problemi di packing](problemi-scelti/index.md#packing-problems) · [Problemi di colorazione](problemi-scelti/index.md#coloring-problems) · [Problemi di clique](problemi-scelti/index.md#clique-problems) · [Problemi di routing](problemi-scelti/index.md#routing-problems) · [Problemi di scheduling](problemi-scelti/index.md#scheduling-problems) · [Problemi di lot sizing](problemi-scelti/index.md#lot-sizing-problems) · [Problemi misti](problemi-scelti/index.md#miscellaneous-problems)
 
 ## Altre pagine
 

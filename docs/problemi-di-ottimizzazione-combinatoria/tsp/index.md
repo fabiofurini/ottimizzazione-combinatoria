@@ -103,4 +103,4 @@ title: "Problemi di routing"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#travelling-salesman-problem)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../problemi-scelti/index.md#travelling-salesman-problem)

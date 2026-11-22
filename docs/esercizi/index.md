@@ -6,7 +6,7 @@ Esercizi con le **soluzioni svolte**, capitolo per capitolo, con le stesse parti
 
 - [1. Ottimizzazione combinatoria: definizioni](combinatorial-optimization.md) · 8 esercizi
 
-## Problemi scelti
+## Problemi
 
 - [2. Problemi di zaino](knapsack.md) · 6 esercizi
 - [3. Problemi di packing](bin-packing.md) · 6 esercizi

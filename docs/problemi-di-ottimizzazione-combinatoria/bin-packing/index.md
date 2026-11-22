@@ -97,4 +97,4 @@ title: "Problemi di packing"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#bin-packing-problem)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../problemi-scelti/index.md#bin-packing-problem)
