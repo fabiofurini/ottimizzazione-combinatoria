@@ -58,6 +58,43 @@ plugins:
   # i vecchi indirizzi delle loro pagine portano ai siti nuovi (python/reindirizzamenti.tsv)
   - redirects:
       redirect_maps:
+        # 2026-11-22: the catalogue is one list page; the old pages of the problems and of the families → their entry in the list
+        catalogo/knapsack-problem.md: catalogo/index.md#knapsack-problem
+        catalogo/knapsack-problems.md: catalogo/index.md#knapsack-problems
+        catalogo/subset-sum-problem.md: catalogo/index.md#subset-sum-problem
+        catalogo/bounded-knapsack-problem.md: catalogo/index.md#bounded-knapsack-problem
+        catalogo/unbounded-knapsack-problem.md: catalogo/index.md#unbounded-knapsack-problem
+        catalogo/multidimensional-knapsack-problem.md: catalogo/index.md#multidimensional-knapsack-problem
+        catalogo/multiple-knapsack-problem.md: catalogo/index.md#multiple-knapsack-problem
+        catalogo/multiple-choice-knapsack-problem.md: catalogo/index.md#multiple-choice-knapsack-problem
+        catalogo/knapsack-problem-with-setups.md: catalogo/index.md#knapsack-problem-with-setups
+        catalogo/bin-packing-problem.md: catalogo/index.md#bin-packing-problem
+        catalogo/packing-problems.md: catalogo/index.md#packing-problems
+        catalogo/cutting-stock-problem.md: catalogo/index.md#cutting-stock-problem
+        catalogo/vertex-coloring-problem.md: catalogo/index.md#vertex-coloring-problem
+        catalogo/coloring-problems.md: catalogo/index.md#coloring-problems
+        catalogo/maximum-clique-problem.md: catalogo/index.md#maximum-clique-problem
+        catalogo/clique-problems.md: catalogo/index.md#clique-problems
+        catalogo/maximum-stable-set-problem.md: catalogo/index.md#maximum-stable-set-problem
+        catalogo/vertex-weighted-maximum-clique-problem.md: catalogo/index.md#vertex-weighted-maximum-clique-problem
+        catalogo/edge-weighted-maximum-clique-problem.md: catalogo/index.md#edge-weighted-maximum-clique-problem
+        catalogo/travelling-salesman-problem.md: catalogo/index.md#travelling-salesman-problem
+        catalogo/routing-problems.md: catalogo/index.md#routing-problems
+        catalogo/metric-travelling-salesman-problem.md: catalogo/index.md#metric-travelling-salesman-problem
+        catalogo/asymmetric-travelling-salesman-problem.md: catalogo/index.md#asymmetric-travelling-salesman-problem
+        catalogo/scheduling-on-identical-parallel-machines.md: catalogo/index.md#scheduling-on-identical-parallel-machines
+        catalogo/scheduling-problems.md: catalogo/index.md#scheduling-problems
+        catalogo/scheduling-on-parallel-machines-with-different-speeds.md: catalogo/index.md#scheduling-on-parallel-machines-with-different-speeds
+        catalogo/scheduling-on-unrelated-parallel-machines.md: catalogo/index.md#scheduling-on-unrelated-parallel-machines
+        catalogo/capacitated-lot-sizing.md: catalogo/index.md#capacitated-lot-sizing
+        catalogo/lot-sizing-problems.md: catalogo/index.md#lot-sizing-problems
+        catalogo/uncapacitated-lot-sizing-problem.md: catalogo/index.md#uncapacitated-lot-sizing-problem
+        catalogo/capacitated-lot-sizing-with-constant-capacity.md: catalogo/index.md#capacitated-lot-sizing-with-constant-capacity
+        catalogo/lot-sizing-with-several-products-and-setup-times.md: catalogo/index.md#lot-sizing-with-several-products-and-setup-times
+        catalogo/lot-sizing-with-initial-stock.md: catalogo/index.md#lot-sizing-with-initial-stock
+        catalogo/lot-sizing-with-overtime.md: catalogo/index.md#lot-sizing-with-overtime
+        catalogo/lot-sizing-with-unsatisfied-demand.md: catalogo/index.md#lot-sizing-with-unsatisfied-demand
+        catalogo/miscellaneous-problems.md: catalogo/index.md#miscellaneous-problems
         programmazione-dinamica/dp-bounded-knapsack.md: https://fabiofurini.github.io/programmazione-dinamica/dp-bounded-knapsack/
         programmazione-dinamica/dp-capacitated-lot-sizing.md: https://fabiofurini.github.io/programmazione-dinamica/dp-capacitated-lot-sizing/
         programmazione-dinamica/dp-coin-change.md: https://fabiofurini.github.io/programmazione-dinamica/dp-coin-change/
@@ -180,33 +217,45 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/fabiofurini
       name: GitHub
+    - icon: material/function-variant
+      link: https://fabiofurini.github.io/analisi-matematica-1/
+      name: Analisi Matematica 1
+    - icon: material/matrix
+      link: https://fabiofurini.github.io/algebra-lineare/
+      name: Algebra lineare
+    - icon: material/code-braces
+      link: https://fabiofurini.github.io/algoritmi/
+      name: Algoritmi
+    - icon: material/vector-triangle
+      link: https://fabiofurini.github.io/programmazione-lineare/
+      name: Programmazione lineare
+    - icon: material/dots-grid
+      link: https://fabiofurini.github.io/programmazione-lineare-intera/
+      name: Programmazione lineare intera
+    - icon: material/vector-curve
+      link: https://fabiofurini.github.io/ottimizzazione-convessa/
+      name: Ottimizzazione convessa
+    - icon: material/graph-outline
+      link: https://fabiofurini.github.io/ottimizzazione-su-reti/
+      name: Ottimizzazione su reti
+    - icon: material/table-large
+      link: https://fabiofurini.github.io/programmazione-dinamica/
+      name: Programmazione dinamica
+    - icon: material/map-marker-path
+      link: https://fabiofurini.github.io/algoritmi-euristici/
+      name: Algoritmi euristici
+    - icon: material/approximately-equal
+      link: https://fabiofurini.github.io/algoritmi-di-approssimazione/
+      name: Algoritmi di approssimazione
     - icon: material/chart-line
       link: https://fabiofurini.github.io/modellazione-pl/
       name: Modellazione PL
     - icon: material/chart-bell-curve-cumulative
       link: https://fabiofurini.github.io/modellazione-pnl/
       name: Modellazione PNL
-    - icon: material/vector-triangle
-      link: https://fabiofurini.github.io/programmazione-lineare/
-      name: Programmazione lineare
     - icon: material/vector-polygon
       link: https://fabiofurini.github.io/modellazione-mip/
       name: Modellazione MIP
-    - icon: material/vector-polyline
-      link: https://fabiofurini.github.io/programmazione-lineare-intera/
-      name: Programmazione lineare intera
-    - icon: material/math-integral
-      link: https://fabiofurini.github.io/analisi-matematica-1/
-      name: Analisi Matematica 1
-    - icon: material/matrix
-      link: https://fabiofurini.github.io/algebra-lineare/
-      name: Algebra lineare
-    - icon: material/chart-bell-curve
-      link: https://fabiofurini.github.io/ottimizzazione-convessa/
-      name: Ottimizzazione convessa
-    - icon: material/code-braces
-      link: https://fabiofurini.github.io/algoritmi/
-      name: Algoritmi
   alternate:
     - name: Italiano
       link: https://fabiofurini.github.io/ottimizzazione-combinatoria/
@@ -217,7 +266,7 @@ extra:
 
 extra_css:
   - stylesheets/collana.css
-  - stylesheets/extra.css?v=a25c6f8414
+  - stylesheets/extra.css?v=c09bb8c9c1
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css
   - stylesheets/interattivi.css?v=c51ac2286b
   - stylesheets/quiz.css?v=9e3792b41c
@@ -365,56 +414,6 @@ nav:
               - "17. Colorazione dei vertici (VCP)": esercizi/dsatur-branch-and-bound.md
   - Quiz: autovalutazione.md
   - Laboratorio: laboratorio/index.md
-  - Catalogo:
-      - catalogo/index.md
-      - "I problemi in sintesi": problemi-di-ottimizzazione-combinatoria/problems.md
-      - "Problemi di zaino":
-          - catalogo/knapsack-problems.md
-          - "Zaino 0/1 (KP)": catalogo/knapsack-problem.md
-          - "Subset sum (SSP)": catalogo/subset-sum-problem.md
-          - "Zaino limitato (BKP)": catalogo/bounded-knapsack-problem.md
-          - "Zaino illimitato (UKP)": catalogo/unbounded-knapsack-problem.md
-          - "Zaino multidimensionale (MDKP)": catalogo/multidimensional-knapsack-problem.md
-          - "Zaini multipli (MKP)": catalogo/multiple-knapsack-problem.md
-          - "Zaino a scelta multipla (MCKP)": catalogo/multiple-choice-knapsack-problem.md
-          - "Zaino con setup (KPS)": catalogo/knapsack-problem-with-setups.md
-      - "Problemi di packing":
-          - catalogo/packing-problems.md
-          - "Bin packing (BPP)": catalogo/bin-packing-problem.md
-          - "Cutting stock (CSP)": catalogo/cutting-stock-problem.md
-      - "Problemi di colorazione":
-          - catalogo/coloring-problems.md
-          - "Colorazione dei vertici (VCP)": catalogo/vertex-coloring-problem.md
-      - "Problemi di cricca":
-          - catalogo/clique-problems.md
-          - "Cricca massima (MCP)": catalogo/maximum-clique-problem.md
-          - "Insieme stabile massimo (MSSP)": catalogo/maximum-stable-set-problem.md
-          - "Cricca massima pesata sui vertici (VWMCP)": catalogo/vertex-weighted-maximum-clique-problem.md
-          - "Cricca massima pesata sui lati (EWMCP)": catalogo/edge-weighted-maximum-clique-problem.md
-      - "Problemi di routing":
-          - catalogo/routing-problems.md
-          - "Commesso viaggiatore (TSP)": catalogo/travelling-salesman-problem.md
-          - "TSP metrico": catalogo/metric-travelling-salesman-problem.md
-          - "TSP asimmetrico (ATSP)": catalogo/asymmetric-travelling-salesman-problem.md
-          - "Ciclo hamiltoniano (HCP)": catalogo/hamiltonian-cycle-problem.md
-      - "Problemi di scheduling":
-          - catalogo/scheduling-problems.md
-          - "Macchine parallele identiche (P||Cmax)": catalogo/scheduling-on-identical-parallel-machines.md
-          - "Numero fissato di macchine identiche (Pm||Cmax)": catalogo/scheduling-on-a-fixed-number-of-identical-machines.md
-          - "Macchine parallele con velocità diverse (Q||Cmax)": catalogo/scheduling-on-parallel-machines-with-different-speeds.md
-          - "Macchine parallele scorrelate (R||Cmax)": catalogo/scheduling-on-unrelated-parallel-machines.md
-      - "Problemi di lot sizing":
-          - catalogo/lot-sizing-problems.md
-          - "Lot sizing capacitato (CLS)": catalogo/capacitated-lot-sizing.md
-          - "Lot sizing senza capacità (ULS)": catalogo/uncapacitated-lot-sizing-problem.md
-          - "Lot sizing capacitato con capacità costante (CLS-C)": catalogo/capacitated-lot-sizing-with-constant-capacity.md
-          - "Lot sizing con più prodotti e tempi di setup (MLS)": catalogo/lot-sizing-with-several-products-and-setup-times.md
-          - "Lot sizing con scorta iniziale (LS-SI)": catalogo/lot-sizing-with-initial-stock.md
-          - "Lot sizing con straordinario (LS-OT)": catalogo/lot-sizing-with-overtime.md
-          - "Lot sizing con domanda non soddisfatta (LS-UD)": catalogo/lot-sizing-with-unsatisfied-demand.md
-      - "Problemi misti":
-          - catalogo/miscellaneous-problems.md
-          - "Taglio delle aste (RCP)": catalogo/rod-cutting-problem.md
-          - "Cambio monete (CCP)": catalogo/coin-change-problem.md
+  - Catalogo: catalogo/index.md
   - Materiale: materiale.md
   - Indice: indice.md

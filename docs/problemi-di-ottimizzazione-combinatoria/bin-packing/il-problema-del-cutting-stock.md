@@ -232,5 +232,5 @@ title: "Cutting stock"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/bin-packing-problem.md)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#bin-packing-problem)
 

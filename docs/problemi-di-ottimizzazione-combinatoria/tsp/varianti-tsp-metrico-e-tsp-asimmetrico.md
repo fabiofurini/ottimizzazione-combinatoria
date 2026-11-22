@@ -122,5 +122,5 @@ title: "TSP metrico e TSP asimmetrico"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/travelling-salesman-problem.md)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#travelling-salesman-problem)
 

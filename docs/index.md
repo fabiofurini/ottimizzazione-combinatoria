@@ -120,7 +120,7 @@ Le stesse voci del menu: ogni scheda dice a quale parte e a quali capitoli della
 
     *Tutti i problemi*
 
-    Una pagina per problema, per famiglia: definizione, ipotesi e che cosa fa il corso sul problema.
+    Tutti i problemi in una lista, per famiglia: la definizione e i capitoli che trattano ciascuno.
 
     [:octicons-arrow-right-24: Il catalogo](catalogo/index.md) · [:material-file-pdf-box: PDF](pdf/catalogo-problemi-combinatori.pdf)
 

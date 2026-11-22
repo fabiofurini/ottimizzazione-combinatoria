@@ -30,10 +30,10 @@ Ogni cella porta al capitolo. La programmazione dinamica, le euristiche e l'appr
 
 ## Le pagine del catalogo
 
-- **Zaino 0/1 (KP)** — [che cosa fa il corso su questo problema](../catalogo/knapsack-problem.md)
-- **Bin packing (BPP)** — [che cosa fa il corso su questo problema](../catalogo/bin-packing-problem.md)
-- **Colorazione dei vertici (VCP)** — [che cosa fa il corso su questo problema](../catalogo/vertex-coloring-problem.md)
-- **Clique massima (MCP)** — [che cosa fa il corso su questo problema](../catalogo/maximum-clique-problem.md)
-- **Commesso viaggiatore (TSP)** — [che cosa fa il corso su questo problema](../catalogo/travelling-salesman-problem.md)
-- **Scheduling su macchine parallele (P\|\|Cmax)** — [che cosa fa il corso su questo problema](../catalogo/scheduling-on-identical-parallel-machines.md)
-- **Lot sizing capacitato (CLS)** — [che cosa fa il corso su questo problema](../catalogo/capacitated-lot-sizing.md)
+- **Zaino 0/1 (KP)** — [che cosa fa il corso su questo problema](../catalogo/index.md#knapsack-problem)
+- **Bin packing (BPP)** — [che cosa fa il corso su questo problema](../catalogo/index.md#bin-packing-problem)
+- **Colorazione dei vertici (VCP)** — [che cosa fa il corso su questo problema](../catalogo/index.md#vertex-coloring-problem)
+- **Clique massima (MCP)** — [che cosa fa il corso su questo problema](../catalogo/index.md#maximum-clique-problem)
+- **Commesso viaggiatore (TSP)** — [che cosa fa il corso su questo problema](../catalogo/index.md#travelling-salesman-problem)
+- **Scheduling su macchine parallele (P\|\|Cmax)** — [che cosa fa il corso su questo problema](../catalogo/index.md#scheduling-on-identical-parallel-machines)
+- **Lot sizing capacitato (CLS)** — [che cosa fa il corso su questo problema](../catalogo/index.md#capacitated-lot-sizing)

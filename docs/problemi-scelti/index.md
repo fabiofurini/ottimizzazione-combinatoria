@@ -20,7 +20,7 @@ Le famiglie di problemi su cui si concentra tutto il corso: ogni famiglia si apr
 
     [Zaino 0/1 (KP)](../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-0-1.md) · [Subset sum (SSP)](../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-del-subset-sum.md) · [Zaino limitato (BKP)](../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-limitato.md) · [Zaino illimitato (UKP)](../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-illimitato.md) · [Zaino multidimensionale (MDKP)](../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-multidimensionale.md) · [Zaini multipli (MKP)](../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-degli-zaini-multipli.md) · [Zaino a scelta multipla (MCKP)](../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-a-scelta-multipla.md) · [Zaino con setup (KPS)](../problemi-di-ottimizzazione-combinatoria/knapsack/il-problema-dello-zaino-con-setup.md)
 
-    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/knapsack/index.md) · [Formulazioni](../formulazioni/knapsack-formulations/index.md) · [Esercizi](../esercizi/knapsack.md) · [Catalogo](../catalogo/knapsack-problems.md)
+    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/knapsack/index.md) · [Formulazioni](../formulazioni/knapsack-formulations/index.md) · [Esercizi](../esercizi/knapsack.md) · [Catalogo](../catalogo/index.md#knapsack-problems)
 
 -   **3. Problemi di packing**
 
@@ -30,7 +30,7 @@ Le famiglie di problemi su cui si concentra tutto il corso: ogni famiglia si apr
 
     [Bin packing (BPP)](../problemi-di-ottimizzazione-combinatoria/bin-packing/il-problema-del-bin-packing.md) · [Cutting stock (CSP)](../problemi-di-ottimizzazione-combinatoria/bin-packing/il-problema-del-cutting-stock.md)
 
-    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/bin-packing/index.md) · [Formulazioni](../formulazioni/bin-packing-formulations/index.md) · [Esercizi](../esercizi/bin-packing.md) · [Catalogo](../catalogo/packing-problems.md)
+    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/bin-packing/index.md) · [Formulazioni](../formulazioni/bin-packing-formulations/index.md) · [Esercizi](../esercizi/bin-packing.md) · [Catalogo](../catalogo/index.md#packing-problems)
 
 -   **4. Problemi di colorazione**
 
@@ -40,7 +40,7 @@ Le famiglie di problemi su cui si concentra tutto il corso: ogni famiglia si apr
 
     [Colorazione dei vertici (VCP)](../problemi-di-ottimizzazione-combinatoria/coloring/il-problema-della-colorazione-dei-vertici.md)
 
-    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/coloring/index.md) · [Formulazioni](../formulazioni/coloring-formulations/index.md) · [Esercizi](../esercizi/coloring.md) · [Catalogo](../catalogo/coloring-problems.md)
+    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/coloring/index.md) · [Formulazioni](../formulazioni/coloring-formulations/index.md) · [Esercizi](../esercizi/coloring.md) · [Catalogo](../catalogo/index.md#coloring-problems)
 
 -   **5. Problemi di clique**
 
@@ -50,7 +50,7 @@ Le famiglie di problemi su cui si concentra tutto il corso: ogni famiglia si apr
 
     [Clique massima (MCP)](../problemi-di-ottimizzazione-combinatoria/clique/il-problema-della-clique-massima.md) · [Clique massima pesata](../problemi-di-ottimizzazione-combinatoria/clique/varianti-pesate.md)
 
-    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/clique/index.md) · [Formulazioni](../formulazioni/clique-formulations/index.md) · [Esercizi](../esercizi/clique.md) · [Catalogo](../catalogo/clique-problems.md)
+    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/clique/index.md) · [Formulazioni](../formulazioni/clique-formulations/index.md) · [Esercizi](../esercizi/clique.md) · [Catalogo](../catalogo/index.md#clique-problems)
 
 -   **6. Problemi di routing**
 
@@ -60,7 +60,7 @@ Le famiglie di problemi su cui si concentra tutto il corso: ogni famiglia si apr
 
     [Commesso viaggiatore (TSP)](../problemi-di-ottimizzazione-combinatoria/tsp/il-problema-del-commesso-viaggiatore.md) · [TSP metrico e asimmetrico (ATSP)](../problemi-di-ottimizzazione-combinatoria/tsp/varianti-tsp-metrico-e-tsp-asimmetrico.md)
 
-    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/tsp/index.md) · [Formulazioni](../formulazioni/tsp-formulations/index.md) · [Esercizi](../esercizi/tsp.md) · [Catalogo](../catalogo/routing-problems.md)
+    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/tsp/index.md) · [Formulazioni](../formulazioni/tsp-formulations/index.md) · [Esercizi](../esercizi/tsp.md) · [Catalogo](../catalogo/index.md#routing-problems)
 
 -   **7. Problemi di scheduling**
 
@@ -70,7 +70,7 @@ Le famiglie di problemi su cui si concentra tutto il corso: ogni famiglia si apr
 
     [Macchine parallele identiche (P||Cmax)](../problemi-di-ottimizzazione-combinatoria/pcmax/scheduling-su-macchine-parallele-identiche.md)
 
-    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/pcmax/index.md) · [Formulazioni](../formulazioni/pcmax-formulations/index.md) · [Esercizi](../esercizi/pcmax.md) · [Catalogo](../catalogo/scheduling-problems.md)
+    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/pcmax/index.md) · [Formulazioni](../formulazioni/pcmax-formulations/index.md) · [Esercizi](../esercizi/pcmax.md) · [Catalogo](../catalogo/index.md#scheduling-problems)
 
 -   **8. Problemi di lot sizing**
 
@@ -80,6 +80,6 @@ Le famiglie di problemi su cui si concentra tutto il corso: ogni famiglia si apr
 
     [Lot sizing capacitato (CLS)](../problemi-di-ottimizzazione-combinatoria/lot-sizing/il-problema-del-lot-sizing-capacitato.md) · [Varianti del lot sizing](../problemi-di-ottimizzazione-combinatoria/lot-sizing/varianti.md)
 
-    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/lot-sizing/index.md) · [Formulazioni](../formulazioni/lot-sizing-formulations/index.md) · [Esercizi](../esercizi/lot-sizing.md) · [Catalogo](../catalogo/lot-sizing-problems.md)
+    [:octicons-arrow-right-24: La famiglia](../problemi-di-ottimizzazione-combinatoria/lot-sizing/index.md) · [Formulazioni](../formulazioni/lot-sizing-formulations/index.md) · [Esercizi](../esercizi/lot-sizing.md) · [Catalogo](../catalogo/index.md#lot-sizing-problems)
 
 </div>

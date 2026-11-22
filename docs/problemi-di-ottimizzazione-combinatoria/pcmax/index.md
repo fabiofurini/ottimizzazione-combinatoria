@@ -109,4 +109,4 @@ title: "Problemi di scheduling"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/scheduling-on-identical-parallel-machines.md)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#scheduling-on-identical-parallel-machines)

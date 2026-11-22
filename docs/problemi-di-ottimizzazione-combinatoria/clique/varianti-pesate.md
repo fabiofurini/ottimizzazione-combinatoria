@@ -115,5 +115,5 @@ title: "Varianti pesate"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/maximum-clique-problem.md)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#maximum-clique-problem)
 

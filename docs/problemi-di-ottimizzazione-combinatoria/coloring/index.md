@@ -119,7 +119,7 @@ title: "Problemi di colorazione"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/vertex-coloring-problem.md)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#vertex-coloring-problem)
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 

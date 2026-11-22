@@ -208,5 +208,5 @@ title: "Zaino con setup"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/knapsack-problem.md)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#knapsack-problem)
 

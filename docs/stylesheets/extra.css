@@ -300,3 +300,38 @@
 
 /* schede: la riga «Part N · chapters a–b» in corsivo, più piccola e grigia */
 .md-typeset .grid.cards > ul > li > p > em:only-child { color: var(--md-default-fg-color--light); font-size: .72rem; }
+
+/* ------------------------------------------------------------------
+   Catalogo: la pagina-lista (2026-11-22). Una voce per problema: il nome (link alla definizione), una riga di
+   definizione, i rimandi come etichette con un'icona fissa per tecnica. Pensata per il telefono.
+   ------------------------------------------------------------------ */
+.md-typeset .cat-famiglie p { display: flex; flex-wrap: wrap; gap: .35rem; margin: .4rem 0 1rem; }
+.md-typeset .cat-famiglie a {
+  display: inline-flex; align-items: center; gap: .3em;
+  padding: .2em .65em; border: 1px solid #0E749040; border-radius: 1em;
+  font-size: .72rem; white-space: nowrap; color: var(--md-typeset-color);
+}
+.md-typeset .cat-famiglie a:hover { border-color: var(--md-accent-fg-color); color: var(--md-accent-fg-color); }
+.md-typeset h2 .twemoji { color: #0E7490; margin-right: .15em; }
+[data-md-color-scheme="slate"] .md-typeset h2 .twemoji { color: #4dd0e1; }
+.md-typeset .cat-famiglia-riga { margin-top: -.3rem; color: var(--md-default-fg-color--light); font-size: .75rem; }
+.md-typeset .cat-voce {
+  margin: 0 0 .7rem; padding: .45rem .7rem .5rem;
+  border-left: 3px solid #0E749055; border-radius: 0 6px 6px 0;
+  background: #0E749008;
+  scroll-margin-top: 4.2rem;
+}
+[data-md-color-scheme="slate"] .md-typeset .cat-voce { background: #4dd0e10a; border-left-color: #4dd0e166; }
+.md-typeset .cat-voce:target { border-left-color: var(--md-accent-fg-color); background: #0E749018; }
+.md-typeset .cat-voce > p { margin: 0 0 .3rem; }
+.md-typeset .cat-voce > p:last-child { margin-bottom: 0; }
+.md-typeset .cat-rimandi { display: flex; flex-wrap: wrap; gap: .3rem; }
+.md-typeset .cat-tag {
+  display: inline-flex; align-items: center; flex-wrap: wrap; gap: .25em;
+  padding: .1em .55em; border-radius: .9em; font-size: .68rem; line-height: 1.5;
+  background: var(--md-default-fg-color--lightest); color: var(--md-default-fg-color--light);
+}
+.md-typeset .cat-tag a { color: var(--md-typeset-a-color); }
+.md-typeset .cat-tag .twemoji { color: #0E7490; }
+[data-md-color-scheme="slate"] .md-typeset .cat-tag .twemoji { color: #4dd0e1; }
+.md-typeset .cat-tag > a:only-child { display: inline-flex; align-items: center; gap: .25em; }

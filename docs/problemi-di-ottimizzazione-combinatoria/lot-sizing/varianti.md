@@ -123,5 +123,5 @@ title: "Varianti"
 
 ---
 
-**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/capacitated-lot-sizing.md)
+**Approfondimento:** [:material-view-list: che cosa fa il corso su questo problema](../../catalogo/index.md#capacitated-lot-sizing)
 
