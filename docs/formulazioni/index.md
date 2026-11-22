@@ -1,10 +1,12 @@
 # Formulazioni dei problemi e loro proprietà
 
-*Parte 2 del corso, volume 2 delle dispense: capitoli 9–15.*
+<div class="info-capitolo" markdown>
+
+**Parte 2 · Formulazioni dei problemi e loro proprietà** · 7 capitoli · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispensa-2-formulazioni.pdf) · [:material-pencil-box-multiple: Esercizi (PDF)](../pdf/esercizi-2-formulazioni.pdf)
+
+</div>
 
 I modelli di programmazione lineare intera dei problemi del volume 1, i loro rilassamenti lineari e i duali, i bound che ne derivano e il confronto fra formulazioni più deboli e più forti.
-
-[:material-file-pdf-box: Dispensa (PDF)](../pdf/dispensa-2-formulazioni.pdf){ .md-button } [:material-file-pdf-box: Esercizi (PDF)](../pdf/esercizi-2-formulazioni.pdf){ .md-button }
 
 <div class="grid cards" markdown>
 
@@ -14,7 +16,7 @@ I modelli di programmazione lineare intera dei problemi del volume 1, i loro ril
 
     Zaino 0/1 (KP) · Subset sum (SSP) · Zaino limitato (BKP) · Zaino illimitato (UKP) · Zaino multidimensionale (MDKP) · Zaini multipli (MKP) · Zaino a scelta multipla (MCKP) · Zaino con setup (KPS)
 
-    [:octicons-arrow-right-24: Leggi il capitolo](knapsack-formulations/index.md) · [Esercizi](../esercizi/knapsack-formulations.md)
+    [:octicons-arrow-right-24: Leggi il capitolo](knapsack-formulations/index.md) · [Esercizi](../esercizi/knapsack-formulations.md) · [Slide](../pdf/slide-knapsack-formulations.pdf)
 
 -   **10. Formulazioni dei problemi di packing**
 
@@ -22,7 +24,7 @@ I modelli di programmazione lineare intera dei problemi del volume 1, i loro ril
 
     Bin packing (BPP) · Cutting stock (CSP)
 
-    [:octicons-arrow-right-24: Leggi il capitolo](bin-packing-formulations/index.md) · [Esercizi](../esercizi/bin-packing-formulations.md)
+    [:octicons-arrow-right-24: Leggi il capitolo](bin-packing-formulations/index.md) · [Esercizi](../esercizi/bin-packing-formulations.md) · [Slide](../pdf/slide-bin-packing-formulations.pdf)
 
 -   **11. Formulazioni dei problemi di colorazione**
 
@@ -30,7 +32,7 @@ I modelli di programmazione lineare intera dei problemi del volume 1, i loro ril
 
     Colorazione dei vertici (VCP)
 
-    [:octicons-arrow-right-24: Leggi il capitolo](coloring-formulations/index.md) · [Esercizi](../esercizi/coloring-formulations.md)
+    [:octicons-arrow-right-24: Leggi il capitolo](coloring-formulations/index.md) · [Esercizi](../esercizi/coloring-formulations.md) · [Slide](../pdf/slide-coloring-formulations.pdf)
 
 -   **12. Formulazioni dei problemi di clique**
 
@@ -38,7 +40,7 @@ I modelli di programmazione lineare intera dei problemi del volume 1, i loro ril
 
     Clique massima (MCP) · Clique massima pesata
 
-    [:octicons-arrow-right-24: Leggi il capitolo](clique-formulations/index.md) · [Esercizi](../esercizi/clique-formulations.md)
+    [:octicons-arrow-right-24: Leggi il capitolo](clique-formulations/index.md) · [Esercizi](../esercizi/clique-formulations.md) · [Slide](../pdf/slide-clique-formulations.pdf)
 
 -   **13. Formulazioni dei problemi di routing**
 
@@ -46,7 +48,7 @@ I modelli di programmazione lineare intera dei problemi del volume 1, i loro ril
 
     Commesso viaggiatore (TSP) · TSP metrico e asimmetrico (ATSP)
 
-    [:octicons-arrow-right-24: Leggi il capitolo](tsp-formulations/index.md) · [Esercizi](../esercizi/tsp-formulations.md)
+    [:octicons-arrow-right-24: Leggi il capitolo](tsp-formulations/index.md) · [Esercizi](../esercizi/tsp-formulations.md) · [Slide](../pdf/slide-tsp-formulations.pdf)
 
 -   **14. Formulazioni dei problemi di scheduling**
 
@@ -54,7 +56,7 @@ I modelli di programmazione lineare intera dei problemi del volume 1, i loro ril
 
     Macchine parallele identiche (P||Cmax)
 
-    [:octicons-arrow-right-24: Leggi il capitolo](pcmax-formulations/index.md) · [Esercizi](../esercizi/pcmax-formulations.md)
+    [:octicons-arrow-right-24: Leggi il capitolo](pcmax-formulations/index.md) · [Esercizi](../esercizi/pcmax-formulations.md) · [Slide](../pdf/slide-pcmax-formulations.pdf)
 
 -   **15. Formulazioni dei problemi di lot sizing**
 
@@ -62,6 +64,6 @@ I modelli di programmazione lineare intera dei problemi del volume 1, i loro ril
 
     Lot sizing capacitato (CLS) · Varianti del lot sizing
 
-    [:octicons-arrow-right-24: Leggi il capitolo](lot-sizing-formulations/index.md) · [Esercizi](../esercizi/lot-sizing-formulations.md)
+    [:octicons-arrow-right-24: Leggi il capitolo](lot-sizing-formulations/index.md) · [Esercizi](../esercizi/lot-sizing-formulations.md) · [Slide](../pdf/slide-lot-sizing-formulations.pdf)
 
 </div>
