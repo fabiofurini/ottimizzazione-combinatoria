@@ -16,7 +16,11 @@ hide:
 Materiale didattico ideato e sviluppato da **[Fabio Furini](https://fabiofurini.github.io/)**, professore
 associato al [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.
 
-**Le dispense del corso, online**: i problemi di zaino, di packing, di colorazione, di clique, di routing, di scheduling e di lot sizing, le loro formulazioni con le proprietà e i bound, e gli algoritmi ad hoc; con definizioni, risultati con dimostrazione, esempi svolti passo per passo, esercizi con le soluzioni e app interattive.
+Il corso presenta i problemi di ottimizzazione combinatoria: zaino, packing, colorazione, clique,
+routing, scheduling e lot sizing, con le loro formulazioni, le proprietà e i bound, e gli algoritmi ad hoc.
+
+Ogni capitolo ha definizioni, risultati con dimostrazione, esempi svolti passo per passo, esercizi con
+le soluzioni e app interattive.
 
 Prerequisiti: [Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/) e [Programmazione lineare intera](https://fabiofurini.github.io/programmazione-lineare-intera/) per le formulazioni e [Algoritmi](https://fabiofurini.github.io/algoritmi/) per gli algoritmi.
 
