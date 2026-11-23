@@ -19,9 +19,6 @@ associato al [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma
 Il corso presenta i problemi di ottimizzazione combinatoria: zaino, packing, colorazione, clique,
 routing, scheduling e lot sizing, con le loro formulazioni, le proprietà e i bound, e gli algoritmi ad hoc.
 
-Ogni capitolo ha definizioni, risultati con dimostrazione, esempi svolti passo per passo, esercizi con
-le soluzioni e app interattive.
-
 Prerequisiti: [Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/) e [Programmazione lineare intera](https://fabiofurini.github.io/programmazione-lineare-intera/) per le formulazioni e [Algoritmi](https://fabiofurini.github.io/algoritmi/) per gli algoritmi.
 
 [Comincia :material-arrow-right:](problemi-di-ottimizzazione-combinatoria/combinatorial-optimization/index.md){ .md-button .md-button--primary }
