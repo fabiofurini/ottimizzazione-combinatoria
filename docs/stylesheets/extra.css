@@ -293,10 +293,6 @@
 .md-tabs__link { font-size: .68rem; }
 .md-tabs__list { margin-left: .2rem; }
 
-/* pagina Downloads: tabelle a tutta larghezza; numeri dei capitoli e file su una riga (2026-10-12) */
-.md-typeset .tabella-download table:not([class]) { display: table; width: 100%; font-size: .74rem; }
-.md-typeset .tabella-download td:nth-last-child(-n+2), .md-typeset .tabella-download th:nth-last-child(-n+2) { white-space: nowrap; }
-.md-typeset .tabella-download td:first-child { font-weight: 600; min-width: 9em; }
 
 /* schede: la riga «Part N · chapters a–b» in corsivo, più piccola e grigia */
 .md-typeset .grid.cards > ul > li > p > em:only-child { color: var(--md-default-fg-color--light); font-size: .72rem; }
