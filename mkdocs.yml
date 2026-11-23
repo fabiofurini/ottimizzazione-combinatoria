@@ -16,7 +16,7 @@ theme:
   name: material
   language: it
   icon:
-    logo: material/dots-grid
+    logo: material/hexagon-multiple-outline
   font:
     text: Source Sans 3
     code: JetBrains Mono
