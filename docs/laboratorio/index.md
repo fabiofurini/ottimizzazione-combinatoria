@@ -5,8 +5,8 @@ hide:
 
 # Laboratorio interattivo
 
-Qui l'ottimizzazione combinatoria si tocca con mano: ogni app esegue un algoritmo passo per passo sulle istanze di riferimento del corso,
-che si possono anche cambiare. Scegli un'app: si apre a tutta pagina. Tutto gira nel browser; i numeri sono calcolati dall'algoritmo, non scritti a mano.
+Ogni app esegue un algoritmo passo per passo sulle istanze di riferimento del corso,
+che si possono anche cambiare. Scegli un'app: si apre a tutta pagina. Tutto gira nel browser.
 
 ## Problemi
 
